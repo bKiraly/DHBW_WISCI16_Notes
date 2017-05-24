@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Communication Systems</title>
+<link rel="stylesheet" href="https://stackedit.io/res-min/themes/base.css" />
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body><div class="container"><h1 id="communication-systems">Communication Systems</h1>
+
+
+
+<h2 id="toc">TOC</h2>
+
+<p><div class="toc">
+<ul>
+<li><a href="#communication-systems">Communication Systems</a><ul>
+<li><a href="#toc">TOC</a></li>
+<li><a href="#literature">Literature</a></li>
+<li><a href="#introduction">Introduction</a><ul>
+<li><a href="#definition-of-computer-networks">Definition of Computer Networks</a><ul>
+<li><a href="#uses-of-computer-networks">Uses of Computer networks</a></li>
+</ul>
+</li>
+<li><a href="#network-hardware">Network hardware</a></li>
+<li><a href="#network-software">Network Software</a><ul>
+<li><a href="#protocol-layers">Protocol layers</a></li>
+<li><a href="#design-issues-for-the-layers">Design Issues for the Layers</a></li>
+<li><a href="#connection-oriented-vs-connectionless">Connection-oriented vs Connectionless</a></li>
+<li><a href="#service-primitive">Service primitive</a></li>
+</ul>
+</li>
+<li><a href="#reference-models">Reference Models</a><ul>
+<li><a href="#osi-model">OSI Model</a></li>
+<li><a href="#tcp-ip-model">TCP-IP model</a></li>
+<li><a href="#model-used-in-this-course">Model used in this course</a></li>
+<li><a href="#critique-of-osi-and-tcp-ip">Critique of OSI and TCP-IP</a></li>
+</ul>
+</li>
+<li><a href="#examples-of-networks">Examples of Networks</a><ul>
+<li><a href="#the-internet">The Internet</a></li>
+<li><a href="#3g-mobile-networks">3G Mobile Networks</a></li>
+<li><a href="#wireless-lan">Wireless LAN</a></li>
+<li><a href="#network-standardization">Network Standardization</a></li>
+<li><a href="#metric-units">Metric units</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#the-physical-layer">The Physical Layer</a><ul>
+<li><a href="#theoretical-basis-for-data-communications">Theoretical Basis for Data Communications</a></li>
+<li><a href="#guided-transmission-media">Guided Transmission Media</a><ul>
+<li><a href="#reality-check">Reality check</a></li>
+<li><a href="#wires">Wires</a></li>
+<li><a href="#fiber-cables">Fiber cables</a></li>
+</ul>
+</li>
+<li><a href="#wireless-transmission">Wireless Transmission</a></li>
+<li><a href="#digital-modulation-and-multiplexing">Digital Modulation and Multiplexing</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</p>
+
+
+
+<h2 id="literature">Literature</h2>
+
+<p>Tennenbaum - Computer networks (up until network security chapter)</p>
+
+
+
+<h2 id="introduction">Introduction</h2>
+
+
+
+<h3 id="definition-of-computer-networks">Definition of Computer Networks</h3>
+
+<blockquote>
+  <p>A <strong>computer network</strong> is a collection of autonomous computers. It is used to share resources across different computers.</p>
+</blockquote>
+
+
+
+<h4 id="uses-of-computer-networks">Uses of Computer networks</h4>
+
+<ul>
+<li>Business Applications <br>
+<ul><li>Generally use the Client-Server model</li></ul></li>
+<li>Home Applications <br>
+<ul><li>Consumption and users</li>
+<li>Some P2P services</li></ul></li>
+<li>Mobile Users <br>
+<ul><li>Wireless networks</li></ul></li>
+</ul>
+
+<p>Problems: Social issues (lack of connectivity)</p>
+
+<ul>
+<li>Net neutrality</li>
+<li>Content ownership</li>
+<li>Anonymity</li>
+<li>Privacy</li>
+<li>Illegal activity</li>
+</ul>
+
+
+
+<h3 id="network-hardware">Network hardware</h3>
+
+<p>Network classification by scale:</p>
+
+<ul>
+<li>Personal AN (Area Network) <br>
+<ul><li>Devices connected to a single device</li></ul></li>
+<li>Local AN <br>
+<ul><li>A single building</li>
+<li>802</li></ul></li>
+<li>Metropolitan AN <br>
+<ul><li>Run by a cable provider</li></ul></li>
+<li>Wide AN <br>
+<ul><li>Run across a country</li></ul></li>
+<li>The internet</li>
+</ul>
+
+
+
+<h3 id="network-software">Network Software</h3>
+
+
+
+<h4 id="protocol-layers">Protocol layers</h4>
+
+<blockquote>
+  <p>The <strong>protocol layering</strong> method is the main method for structuring the network. Each protocol communicates with its peer using the protocol below.  The lower-level layers are accessed via an <em>interface</em>. The lowest layer is the physical medium.</p>
+</blockquote>
+
+
+
+<h5 id="header-and-trailer-information">Header and Trailer Information</h5>
+
+<blockquote>
+  <p><strong>Header information</strong> is extra information added to the beginning of the message by each layer before passing it on to the next. This header information is treated as part of the data by the next layer. <strong>Trailer information</strong> behaves in the same way as headers, but is appended to the end of the message. It is generally used for checking the correctness of the message</p>
+</blockquote>
+
+
+
+<h5 id="splitting-messages">Splitting messages</h5>
+
+<blockquote>
+  <p>If a message is too large to be transmitted in the lower layer, the current layer may <strong>split the message</strong>.</p>
+</blockquote>
+
+
+
+<h4 id="design-issues-for-the-layers">Design Issues for the Layers</h4>
+
+<ul>
+<li>Reliability despite failures</li>
+<li>Network growth and evolution</li>
+<li>Allocation of resources</li>
+<li>Security</li>
+</ul>
+
+
+
+<h4 id="connection-oriented-vs-connectionless">Connection-oriented vs Connectionless</h4>
+
+<blockquote>
+  <p>A <strong>connection oriented</strong> protocol must be set up for the ongoing use. A <strong>connectionless</strong> protocol does not have a setup.</p>
+</blockquote>
+
+
+
+<h4 id="service-primitive">Service primitive</h4>
+
+<blockquote>
+  <p><strong>Service primitives</strong> are basic instructions implemented in the layer provided by the layer below.</p>
+</blockquote>
+
+
+
+<h3 id="reference-models">Reference Models</h3>
+
+
+
+<h4 id="osi-model">OSI Model</h4>
+
+<blockquote>
+  <p>The <strong>OSI Model</strong> is an international standard for connecting two hosts using seven layers.</p>
+</blockquote>
+
+<ul>
+<li>Application <br>
+<ul><li>Functions to the user</li></ul></li>
+<li>Presentation <br>
+<ul><li>Converts different representations</li></ul></li>
+<li>Session <br>
+<ul><li>Manages sessions</li></ul></li>
+<li>Transport <br>
+<ul><li>Transports the data to its specified destination</li></ul></li>
+<li>Network <br>
+<ul><li>Send packets over multiple links (finds next link)</li></ul></li>
+<li>Data link <br>
+<ul><li>Combines to data into frames (gives data a beginning and an end)</li></ul></li>
+<li>Physical <br>
+<ul><li>Electric voltages</li></ul></li>
+</ul>
+
+
+
+<h4 id="tcp-ip-model">TCP-IP model</h4>
+
+<ul>
+<li>Application <br>
+<ul><li>ex. HTML</li></ul></li>
+<li>Transport <br>
+<ul><li>TCP or UDP</li></ul></li>
+<li>Internet <br>
+<ul><li>IP, ICMP (Internet Control Messaging Protocol)</li></ul></li>
+<li>Link <br>
+<ul><li>DSL</li>
+<li>802</li></ul></li>
+</ul>
+
+
+
+<h4 id="model-used-in-this-course">Model used in this course</h4>
+
+<ul>
+<li>Application</li>
+<li>Transport</li>
+<li>Network</li>
+<li>Link</li>
+<li>Physical</li>
+</ul>
+
+
+
+<h4 id="critique-of-osi-and-tcp-ip">Critique of OSI and TCP-IP</h4>
+
+<p>OSI</p>
+
+<ul>
+<li>Influential, clear concepts</li>
+<li>Models, protocols and adoption are hindered by complexity</li>
+</ul>
+
+<p>TCP/IP <br>
+* Widely adopted <br>
+* Weak model derived after the fact</p>
+
+
+
+<h3 id="examples-of-networks">Examples of Networks</h3>
+
+
+
+<h4 id="the-internet">The Internet</h4>
+
+<ul>
+<li>ARPANET (US military network, robust against nuclear attacks)</li>
+<li>NSFNET (High-speed backbones between central locations)</li>
+<li>Modern Internet <br>
+<ul><li>ISPs maintain networks</li>
+<li>Route traffic between each other using IXPs</li>
+<li>Inside networks routers switch packets</li>
+<li>Between networks business agreements regulate data exchange</li>
+<li>Customers connect at the edge</li>
+<li>Data centers concentrate many servers</li>
+<li>Most traffic is content from data centers</li>
+<li>Architecture continues to evolve</li></ul></li>
+</ul>
+
+
+
+<h4 id="3g-mobile-networks">3G Mobile Networks</h4>
+
+<ul>
+<li>Divided into cells</li>
+<li>Each cell is covered by a base-station</li>
+<li>The phone is connected to the base-station</li>
+<li>Upon passing from one cell to another, you get handed over to the next base station</li>
+<li>RNC connects the base stations</li>
+</ul>
+
+
+
+<h4 id="wireless-lan">Wireless LAN</h4>
+
+<ul>
+<li>Defined by the 802.11 standard</li>
+<li>Access points serve the client</li>
+<li>Multiple paths</li>
+<li>Interference is a problem (Carrier Sense Multiple Access designs are used)</li>
+</ul>
+
+
+
+<h4 id="network-standardization">Network Standardization</h4>
+
+<p>Standards define what is needed for <em>interoperability</em></p>
+
+<table>
+<thead>
+<tr>
+  <th>Body</th>
+  <th>Area</th>
+  <th>Examples</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>ITU</td>
+  <td>Telecom</td>
+  <td>ADSL, H.264</td>
+</tr>
+<tr>
+  <td>IEEE</td>
+  <td>Communication</td>
+  <td>802 (Ethernet)</td>
+</tr>
+<tr>
+  <td>IETF</td>
+  <td>Internet</td>
+  <td>RFC 2616, HTTP/1.1</td>
+</tr>
+<tr>
+  <td>W3C</td>
+  <td>Web</td>
+  <td>HTML5, CSS</td>
+</tr>
+</tbody></table>
+
+
+
+
+<h4 id="metric-units">Metric units</h4>
+
+<ul>
+<li>Regular metric prefixes</li>
+<li>Powers of 10 for rates, powers of 2 for storage</li>
+<li>B for bytes, b for bits</li>
+</ul>
+
+
+
+<h2 id="the-physical-layer">The Physical Layer</h2>
+
+
+
+<h3 id="theoretical-basis-for-data-communications">Theoretical Basis for Data Communications</h3>
+
+
+
+<h3 id="guided-transmission-media">Guided Transmission Media</h3>
+
+
+
+<h4 id="reality-check">Reality check</h4>
+
+<p>Storage media</p>
+
+<ul>
+<li>Send data on tape/disk</li>
+<li>Pingtime is high</li>
+</ul>
+
+
+
+<h4 id="wires">Wires</h4>
+
+
+
+<h5 id="twisted-pairs">Twisted pairs</h5>
+
+<ul>
+<li>Twisted to cancel interference</li>
+<li>Most common</li>
+<li>Shielded</li>
+<li>Links <br>
+<ul><li>Full-duplex <br>
+<ul><li>Transmission both ways</li></ul></li>
+<li>Half-duplex <br>
+<ul><li>Both directions, but not at the same time</li></ul></li>
+<li>Simplex <br>
+<ul><li>Only one direction</li></ul></li></ul></li>
+</ul>
+
+
+
+<h5 id="coaxial-cable">Coaxial cable</h5>
+
+<ul>
+<li>Also common</li>
+<li>Two conductors are outside and inside</li>
+<li>Higher bandwidths</li>
+</ul>
+
+
+
+<h5 id="power-lines">Power lines</h5>
+
+<ul>
+<li>Encode the signal in the power</li>
+<li>Prone to interference</li>
+</ul>
+
+
+
+<h4 id="fiber-cables">Fiber cables</h4>
+
+<ul>
+<li>Cover longer distances</li>
+<li>Higher transmission speeds</li>
+* 
+</ul>
+
+
+
+<h3 id="wireless-transmission">Wireless Transmission</h3>
+
+
+
+<h3 id="digital-modulation-and-multiplexing">Digital Modulation and Multiplexing</h3></div></body>
+</html>
