@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Logic and Algebra</title>
+<link rel="stylesheet" href="https://stackedit.io/res-min/themes/base.css" />
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body><div class="container"><h1 id="logic-and-algebra">Logic and Algebra</h1>
+
+<p><div class="toc">
+<ul>
+<li><a href="#logic-and-algebra">Logic and Algebra</a><ul>
+<li><a href="#literature">Literature</a></li>
+<li><a href="#structure-of-business-it">Structure of Business IT</a></li>
+<li><a href="#set-theory">Set theory</a><ul>
+<li><a href="#definition">Definition</a></li>
+</ul>
+</li>
+<li><a href="#relations">Relations</a></li>
+<li><a href="#special-relations">Special Relations</a></li>
+<li><a href="#basic-logic">Basic Logic</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</p>
+
+
+
+<h2 id="literature">Literature</h2>
+
+<p>Script: Beedgen, R: Elemente der Informatik <br>
+Additional information: Any books with discrete mathematics</p>
+
+
+
+<h2 id="structure-of-business-it">Structure of Business IT</h2>
+
+<ul>
+<li>Application methodology <br>
+<ul><li>Applications</li></ul></li>
+<li>Big programming <br>
+<ul><li>Databases, Big data</li></ul></li>
+<li>Small programming <br>
+<ul><li>Algorithms</li></ul></li>
+<li>Theory <br>
+<ul><li><strong>Our lecture</strong></li></ul></li>
+* 
+</ul>
+
+
+
+<h2 id="set-theory">Set theory</h2>
+
+
+
+<h3 id="definition">Definition</h3>
+
+<blockquote>
+  <p>A <strong>set</strong> is a <em>unordered</em> collection of <em>unique</em> real or abstract entities. The entities within the set are called <em>elements</em>. The set is then a separate entity from its elements.</p>
+</blockquote>
+
+<dl>
+<dt>Example</dt>
+<dd><script type="math/tex; mode=display" id="MathJax-Element-81">S = \{a, b, c\} = \{c, b, a\}\\
+nS = \{a, a, b, c\} \text{is not a set}
+</script></dd>
+</dl>
+
+
+
+<h2 id="relations">Relations</h2>
+
+
+
+<h2 id="special-relations">Special Relations</h2>
+
+
+
+<h2 id="basic-logic">Basic Logic</h2></div></body>
+</html>
