@@ -1,5 +1,7 @@
 # DHBW_WISCI16_Notes
 
+# Cookies
+
 Lecture notes for the WISCI16 classes at DHBW
 
 ### My notes are available for the following courses:
