@@ -1,4 +1,4 @@
-# DHBW_WISCI16_Notes
+# DHBW WISCI16 Notes
 
 Lecture notes for the WISCI16 classes at DHBW
 
