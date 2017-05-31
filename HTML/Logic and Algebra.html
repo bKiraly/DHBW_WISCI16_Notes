@@ -9,13 +9,31 @@
 </head>
 <body><div class="container"><h1 id="logic-and-algebra">Logic and Algebra</h1>
 
+<blockquote>
+  <p><strong>Disclaimer</strong> <br>
+  These are notes created for my personal use. They mostly cover the contents of the lectures. I take no responsibility for the correctness of anything stated in the contents, although I strive for making them as accurate as possible. If you find any factual or formal mistakes in these notes, please don’t hesitate to contact me at <a href="mailto:kiraly.bence.1025@gmail.com">kiraly.bence.1025@gmail.com</a>.</p>
+</blockquote>
+
+
+
+<h2 id="table-of-contents">Table of Contents</h2>
+
 <p><div class="toc">
 <ul>
 <li><a href="#logic-and-algebra">Logic and Algebra</a><ul>
+<li><a href="#table-of-contents">Table of Contents</a></li>
 <li><a href="#literature">Literature</a></li>
 <li><a href="#structure-of-business-it">Structure of Business IT</a></li>
 <li><a href="#set-theory">Set theory</a><ul>
 <li><a href="#definition">Definition</a></li>
+<li><a href="#history">History</a></li>
+<li><a href="#set-operations">Set Operations</a><ul>
+<li><a href="#illustration-using-venn-diagrams">Illustration Using Venn-diagrams</a></li>
+<li><a href="#special-cases-with-the-empty-set">Special Cases with the Empty Set</a></li>
+<li><a href="#set-cardinality-and-powersets">Set Cardinality and Powersets</a></li>
+<li><a href="#laws-of-de-morgan">Laws of de Morgan</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#relations">Relations</a></li>
@@ -46,8 +64,9 @@ Additional information: Any books with discrete mathematics</p>
 <li>Small programming <br>
 <ul><li>Algorithms</li></ul></li>
 <li>Theory <br>
-<ul><li><strong>Our lecture</strong></li></ul></li>
-* 
+<ul><li><strong>Our lecture</strong></li>
+<li>Theoretical foundation of Databases</li>
+<li>Languages (SQL, ABAP)</li></ul></li>
 </ul>
 
 
@@ -64,11 +83,118 @@ Additional information: Any books with discrete mathematics</p>
 
 <dl>
 <dt>Example</dt>
-<dd><script type="math/tex; mode=display" id="MathJax-Element-17">S = \{a, b, c\} = \{c, b, a\}\\
+<dd><script type="math/tex; mode=display" id="MathJax-Element-5176">S = \{a, b, c\} = \{c, b, a\}\\
 nS = \{a, a, b, c\} \text{is not a set}
 </script></dd>
 </dl>
 
+
+
+<h3 id="history">History</h3>
+
+<p>Developed in the 19th century by Georg Cantor</p>
+
+
+
+<h3 id="set-operations">Set Operations</h3>
+
+<p>If <script type="math/tex" id="MathJax-Element-5177">x</script> is one of the objects inside a set <script type="math/tex" id="MathJax-Element-5178">A</script>, we call it an <em>element</em> of <script type="math/tex" id="MathJax-Element-5179">A</script>. We denote <script type="math/tex" id="MathJax-Element-5180">x \in A</script>. <br>
+If a set <script type="math/tex" id="MathJax-Element-5181">\Phi</script> contains no elements, we call it an <em>empty set</em>. We denote <script type="math/tex" id="MathJax-Element-5182">\Phi = \{\}</script></p>
+
+<p>Given two sets <script type="math/tex" id="MathJax-Element-5183">A</script> and <script type="math/tex" id="MathJax-Element-5184">B</script>, we say:</p>
+
+
+
+<p><script type="math/tex; mode=display" id="MathJax-Element-5185">
+A \subseteq B \iff a \in A \Rightarrow a \in B\\
+A = B \iff A \subseteq B \land B \subseteq A\\
+A \subset B \iff A \subseteq B \land B \not = A\\
+A \cup B = \{x: x \in A \lor x \in B\}\\
+A \cap B = \{x: x \in A \land x \in B\}\\
+A \backslash B = \{x: x \in A \land x \not \in B\}\\
+\overline{A} = U\backslash A
+</script></p>
+
+<p><script type="math/tex" id="MathJax-Element-5186">\subseteq</script> read <em>is a subset of</em> <br>
+<script type="math/tex" id="MathJax-Element-5187">\subset</script> read <em>is exclusive subset of</em> <br>
+<script type="math/tex" id="MathJax-Element-5188">\cup</script> read <em>union</em></p>
+
+
+
+<h4 id="illustration-using-venn-diagrams">Illustration Using Venn-diagrams</h4>
+
+<p><img src="https://raw.githubusercontent.com/bKiraly/DHBW_WISCI16_Notes/master/IMG/Logic%20and%20Algebra/set-operations-illustrated-with-venn-diagrams.png" alt="Venn-Diagrams" title=""></p>
+
+
+
+<h4 id="special-cases-with-the-empty-set">Special Cases with the Empty Set</h4>
+
+<p><script type="math/tex; mode=display" id="MathJax-Element-5189">
+\text{for } \Phi = \{\}\\
+\Phi \subseteq \Phi \text{ is the only subset of } \Phi\\
+\Phi \in A \forall A \\
+\Phi \not \in \Phi
+</script></p>
+
+
+
+<h4 id="set-cardinality-and-powersets">Set Cardinality and Powersets</h4>
+
+<p>The number of elements in a set <script type="math/tex" id="MathJax-Element-5190">A</script> is the <em>cardinality</em> of the set. We denote <script type="math/tex" id="MathJax-Element-5191">\|A\| = x</script></p>
+
+<p>The set of all subsets of set <script type="math/tex" id="MathJax-Element-5192">A</script> is called the <em>powerset</em> of <script type="math/tex" id="MathJax-Element-5193">A</script>.  We denote <script type="math/tex" id="MathJax-Element-5194">\mathcal{P}(A) = \{B \subseteq A\}</script>.</p>
+
+<p><script type="math/tex" id="MathJax-Element-5195">\|\mathcal{P}(A)\| = 2^{\|A\|}</script> because of the following</p>
+
+<blockquote>
+  <p>let <script type="math/tex" id="MathJax-Element-5196">A</script> be an arbitrary finite set with <script type="math/tex" id="MathJax-Element-5197">\|A\| = n (n \in \Bbb{N})</script> with elements <script type="math/tex" id="MathJax-Element-5198">\{a_1; a_2; a_3; ...; a_n\}</script></p>
+  
+  <p><script type="math/tex; mode=display" id="MathJax-Element-5199">
+A' = A\{a_n\}\\
+B = \{\{a_n\}; \{a_1; a_n\}; \{a_2; a_n\}; ...; \{a_1; a_2; ... ; a_n\}\} = \{b \cup {a_n} \forall b \in \mathcal{P} (A)\}\\
+\|B\| = \|\mathcal{P}(A')\|\\
+\mathcal{P} (A) = \mathcal{P} (A') \cup B\\
+\|\mathcal{P}(A)\| = 2*\|\mathcal{P}(A')\|\\
+\mathcal{P}(\Phi) = \{\Phi\}\\
+\|\mathcal{P}(\Phi)\| = 1\\
+\Rightarrow \mathcal{P}(A) = 2^n\\
+Q.E.D
+</script></p>
+</blockquote>
+
+
+
+<h4 id="laws-of-de-morgan">Laws of de Morgan</h4>
+
+<p>Given two sets <script type="math/tex" id="MathJax-Element-5200">A</script> and <script type="math/tex" id="MathJax-Element-5201">B</script></p>
+
+<p></p><ul> <br>
+<li><p><script type="math/tex" id="MathJax-Element-5202">\overline{A \cup B} = \overline{A} \cap \overline{B}</script></p></li></ul><p></p>
+
+<blockquote>
+  <p><script type="math/tex; mode=display" id="MathJax-Element-5203">
+x \in \overline{A \cup B}\\\iff x \not \in (A \cup B)\\
+\iff x \not \in A \land x \not \in B\\
+\iff x \in \overline{A} \land x \in \overline{B}\\
+\iff x \in \overline{A} \cap \overline{B}\\
+\therefore \overline{A \cup B}  = \overline{A} \cap \overline{B}\\
+Q.E.D.
+</script></p>
+</blockquote>
+<li><p><script type="math/tex" id="MathJax-Element-5204">\overline{A \cap B} = \overline{A} \cup \overline{B}</script> <br>
+
+</p><blockquote>
+  <br>
+  <script type="math/tex; mode=display" id="MathJax-Element-5205">
+x \in \overline{A \cap B}\\
+\iff x \not \in A \lor x \not \in B\\
+\iff x \in \overline{A} \lor x \in \overline{B}\\
+\iff x \in \overline{A} \cup \overline{B}\\
+\therefore \overline{A \cap B} = \overline{A} \cup \overline{B}\\
+Q.E.D.
+</script></blockquote><p></p></li>
+  
+  
 
 
 <h2 id="relations">Relations</h2>
