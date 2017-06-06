@@ -22,7 +22,7 @@
 <ul>
 <li><a href="#communication-systems">Communication Systems</a><ul>
 <li><a href="#table-of-contents">Table of Contents</a></li>
-<li><a href="#literatu">Literatu</a></li>
+<li><a href="#literature">Literature</a></li>
 <li><a href="#introduction">Introduction</a><ul>
 <li><a href="#definition-of-computer-networks">Definition of Computer Networks</a><ul>
 <li><a href="#uses-of-computer-networks">Uses of Computer networks</a></li>
@@ -76,6 +76,8 @@
 <h2 id="literature">Literature</h2>
 
 <p>Tennenbaum - Computer networks (up until network security chapter)</p>
+
+
 
 <h2 id="introduction">Introduction</h2>
 
@@ -230,6 +232,8 @@
 <li>802</li></ul></li>
 </ul>
 
+
+
 <h4 id="model-used-in-this-course">Model used in this course</h4>
 
 <ul>
@@ -257,6 +261,8 @@
 <li>Widely adopted</li>
 <li>Weak model derived after the fact</li>
 </ul>
+
+
 
 <h3 id="examples-of-networks">Examples of Networks</h3>
 
@@ -420,9 +426,517 @@
 <li>Higher transmission speeds</li>
 </ul>
 
+
+
 <h3 id="wireless-transmission">Wireless Transmission</h3>
 
 
 
-<h3 id="digital-modulation-and-multiplexing">Digital Modulation and Multiplexing</h3></div></body>
+<h4 id="electromagnetic-spectrum">Electromagnetic spectrum</h4>
+
+<p>There are a limited number of frequencies that can be used to communicate simultaneously without interfering with each other.</p>
+
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/EM_Spectrum_Properties_edit.svg" alt="Electromagnetic frequencies" title=""></p>
+
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/United_States_Frequency_Allocations_Chart_2011_-_The_Radio_Spectrum.pdf/page1-1200px-United_States_Frequency_Allocations_Chart_2011_-_The_Radio_Spectrum.pdf.jpg" alt="Frequency usage" title=""></p>
+
+<h5 id="unallocated-frequency-bands-ism">Unallocated frequency bands (ISM)</h5>
+
+<p>2.4 GHz, 5 GHz</p>
+
+<p><img src="http://www.peterpaulengelen.com/wp-content/uploads/2013/11/Wireless-radio.jpg" alt="ISM bands" title=""></p>
+
+<h4 id="radio-transmission">Radio transmission</h4>
+
+<p>Radio signals penetrate buildings, but over long distances the curvature of the earth gets in the way <br>
+Solution: HF radio waves can be bounced off the ionosphere to reach over-the-horizon listeners</p>
+
+<h4 id="microwave-transmission">Microwave transmission</h4>
+
+<p>Different paths, that might interfere with each other.</p>
+
+<h4 id="light-transmission">Light transmission</h4>
+
+<p>Non-fiber light transmissions <br>
+Lasers-Photodetectors can be used for high-bandwidth transfer <br>
+Disturbances in the air cause problems with the transmission</p>
+
+<h4 id="wireless-vs-wired">Wireless vs Wired</h4>
+
+<ul>
+<li>Wireless <br>
+<ul><li>Easy and inexpensive</li>
+<li>Naturally supports mobility</li>
+<li>Naturally supports broadcast</li>
+<li>Transmissions interfere and must be managed</li>
+<li>Signal strengths and data rates degrade depending on distance</li></ul></li>
+<li>Wired <br>
+<ul><li>Easy to engineer with fixed data rate point-to-point links</li>
+<li>Can be relatively expensive</li>
+<li>Doesn’t support mobility or broadcast</li></ul></li>
+</ul>
+
+
+
+<h3 id="communication-satellites">Communication Satellites</h3>
+
+
+
+<h4 id="types-of-satellites">Types of Satellites</h4>
+
+
+
+<h5 id="geostationary-satellites-geo">Geostationary satellites (GEO)</h5>
+
+<p>Latency: 270ms <br>
+Satellites for global coverage: 3 <br>
+Altitude: 35 000km</p>
+
+<p>VSAT computers</p>
+
+<h5 id="low-earth-orbit-satellites-leo">Low-Earth Orbit satellites (LEO)</h5>
+
+<p>Latency: 1-7ms <br>
+Satellites needed for global coverage: 50 <br>
+Altitude: &lt;5 000km</p>
+
+<p>Iridium service</p>
+
+
+
+<h5 id="satellite-vs-fiber">Satellite vs Fiber</h5>
+
+<ul>
+<li>Satellite <br>
+<ul><li>Can be set-up anywhere</li>
+<li>Covers large regions</li>
+<li>Bandwidth is limited</li></ul></li>
+<li>Fiber <br>
+<ul><li>Large bandwidth</li>
+<li>Needs installation</li></ul></li>
+</ul>
+
+
+
+<h3 id="public-switched-telephone-network-pstn">Public Switched Telephone Network (PSTN)</h3>
+
+
+
+<h4 id="structure-of-the-telephone-systemű">Structure of the telephone systemű</h4>
+
+<p>Hierarchical system carrying voice calls:</p>
+
+<ul>
+<li>Local loops, mostly analog twisted pair</li>
+<li>Trunks, digital fiber optics</li>
+<li>Switching offices that move calls around trunks</li>
+</ul>
+
+<h4 id="politics-of-telephones">Politics of telephones</h4>
+
+<h4 id="local-loop-adsl-ftth">Local loop (ADSL, FttH)</h4>
+
+
+
+<h5 id="modems">Modems</h5>
+
+<p>Rates: &lt;56kb/s <br>
+Uses analog voice to transmit data</p>
+
+<h5 id="dynamic-subscriber-line">Dynamic Subscriber Line</h5>
+
+<p>Uses frequencies that are unused by the voice communication <br>
+A(Asymmetric) DSL: 12Mb/s <br>
+VDSL: 100 Mb/s</p>
+
+<h5 id="fiber-to-the-home">Fiber to the Home</h5>
+
+<p>Fiberoptic cables <br>
+High bandwidth <br>
+Expensive <br>
+Passive, no amplifiers, one wavelength among many houses</p>
+
+<h4 id="switching">Switching</h4>
+
+<p>PSTN uses <em>circuit switching</em>, the internet uses <em>packet switching</em>.</p>
+
+<blockquote>
+  <p><strong>Circuit switching</strong> describes the concept of directly connecting two hosts on a single circuit</p>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<blockquote>
+  <p><strong>Packet switching</strong> describes the concept of the data being broken up into different <em>packets</em>, that take different routes to the destination</p>
+</blockquote>
+
+<ul>
+<li>Circuit switching requires an initial setup and connection time, as the host looks for an outgoing trunk</li>
+<li>Packet switching treats data independently, suffering queuing delay on the way</li>
+</ul>
+
+<h3 id="mobile-telephone-systems">Mobile Telephone Systems</h3>
+
+
+
+<h4 id="1g-analog-voice">1G, analog voice</h4>
+
+<ul>
+<li>AMPS</li>
+</ul>
+
+<h4 id="2g-analog">2G, analog</h4>
+
+<ul>
+<li>GSM (Global System for Mobile communications)</li>
+</ul>
+
+
+
+<h4 id="3g-digital-voice-and-data">3G, digital voice and data</h4>
+
+<ul>
+<li>UTMS</li>
+</ul>
+
+<h4 id="4g-digital-data-including-voice">4G, digital data including voice</h4>
+
+<ul>
+<li>LTE</li>
+</ul>
+
+
+
+<h4 id="cellular-mobile-systems">Cellular mobile systems</h4>
+
+<ul>
+<li>All based on spatially separated cells</li>
+<li>Devices switch between these cells using <em>handoffs</em></li>
+<li>Frequencies are reused across non-adjacent cells</li>
+</ul>
+
+<p><strong>The prof skipped a whole bunch of stuff here, see the slides for this one ¯\_(ツ)_/¯</strong></p>
+
+<h3 id="cable-television">Cable television</h3>
+
+
+
+<h4 id="internet-over-cable">Internet over Cable</h4>
+
+<ul>
+<li>Many customers share the same line</li>
+<li>Higher bandwidth</li>
+<li>The frequencies are mostly used for downstream data (Asymmetric data rates)</li>
+</ul>
+
+
+
+<h4 id="cable-modem">Cable modem</h4>
+
+<ul>
+<li>Physical layer DOCSYS standard (?)</li>
+</ul>
+
+
+
+<h4 id="cable-vs-dsl">Cable vs DSL</h4>
+
+<ul>
+<li>Cable <br>
+<ul><li>Uses coaxial cable to customers (Bandwidth)</li>
+<li>Data is broadcast to all customers</li>
+<li>Bandwidth is shared between all customers</li></ul></li>
+<li>DSL <br>
+<ul><li>Bandwidth dedicated to each customer</li>
+<li>Point-to-Point link does not broadcast data</li>
+<li>Twisted pair to customers <script type="math/tex" id="MathJax-Element-12">\rightarrow</script> lower bandwidth</li></ul></li>
+</ul>
+
+<h3 id="digital-modulation-and-multiplexing">Digital Modulation and Multiplexing</h3>
+
+<p><strong>I’m pretty sure we skipped this one as well</strong></p>
+
+<h2 id="the-data-link-layer">The Data Link Layer</h2>
+
+<blockquote>
+  <p>The <strong>data link layer</strong> delivers <em>frames</em> of information across a single link. It handles transmission errors, and connection across a link.</p>
+</blockquote>
+
+<h4 id="frames">Frames</h4>
+
+<blockquote>
+  <p><strong>Frames</strong> are chunks of data of specific length with a header and a footer.</p>
+</blockquote>
+
+
+
+<h4 id="services">Services</h4>
+
+<ul>
+<li>Unacknowledged connectionless service <br>
+<ul><li>Frame is sent without any connection and error recovery</li>
+<li>Ethernet</li></ul></li>
+<li>Acknowledgement connectionless service <br>
+<ul><li>Message is acknowledged</li>
+<li>802.11</li></ul></li>
+<li>Acknowledged connection oriented service</li>
+</ul>
+
+
+
+<h4 id="framing-methods">Framing methods</h4>
+
+
+
+<h5 id="byte-count">Byte count</h5>
+
+<p>Start of the frame has the number of bytes in the frame <br>
+Simple, but difficult to resynchronize after an error</p>
+
+
+
+<h5 id="flag-bytes-and-byte-stuffing">Flag bytes and byte stuffing</h5>
+
+<p>Special <em>flag</em> byte delimits the frames, the same byte pattern in message must be <em>escaped</em>. <br>
+Longer, but easily resynchronized after error.</p>
+
+<h5 id="flag-bits-and-bit-stuffing">Flag bits and bit stuffing</h5>
+
+<p>Stuffing is done on a bit level</p>
+
+<ul>
+<li>Frame flag has six consecutive ones</li>
+<li>On transmit after 5 ones of data, a zero is added</li>
+<li>On receive the zero is discarded</li>
+</ul>
+
+<h5 id="physical-layer-violations">Physical layer violations</h5>
+
+<p>Changes in the specification on a physical level (different voltage, etc.)</p>
+
+<h3 id="error-detection-and-correction">Error- Detection and Correction</h3>
+
+<p>Repairs frames received with an error</p>
+
+<ul>
+<li>Requires errors to be received</li>
+<li>Typically retransmit the unacknowledged messages</li>
+<li>Timer protects against lost acknowledgements</li>
+</ul>
+
+<p>Detecting errors and retransmission is paramount</p>
+
+<h4 id="flow-control">Flow control</h4>
+
+<blockquote>
+  <p><strong>Flow control</strong> prevents fast sender from out-pacing the slow receiver.</p>
+</blockquote>
+
+<ul>
+<li>Receiver gives feedback on the data it can accept</li>
+<li>Rare in Link layer, as Network Interface Cards (NICs) run at “wire speed” <br>
+<ul><li>Receiver can take data as fast as it can be sent</li></ul></li>
+</ul>
+
+<p>Flow control is mostly used on the Transport layers</p>
+
+<h4 id="error-detection-vs-error-correction">Error Detection vs Error correction</h4>
+
+<blockquote>
+  <p><strong>Error codes</strong> add structured redundancy to data sot that errors can be detected and corrected</p>
+</blockquote>
+
+<ul>
+<li>Error correction codes (we skip those as well ¯\_(ツ)_/¯) <br>
+<ul><li>Hamming codes</li>
+<li>Binary convolutional codes</li>
+<li>Reed-Solomon and Low-Density Parity Check codes <br>
+<ul><li>Mathematically complex</li></ul></li></ul></li>
+<li>Error detection codes <br>
+<ul><li>Parity <br>
+<ul><li>XOR all bits, add result to the end</li>
+<li>Detection checks if last bit is XOR of all previous ones</li></ul></li>
+<li>Checksums <br>
+<ul><li>Treats message as N-bit words, and adds N check bits that are modulo <script type="math/tex" id="MathJax-Element-76">2^n</script> szn if the words</li></ul></li>
+<li>Cyclic Redundancy Codes (CRC) <br>
+<ul><li>Adds bits to the transmitted frame</li>
+<li>The data is treated as a binary polynomial, and divided by another, resulting in a remainder</li>
+<li>Detection does the CRC again, and compares with the transmitted CRC code</li>
+<li>Used by ethernet</li>
+<li>Can detect all double-bit errors</li>
+<li>Not susceptible to symmetric errors</li></ul></li></ul></li>
+</ul>
+
+<p><strong>We skipped some stuff here too…</strong></p>
+
+<h3 id="link-layer-environment">Link Layer Environment</h3>
+
+<p>Driver and NIC implement the Data-Link layer</p>
+
+<p><strong>Skipped some stuff again…</strong></p>
+
+<h4 id="utopian-simplex-protocol">Utopian simplex protocol</h4>
+
+<ul>
+<li>An optimistic protocol (p1) to get us started <br>
+<ul><li>Assumes no errors, and receiver as fast as sender</li>
+<li>Considers one-way data transfer</li>
+<li>Comments are additions for flow control</li></ul></li>
+</ul>
+
+<pre class="prettyprint"><code class=" hljs avrasm">void sender1(void)
+{
+    frame s<span class="hljs-comment">;</span>
+    packet buffer<span class="hljs-comment">;</span>
+    //event<span class="hljs-preprocessor">.type</span> event<span class="hljs-comment">;</span>
+    while(true){
+        from<span class="hljs-preprocessor">.network</span><span class="hljs-preprocessor">.layer</span>(&amp;buffer)<span class="hljs-comment">;</span>
+        s<span class="hljs-preprocessor">.info</span> = buffer<span class="hljs-comment">;</span>
+        to<span class="hljs-preprocessor">.physical</span><span class="hljs-preprocessor">.layer</span>(&amp;s)<span class="hljs-comment">;</span>
+        //wait<span class="hljs-preprocessor">.for</span><span class="hljs-preprocessor">.event</span>(&amp;event)<span class="hljs-comment">;</span>
+    }
+}</code></pre>
+
+<pre class="prettyprint"><code class=" hljs cs"><span class="hljs-keyword">void</span> receiver1(<span class="hljs-keyword">void</span>)
+{
+    frame r;
+    <span class="hljs-comment">//frame s;</span>
+    Event.type <span class="hljs-keyword">event</span>;
+    <span class="hljs-keyword">while</span>(<span class="hljs-keyword">true</span>){
+        wait.<span class="hljs-keyword">for</span>.<span class="hljs-keyword">event</span>(&amp;<span class="hljs-keyword">event</span>);
+        <span class="hljs-keyword">from</span>.physical.layer(&amp;r);
+        to.network.layer(&amp;r.info);
+        <span class="hljs-comment">//to.physical.layer(&amp;s);</span>
+    }
+}</code></pre>
+
+<h4 id="sliding-window-concept">Sliding window concept</h4>
+
+<ul>
+<li>Sender maintains window of frames <br>
+<ul><li>Only sends if ack is received</li></ul></li>
+<li>Receiver acknowledges when it’s done processing</li>
+</ul>
+
+<p>Larger windows enable <em>pipelining</em> for efficient ling use</p>
+
+<ul>
+<li>Stop and wait is inefficient</li>
+<li>Best window depends on bandwidth delay</li>
+<li>Wand w &gt; 2BD+1 to ensure high link utilization</li>
+</ul>
+
+<p>Pipelining leads to different choices for errors/buffering</p>
+
+<h2 id="medium-access-control-sublayer">Medium Access Control Sublayer</h2>
+
+<blockquote>
+  <p>The <strong>Medium Access Control</strong> (MAC) sublayer decides who sends next on a multi-access link. Important for LAN.</p>
+</blockquote>
+
+<h3 id="channel-allocation-problem">Channel Allocation Problem</h3>
+
+<ul>
+<li>For fixed channel and traffic N users <br>
+<ul><li>Divide up bandwidth using FTM, TDM, CDMA, etc.</li>
+<li>This is static allocation (ex. FM radio)</li></ul></li>
+<li>This static allocation is ill-suited for bursty traffic <br>
+<ul><li>Allocations will sometimes go unused</li></ul></li>
+</ul>
+
+<blockquote>
+  <p><strong>Dynamic allocation</strong> gives the channel to a user when they need it. Potentially N times as efficient for N users.</p>
+</blockquote>
+
+<p>Schemes vary with assumptions</p>
+
+<ul>
+<li>Independent traffic <br>
+<ul><li>Often not a good model, but permits analysis</li></ul></li>
+<li>Single channel <br>
+<ul><li>No external way to coordinate senders</li></ul></li>
+<li>Observable collisions <br>
+<ul><li>Needed for reliability; mechanisms vary</li></ul></li>
+<li>Continuous or slotted time <br>
+<ul><li>Slotting may improve performance</li></ul></li>
+<li>Carrier sense <br>
+<ul><li>The sender is aware of the availability of the channel</li>
+<li>Can improve performance if available</li></ul></li>
+</ul>
+
+<h4 id="multiple-access-protocols">Multiple Access Protocols</h4>
+
+
+
+<h5 id="aloha">ALOHA</h5>
+
+<ul>
+<li>Transmit frames whenever they have data</li>
+<li>Retry after a random time for collisions</li>
+<li>Collision happens, if frames are transmitted during vulnerable times</li>
+<li>Slotted ALOHA gains higher efficiency by slotting the times</li>
+</ul>
+
+<h5 id="csma">CSMA</h5>
+
+<ul>
+<li>Improvement: Sensing channel <br>
+<ul><li>User doesn’t send if there is something going on</li></ul></li>
+<li>Variations on what to do if the channel is busy <br>
+<ul><li>I-presistent (greedy) sebds as soon as idle</li>
+<li>Nonpresistent waist for a random time</li>
+<li>Sends with p probability</li></ul></li>
+<li>Used in todays LAN</li>
+</ul>
+
+<p><img src="http://www.pling.org.uk/cs/ndsimg/csmautilisation.png" alt="Graphs comparing different protocols at different traffic levels" title=""></p>
+
+
+
+<h6 id="collision-detection">Collision detection</h6>
+
+<p>CSMA/CD improvement detects/aborts collisions <br>
+<script type="math/tex" id="MathJax-Element-83">\rightarrow</script> reduced contention times improve performance</p>
+
+<h5 id="collision-free-protocols">Collision-free protocols</h5>
+
+<ul>
+<li>Collision-free protocols avoid collisions entirely <br>
+<ul><li>Senders must know when it’s their turn to send</li></ul></li>
+<li>Token rings <br>
+<ul><li>Station with token may send a frame before passing</li>
+<li>Idea can be used without a ring (ex. token bus)</li></ul></li>
+</ul>
+
+<h5 id="limited-contention-protocols">Limited-contention protocols</h5>
+
+<p><em>* We skipped this too…*</em></p>
+
+<h5 id="wireless-lan-protocols">Wireless LAN protocols</h5>
+
+
+
+<h6 id="hidden-terminals">Hidden terminals</h6>
+
+<ul>
+<li>The signal range may cause one of the hosts to not detect the collision, while the message is still lost to the recipient</li>
+</ul>
+
+
+
+<h6 id="exposed-terminals">Exposed terminals</h6>
+
+<ul>
+<li>The host may detect a collision, even when the interference is outside the signal range for the receiver</li>
+</ul>
+
+
+
+<h6 id="maca">MACA</h6>
+
+<ul>
+<li>Grants access for A to send to B <br>
+<ul><li>A sends RTS to B; B replies with CTS</li>
+<li>A can send with exposed but not hidden terminals</li></ul></li>
+</ul></div></body>
 </html>
