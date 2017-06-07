@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intro to IT</title>
+<link rel="stylesheet" href="https://stackedit.io/res-min/themes/base.css" />
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body><div class="container"><h1 id="intro-to-it">Intro to IT</h1>
+
+<blockquote>
+  <p><strong>Disclaimer</strong> <br>
+  These notes are translated and compiled on the courtesy of Dávid Lázár based on the notes of the German course by Julius Englert. I take no responsibility for the correctness of anything stated in the contents, although I strive for making them as accurate as possible. If you find any factual or formal mistakes in these notes, please don’t hesitate to contact me at <a href="mailto:kiraly.bence.1025@gmail.com">kiraly.bence.1025@gmail.com</a>.</p>
+</blockquote>
+
+
+
+<h2 id="table-of-contents">Table of Contents</h2>
+
+<p><div class="toc">
+<ul>
+<li><a href="#intro-to-it">Intro to IT</a><ul>
+<li><a href="#table-of-contents">Table of Contents</a></li>
+<li><a href="#basics-of-it-intro-to-computer-systems">Basics of IT – Intro to Computer Systems</a></li>
+<li><a href="#history-of-computers">History of Computers</a></li>
+<li><a href="#basic-terms-from-data-processing">Basic terms from Data Processing</a></li>
+<li><a href="#main-areas">Main areas</a><ul>
+<li><a href="#technical-computer-science">Technical computer science</a></li>
+<li><a href="#practical-computer-science">Practical computer science</a></li>
+<li><a href="#theoretical-computer-science">Theoretical computer science</a></li>
+<li><a href="#applied-computer-science">Applied computer science</a></li>
+<li><a href="#other-areas">Other areas:</a></li>
+<li><a href="#computer">Computer</a></li>
+</ul>
+</li>
+<li><a href="#computer-architectures">Computer architectures</a><ul>
+<li><ul>
+<li><a href="#classification-according-to-flynn">Classification according to Flynn</a></li>
+</ul>
+</li>
+<li><a href="#computer-architecture-von-neumann-architecture">Computer architecture, von Neumann architecture</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#harvard-architecture">Harvard Architecture</a><ul>
+<li><a href="#measures-of-implementation-times">Measures of implementation times</a></li>
+<li><a href="#computer-types">Computer Types</a></li>
+<li><a href="#who-is-who-in-computer-science">Who is who in Computer Science?</a></li>
+<li><a href="#it-service-management-according-to-itil">IT service management according to ITIL</a></li>
+<li><a href="#standards-in-it">Standards in IT</a></li>
+<li><a href="#categories-of-standards">Categories of standards</a></li>
+<li><a href="#practical-part">Practical Part</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</p>
+
+
+
+<h2 id="basics-of-it-intro-to-computer-systems">Basics of IT – Intro to Computer Systems</h2>
+
+
+
+<h2 id="history-of-computers">History of Computers</h2>
+
+<table>
+<thead>
+<tr>
+  <th>Generation</th>
+  <th>Duration</th>
+  <th>Technology</th>
+  <th>Operations/sec</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>0</td>
+  <td>-1944</td>
+  <td>Relays, Mechanic</td>
+  <td>~100</td>
+</tr>
+<tr>
+  <td>1</td>
+  <td>1945-1954</td>
+  <td>Electron tubes</td>
+  <td>40 000</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>1955-1964</td>
+  <td>Transistors</td>
+  <td>200 000</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td>1964-1970</td>
+  <td>Chip</td>
+  <td>1 000 000</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td>From 1971</td>
+  <td>Highly integrated Chip</td>
+  <td>10 000 000+</td>
+</tr>
+</tbody></table>
+
+
+
+
+<h2 id="basic-terms-from-data-processing">Basic terms from Data Processing</h2>
+
+<p>Data Processing in Modern Days:</p>
+
+<ul>
+<li>Data as an input in a Computer</li>
+<li>Data that is processed by a Computer</li>
+<li>Data that is prodused by a Computer</li>
+</ul>
+
+<blockquote>
+  <p><strong>Data</strong> Characters without kontext</p>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<blockquote>
+  <p><strong>Information</strong> Kontext orientated Data</p>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<blockquote>
+  <p><strong>Character</strong> Elements for presenting Information (this has to be previously agreed on)</p>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<blockquote>
+  <p><strong>Character set</strong> Limited ammout of characters</p>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<blockquote>
+  <p><strong>News</strong> A combination of Characters, its primary purpose is transfering Information</p>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<blockquote>
+  <p><strong>Data processing</strong> A process which relates to the acquisition, storage, transmission and transformation</p>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<blockquote>
+  <p><strong>Transmission</strong> Mapping ensures correct data transmission between two systems</p>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<blockquote>
+  <p><strong>EDI</strong> Electronic Data Interchange</p>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<blockquote>
+  <p><strong>EDP</strong> Electronic Data Processing</p>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<blockquote>
+  <p><strong>Algorithm</strong> Well-defined, finite, terminating, (non)deterministic process.</p>
+</blockquote>
+
+<p>Data processing systems</p>
+
+<ul>
+<li>Electronically working unit, which automatically processes data with stored programs</li>
+<li>Mathematical, forming, transferring storing operations</li>
+<li>Advantages: Automatic and fast execution of operations</li>
+</ul>
+
+<blockquote>
+  <p><strong>Computer Science</strong> The science of processing data with computers</p>
+</blockquote>
+
+
+
+<h2 id="main-areas">Main areas</h2>
+
+
+
+<h3 id="technical-computer-science">Technical computer science</h3>
+
+<ul>
+<li>Hardware</li>
+<li>Technology</li>
+<li>Phisics</li>
+<li>Electricity</li>
+<li>Construction</li>
+<li>Processors</li>
+</ul>
+
+
+
+<h3 id="practical-computer-science">Practical computer science</h3>
+
+<ul>
+<li>Software <br>
+<ul><li>Operating Systems</li>
+<li>Programs</li></ul></li>
+<li>Compiler</li>
+</ul>
+
+
+
+<h3 id="theoretical-computer-science">Theoretical computer science</h3>
+
+<ul>
+<li>Formal languages</li>
+<li>Automation Theory</li>
+<li>Proofs</li>
+</ul>
+
+
+
+<h3 id="applied-computer-science">Applied computer science</h3>
+
+<ul>
+<li>Use of computers in different areas</li>
+<li>Robots, AIs,…</li>
+</ul>
+
+
+
+<h3 id="other-areas">Other areas:</h3>
+
+<ul>
+<li>Business informatics</li>
+<li>Legal c.s.</li>
+<li>…</li>
+</ul>
+
+
+
+<h3 id="computer">Computer</h3>
+
+<blockquote>
+  <p>A <strong>computer</strong> is a memory-programmable calculation system</p>
+</blockquote>
+
+<p>A computer must</p>
+
+<ul>
+<li>Freely programmable</li>
+<li>Memory for recording programs</li>
+<li>Connect devices for input and output of data</li>
+</ul>
+
+<p>Outline of a Computer</p>
+
+<ul>
+<li>Hardware</li>
+<li>System software (operating system)</li>
+<li>Application software</li>
+</ul>
+
+<blockquote>
+  <p><strong>Hardware</strong> Physical devices forming the system</p>
+  
+  <p>&nbsp; <br>
+  <strong>System software</strong> It is connecting the applications to the hardware and telling the hardware what to do.</p>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<blockquote>
+  <p><strong>Applications</strong> Serves the special data processing application</p>
+</blockquote>
+
+
+
+<h2 id="computer-architectures">Computer architectures</h2>
+
+<blockquote>
+  <p><strong>Computer architectures</strong> Technical realization of data processing systems</p>
+</blockquote>
+
+<p>Definition of the display of the internal data <br>
+Definition of the representation of the external data</p>
+
+<ul>
+<li>CPU</li>
+<li>machine instructions (format of the instructions)</li>
+<li>Interfaces (internal and external)</li>
+</ul>
+
+<p>Construction plan, according to which the functional units are assembled</p>
+
+
+
+<h4 id="classification-according-to-flynn">Classification according to Flynn</h4>
+
+<ul>
+<li>Machine processes only one command or more at a given time</li>
+<li>Machine processes only one or more data at a time (date with files)</li>
+</ul>
+
+<blockquote>
+  <p><strong>SISD Architecture</strong> Single Instruction Single Data Stream <br>
+  <strong>SIMD Architecture</strong> Single Instruction Multiple Data Stream <br>
+  <strong>MISD Architecture</strong> Multiple Instruction Single Data Stream <br>
+  <strong>MIMD Architecture</strong> Multiple Instruction Multiple Data Stream</p>
+</blockquote>
+
+
+
+<h3 id="computer-architecture-von-neumann-architecture">Computer architecture, von Neumann architecture</h3>
+
+<ul>
+<li>Most of today’s computers are built according to the “Neumann architecture” principle</li>
+<li>This principle implements the EVA principle </li>
+</ul>
+
+<h4 id="components-of-neumann-architecture">Components of Neumann architecture</h4>
+
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Von_Neumann_Architecture.svg/510px-Von_Neumann_Architecture.svg.png" alt="Von-Neumann architecture" title=""></p>
+
+<ul>
+<li>Arithmatic unit <br>
+<ul><li>Execution of the arithmetic and logical operations</li></ul></li>
+<li>Control unit <br>
+<ul><li>Initiates the transfer of the instructions from the main memory into the processor</li>
+<li>Interpret (decode) the encoded statements</li>
+<li>Initializes the components necessary for executing the instructions via the control signal</li></ul></li>
+<li>Memory unit <br>
+<ul><li>Also main memory or memory</li>
+<li>Programs and data are stored here</li></ul></li>
+<li>Input Device <br>
+<ul><li>Data and programs are entered into the computer system and run into the memory via data paths(BUS)</li></ul></li>
+<li>Output Device <br>
+<ul><li>Output of results and / or data</li>
+<li>The results calculated by the CPU are transferred to the output via data paths</li></ul></li>
+</ul>
+
+<h4 id="the-processor">The processor</h4>
+
+<ul>
+<li>Central component of the computer system</li>
+<li>The actual data processing takes place here</li>
+<li>The execution unit for arithmetic operations is the Arithmetical-Logical-Unit (ALU)</li>
+<li>Data and instructions loaded from the main memory are temporarily stored in memory records in the register</li>
+<li>Today, a distinction is made between two process location architectures</li>
+<li>RISC Reduced Instruction Set Computing</li>
+<li>CISC Complex Instruction Set Computing</li>
+</ul>
+
+<h4 id="types-of-memory">Types of memory</h4>
+
+<ul>
+<li>Volatile Memory (RAM)</li>
+<li>Non-volatile memories (ROM)</li>
+<li>Network storage (NAS, SAN)</li>
+<li>RAID systems</li>
+</ul>
+
+<blockquote>
+  <p><strong>NAS Network Attached Storage</strong> Special servers in a network that are optimized as a file server <br>
+  <strong>SAN Storage Area Network</strong> Network structure in which servers of a computer network are connected to storage units via a separate high-performance network <br>
+  <strong>RAID systems</strong> Redundant Array of Independent Disks</p>
+</blockquote>
+
+<h4 id="von-neumann-cycle">Von Neumann Cycle</h4>
+
+<ul>
+<li>FETCH instruction from memory <br>
+<ul><li>The content of the storage cell determined by the Instruction-Counter (IC) is loaded from the working memory into the instruction register (IR)</li></ul></li>
+<li>DECODE instructions  <br>
+<ul><li>FETCH OPERANDS from memory </li></ul></li>
+<li>EXECUTE </li>
+<li>WRITE BACK result </li>
+<li>UPDATE INSTRUCTION POINTER </li>
+</ul>
+
+<h3 id="harvard-architecture">Harvard Architecture</h3>
+
+<pre><code>Programs and data in separate memory 
+</code></pre>
+
+<h2 id="measures-of-implementation-times">Measures of implementation times</h2>
+
+
+
+<h3 id="machine-cycle-time">Machine Cycle Time</h3>
+
+<ul>
+<li>The time at which a run of instructions is measured</li>
+<li>Cycle time can also be measured in MIPS (Millions of Instructions per Second)</li>
+</ul>
+
+<h2 id="clock-speed">Clock Speed</h2>
+
+<ul>
+<li>Each CPU generates a series of electronic pulses according to a pre-determined Rate -&gt; Clock Speed</li>
+<li>The control unit in the CPU manages the stages of the machine run by following predefined internal instructions -&gt; Microcode</li>
+<li>Microcode are predefined, elementary circuits, and logical operations that the processor runs through when executing instructions</li>
+</ul>
+
+<h2 id="moores-law">Moore’s law</h2>
+
+<ul>
+<li>Every 12 months, the chip’s transistor density is doubled</li>
+</ul>
+
+<h2 id="computer-types">Computer Types</h2>
+
+<ul>
+<li>Supercomputer</li>
+<li>Mainframe</li>
+<li>Minicomputer</li>
+<li>Macrocomputer</li>
+</ul>
+
+<h2 id="who-is-who-in-computer-science">Who is who in Computer Science?</h2>
+
+<ul>
+<li>User <br>
+<ul><li>Users of the applications</li></ul></li>
+<li>System administrator <br>
+<ul><li>Maintenance and support of operating systems</li>
+<li>Management of system users</li>
+<li>Network management</li>
+<li>Administration of servers</li>
+<li>Manage access rights to databases</li></ul></li>
+</ul>
+
+<blockquote>
+  <p><strong>ACL</strong> Access Control List <br>
+  * Helpdesk  <br>
+      * Central office to help employees and customers <br>
+      * According to ITIL: Sing Point of Contact <br>
+  * ITIL  <br>
+      * Infrastructure Information Library <br>
+      * Best practice standard of IT service management</p>
+</blockquote>
+
+<h2 id="it-service-management-according-to-itil">IT service management according to ITIL</h2>
+
+<ol>
+<li>Single Point of Contac - Incident Management: <br>
+<ul><li>Customer logs in at helpdesk</li></ul></li>
+<li>First-Level Support - Problem Management: <br>
+<ul><li>Helpdesk looks for solution (previous problems)</li></ul></li>
+<li>Second-Level Support - Laboratory: <br>
+<ul><li>Helpdesk ticket goes to the department</li></ul></li>
+<li>Third-level support. <br>
+<ul><li>Laboratory / Development solves the problem</li></ul></li>
+</ol>
+
+<p>In the worst case, a series must be recalled</p>
+
+<h2 id="standards-in-it">Standards in IT</h2>
+
+<blockquote>
+  <p>Standards make it much easier for IT, because this way we don’t have to define that many exceptions!</p>
+</blockquote>
+
+<h2 id="categories-of-standards">Categories of standards</h2>
+
+
+
+<h3 id="de-facto-standards">De-facto Standards:</h3>
+
+<ul>
+<li>Standardization was done without conceptual preliminary work and formal plan as such.</li>
+</ul>
+
+
+
+<h3 id="de-jure-standard">De-jure Standard:</h3>
+
+<ul>
+<li>Formal, legal standardization, authorized by authorized Bodies</li>
+</ul>
+
+
+
+<h3 id="international-bodies">International bodies:</h3>
+
+<ul>
+<li>Bodies established by government agreements</li>
+<li>Bodies not governed by government agreements</li>
+</ul>
+
+
+
+<h3 id="examples">Examples</h3>
+
+<ul>
+<li>ITU  <br>
+<ul><li>International Telecommunication Union</li>
+<li>International allocation and registration of broadcast- and reception frequencies</li></ul></li>
+<li>IEEE:  <br>
+<ul><li>Institute of Electrical and Electronics Engineers</li>
+<li>Working groups develop standards for specific areas</li></ul></li>
+<li>ISO:  <br>
+<ul><li>Internation Standards Organization</li>
+<li>Association of standardization organizations</li>
+<li>E.g., B. ISO OSI model</li></ul></li>
+</ul>
+
+<h2 id="practical-part">Practical Part</h2>
+
+<ul>
+<li>number system conversion</li>
+<li>units (kilo, mega, giga)</li>
+<li>logical operations (circuit algebra)</li>
+<li>unicode chars</li>
+<li>floating point conversion</li>
+<li>circuit elements</li>
+</ul></div></body>
+</html>
