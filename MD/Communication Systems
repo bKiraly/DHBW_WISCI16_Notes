@@ -693,5 +693,5 @@ Same type of cabling as Fast Ethernet, additional multi-km fiber cables exist fo
 
 > **VLAN** splits a physical LAN into multiple logical LANs to ease management, ports are color-coded according to their VLAN. VLAN header is added to the Frame to identify the VLAN.
 
-Described in IEEE 802.1Q
+Described in IEEE 802.1Q22222
 
