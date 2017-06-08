@@ -67,6 +67,24 @@
 </ul>
 </li>
 <li><a href="#practical-part">Practical Part</a></li>
+<li><a href="#units">Units</a></li>
+<li><a href="#number-system-conversion">Number system conversion</a><ul>
+<li><a href="#decimal-to-other-base-system">Decimal to Other Base System</a></li>
+<li><a href="#other-base-system-to-decimal-system">Other Base System to Decimal System</a></li>
+<li><a href="#other-base-system-to-non-decimal-system">Other Base System to Non-Decimal System</a></li>
+</ul>
+</li>
+<li><a href="#unicode-characters">Unicode characters</a><ul>
+<li><a href="#ascii-characters">ASCII characters</a></li>
+<li><a href="#creation-of-utf-8-characters">Creation of UTF-8 characters</a></li>
+</ul>
+</li>
+<li><a href="#presentation-of-data-types">Presentation of data types</a><ul>
+<li><a href="#data-types">Data Types</a></li>
+<li><a href="#integer-types-byte-char-short-int-long">Integer Types (byte, char, short, int, long)</a></li>
+<li><a href="#floating-point-types-float-double">Floating-point types (float, double)</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -570,5 +588,408 @@ Definition of the representation of the external data</p>
 <li>unicode chars</li>
 <li>floating point conversion</li>
 <li>circuit elements</li>
-</ul></div></body>
+</ul>
+
+
+
+<h2 id="units">Units</h2>
+
+<blockquote>
+  <p>A <strong>Bit</strong> is the smallest amount of data, it can have the value 1 or 0, short “b”.</p>
+  
+  <p>A <strong>Byte</strong> it 8 bits.</p>
+</blockquote>
+
+<table>
+<thead>
+<tr>
+  <th>Symbol</th>
+  <th>Prefix (SI/Binary)</th>
+  <th>SI Meaning</th>
+  <th>Binary meaning</th>
+  <th>Size difference (sidenote)</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>k</td>
+  <td>kilo/kibi</td>
+  <td>10^3</td>
+  <td>2^10</td>
+  <td>2,40%</td>
+</tr>
+<tr>
+  <td>M</td>
+  <td>mega/mebi</td>
+  <td>10^6</td>
+  <td>2^20</td>
+  <td>4,86%</td>
+</tr>
+<tr>
+  <td>G</td>
+  <td>giga/gibi</td>
+  <td>10^9</td>
+  <td>2^30</td>
+  <td>7,37%</td>
+</tr>
+<tr>
+  <td>T</td>
+  <td>tera/tebi</td>
+  <td>10^12</td>
+  <td>2^40</td>
+  <td>9,95%</td>
+</tr>
+<tr>
+  <td>P</td>
+  <td>peta/pebi</td>
+  <td>10^15</td>
+  <td>2^50</td>
+  <td>12,59%</td>
+</tr>
+<tr>
+  <td>E</td>
+  <td>exa/exbi</td>
+  <td>10^18</td>
+  <td>2^60</td>
+  <td>15,29%</td>
+</tr>
+<tr>
+  <td>Z</td>
+  <td>zetta/zebi</td>
+  <td>10^21</td>
+  <td>2^70</td>
+  <td>18,06%</td>
+</tr>
+<tr>
+  <td>Y</td>
+  <td>yotta/yobi</td>
+  <td>10^24</td>
+  <td>2^80</td>
+  <td>20,89%</td>
+</tr>
+</tbody></table>
+
+
+
+
+<h2 id="number-system-conversion">Number system conversion</h2>
+
+
+
+<h3 id="decimal-to-other-base-system">Decimal to Other Base System</h3>
+
+<ul>
+<li><strong>Step 1</strong> - Divide the decimal number to be converted by the value of the new base.</li>
+<li><strong>Step 2</strong> - Get the remainder from Step 1 as the rightmost digit (least significant digit) of new base number.</li>
+<li><strong>Step 3</strong> - Divide the quotient of the previous divide by the new base.</li>
+<li><strong>Step 4</strong> - Record the remainder from Step 3 as the next digit (to the left) of the new base number.</li>
+</ul>
+
+<p>Repeat Steps 3 and 4, getting remainders from right to left, until the quotient becomes zero in Step 3.</p>
+
+<p><strong>Example</strong> (29 in Binary)</p>
+
+<table>
+<thead>
+<tr>
+  <th>Operation</th>
+  <th>Result</th>
+  <th>Remainder</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>29 / 2</td>
+  <td>14</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>14 / 2</td>
+  <td>7</td>
+  <td>0</td>
+</tr>
+<tr>
+  <td>7 / 2</td>
+  <td>3</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>3 / 2</td>
+  <td>1</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>1 / 2</td>
+  <td>0</td>
+  <td>1</td>
+</tr>
+</tbody></table>
+
+
+<p><em>29</em> in binary is <em>11101</em>.</p>
+
+
+
+<h3 id="other-base-system-to-decimal-system">Other Base System to Decimal System</h3>
+
+<ul>
+<li><strong>Step 1</strong> - Determine the column (positional) value of each digit (this depends on the position of the digit and the base of the number system).</li>
+<li><strong>Step 2</strong> - Multiply the obtained column values (in Step 1) by the digits in the corresponding columns.</li>
+<li><strong>Step 3</strong> - Sum the products calculated in Step 2. The total is the equivalent value in decimal.</li>
+</ul>
+
+<p><strong>Example</strong> (11101 to decimal)</p>
+
+<p>in base 2 = in base 10</p>
+
+<p><script type="math/tex" id="MathJax-Element-2348">11101 = ((1 × 2^4) + (1 × 2^3) + (1 × 2^2) + (0 × 2^1) + (1 × 2^0))</script></p>
+
+
+
+<h3 id="other-base-system-to-non-decimal-system">Other Base System to Non-Decimal System</h3>
+
+<pre><code>* **Step 1** - Convert the original number to a decimal number (base 10).
+* **Step 2** - Convert the decimal number so obtained to the new base number.
+</code></pre>
+
+
+
+<h2 id="unicode-characters">Unicode characters</h2>
+
+
+
+<h3 id="ascii-characters">ASCII characters</h3>
+
+<blockquote>
+  <p><strong>ASCII</strong> stands for American Standard Code for Information Interchange and its the the most basic 7 bit table.</p>
+</blockquote>
+
+<p><strong>ASCII table breakdown</strong></p>
+
+<ul>
+<li><strong>0-31</strong> and 127 are controll characters</li>
+<li><strong>32-126</strong> Symbols and Alphanumeric characters <br>
+<ul><li><strong>48-57</strong> Numbers</li>
+<li><strong>65-90</strong> Capital leters from the american alphabet</li>
+<li><strong>97-122</strong> small leters from the american alphabet</li>
+<li><strong>rest</strong> Symbols</li></ul></li>
+</ul>
+
+<h3 id="creation-of-utf-8-characters">Creation of UTF-8 characters</h3>
+
+<table>
+<thead>
+<tr>
+  <th>Number of bytes</th>
+  <th>Bits for code print</th>
+  <th>First code point</th>
+  <th>Last code point</th>
+  <th>Byte 1</th>
+  <th>Byte 2</th>
+  <th>Byte 3</th>
+  <th>Byte 4</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>1 [0]</td>
+  <td>7</td>
+  <td>U+0000</td>
+  <td>U+007F</td>
+  <td>0xxxxxxx</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>11</td>
+  <td>U+0080</td>
+  <td>U+07FF</td>
+  <td>110xxxxx</td>
+  <td>10xxxxxx</td>
+  <td>-</td>
+  <td>-</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td>16</td>
+  <td>U+0800</td>
+  <td>U+FFFF</td>
+  <td>1110xxxx</td>
+  <td>10xxxxxx</td>
+  <td>10xxxxxx</td>
+  <td>-</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td>21</td>
+  <td>U+10000</td>
+  <td>U+10FFFF</td>
+  <td>11110xxx</td>
+  <td>10xxxxxx</td>
+  <td>10xxxxxx</td>
+  <td>10xxxxxx</td>
+</tr>
+</tbody></table>
+
+
+<p>[0] Theese are the ASCII characters</p>
+
+<p>In UTF-8 the byte tells how many bytes a character consists of </p>
+
+<ul>
+<li><strong>0xxxxxxx</strong> means that its the first byte of a1 byte character</li>
+<li><strong>110xxxxx</strong> means that its the first byte of a 2 byte character, because it starts with 2 *1*s and a *0*s</li>
+<li><strong>1110xxxx</strong> means that its the first byte of a 3 byte character, because it starts with 3 *1*s and a *0*s</li>
+<li><strong>…</strong></li>
+<li><strong>11111110</strong> means that its the first byte of a 7 byte character, because it starts with 7 *1*s and a *0*s (this is a VERY rare case)</li>
+<li><strong>10xxxxxx</strong> means that its a trailing byte in a multi byte character</li>
+</ul>
+
+<h2 id="presentation-of-data-types">Presentation of data types</h2>
+
+
+
+<h3 id="data-types">Data Types</h3>
+
+<table>
+<thead>
+<tr>
+  <th>Types</th>
+  <th>Size (bits)</th>
+  <th>Minimum Value</th>
+  <th>Maximum Value</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>byte</td>
+  <td>8</td>
+  <td>-128</td>
+  <td>127</td>
+</tr>
+<tr>
+  <td>char</td>
+  <td>16</td>
+  <td>0</td>
+  <td>2^16-1</td>
+</tr>
+<tr>
+  <td>short</td>
+  <td>16</td>
+  <td>-2^15</td>
+  <td>2^15-1</td>
+</tr>
+<tr>
+  <td>int</td>
+  <td>32</td>
+  <td>-2^31</td>
+  <td>2^31-1</td>
+</tr>
+<tr>
+  <td>long</td>
+  <td>64</td>
+  <td>-2^63</td>
+  <td>2^63-1</td>
+</tr>
+<tr>
+  <td>float</td>
+  <td>32</td>
+  <td>-2^149</td>
+  <td>complicated</td>
+</tr>
+<tr>
+  <td>double</td>
+  <td>64</td>
+  <td>-2^1074</td>
+  <td>complicated</td>
+</tr>
+<tr>
+  <td>boolean</td>
+  <td>1</td>
+  <td>0 / false</td>
+  <td>1 / true</td>
+</tr>
+</tbody></table>
+
+
+
+
+<h3 id="integer-types-byte-char-short-int-long">Integer Types (byte, char, short, int, long)</h3>
+
+<blockquote>
+  <p><strong>Sign</strong> if its 0 than the number is positive if its 1 its negative.</p>
+</blockquote>
+
+<p>An integer type is stored this way: <br>
+<em>Note char is an unsigned short, meaning it has no sign bit.</em></p>
+
+<table>
+<thead>
+<tr>
+  <th>Sign</th>
+  <th>Digits</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>1 bit</td>
+  <td>rest of the bits</td>
+</tr>
+<tr>
+  <td>0 bit</td>
+  <td>all of the bits</td>
+</tr>
+</tbody></table>
+
+
+
+
+<h3 id="floating-point-types-float-double">Floating-point types (float, double)</h3>
+
+<blockquote>
+  <p>In computing, <strong>floating-point</strong> arithmetic is arithmetic using formulaic representation of real numbers as an approximation so as to support a trade-off between range and precision. Its elements are always integers.</p>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<blockquote>
+  <p><strong>Significant digits</strong> (significand) are the first few digits of a number (it can’t start with a zero).</p>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<blockquote>
+  <p><strong>Base</strong> is the base of the number System, in <em>decimal</em> its <em>10</em>.</p>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<blockquote>
+  <p><strong>Exponent</strong> is the base to the power of that integer.</p>
+</blockquote>
+
+<p>Floating point types are stored like this</p>
+
+<table>
+<thead>
+<tr>
+  <th>Type</th>
+  <th>Sign</th>
+  <th>Exponent</th>
+  <th>Significand field</th>
+  <th>Total bits</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>Single(float)</td>
+  <td>1</td>
+  <td>8</td>
+  <td>23</td>
+  <td>32</td>
+</tr>
+<tr>
+  <td>Double</td>
+  <td>1</td>
+  <td>11</td>
+  <td>52</td>
+  <td>64</td>
+</tr>
+</tbody></table></div></body>
 </html>
