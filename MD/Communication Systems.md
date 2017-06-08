@@ -695,3 +695,56 @@ Same type of cabling as Fast Ethernet, additional multi-km fiber cables exist fo
 
 Described in IEEE 802.1Q
 
+## Network Layer
+
+> The **Network Layer** is responsible for delivering packets between endpoints over multiple links.
+
+### Design and issues
+
+#### Store and forward packet switching
+
+*Hosts* send *packets* into the network that are *stored* and forwarded by routers.
+
+Packets are forwarded based on the *routing table*, not all packets take the same path.
+
+#### Virtual circuit tags
+
+> The **Virtual circuit tag** determines the packets route before sending, it is therefore faster, but less flexible than datagram subnets
+
+Advantages and disadvantages of virtual circuit networks
+
+![Advantages and disadvantages](http://computing.dcu.ie/~humphrys/Notes/Networks/tanenbaum/5-04.jpg)
+
+### Routing algorithms
+
+> **Routing** is the process of discovering network paths
+
+* Model a network graph of nodes and links
+* Optimize for fairness or efficiency
+* Update on changes (failures)
+* *Forwarding* is sending packets along a path
+
+#### The optimality principle
+
+Each portion of the best path is also a best path (Best might mean fewest hops)
+> The union of all best paths is called a **sink tree**
+
+#### Shortest path algorithms
+
+##### Dijkstra's algorithm
+
+* Each link is assigned a non-negative weight/distance
+* Shortest path is the one with the lowest total weight
+* Using weights of 1 gives the fewest hops (since each hop costs 1)
+
+##### Algorithm
+
+* Start with sink, set all distances to infinity
+* When a node is reached via some path from the reachable nodes (ones with non infinite distances) and no shorter path already exists
+	* Set the distance of the node the distance of the intermediary + the distance from the intermediary
+	* Set the path-to value of the node to the path-to value of the node to the intermediary node
+* Repeat until all reachable nodes are mapped
+
+![Dijkstra's algorithm explained](http://cs.smith.edu/~streinu/Teaching/Courses/274/Spring98/Projects/Philip/fp/dijkstra.jpg)
+
+See [this video by Computerphile](https://youtu.be/GazC3A4OQTE) for a more detailed explanation on Dijkstra's algorithm
