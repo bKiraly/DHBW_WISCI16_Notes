@@ -127,6 +127,27 @@
 <li><a href="#gigabit-10-gigabit-ethernet">Gigabit / 10 Gigabit Ethernet</a></li>
 </ul>
 </li>
+<li><a href="#data-link-layer-switching">Data Link Layer Switching</a><ul>
+<li><a href="#bridges">Bridges</a></li>
+<li><a href="#learning-bridges">Learning Bridges</a></li>
+<li><a href="#spanning-tree-problem">Spanning tree problem</a></li>
+<li><a href="#network-interconnecting-devices">Network interconnecting devices</a></li>
+<li><a href="#virtual-lan-valn">Virtual LAN (VALN)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#network-layer">Network Layer</a><ul>
+<li><a href="#design-and-issues">Design and issues</a><ul>
+<li><a href="#store-and-forward-packet-switching">Store and forward packet switching</a></li>
+<li><a href="#virtual-circuit-tags">Virtual circuit tags</a></li>
+</ul>
+</li>
+<li><a href="#routing-algorithms">Routing algorithms</a><ul>
+<li><a href="#the-optimality-principle">The optimality principle</a></li>
+<li><a href="#shortest-path-algorithms">Shortest path algorithms</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -743,7 +764,7 @@ Passive, no amplifiers, one wavelength among many houses</p>
 <li>DSL <br>
 <ul><li>Bandwidth dedicated to each customer</li>
 <li>Point-to-Point link does not broadcast data</li>
-<li>Twisted pair to customers <script type="math/tex" id="MathJax-Element-2381">\rightarrow</script> lower bandwidth</li></ul></li>
+<li>Twisted pair to customers <script type="math/tex" id="MathJax-Element-2546">\rightarrow</script> lower bandwidth</li></ul></li>
 </ul>
 
 
@@ -867,7 +888,7 @@ Longer, but easily resynchronized after error.</p>
 <ul><li>XOR all bits, add result to the end</li>
 <li>Detection checks if last bit is XOR of all previous ones</li></ul></li>
 <li>Checksums <br>
-<ul><li>Treats message as N-bit words, and adds N check bits that are modulo <script type="math/tex" id="MathJax-Element-2382">2^n</script> szn if the words</li></ul></li>
+<ul><li>Treats message as N-bit words, and adds N check bits that are modulo <script type="math/tex" id="MathJax-Element-2547">2^n</script> szn if the words</li></ul></li>
 <li>Cyclic Redundancy Codes (CRC) <br>
 <ul><li>Adds bits to the transmitted frame</li>
 <li>The data is treated as a binary polynomial, and divided by another, resulting in a remainder</li>
@@ -1024,7 +1045,7 @@ Longer, but easily resynchronized after error.</p>
 <h6 id="collision-detection">Collision detection</h6>
 
 <p>CSMA/CD improvement detects/aborts collisions <br>
-<script type="math/tex" id="MathJax-Element-2383">\rightarrow</script> reduced contention times improve performance</p>
+<script type="math/tex" id="MathJax-Element-2548">\rightarrow</script> reduced contention times improve performance</p>
 
 
 
@@ -1148,9 +1169,11 @@ Longer, but easily resynchronized after error.</p>
 
 <p><img src="https://networklessons.com/wp-content/uploads/2014/02/wireshark-ip-tcp-ethernet-bytes-length.png" alt="Wireshark capture of an Ethernet package" title=""></p>
 
-<p>Collisions can arrive in <script type="math/tex" id="MathJax-Element-2391">2\tau</script> (twice the time for the message to arrive). Message size should be chosen accordingly.</p>
+<p>Collisions can arrive in <script type="math/tex" id="MathJax-Element-2549">2\tau</script> (twice the time for the message to arrive). Message size should be chosen accordingly.</p>
 
 <p>Ethernet is efficient with large frames even with many senders. Smaller frames are worse.</p>
+
+
 
 <h4 id="switched-fast-ethernet">Switched / Fast Ethernet</h4>
 
@@ -1187,15 +1210,21 @@ Same type of cabling as Fast Ethernet, additional multi-km fiber cables exist fo
   <p><strong>Bridges</strong> are auxiliary switches or hubs that concentrate network traffic on single lines before attaching to the main switch</p>
 </blockquote>
 
+
+
 <h4 id="learning-bridges">Learning Bridges</h4>
 
 <blockquote>
   <p><strong>Bridge</strong> operates as a switch, and <em>“learn”</em> which ports are associated with which addresses.</p>
 </blockquote>
 
+
+
 <h4 id="spanning-tree-problem">Spanning tree problem</h4>
 
 <p><strong>Skipped</strong></p>
+
+
 
 <h4 id="network-interconnecting-devices">Network interconnecting devices</h4>
 
@@ -1207,11 +1236,100 @@ Same type of cabling as Fast Ethernet, additional multi-km fiber cables exist fo
 <li>Application Layer: Application Gateway</li>
 </ul>
 
+
+
 <h4 id="virtual-lan-valn">Virtual LAN (VALN)</h4>
 
 <blockquote>
   <p><strong>VLAN</strong> splits a physical LAN into multiple logical LANs to ease management, ports are color-coded according to their VLAN. VLAN header is added to the Frame to identify the VLAN.</p>
 </blockquote>
 
-<p>Described in IEEE 802.1Q</p></div></body>
+<p>Described in IEEE 802.1Q</p>
+
+
+
+<h2 id="network-layer">Network Layer</h2>
+
+<blockquote>
+  <p>The <strong>Network Layer</strong> is responsible for delivering packets between endpoints over multiple links.</p>
+</blockquote>
+
+
+
+<h3 id="design-and-issues">Design and issues</h3>
+
+
+
+<h4 id="store-and-forward-packet-switching">Store and forward packet switching</h4>
+
+<p><em>Hosts</em> send <em>packets</em> into the network that are <em>stored</em> and forwarded by routers.</p>
+
+<p>Packets are forwarded based on the <em>routing table</em>, not all packets take the same path.</p>
+
+
+
+<h4 id="virtual-circuit-tags">Virtual circuit tags</h4>
+
+<blockquote>
+  <p>The <strong>Virtual circuit tag</strong> determines the packets route before sending, it is therefore faster, but less flexible than datagram subnets</p>
+</blockquote>
+
+<p>Advantages and disadvantages of virtual circuit networks</p>
+
+<p><img src="http://computing.dcu.ie/~humphrys/Notes/Networks/tanenbaum/5-04.jpg" alt="Advantages and disadvantages" title=""></p>
+
+
+
+<h3 id="routing-algorithms">Routing algorithms</h3>
+
+<blockquote>
+  <p><strong>Routing</strong> is the process of discovering network paths</p>
+</blockquote>
+
+<ul>
+<li>Model a network graph of nodes and links</li>
+<li>Optimize for fairness or efficiency</li>
+<li>Update on changes (failures)</li>
+<li><em>Forwarding</em> is sending packets along a path</li>
+</ul>
+
+
+
+<h4 id="the-optimality-principle">The optimality principle</h4>
+
+<p>Each portion of the best path is also a best path (Best might mean fewest hops)</p>
+
+<blockquote>
+  <p>The union of all best paths is called a <strong>sink tree</strong></p>
+</blockquote>
+
+
+
+<h4 id="shortest-path-algorithms">Shortest path algorithms</h4>
+
+
+
+<h5 id="dijkstras-algorithm">Dijkstra’s algorithm</h5>
+
+<ul>
+<li>Each link is assigned a non-negative weight/distance</li>
+<li>Shortest path is the one with the lowest total weight</li>
+<li>Using weights of 1 gives the fewest hops (since each hop costs 1)</li>
+</ul>
+
+
+
+<h5 id="algorithm">Algorithm</h5>
+
+<ul>
+<li>Start with sink, set all distances to infinity</li>
+<li>When a node is reached via some path from the reachable nodes (ones with non infinite distances) and no shorter path already exists <br>
+<ul><li>Set the distance of the node the distance of the intermediary + the distance from the intermediary</li>
+<li>Set the path-to value of the node to the path-to value of the node to the intermediary node</li></ul></li>
+<li>Repeat until all reachable nodes are mapped</li>
+</ul>
+
+<p><img src="http://cs.smith.edu/~streinu/Teaching/Courses/274/Spring98/Projects/Philip/fp/dijkstra.jpg" alt="Dijkstra's algorithm explained" title=""></p>
+
+<p>See <a href="https://youtu.be/GazC3A4OQTE">this video by Computerphile</a> for a more detailed explanation on Dijkstra’s algorithm</p></div></body>
 </html>
