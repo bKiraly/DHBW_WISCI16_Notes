@@ -627,7 +627,7 @@ Addressing scheme
 
 * MAC protocol as CSMA/CD (see above)
 * Random delay (backoff) after collision is computed using BEP (Binary Exponential backoff)
-* Frame format is still used in modern Ethernet
+* Frame format is still used in modern Ethernet (IEEE 802.3)
 
 ![Ethernet packet layout](http://i.cloud.opensystemsmedia.com/i__src348cc73403da619e46bf4af301f8b441_par1a3c1eb4506a5f22486e2677b9cb9c0d.jpeg)
 
@@ -693,5 +693,5 @@ Same type of cabling as Fast Ethernet, additional multi-km fiber cables exist fo
 
 > **VLAN** splits a physical LAN into multiple logical LANs to ease management, ports are color-coded according to their VLAN. VLAN header is added to the Frame to identify the VLAN.
 
-Described in IEEE 802.1Q22222
+Described in IEEE 802.1Q
 
