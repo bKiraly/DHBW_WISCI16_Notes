@@ -11,6 +11,8 @@ Communication Systems
 ## Literature
 Tennenbaum - Computer networks (up until network security chapter)
 
+[This slideshow on the internet](http://slideplayer.com/slide/3607059/) among others apparently
+
 ## Introduction
 
 ### Definition of Computer Networks
@@ -482,7 +484,7 @@ Driver and NIC implement the Data-Link layer
 	* Considers one-way data transfer
 	* Comments are additions for flow control
 
-```
+``` c
 void sender1(void)
 {
 	frame s;
@@ -497,7 +499,7 @@ void sender1(void)
 }
 ```
 
-```
+``` c
 void receiver1(void)
 {
 	frame r;
@@ -751,3 +753,135 @@ See this video for a more detailed explanation on Dijkstra's algorithm.
 <center><iframe width="560" height="315" src="https://www.youtube.com/embed/GazC3A4OQTE" frameborder="0" allowfullscreen></iframe></center>
 
 ### Flooding
+
+>***Flooding** is a simple method to send a packet to all network nodes. Each node floods a new packet received on an incoming link to all other links. Nodes keep track of flood packets, and employ hop limits to prevent loops.
+
+#### Distance Vector Routing
+
+> **Distance vector** is a distributed routing algorithm, that splits the shortest path calculation between nodes.
+
+##### The Algorithm
+
+* Each node knows the distance between itself and its neighboring nodes
+* Each node advertises distances to all known nodes
+* Each node updates the distance from all connected nodes based on the information from other nodes
+
+![DV routing](https://image.slidesharecdn.com/distancevectorrouting-140108002558-phpapp02/95/distance-vector-routing-2-638.jpg?cb=1395479151)
+
+##### The Count-to-Infinity problem
+
+Failures can cause DV to "count to infinity" while seeking a path to an unreachable node, leading of a slow propagation of increasing access times
+
+![Count to infinity example](https://qph.ec.quoracdn.net/main-qimg-461f25bd2385ac40c92f4b1a7b1e867b-c)
+
+#### Hierarchical routing
+
+> The **hierarchical routing** concept describes a network *hierarchy*, whereby not all nodes are connected to all other nodes, instead they are hierarchically nested in *subnets*. Only the destination *subnet* needs to be stored and computed, thus 
+
+Hierarchical routing reduces the work of route computation, but may result in slightly longer path.
+
+![Hierarchical routing](http://s.hswstatic.com/gif/routing-algorithm10.gif)
+
+#### Routing for Mobile Hosts
+
+* Mobile hosts can be reached via a home agent (proxy)
+	* Fixed home agent tunnels packets to the mobile host and optimizes route based on response
+	* The outside host uses a regular routing protocol
+
+#### Traffic-Aware Routing
+
+Choose routes depending on traffic, not just topology. (Avoid overloading lines)
+
+### Quality of Service (QoS)
+
+#### Application Requirements
+
+Different applications have different network requirements, all should get what they need.
+
+![](http://www.networkinginfoblog.com/contentsimages/Requirements%20of%20selected%20network%20applications.JPG)
+
+Network provides different QoS to different services, for example a constant bitrate to telephony.
+
+#### Traffic shaping
+
+Traffic shaping regulates the average rate of data that enters the network
+
+Token/Leaky bucket limits both average rate (R) and short-term burst (B) of traffic.
+
+![Leaky bucket](http://ecomputernotes.com/images/Leaky-Bucket.jpg)
+
+**Skipped stuff**
+
+#### Packets scheduling
+
+FIFO or prioritize (Round Robin', Fair queuing (WFQ))
+
+**Skipped stuff***
+
+### Internetworking
+
+> **Internetworking** connects multiple different networks to a single, larger networks
+
+#### Differences between networks
+
+Differences between networks (architecture, implemented protocols, offered services, packet sizes, etc.) make internetworking complicated
+
+#### Connecting networks
+
+Different networks use the same network layer.
+
+![Network layer internetworking](http://images.slideplayer.com/13/3607059/slides/slide_57.jpg)
+
+#### Tunneling
+
+> **Tunneling** connects two network through a middle one (packets are encapsulated over the middle)
+
+![Tunneling](http://player.slideplayer.com/13/3607059/data/images/img50.jpg)
+
+#### Packet fragmentation
+
+> **Packet fragmentation** refers to the process of breaking up a packet into smaller packets to conform with a networks frame size requirements.
+
+The start offset is the place of the message that is being sent.
+
+> **Max Transmission Unit (MTU)** analyzes the network to get the maximal size packets that can be transmitted over the network.
+
+### Network layer on the Internet
+
+#### IPv4
+
+IP has been shaped by the following guiding principles
+
+* Make sure it works
+* Keep it simple
+* Make it clear
+* Exploit modularity
+* Expect heterogenity
+* Avoid static options and parameters
+* Look for good design
+* Strict sending, tolerant receiving
+* Scalability
+* Performance and cost
+
+#### IP Addresses
+
+IPv4 header carries the following data:
+
+![IPv4](http://static.thegeekstuff.com/wp-content/uploads/2012/03/ip-header-2.png)
+
+* Version (v4 or v6)
+* IHL (Header length)
+* Differentiated services
+* Total length (message length)
+* ID
+* Flags (Fragmentation flags)
+* Fragment offset
+* Time To Live (hop count)
+* Protocol (UDP / TCP)
+* Header checksum
+* Source IP
+* Destination IP
+* Options / Padding
+
+#### IPv6
+#### Internet Control Protocols
