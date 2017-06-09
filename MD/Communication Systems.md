@@ -748,6 +748,6 @@ Each portion of the best path is also a best path (Best might mean fewest hops)
 ![Dijkstra's algorithm explained](http://cs.smith.edu/~streinu/Teaching/Courses/274/Spring98/Projects/Philip/fp/dijkstra.jpg)
 
 See this video for a more detailed explanation on Dijkstra's algorithm.
-<iframe width="560" height="315" src="https://www.youtube.com/embed/GazC3A4OQTE" frameborder="0" allowfullscreen></iframe>
+<center><iframe width="560" height="315" src="https://www.youtube.com/embed/GazC3A4OQTE" frameborder="0" allowfullscreen></iframe></center>
 
 ### Flooding
