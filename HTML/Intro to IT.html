@@ -86,6 +86,22 @@
 <li><a href="#floating-point-types-float-double">Floating-point types (float, double)</a></li>
 </ul>
 </li>
+<li><a href="#logical-operations-circuit-algebra">Logical operations (circuit algebra)</a><ul>
+<li><a href="#unary-operations">Unary operations</a></li>
+<li><a href="#binary-operations">Binary operations</a></li>
+</ul>
+</li>
+<li><a href="#circuit">Circuit</a><ul>
+<li><a href="#basic-circuit-elements">Basic circuit elements</a></li>
+<li><a href="#diods-and-transistors">Diods and Transistors</a></li>
+<li><a href="#basic-gates">Basic gates</a></li>
+<li><a href="#basic-circuits">Basic circuits</a><ul>
+<li><a href="#rs-latch-jk-flip-flop">RS-Latch / JK flip-flop</a></li>
+<li><a href="#a-4-bit-synchronous-counter-using-jk-flip-flops">A 4-bit synchronous counter using JK flip-flops</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -770,7 +786,7 @@ Definition of the representation of the external data</p>
 
 <p>in base 2 = in base 10</p>
 
-<p><script type="math/tex" id="MathJax-Element-316">11101 = ((1 × 2^4) + (1 × 2^3) + (1 × 2^2) + (0 × 2^1) + (1 × 2^0))</script></p>
+<p><script type="math/tex" id="MathJax-Element-1">11101 = ((1 × 2^4) + (1 × 2^3) + (1 × 2^2) + (0 × 2^1) + (1 × 2^0))</script></p>
 
 
 
@@ -1025,5 +1041,347 @@ Definition of the representation of the external data</p>
   <td>52</td>
   <td>64</td>
 </tr>
-</tbody></table></div></body>
+</tbody></table>
+
+
+
+
+<h2 id="logical-operations-circuit-algebra">Logical operations (circuit algebra)</h2>
+
+<blockquote>
+  <p>Any logical statement which contains a finite number of logical variables can be analyzed using a table which lists all possible values of the variables: a <strong>truth table</strong>.</p>
+</blockquote>
+
+
+
+<h3 id="unary-operations">Unary operations</h3>
+
+<blockquote>
+  <p><strong>Unary operations</strong> are operations with only one argument.</p>
+</blockquote>
+
+<table>
+<thead>
+<tr>
+  <th>Name</th>
+  <th>Short</th>
+  <th>Description</th>
+  <th>Symbol</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>Tautology</td>
+  <td>true</td>
+  <td>The output is allways true</td>
+  <td><script type="math/tex" id="MathJax-Element-2">1</script></td>
+</tr>
+<tr>
+  <td>Never true/unary falsum</td>
+  <td>false</td>
+  <td>The output is allways false</td>
+  <td><script type="math/tex" id="MathJax-Element-3">0</script></td>
+</tr>
+<tr>
+  <td>Unary(or logical) Identity / Projection</td>
+  <td>eq</td>
+  <td>output = input</td>
+  <td></td>
+</tr>
+<tr>
+  <td>Unary(or logical) negation (NOT)</td>
+  <td>NOT</td>
+  <td>output = the oposite of the input</td>
+  <td><script type="math/tex" id="MathJax-Element-4">\lnot</script></td>
+</tr>
+</tbody></table>
+
+
+
+
+<h3 id="binary-operations">Binary operations</h3>
+
+<table>
+<thead>
+<tr>
+  <th>Operation name</th>
+  <th>Short name</th>
+  <th>Symbol</th>
+  <th>q/p</th>
+  <th>T/T</th>
+  <th>T/F</th>
+  <th>F/T</th>
+  <th>F/F</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>Contridiction</td>
+  <td>false</td>
+  <td><script type="math/tex" id="MathJax-Element-5">0</script></td>
+  <td>-</td>
+  <td>F</td>
+  <td>F</td>
+  <td>F</td>
+  <td>F</td>
+</tr>
+<tr>
+  <td>Tautology</td>
+  <td>true</td>
+  <td><script type="math/tex" id="MathJax-Element-6">1</script></td>
+  <td>-</td>
+  <td>T</td>
+  <td>T</td>
+  <td>T</td>
+  <td>T</td>
+</tr>
+<tr>
+  <td>Logical disjunction</td>
+  <td>OR</td>
+  <td><script type="math/tex" id="MathJax-Element-7">\lor</script></td>
+  <td>-</td>
+  <td>T</td>
+  <td>T</td>
+  <td>T</td>
+  <td>F</td>
+</tr>
+<tr>
+  <td>Logical NOR</td>
+  <td>NOR</td>
+  <td><script type="math/tex" id="MathJax-Element-8">\lnot\lor</script></td>
+  <td>-</td>
+  <td>F</td>
+  <td>F</td>
+  <td>F</td>
+  <td>T</td>
+</tr>
+<tr>
+  <td>Exclusive disjunction</td>
+  <td>XOR</td>
+  <td><script type="math/tex" id="MathJax-Element-9">\lxor</script></td>
+  <td>-</td>
+  <td>F</td>
+  <td>T</td>
+  <td>T</td>
+  <td>F</td>
+</tr>
+<tr>
+  <td>Logical biconditional</td>
+  <td>XNOR</td>
+  <td>iff*</td>
+  <td>-</td>
+  <td>T</td>
+  <td>F</td>
+  <td>F</td>
+  <td>T</td>
+</tr>
+<tr>
+  <td>Logical Conjunction</td>
+  <td>AND</td>
+  <td><script type="math/tex" id="MathJax-Element-10">\land</script></td>
+  <td>-</td>
+  <td>T</td>
+  <td>F</td>
+  <td>F</td>
+  <td>F</td>
+</tr>
+<tr>
+  <td>Logical NAND</td>
+  <td>NAND</td>
+  <td><script type="math/tex" id="MathJax-Element-11">\lnot\land</script></td>
+  <td>-</td>
+  <td>F</td>
+  <td>T</td>
+  <td>T</td>
+  <td>T</td>
+</tr>
+<tr>
+  <td>Material implication</td>
+  <td>implication</td>
+  <td><script type="math/tex" id="MathJax-Element-12">\Rightarrow</script></td>
+  <td>-</td>
+  <td>T</td>
+  <td>F</td>
+  <td>T</td>
+  <td>T</td>
+</tr>
+<tr>
+  <td>Material nonimplication</td>
+  <td>nonimplication</td>
+  <td><script type="math/tex" id="MathJax-Element-13">\not\Rightarrow</script></td>
+  <td>-</td>
+  <td>F</td>
+  <td>T</td>
+  <td>F</td>
+  <td>F</td>
+</tr>
+<tr>
+  <td>Converse implication</td>
+  <td>reverse implication</td>
+  <td><script type="math/tex" id="MathJax-Element-14">\Leftarrow</script></td>
+  <td>-</td>
+  <td>T</td>
+  <td>T</td>
+  <td>F</td>
+  <td>T</td>
+</tr>
+<tr>
+  <td>Converse nonimplication</td>
+  <td>reverse nonimplication</td>
+  <td><script type="math/tex" id="MathJax-Element-15">\not\Leftarrow</script></td>
+  <td>-</td>
+  <td>F</td>
+  <td>F</td>
+  <td>T</td>
+  <td>F</td>
+</tr>
+</tbody></table>
+
+
+<blockquote>
+  <p><strong>OR</strong> means, that its true, if one of the inputs is true.</p>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<blockquote>
+  <p><strong>XOR</strong> means, that its true, if only one of the inputs is true.</p>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<blockquote>
+  <p><strong>XNOR</strong>, is the same eqvivalence, meaning ((A→B) ∧ (B→A)), but it also means NOT XOR. </p>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<blockquote>
+  <p><strong>AND</strong> means, that its true, if all inputs are true.</p>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<blockquote>
+  <p><strong>Implication</strong> means, that its true, if the <em>if A, then B</em> is true. </p>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<blockquote>
+  <p><strong>Converse implication</strong> is implication to the other direction.</p>
+</blockquote>
+
+
+
+<h2 id="circuit">Circuit</h2>
+
+
+
+<h3 id="basic-circuit-elements">Basic circuit elements</h3>
+
+<table>
+<thead>
+<tr>
+  <th>Name</th>
+  <th>Description</th>
+  <th>Looks</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>Switch</td>
+  <td>A basic switch that opens and closes the circuit</td>
+  <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/SPST-Switch.svg/150px-SPST-Switch.svg.png" alt="Switch circuit representation" title=""></td>
+</tr>
+<tr>
+  <td>Diode</td>
+  <td>It restricts the current to flow only in one direction</td>
+  <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Diode_symbol.svg/180px-Diode_symbol.svg.png" alt="Diode circuit representation" title=""></td>
+</tr>
+<tr>
+  <td>Transistor</td>
+  <td>It is an electronic switch or in circuit algebra an AND (used in computers</td>
+  <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/BJT_PNP_symbol.svg/120px-BJT_PNP_symbol.svg.png" alt="Transistor circuit representation" title=""></td>
+</tr>
+<tr>
+  <td>Electron Tube</td>
+  <td>An earlier version of transistors, still used in audio engineering</td>
+  <td></td>
+</tr>
+<tr>
+  <td>Relay</td>
+  <td>The earliest version of transistors, still used in high voltage switches</td>
+  <td></td>
+</tr>
+</tbody></table>
+
+
+
+
+<h3 id="diods-and-transistors">Diods and Transistors</h3>
+
+<iframe src="https://www.youtube.com/embed/7ukDKVHnac4" allowfullscreen="" width="560" height="315"></iframe>
+
+
+
+<h3 id="basic-gates">Basic gates</h3>
+
+<table>
+<thead>
+<tr>
+  <th>Name (Circuit Algebra equivalent)</th>
+  <th>Looks(old)</th>
+  <th>Looks(new)</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>NOT</td>
+  <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/NOT_ANSI.svg/150px-NOT_ANSI.svg.png" alt="" title=""></td>
+  <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/NOT_IEC.svg/150px-NOT_IEC.svg.png" alt="" title=""></td>
+</tr>
+<tr>
+  <td>AND</td>
+  <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/AND_ANSI.svg/150px-AND_ANSI.svg.png" alt="" title=""></td>
+  <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/AND_IEC.svg/150px-AND_IEC.svg.png" alt="" title=""></td>
+</tr>
+<tr>
+  <td>OR</td>
+  <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/OR_ANSI.svg/150px-OR_ANSI.svg.png" alt="" title=""></td>
+  <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/OR_IEC.svg/150px-OR_IEC.svg.png" alt="" title=""></td>
+</tr>
+<tr>
+  <td>XOR</td>
+  <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/XOR_ANSI.svg/150px-XOR_ANSI.svg.png" alt="" title=""></td>
+  <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/XOR_IEC.svg/150px-XOR_IEC.svg.png" alt="" title=""></td>
+</tr>
+<tr>
+  <td>NAND</td>
+  <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/NAND_ANSI.svg/150px-NAND_ANSI.svg.png" alt="" title=""></td>
+  <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/NAND_IEC.svg/150px-NAND_IEC.svg.png" alt="" title=""></td>
+</tr>
+<tr>
+  <td>NOR</td>
+  <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/NOR_ANSI.svg/150px-NOR_ANSI.svg.png" alt="" title=""></td>
+  <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/NOR_IEC.svg/150px-NOR_IEC.svg.png" alt="" title=""></td>
+</tr>
+<tr>
+  <td>XNOR</td>
+  <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/XNOR_ANSI.svg/150px-XNOR_ANSI.svg.png" alt="" title=""></td>
+  <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/XNOR_IEC.svg/150px-XNOR_IEC.svg.png" alt="" title=""></td>
+</tr>
+</tbody></table>
+
+
+<h3 id="basic-circuits">Basic circuits</h3>
+
+
+
+<h4 id="rs-latch-jk-flip-flop">RS-Latch / JK flip-flop</h4>
+
+<p><a href="https://upload.wikimedia.org/wikipedia/commons/1/14/Transistor_Bistable_interactive_animated_EN.svg"><img src="https://upload.wikimedia.org/wikipedia/commons/1/14/Transistor_Bistable_interactive_animated_EN.svg" alt="" title=""></a> <br>
+Click the picture for interactive animation.</p>
+
+
+
+<h4 id="a-4-bit-synchronous-counter-using-jk-flip-flops">A 4-bit synchronous counter using JK flip-flops</h4>
+
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/4-bit-jk-flip-flop_V1.1.svg/921px-4-bit-jk-flip-flop_V1.1.svg.png" alt="" title=""></p></div></body>
 </html>
