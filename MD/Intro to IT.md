@@ -452,3 +452,91 @@ Floating point types are stored like this
 | Double	| 1 	| 11 		| 52 			| 64	 	|
 
 
+## Logical operations (circuit algebra)
+
+> Any logical statement which contains a finite number of logical variables can be analyzed using a table which lists all possible values of the variables: a **truth table**.
+
+### Unary operations
+
+> **Unary operations** are operations with only one argument.
+	
+| Name						| Short | Description				| Symbol	|
+|-----------------------------------------------|-------|---------------------------------------|---------------|
+| Tautology					| true	| The output is allways true		| $1$		|
+| Never true/unary falsum			| false	| The output is allways false		| $0$		|
+| Unary(or logical) Identity / Projection	| eq	| output = input			|		|
+| Unary(or logical) negation (NOT)		| NOT	| output = the oposite of the input	| $\lnot$	|
+
+### Binary operations
+
+| Operation name		| Short name		| Symbol 	| q/p 	| T/T | T/F | F/T | F/F |
+|-------------------------------|-----------------------|---------------|-------|-----|-----|-----|-----|
+| Contridiction			| false			| $0$	 	| -	| F   | F   | F   | F   |
+| Tautology			| true			| $1$	 	| -	| T   | T   | T   | T   |
+| Logical disjunction		| OR			| $\lor$	| -	| T   | T   | T   | F   |
+| Logical NOR			| NOR			| $\lnot\lor$	| -	| F   | F   | F   | T   |
+| Exclusive disjunction		| XOR			| $\lxor$	| -	| F   | T   | T   | F   |
+| Logical biconditional		| XNOR			| iff\*		| -	| T   | F   | F   | T   |
+| Logical Conjunction		| AND			| $\land$	| -	| T   | F   | F   | F   |
+| Logical NAND			| NAND			| $\lnot\land$	| -	| F   | T   | T   | T   |
+| Material implication		| implication		| $\Rightarrow$	| -	| T   | F   | T   | T   |
+| Material nonimplication	| nonimplication	|$\not\Rightarrow$| -	| F   | T   | F   | F   |
+| Converse implication		| reverse implication	| $\Leftarrow$	| -	| T   | T   | F   | T   |
+| Converse nonimplication	| reverse nonimplication|$\not\Leftarrow$| -	| F   | F   | T   | F   |
+
+> **OR** means, that its true, if one of the inputs is true.
+
+&nbsp;
+> **XOR** means, that its true, if only one of the inputs is true.
+
+&nbsp;
+> **XNOR**, is the same eqvivalence, meaning ((A→B) ∧ (B→A)), but it also means NOT XOR. 
+
+&nbsp;
+> **AND** means, that its true, if all inputs are true.
+
+&nbsp;
+> **Implication** means, that its true, if the *if A, then B* is true. 
+
+&nbsp;
+> **Converse implication** is implication to the other direction.
+
+## Circuit
+
+### Basic circuit elements
+
+| Name		| Description									| Looks														|
+|---------------|-------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|
+| Switch	| A basic switch that opens and closes the circuit				|![Switch circuit representation](https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/SPST-Switch.svg/150px-SPST-Switch.svg.png)		|
+| Diode		| It restricts the current to flow only in one direction			|![Diode circuit representation](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Diode_symbol.svg/180px-Diode_symbol.svg.png)	|
+| Transistor	| It is an electronic switch or in circuit algebra an AND (used in computers	|![Transistor circuit representation](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/BJT_PNP_symbol.svg/120px-BJT_PNP_symbol.svg.png)	|
+| Electron Tube	| An earlier version of transistors, still used in audio engineering		|														|
+| Relay		| The earliest version of transistors, still used in high voltage switches	|														|
+
+
+### Diods and Transistors
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/7ukDKVHnac4" frameborder="0" allowfullscreen></iframe>
+
+### Basic gates
+
+| Name (Circuit Algebra equivalent)	| Looks(old)												|  Looks(new)												|
+|---------------------------------------|-------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------|
+| NOT					|![](https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/NOT_ANSI.svg/150px-NOT_ANSI.svg.png)	|![](https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/NOT_IEC.svg/150px-NOT_IEC.svg.png)		|
+| AND					|![](https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/AND_ANSI.svg/150px-AND_ANSI.svg.png)	|![](https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/AND_IEC.svg/150px-AND_IEC.svg.png)		|
+| OR					|![](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/OR_ANSI.svg/150px-OR_ANSI.svg.png)		|![](https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/OR_IEC.svg/150px-OR_IEC.svg.png)		|
+| XOR					|![](https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/XOR_ANSI.svg/150px-XOR_ANSI.svg.png)	|![](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/XOR_IEC.svg/150px-XOR_IEC.svg.png)		|
+| NAND					|![](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/NAND_ANSI.svg/150px-NAND_ANSI.svg.png)	|![](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/NAND_IEC.svg/150px-NAND_IEC.svg.png)	|
+| NOR					|![](https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/NOR_ANSI.svg/150px-NOR_ANSI.svg.png)	|![](https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/NOR_IEC.svg/150px-NOR_IEC.svg.png)		|
+| XNOR					|![](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/XNOR_ANSI.svg/150px-XNOR_ANSI.svg.png)	|![](https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/XNOR_IEC.svg/150px-XNOR_IEC.svg.png)	|
+
+
+### Basic circuits
+
+####RS-Latch / JK flip-flop
+[![](https://upload.wikimedia.org/wikipedia/commons/1/14/Transistor_Bistable_interactive_animated_EN.svg)](https://upload.wikimedia.org/wikipedia/commons/1/14/Transistor_Bistable_interactive_animated_EN.svg)
+Click the picture for interactive animation.
+
+####A 4-bit synchronous counter using JK flip-flops
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/4-bit-jk-flip-flop_V1.1.svg/921px-4-bit-jk-flip-flop_V1.1.svg.png)
+
