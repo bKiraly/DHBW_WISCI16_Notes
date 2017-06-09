@@ -876,7 +876,7 @@ Prices change often
 * Borrowers will win, because the real value of the initial loan is smaller
 * Savers lose, because the real value of savings is smaller
 
-### 2.6 Price of Deflation
+### 2.7 Price of Deflation
 
 * No shoeleather costs
 * Menu costs
@@ -918,11 +918,132 @@ The risk of deflation in the European Union is low.
 	* Quantity and price of coal increases
 
 ## 3. International trade
+
+
+
 ## 4. Foreign exchange markets
+
+### 4.1 Spot Market
+
+#### Characteristics of foreign exchange markets
+Currency exchange is always going on
+Main trading hubs.
+
+* Frankfurt
+* London
+* New York
+* Tokyo
+* Singapore
+* Hong-Kong
+
+Spot transactions are the second most important instruments on the foreign exchange market
+The daily trade volume is $5.3tr (more than the *annual* GDP of Germany)
+
+#### Types of transactions
+
+* Spot transactions (38%)
+	* Trade on the day
+* Outright forwards
+	* Agreement is on the day
+	* Transaction takes place in the future
+	* Advantage: The exchange rate is fixed $\rightarrow$ No exchange rate risk (aka. "hedging")
+* Foreign exchange swaps (41%)
+	* Combination of one spot and one forward trade
+		* Spot transaction: Buy n amount currency A for currency B
+		* Forward transaction: Sell n amount currency A for currency B
+	* Capital investment in foreign countries without foreign exchange risk
+* Option (6%)
+	* Speculation
+	* A buy/sell option is the right, but not the duty, to buy/sell foreign currency in the future whereas the exchange rate is determined in advance.
+	* If it is not profitable to realize the option, it does not have to be fulfilled
+
+#### Most Traded Currencies
+As a percentage of transactions in which these are involved
+
+* USD (87%)
+* EUR (33%)
+* JPY (23%)
+* GBP (12%)
+* AUD (9%)
+* CHF
+* CAD
+* CNY (Ranmimbi or Yuan)
+
+#### Sources for Exchange Rates
+
+* Wall street journal
+* [Reuters](http://reuters.com)
+* [Yahoo finance](http://finance.yahoo.com)
+
+#### Direct and Indirect Quotation
+
+##### Direct quotation
+
+> **Direct quotation** (aka. European quotation) is the price of a foreign currency expressed in home currency.
+
+Example
+: 
+1 USD = 0.89 EUR
+
+##### Indirect quotation
+
+> **Indirect quotation** (aka. American quotation) describes the price of the home currency expressed in foreign currency.
+
+Example
+:
+1 EUR = 1.12 USD
+
+##### Convention
+Since the introduction of the EUR (1998) the indirect quotation is used in Europe, except for the GBP, which is quoted in direct quotation.
+
+#### Exchange Rates and Depreciation
+
+If the exchange rate of a currency in indirect notation *increases*, the currency *appreciates*, the other currency *depreciates* compared to each-other and the other way around.
+
+#### Base currency notation
+
+> **Base currency notation** is a notation in the following form, whereby the base currency is always expressed in one unit. Base currency - Quote currency (ex.: EUR - USD 1.12)
+
+#### Textbook Notation
+
+> The **textbook notation** displays the conversion rate as a fraction, and needs to be interpreted as proper SI combined ration unit. (Example: $1.12 {USD \over EUR}$). Anther advantage is the reverse exchange rate with the proper unit can be obtained by taking the reciprocal.
+
+#### Spot FX trading
+
+* In the interbank market the standard trade size is $10m
+* High stakes
+* *"Long-term"* is 10 minutes
+
+### 4.2 Bid-Ask Spread
+
+> The **Bid-Ask Spread** describes the difference between the price to buy the foreign currency (Bid) and the price to sell the foreign currency (Ask). The difference represents the profit margin of the *commercial bank* that is exchanging the currency.
+
+The bank buys the currency at a cheaper price than it is willing to sell it for.
+
+USD: 10 000 000 CAD / 1.3462 ${CAD\over USD}$ = 7 428 316,74 USD
+CAD: 7 428 316,74 USD * 1.3464 ${CAD\over USD}$ = 10 001 485,66 CAD
+Profit: 1485,66
+
+
+### 4.3 Cross-Exchange Rates
+
+If n currencies exist, there are $n^2-n \over 2$ conversion ratios.
+Most conversion ratios today are free-floating, meaning they are not fixed to each other.
+This would need too many dealers (11 175 for 150 currencies).
+
+Solution
+
+* n-1 exchange rates against the USD $\rightarrow$ cover all possible exchanges with a single intermediary
+* Additional regional traders (ex. EUR-GBP)
+* Around 160 exchange rates are represented
+
+### 4.4 Summary
 
 -------
 Homework:
 
+Do profitable trade with the other currencies
 Prepare the questions: 1-3 (only questions about ECB), 5-8
 Solve the following problems in Ch. 26: 1-9
 Inflation rate in Syria
+
