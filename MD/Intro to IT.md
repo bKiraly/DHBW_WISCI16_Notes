@@ -184,9 +184,27 @@ Construction plan, according to which the functional units are assembled
 * RAID systems
 
 > **NAS Network Attached Storage** Special servers in a network that are optimized as a file server
+
+&nbsp;
 > **SAN Storage Area Network** Network structure in which servers of a computer network are connected to storage units via a separate high-performance network
+
+&nbsp;
 > **RAID systems** Redundant Array of Independent Disks
 
+#### Memory Hierarchy
+
+The memory of the computer is divided into several, progressively slower and higher-capacity chunks.
+
+* Registers (<=1ns, 100s of Bytes)
+* Cache: L1 (~5ns, 16KiB), L2 -> SRAM (~10ns, 1MiB) and L3 ->DRAM (30 ns, 16 MiB)
+* RAM (~100ns, ~8GB)
+	* Core memory
+* Flash memory (100 microSec, ~0.5TB)
+* Permanent storage -> Usually HDDs (~4ms, Terabytes)
+* Archival storage (minutes, >= 1PB)
+
+This is illustrated on the following picture
+![Memory levels](http://cse1.net/recaps/img/4-hierarchy.jpg)
 
 #### Von Neumann Cycle
 
