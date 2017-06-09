@@ -516,7 +516,7 @@ Floating point types are stored like this
 
 ### Diods and Transistors
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/7ukDKVHnac4" frameborder="0" allowfullscreen></iframe>
+<center><iframe width="560" height="315" src="https://www.youtube.com/embed/7ukDKVHnac4" frameborder="0" allowfullscreen></iframe></center>
 
 ### Basic gates
 
