@@ -148,7 +148,33 @@
 <li><a href="#shortest-path-algorithms">Shortest path algorithms</a></li>
 </ul>
 </li>
-<li><a href="#flooding">Flooding</a></li>
+<li><a href="#flooding">Flooding</a><ul>
+<li><a href="#distance-vector-routing">Distance Vector Routing</a></li>
+<li><a href="#hierarchical-routing">Hierarchical routing</a></li>
+<li><a href="#routing-for-mobile-hosts">Routing for Mobile Hosts</a></li>
+<li><a href="#traffic-aware-routing">Traffic-Aware Routing</a></li>
+</ul>
+</li>
+<li><a href="#quality-of-service-qos">Quality of Service (QoS)</a><ul>
+<li><a href="#application-requirements">Application Requirements</a></li>
+<li><a href="#traffic-shaping">Traffic shaping</a></li>
+<li><a href="#packets-scheduling">Packets scheduling</a></li>
+</ul>
+</li>
+<li><a href="#internetworking">Internetworking</a><ul>
+<li><a href="#differences-between-networks">Differences between networks</a></li>
+<li><a href="#connecting-networks">Connecting networks</a></li>
+<li><a href="#tunneling">Tunneling</a></li>
+<li><a href="#packet-fragmentation">Packet fragmentation</a></li>
+</ul>
+</li>
+<li><a href="#network-layer-on-the-internet">Network layer on the Internet</a><ul>
+<li><a href="#ipv4">IPv4</a></li>
+<li><a href="#ip-addresses">IP Addresses</a></li>
+<li><a href="#ipv6">IPv6</a></li>
+<li><a href="#internet-control-protocols">Internet Control Protocols</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -162,6 +188,8 @@
 <h2 id="literature">Literature</h2>
 
 <p>Tennenbaum - Computer networks (up until network security chapter)</p>
+
+<p><a href="http://slideplayer.com/slide/3607059/">This slideshow on the internet</a> among others apparently</p>
 
 
 
@@ -765,7 +793,7 @@ Passive, no amplifiers, one wavelength among many houses</p>
 <li>DSL <br>
 <ul><li>Bandwidth dedicated to each customer</li>
 <li>Point-to-Point link does not broadcast data</li>
-<li>Twisted pair to customers <script type="math/tex" id="MathJax-Element-156">\rightarrow</script> lower bandwidth</li></ul></li>
+<li>Twisted pair to customers <script type="math/tex" id="MathJax-Element-1">\rightarrow</script> lower bandwidth</li></ul></li>
 </ul>
 
 
@@ -889,7 +917,7 @@ Longer, but easily resynchronized after error.</p>
 <ul><li>XOR all bits, add result to the end</li>
 <li>Detection checks if last bit is XOR of all previous ones</li></ul></li>
 <li>Checksums <br>
-<ul><li>Treats message as N-bit words, and adds N check bits that are modulo <script type="math/tex" id="MathJax-Element-157">2^n</script> szn if the words</li></ul></li>
+<ul><li>Treats message as N-bit words, and adds N check bits that are modulo <script type="math/tex" id="MathJax-Element-2">2^n</script> szn if the words</li></ul></li>
 <li>Cyclic Redundancy Codes (CRC) <br>
 <ul><li>Adds bits to the transmitted frame</li>
 <li>The data is treated as a binary polynomial, and divided by another, resulting in a remainder</li>
@@ -922,29 +950,29 @@ Longer, but easily resynchronized after error.</p>
 
 
 
-<pre class="prettyprint"><code class=" hljs avrasm">void sender1(void)
+<pre class="prettyprint"><code class="language-c hljs "><span class="hljs-keyword">void</span> sender1(<span class="hljs-keyword">void</span>)
 {
-    frame s<span class="hljs-comment">;</span>
-    packet buffer<span class="hljs-comment">;</span>
-    //event<span class="hljs-preprocessor">.type</span> event<span class="hljs-comment">;</span>
-    while(true){
-        from<span class="hljs-preprocessor">.network</span><span class="hljs-preprocessor">.layer</span>(&amp;buffer)<span class="hljs-comment">;</span>
-        s<span class="hljs-preprocessor">.info</span> = buffer<span class="hljs-comment">;</span>
-        to<span class="hljs-preprocessor">.physical</span><span class="hljs-preprocessor">.layer</span>(&amp;s)<span class="hljs-comment">;</span>
-        //wait<span class="hljs-preprocessor">.for</span><span class="hljs-preprocessor">.event</span>(&amp;event)<span class="hljs-comment">;</span>
+    frame s;
+    packet buffer;
+    <span class="hljs-comment">//event.type event;</span>
+    <span class="hljs-keyword">while</span>(<span class="hljs-keyword">true</span>){
+        from.network.layer(&amp;buffer);
+        s.info = buffer;
+        to.physical.layer(&amp;s);
+        <span class="hljs-comment">//wait.for.event(&amp;event);</span>
     }
 }</code></pre>
 
 
 
-<pre class="prettyprint"><code class=" hljs cs"><span class="hljs-keyword">void</span> receiver1(<span class="hljs-keyword">void</span>)
+<pre class="prettyprint"><code class="language-c hljs "><span class="hljs-keyword">void</span> receiver1(<span class="hljs-keyword">void</span>)
 {
     frame r;
     <span class="hljs-comment">//frame s;</span>
-    Event.type <span class="hljs-keyword">event</span>;
+    Event.type event;
     <span class="hljs-keyword">while</span>(<span class="hljs-keyword">true</span>){
-        wait.<span class="hljs-keyword">for</span>.<span class="hljs-keyword">event</span>(&amp;<span class="hljs-keyword">event</span>);
-        <span class="hljs-keyword">from</span>.physical.layer(&amp;r);
+        wait.<span class="hljs-keyword">for</span>.event(&amp;event);
+        from.physical.layer(&amp;r);
         to.network.layer(&amp;r.info);
         <span class="hljs-comment">//to.physical.layer(&amp;s);</span>
     }
@@ -1046,7 +1074,7 @@ Longer, but easily resynchronized after error.</p>
 <h6 id="collision-detection">Collision detection</h6>
 
 <p>CSMA/CD improvement detects/aborts collisions <br>
-<script type="math/tex" id="MathJax-Element-158">\rightarrow</script> reduced contention times improve performance</p>
+<script type="math/tex" id="MathJax-Element-3">\rightarrow</script> reduced contention times improve performance</p>
 
 
 
@@ -1170,7 +1198,7 @@ Longer, but easily resynchronized after error.</p>
 
 <p><img src="https://networklessons.com/wp-content/uploads/2014/02/wireshark-ip-tcp-ethernet-bytes-length.png" alt="Wireshark capture of an Ethernet package" title=""></p>
 
-<p>Collisions can arrive in <script type="math/tex" id="MathJax-Element-159">2\tau</script> (twice the time for the message to arrive). Message size should be chosen accordingly.</p>
+<p>Collisions can arrive in <script type="math/tex" id="MathJax-Element-4">2\tau</script> (twice the time for the message to arrive). Message size should be chosen accordingly.</p>
 
 <p>Ethernet is efficient with large frames even with many senders. Smaller frames are worse.</p>
 
@@ -1335,5 +1363,202 @@ Same type of cabling as Fast Ethernet, additional multi-km fiber cables exist fo
 <p>See this video for a more detailed explanation on Dijkstra’s algorithm. <br>
 </p><center><iframe src="https://www.youtube.com/embed/GazC3A4OQTE" allowfullscreen="" width="560" height="315"></iframe></center><p></p>
 
-<h3 id="flooding">Flooding</h3></div></body>
+
+
+<h3 id="flooding">Flooding</h3>
+
+<blockquote>
+  <p><strong>*Flooding</strong> is a simple method to send a packet to all network nodes. Each node floods a new packet received on an incoming link to all other links. Nodes keep track of flood packets, and employ hop limits to prevent loops.</p>
+</blockquote>
+
+
+
+<h4 id="distance-vector-routing">Distance Vector Routing</h4>
+
+<blockquote>
+  <p><strong>Distance vector</strong> is a distributed routing algorithm, that splits the shortest path calculation between nodes.</p>
+</blockquote>
+
+
+
+<h5 id="the-algorithm">The Algorithm</h5>
+
+<ul>
+<li>Each node knows the distance between itself and its neighboring nodes</li>
+<li>Each node advertises distances to all known nodes</li>
+<li>Each node updates the distance from all connected nodes based on the information from other nodes</li>
+</ul>
+
+<p><img src="https://image.slidesharecdn.com/distancevectorrouting-140108002558-phpapp02/95/distance-vector-routing-2-638.jpg?cb=1395479151" alt="DV routing" title=""></p>
+
+
+
+<h5 id="the-count-to-infinity-problem">The Count-to-Infinity problem</h5>
+
+<p>Failures can cause DV to “count to infinity” while seeking a path to an unreachable node, leading of a slow propagation of increasing access times</p>
+
+<p><img src="https://qph.ec.quoracdn.net/main-qimg-461f25bd2385ac40c92f4b1a7b1e867b-c" alt="Count to infinity example" title=""></p>
+
+
+
+<h4 id="hierarchical-routing">Hierarchical routing</h4>
+
+<blockquote>
+  <p>The <strong>hierarchical routing</strong> concept describes a network <em>hierarchy</em>, whereby not all nodes are connected to all other nodes, instead they are hierarchically nested in <em>subnets</em>. Only the destination <em>subnet</em> needs to be stored and computed, thus </p>
+</blockquote>
+
+<p>Hierarchical routing reduces the work of route computation, but may result in slightly longer path.</p>
+
+<p><img src="http://s.hswstatic.com/gif/routing-algorithm10.gif" alt="Hierarchical routing" title=""></p>
+
+
+
+<h4 id="routing-for-mobile-hosts">Routing for Mobile Hosts</h4>
+
+<ul>
+<li>Mobile hosts can be reached via a home agent (proxy) <br>
+<ul><li>Fixed home agent tunnels packets to the mobile host and optimizes route based on response</li>
+<li>The outside host uses a regular routing protocol</li></ul></li>
+</ul>
+
+
+
+<h4 id="traffic-aware-routing">Traffic-Aware Routing</h4>
+
+<p>Choose routes depending on traffic, not just topology. (Avoid overloading lines)</p>
+
+
+
+<h3 id="quality-of-service-qos">Quality of Service (QoS)</h3>
+
+
+
+<h4 id="application-requirements">Application Requirements</h4>
+
+<p>Different applications have different network requirements, all should get what they need.</p>
+
+<p><img src="http://www.networkinginfoblog.com/contentsimages/Requirements%20of%20selected%20network%20applications.JPG" alt="" title=""></p>
+
+<p>Network provides different QoS to different services, for example a constant bitrate to telephony.</p>
+
+
+
+<h4 id="traffic-shaping">Traffic shaping</h4>
+
+<p>Traffic shaping regulates the average rate of data that enters the network</p>
+
+<p>Token/Leaky bucket limits both average rate (R) and short-term burst (B) of traffic.</p>
+
+<p><img src="http://ecomputernotes.com/images/Leaky-Bucket.jpg" alt="Leaky bucket" title=""></p>
+
+<p><strong>Skipped stuff</strong></p>
+
+
+
+<h4 id="packets-scheduling">Packets scheduling</h4>
+
+<p>FIFO or prioritize (Round Robin’, Fair queuing (WFQ))</p>
+
+<p><strong>Skipped stuff*</strong></p>
+
+
+
+<h3 id="internetworking">Internetworking</h3>
+
+<blockquote>
+  <p><strong>Internetworking</strong> connects multiple different networks to a single, larger networks</p>
+</blockquote>
+
+
+
+<h4 id="differences-between-networks">Differences between networks</h4>
+
+<p>Differences between networks (architecture, implemented protocols, offered services, packet sizes, etc.) make internetworking complicated</p>
+
+
+
+<h4 id="connecting-networks">Connecting networks</h4>
+
+<p>Different networks use the same network layer.</p>
+
+<p><img src="http://images.slideplayer.com/13/3607059/slides/slide_57.jpg" alt="Network layer internetworking" title=""></p>
+
+
+
+<h4 id="tunneling">Tunneling</h4>
+
+<blockquote>
+  <p><strong>Tunneling</strong> connects two network through a middle one (packets are encapsulated over the middle)</p>
+</blockquote>
+
+<p><img src="http://player.slideplayer.com/13/3607059/data/images/img50.jpg" alt="Tunneling" title=""></p>
+
+
+
+<h4 id="packet-fragmentation">Packet fragmentation</h4>
+
+<blockquote>
+  <p><strong>Packet fragmentation</strong> refers to the process of breaking up a packet into smaller packets to conform with a networks frame size requirements.</p>
+</blockquote>
+
+<p>The start offset is the place of the message that is being sent.</p>
+
+<blockquote>
+  <p><strong>Max Transmission Unit (MTU)</strong> analyzes the network to get the maximal size packets that can be transmitted over the network.</p>
+</blockquote>
+
+
+
+<h3 id="network-layer-on-the-internet">Network layer on the Internet</h3>
+
+
+
+<h4 id="ipv4">IPv4</h4>
+
+<p>IP has been shaped by the following guiding principles</p>
+
+<ul>
+<li>Make sure it works</li>
+<li>Keep it simple</li>
+<li>Make it clear</li>
+<li>Exploit modularity</li>
+<li>Expect heterogenity</li>
+<li>Avoid static options and parameters</li>
+<li>Look for good design</li>
+<li>Strict sending, tolerant receiving</li>
+<li>Scalability</li>
+<li>Performance and cost</li>
+</ul>
+
+
+
+<h4 id="ip-addresses">IP Addresses</h4>
+
+<p>IPv4 header carries the following data:</p>
+
+<p><img src="http://static.thegeekstuff.com/wp-content/uploads/2012/03/ip-header-2.png" alt="IPv4" title=""></p>
+
+<ul>
+<li>Version (v4 or v6)</li>
+<li>IHL (Header length)</li>
+<li>Differentiated services</li>
+<li>Total length (message length)</li>
+<li>ID</li>
+<li>Flags (Fragmentation flags)</li>
+<li>Fragment offset</li>
+<li>Time To Live (hop count)</li>
+<li>Protocol (UDP / TCP)</li>
+<li>Header checksum</li>
+<li>Source IP</li>
+<li>Destination IP</li>
+<li>Options / Padding</li>
+</ul>
+
+
+
+<h4 id="ipv6">IPv6</h4>
+
+
+
+<h4 id="internet-control-protocols">Internet Control Protocols</h4></div></body>
 </html>
