@@ -43,6 +43,7 @@
 <li><a href="#components-of-neumann-architecture">Components of Neumann architecture</a></li>
 <li><a href="#the-processor">The processor</a></li>
 <li><a href="#types-of-memory">Types of memory</a></li>
+<li><a href="#memory-hierarchy">Memory Hierarchy</a></li>
 <li><a href="#von-neumann-cycle">Von Neumann Cycle</a></li>
 </ul>
 </li>
@@ -410,10 +411,39 @@ Definition of the representation of the external data</p>
 </ul>
 
 <blockquote>
-  <p><strong>NAS Network Attached Storage</strong> Special servers in a network that are optimized as a file server <br>
-  <strong>SAN Storage Area Network</strong> Network structure in which servers of a computer network are connected to storage units via a separate high-performance network <br>
-  <strong>RAID systems</strong> Redundant Array of Independent Disks</p>
+  <p><strong>NAS Network Attached Storage</strong> Special servers in a network that are optimized as a file server</p>
 </blockquote>
+
+<p>&nbsp;</p>
+
+<blockquote>
+  <p><strong>SAN Storage Area Network</strong> Network structure in which servers of a computer network are connected to storage units via a separate high-performance network</p>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<blockquote>
+  <p><strong>RAID systems</strong> Redundant Array of Independent Disks</p>
+</blockquote>
+
+
+
+<h4 id="memory-hierarchy">Memory Hierarchy</h4>
+
+<p>The memory of the computer is divided into several, progressively slower and higher-capacity chunks.</p>
+
+<ul>
+<li>Registers (&lt;=1ns, 100s of Bytes)</li>
+<li>Cache: L1 (~5ns, 16KiB), L2 -&gt; SRAM (~10ns, 1MiB) and L3 -&gt;DRAM (30 ns, 16 MiB)</li>
+<li>RAM (~100ns, ~8GB) <br>
+<ul><li>Core memory</li></ul></li>
+<li>Flash memory (100 microSec, ~0.5TB)</li>
+<li>Permanent storage -&gt; Usually HDDs (~4ms, Terabytes)</li>
+<li>Archival storage (minutes, &gt;= 1PB)</li>
+</ul>
+
+<p>This is illustrated on the following picture <br>
+<img src="http://cse1.net/recaps/img/4-hierarchy.jpg" alt="Memory levels" title=""></p>
 
 
 
@@ -740,7 +770,7 @@ Definition of the representation of the external data</p>
 
 <p>in base 2 = in base 10</p>
 
-<p><script type="math/tex" id="MathJax-Element-2348">11101 = ((1 × 2^4) + (1 × 2^3) + (1 × 2^2) + (0 × 2^1) + (1 × 2^0))</script></p>
+<p><script type="math/tex" id="MathJax-Element-316">11101 = ((1 × 2^4) + (1 × 2^3) + (1 × 2^2) + (0 × 2^1) + (1 × 2^0))</script></p>
 
 
 
@@ -772,6 +802,8 @@ Definition of the representation of the external data</p>
 <li><strong>97-122</strong> small leters from the american alphabet</li>
 <li><strong>rest</strong> Symbols</li></ul></li>
 </ul>
+
+
 
 <h3 id="creation-of-utf-8-characters">Creation of UTF-8 characters</h3>
 
@@ -843,6 +875,8 @@ Definition of the representation of the external data</p>
 <li><strong>11111110</strong> means that its the first byte of a 7 byte character, because it starts with 7 *1*s and a *0*s (this is a VERY rare case)</li>
 <li><strong>10xxxxxx</strong> means that its a trailing byte in a multi byte character</li>
 </ul>
+
+
 
 <h2 id="presentation-of-data-types">Presentation of data types</h2>
 
