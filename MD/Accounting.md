@@ -8,8 +8,77 @@ Accounting
 
 [TOC]
 
-## IFRS
-### Conceptual framework
+## Basic Definitions
+
+> **IFRS**
+	* In a narrow sense it might refer to the standards published by the International Accounting Standards Board (*prefixed with IFRS*).
+	* In a broad sense it might also refer to publications prefixed with *IAS, SIC, IFRIC*.
+
+> **Standards** are principles to be applied by accountants.
+
+> **Interpretations** are explanations of a complex principle and These have the same authority as standards.
+
+> **Compliance with/Adaptations of** IFRS means, the application of Standards (IAS, IFRS) and Interpretations (SIC, IFRIC).
+
+> **Convergence (Harmonization)** to IFRS means continuously reducing the difference between GAAP and IFRS.
+
+
+## Development of IFRSs:
+
+* Creation of Exposure Drafts (created by IASB)
+* Exposure Draft is edited trough Discussion Papers which are created during Public discussions of an Exposure Draft
+* If the majority votes for passing the Draft, if its a 
+	* major issue a new Standard is developed or revised by IASB
+	* minor issue it is dealt with in the Annual Improvements by IFRSIC or IASB:
+* If necessary an Interpretation is also developed by IFRSIC.
+
+> **Exposure Drafts** are developed by the IASB, before Standards/Interpretations/Annual Improvements, as a *specific proposal* for Standards/Interpretations/Annual Improvements.
+
+&nbsp;
+> **Discussion Papers** are created to discuss a specific feedback of an Exposure Draft.
+
+
+## IFRS Foundation
+
+> **Objectives of IFRS Foundation:**
+>
+* to develop high quality and understandable international financial reporting standards, that are accepted globally.
+* to promote these standards and the adaptation of IFRS
+
+&nbsp;
+> **The IASB** (International Accounting Standards Board) is the standard setting body, that is responsible for issuing Exposure Drafts, Standards and Interpretations.
+
+&nbsp;
+> **The IFRSIC** (International Financial Reporting Standards Interpretations Committee) is a part of IASB and is responsibly for creating the Interpretations.
+
+&nbsp;
+> **The IFRSAC** (International Financial Reporting Standards Advisory Council) is a forum of organizations and individuals, interested in IFR (at least 30 person with different geographical and professional background).
+
+&nbsp;
+> **The ASAF** (Accounting Standards Advisory Forum) includes 12 global accounting standard setter + chairman.
+
+
+## Conceptual framework
+
+> **Conceptual Framework** *for Financial Reporting* (CF) is the foundation of IFRS. these are the base concepts for evaluation and development of standards and interpretations.
+
+Concepts currently contained in the CF:
+
+* Objectives of general purpose financial reporting
+* Underlying assumption inherent in a set of financial statements
+* Qualitative characteristics of useful financial statements
+* Definitions of elements in the financial statements
+* Recognition criteria to be met before recognizing an element
+* measurement bases that may be used when measuring the elements
+* concept and maintenance of capital
+
+> **IAS 1**, *Presentation of Financial Statements* is the other base pillar of IFRS.
+
+### General Purpose Financial Reporting
+
+> The **objective** of General Purpose Financial Reporting is to provide useful financial information about the company to outside observers.
+
+
 Parts:
 
 1. Objective (new)
@@ -22,7 +91,7 @@ Parts:
 	4. Measurements
 	5. Capital maintenance
 
-#### Objectives
+### Objectives
 > The **objective** of financial statements is to provide useful financial information about the company to outside observers.
 
 Users of financial information:
@@ -31,37 +100,49 @@ Users of financial information:
 * lenders
 * creditors
 
-##### Economic resources and claims against these resources
+#### Economic resources and claims against these resources
 > **Economic resources** are called *assets*, claims against those resources by the owner(s) is called *equity* and claims against those resources by creditors are called *liabilities*. Resources and claims against those resources must always be *in balance*.
 
-##### Changes in economic resources
+### Changes in economic resources
 >**Changes in the economic resources of a company** are recorded in transactions. They are reported on an *accrual* and a *cash* basis. These are reported in the *income statement* and the *statement of cash flows* respectively.
 
-#### Qualitative characteristics and Constraints
-##### Qualitative characteristics
+&nbsp;
+> **Financial performance** helps users understand the return made trough the use of an entity's economic resources.
+
+&nbsp;
+> **Accrual accounting** is achieved by recording elements (assets, liabilities, income, expenses and equity) when the definitions and recognition criteria are met.
+
+&nbsp;
+> The **cash flow** basis entails recording cash receipts, cash payments and in the periods in which they occur.
+
+### Qualitative characteristics and Constraints
+
+> **Fundamental qualitative characteristics** are those that are absolutely essential if the financial statements are to be useful. 
+
+> **Enhancing qualitative characteristics** enhance this usefulness.
+
+#### Qualitative characteristics
 * Relevant
 	* Predictive value $\rightarrow$ Can predict future outcomes
 	* Confirmatory value $\rightarrow$ Can verify past outcomes
 * Faithfully represented
-	* complete
-	* neutral
-	* free from error
-* Complete
-	* Nature of the assets
-	* Relevant numerical information
-	* Meaning of numbers
-	* Method to obtain these results
-* Neutral
-	* Free from bias
-* Free from error
-	* Description of the phenomenon
-	* Methods to obtain the information
-	* Estimates and their limitations need to be stated
-##### Applying qualitative characteristics
+	* Complete
+		* Nature of the assets
+		* Relevant numerical information
+		* Meaning of numbers
+		* Method to obtain these results
+	* Neutral
+		* Free from bias
+	* Free from error
+		* Description of the phenomenon
+		* Methods to obtain the information
+		* Estimates and their limitations need to be stated
+
+#### Applying qualitative characteristics
 * Identify economic phenomena
 * Identify the type of information that makes it the most relevant
 * Determine whether the information can be faithfully represented
-##### Enhancing qualitative characteristics
+#### Enhancing qualitative characteristics
 Information needs to be
 
 * Comparable
@@ -82,7 +163,48 @@ Information needs to be
 
 If expensive, ignore
 
-#### Underlying assumptions
+> The two **recognition criteria** are as follows:
+>
+* the flow of future economic benefits caused by this element must be probable
+* the element must have a cost/value that can be reliably measured
+
+> *If information is still relevant it can be disclosed.*
+
+## Presentation of Financial Statements (IAS 1)
+
+
+The **objective of IAS 1** is to help us present general-purpose financial statements so that comparability is achieved between: 
+
+* the entity's own financial statements in previous periods
+* other entity's financial statements
+
+The **objective of financial statements** is to be a structured representation of an entity's financial position, performance and cash flows that is useful to a wide range of users in making economic decisions and showing the result of management's stewardship of the resources entrusted to it.
+
+#### The five main statements:
+
+* the statement of financial position (SOFP)
+	* normally includes balances as at the end of the current period and end of the prior period
+	* it must reflect the balances at the beginning of the prior period if there is a retrospective change in accounting policy, restatement of items or reclassification of items
+* the statement of comprehensive income (SOCI)
+	* in **a single statement** the statement of comprehensive income (this may be called the statement of profit or loss and other comprehensive income)
+	* in **two separate statements** (one called the statement of profit or loss and the other called the statement of comprehensive income):
+* the statement of changes in equity (SOCIE)
+* the statement of cash flows (SOCF)
+* the notes to the financial statements (Notes)
+
+#### The 8 general features of financial statements:
+
+* fair presentation & compliance with IFRS
+* going concern
+* accrual basis
+* materiality and aggregation
+* offsetting
+* frequency of reporting
+* comparative information
+* consistency of presentation
+
+
+### Underlying assumptions
 ##### Going concern assumption
 > The **going concern** assumption states that the company will stay in market and not liquidate its assets in the foreseeable future (defined usually as one or two years).
 
@@ -174,7 +296,7 @@ Allowance for credit losses / doubtful debts
 Corrections -> Must be disclosed to be comparable
 Annual report
 
-Current assets/liabilities -> Short-term assets/liabilities
+Current assets/liabilities $\rightarrow$ Short-term assets/liabilities
 
 Dividends must be approved and disclosed in the statement of changes in equity or in the notes
 
