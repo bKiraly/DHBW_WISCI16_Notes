@@ -2,6 +2,9 @@
 
 Lecture notes for the WISCI16 classes at DHBW
 
+> **Disclaimer**
+> These are notes created for my personal use. They mostly cover the contents of the lectures. I take no responsibility for the correctness of anything stated in the contents, although I strive for making them as accurate as possible. If you find any factual or formal mistakes in these notes, please don't hesitate to open an issue or suggest fixes using a pull request.
+
 ### My notes are available for the following courses:
 
 * [Accounting](https://rawgit.com/bKiraly/DHBW_WISCI16_Notes/new_no/HTML/Accounting.html)
