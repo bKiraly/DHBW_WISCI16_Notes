@@ -4,6 +4,7 @@ Macro- and Microeconomics
 > **Disclaimer**
 > These are notes created for my personal use. They mostly cover the contents of the lectures. I take no responsibility for the correctness of anything stated in the contents, although I strive for making them as accurate as possible. If you find any factual or formal mistakes in these notes, please don't hesitate to contact me at [kiraly.bence.1025@gmail.com](mailto:kiraly.bence.1025@gmail.com).
 
+
 ## Table of Contents
 
 [TOC]
@@ -1019,6 +1020,14 @@ Opportunity costs
 
 [![PPF relative advantage](https://raw.githubusercontent.com/bKiraly/DHBW_WISCI16_Notes/master/IMG/Econ/PPF_Relative_advantage.png)](https://github.com/bKiraly/DHBW_WISCI16_Notes/blob/master/IMG/Econ/PPF_Relative_advantage.ggb)
 
+### 3.7 Case Study: Gains of Trade
+
+Germany benefited from international trade: The GDP grew by an estimated additional 2%. This amounts to 450€ per capita!
+
+### 3.8 Case Study: Labor Productivity in the US and the UK
+
+
+
 ## 4. Foreign exchange markets
 
 ### 4.1 Spot Market
@@ -1134,11 +1143,6 @@ Solution
 * n-1 exchange rates against the USD $\rightarrow$ cover all possible exchanges with a single intermediary
 * Additional regional traders (ex. EUR-GBP)
 * Around 160 exchange rates are represented
-
-
-### 4.4 Summary
-
-
 
 -------
 Homework:
