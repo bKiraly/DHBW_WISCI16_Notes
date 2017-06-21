@@ -919,7 +919,105 @@ The risk of deflation in the European Union is low.
 
 ## 3. International trade
 
+### 3.1 Case Study I: Adidas
 
+Adidas has a huge price advantage, due to its internationalized supply chain.
+80% of their sales come from Asia
+Subcontractors
+
+High-quality products and highly automated products still produced in Europe
+
+Labor intensive products are imported from low-wage countries
+
+Spending of Adidas
+
+| Name		| Share	|
+|---------------|-------|
+| Profit	| 10%	|
+| R&D		| 10%	|
+| Marketing	| 10%	|
+| Sales		| 10%	|
+| Q/A		| 10%	|
+| Administration| 10%	|
+| Misc		| 10%	|
+| Logistics	| 10%	|
+| Production	| 20%	|
+
+The experts in Germany produce most of the *value* in the product. The profits also flow top Germany.
+
+### 3.2 Advantages of International trade
+
+#### Case-Study: North Korea
+
+* Very little trade
+	* Raw-materials
+	* High-tech products
+* Self-sufficient country
+	* Try to produce everything on their own
+* Advantages of trade
+	* Export products and services if the country has an absolute- or comperative advantage
+		* Country is better in producing one product
+		* The country imports products that it is relatively worse at making, while exporting the products it is relatively better at making
+	* Import goods which are more expensive to produce
+		* Use resources to produce stuff
+	* Consumption is higher with trade than without
+	* Earn the money with exports and spend it on imports
+
+### 3.3 Opportunity Cost
+
+You trade for things that are cheaper to trade than to produce factoring in the opportunity costs.
+
+Generally lower opportunity costs = export
+
+### 3.4 Production Possibilities Frontier
+
+* All combinations of good 1 and 2 country can produce without trade with limited resources
+	* Land
+	* Raw-materials
+	* Labor
+
+Production possibilities frontier
+
+[![PPF pic](https://upload.wikimedia.org/wikipedia/commons/6/67/Production_Possibilities_Frontier_Curve.svg)](https://en.wikipedia.org/wiki/Production%E2%80%93possibility_frontier)
+
+The production is on the production possibility frontier, without trade, the *consumption* must also do so (eg.: North Korea)
+
+#### Should a Country fully specialize?
+
+In this model yes, it produces a higher PPF than producing yourself.
+
+In reality specialization is better, but full specialization is not efficient because of
+
+* Different resources
+* Different specialization of workers
+
+### 3.6 Comparative Advantage
+
+Even if one state has an absolute advantage in all goods, it is still better to import sometimes
+
+Even here, it is worth it to trade and fully specialize.
+
+$\therefore$ Trade is always worth it
+
+* Trade is a positive-sum game
+* The lack of trade is therefore a negative-sum game
+* Therefore policies that restrict trade are bound to have a negative outcome
+
+Example
+: 
+| Country	| Cheese	| Wine	|
+|---------------|---------------|-------|
+| Switzerland	| 1h/kg		| 4h/kg	|
+| Australia	| 2h/kg		| 5h/kg	|
+Both countries have 500h of workforce
+
+Opportunity costs
+| Country	| Cheese	| Wine	|
+|---------------|---------------|-------|
+| Switzerland	| 1/4		| 4	|
+| Australia	| 2/5		| 5/2	|
+
+[![PPF relative advantage](https://raw.githubusercontent.com/bKiraly/DHBW_WISCI16_Notes/master/IMG/Econ/PPF_Relative_advantage.png)](https://github.com/bKiraly/DHBW_WISCI16_Notes/blob/master/IMG/Econ/PPF_Relative_advantage.ggb)
 
 ## 4. Foreign exchange markets
 
@@ -1037,7 +1135,10 @@ Solution
 * Additional regional traders (ex. EUR-GBP)
 * Around 160 exchange rates are represented
 
+
 ### 4.4 Summary
+
+
 
 -------
 Homework:
@@ -1046,4 +1147,3 @@ Do profitable trade with the other currencies
 Prepare the questions: 1-3 (only questions about ECB), 5-8
 Solve the following problems in Ch. 26: 1-9
 Inflation rate in Syria
-
