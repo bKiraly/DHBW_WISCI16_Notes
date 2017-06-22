@@ -40,7 +40,7 @@ Developed in the 19th century by Georg Cantor
 ### Set Operations
 
 If $x$ is one of the objects inside a set $A$, we call it an *element* of $A$. We denote $x \in A$.
-If a set $\Phi$ contains no elements, we call it an *empty set*. We denote $\Phi = \{\}$
+If a set $\Phi$ or $\emptyset$ contains no elements, we call it an *empty set*. We denote $\Phi = \{\}$
 
 Given two sets $A$ and $B$, we say:
 
@@ -50,7 +50,7 @@ A = B \iff A \subseteq B \land B \subseteq A\\
 A \subset B \iff A \subseteq B \land B \not = A\\
 A \cup B = \{x: x \in A \lor x \in B\}\\
 A \cap B = \{x: x \in A \land x \in B\}\\
-A \backslash B = \{x: x \in A \land x \not \in B\}\\
+A \backslash B = \{x: x \in A \land x \not \in B\}\text{ alternative notation: } A - B\\
 \overline{A} = U\backslash A
 $$
 
@@ -120,6 +120,86 @@ x \in \overline{A \cap B}\\
 Q.E.D.
 $$
 
+### Proof of induction
+
+Example:
+
+Let's prove that $0 + 1 + 2 + 3 + \dots + n = {n(n+1) \over 2}$ or:
+
+$$\sum_{1}^{n}(k) = {n(n+1) \over 2}$$
+
+#### Step 1: Show the assumption holds for an example
+
+Let $n$ be $0$.
+
+Then
+
+$$ 0 = {0(0+1) \over 2}$$
+
+This is a true statement, therefore the assumption holds for $n = 0$
+
+#### Step 2: Assume that the assumption is correct for any integer n
+
+Let $n_1$ be arbitrary, and assume the statement holds, so:
+
+$$\sum_{1}^{n_1}(k) = {n_1(n_1+1) \over 2}$$
+
+#### Step 3: Show that the assumption therefore holds for another integer n+1
+
+Now we have to prove, that form the previous assumption follows that it holds for $n_2 = n_1+1$:
+
+$$
+\sum_{1}^{n_1}(k) = {n_1(n_1+1) \over 2} \Rightarrow \sum_{1}^{n_2}(k) = {n_2(n_2+1) \over 2}\\
+n_2 = n_1+1 \Rightarrow \sum_{1}^{n_2}(k) = \sum_{1}^{n_1}(k)+n_2\\
+\Rightarrow \sum_{1}^{n_2}(k) = {n_1(n_1+1) \over 2}+n_1+1 = {n_1(n_1+1) + 2(n_1 + 1) \over 2}\\
+= {(n_1 + 1)(n_1 + 2) \over 2} = {n_2(n_2+1) \over 2}\\
+\Rightarrow \sum_{1}^{n_2}(k) = {n_2(n_2+1) \over 2}\\
+Q.E.D
+$$
+
+The proposition is proven, because it holds for $0$ and any integer greater than that (as we can just repeatedly apply the previous formula to add one to the number and the proof would still hold). In general a proposition proven by induction holds for all integers that are greater than the element we have chosen in step 1.
+
+*Fun times.*
+
+### The Cartesian product
+
+> The **Cartesian product** or *product set* of two sets $A$ and $B$ is a set of the form
+> $$
+\{(a, b): a \in A; b \in B\}
+$$
+
+### Russel's paradox
+
+$$
+\text{let } R = \{S: S \not \in S\} \text{be a set of all sets that do not contain themselves}\\
+\text{Then } R \in R \iff R \not \in R
+$$
+
+This is a [logical paradox](https://en.wikipedia.org/wiki/Russell%27s_paradox).
+
+A real-life interpretation of Russel's paradox is the [barbers paradox](https://en.wikipedia.org/wiki/Barber_paradox). The proposition is the following
+
+> A barber who shaves everyone who does not shave themselves, shave himself?
+
+### The Unit Circle
+
+$$
+A = B = \Bbb{R}\\
+S \subseteq A \times B\\
+S = \{(x,y): x^2+y^2 = 1: x \in \Bbb{R}; x \in \Bbb{R}\}
+$$
+
+### Generalization of the Cartesian Product in n-dimensions
+
+Given sets $M_1; M_2; \dots ; M_n$
+Cartesian Product of all is represented as $M_1 \times M_2 \times \dots \times M_n$
+
 ## Relations
+
+> A binary **relation** is a subset of a product set. Alternatively:
+$$
+R \subseteq A \times B
+$$
+
 ## Special Relations
 ## Basic Logic
