@@ -83,7 +83,7 @@ Additional information: Any books with discrete mathematics</p>
 
 <dl>
 <dt>Example</dt>
-<dd><script type="math/tex; mode=display" id="MathJax-Element-152">S = \{a, b, c\} = \{c, b, a\}\\
+<dd><script type="math/tex; mode=display" id="MathJax-Element-725">S = \{a, b, c\} = \{c, b, a\}\\
 nS = \{a, a, b, c\} \text{is not a set}
 </script></dd>
 </dl>
@@ -98,37 +98,37 @@ nS = \{a, a, b, c\} \text{is not a set}
 
 <h3 id="set-operations">Set Operations</h3>
 
-<p>If <script type="math/tex" id="MathJax-Element-153">x</script> is one of the objects inside a set <script type="math/tex" id="MathJax-Element-154">A</script>, we call it an <em>element</em> of <script type="math/tex" id="MathJax-Element-155">A</script>. We denote <script type="math/tex" id="MathJax-Element-156">x \in A</script>. <br>
-If a set <script type="math/tex" id="MathJax-Element-157">\Phi</script> contains no elements, we call it an <em>empty set</em>. We denote <script type="math/tex" id="MathJax-Element-158">\Phi = \{\}</script></p>
+<p>If <script type="math/tex" id="MathJax-Element-726">x</script> is one of the objects inside a set <script type="math/tex" id="MathJax-Element-727">A</script>, we call it an <em>element</em> of <script type="math/tex" id="MathJax-Element-728">A</script>. We denote <script type="math/tex" id="MathJax-Element-729">x \in A</script>. <br>
+If a set <script type="math/tex" id="MathJax-Element-730">\Phi</script> or <script type="math/tex" id="MathJax-Element-731">\emptyset</script> contains no elements, we call it an <em>empty set</em>. We denote <script type="math/tex" id="MathJax-Element-732">\Phi = \{\}</script></p>
 
-<p>Given two sets <script type="math/tex" id="MathJax-Element-159">A</script> and <script type="math/tex" id="MathJax-Element-160">B</script>, we say:</p>
+<p>Given two sets <script type="math/tex" id="MathJax-Element-733">A</script> and <script type="math/tex" id="MathJax-Element-734">B</script>, we say:</p>
 
 
 
-<p><script type="math/tex; mode=display" id="MathJax-Element-161">
+<p><script type="math/tex; mode=display" id="MathJax-Element-779">
 A \subseteq B \iff a \in A \Rightarrow a \in B\\
 A = B \iff A \subseteq B \land B \subseteq A\\
 A \subset B \iff A \subseteq B \land B \not = A\\
 A \cup B = \{x: x \in A \lor x \in B\}\\
 A \cap B = \{x: x \in A \land x \in B\}\\
-A \backslash B = \{x: x \in A \land x \not \in B\}\\
+A \backslash B = \{x: x \in A \land x \not \in B\}\text{ alternative notation: } A - B\\
 \overline{A} = U\backslash A
 </script></p>
 
-<p><script type="math/tex" id="MathJax-Element-162">\subseteq</script> read <em>is a subset of</em> <br>
-<script type="math/tex" id="MathJax-Element-163">\subset</script> read <em>is exclusive subset of</em> <br>
-<script type="math/tex" id="MathJax-Element-164">\cup</script> read <em>union</em></p>
-
-
+<p><script type="math/tex" id="MathJax-Element-780">\subseteq</script> read <em>is a subset of</em> <br>
+<script type="math/tex" id="MathJax-Element-781">\subset</script> read <em>is exclusive subset of</em> <br>
+<script type="math/tex" id="MathJax-Element-782">\cup</script> read <em>union</em></p>
 
 <h4 id="illustration-using-venn-diagrams">Illustration Using Venn-diagrams</h4>
 
 <p><img src="https://raw.githubusercontent.com/bKiraly/DHBW_WISCI16_Notes/master/IMG/Logic%20and%20Algebra/set-operations-illustrated-with-venn-diagrams.png" alt="Venn-Diagrams" title=""> <br>
 Source: Wikimedia Foundation</p>
 
+
+
 <h4 id="special-cases-with-the-empty-set">Special Cases with the Empty Set</h4>
 
-<p><script type="math/tex; mode=display" id="MathJax-Element-165">
+<p><script type="math/tex; mode=display" id="MathJax-Element-34">
 \text{for } \Phi = \{\}\\
 \Phi \subseteq \Phi \text{ is the only subset of } \Phi\\
 \Phi \in A \forall A \\
@@ -139,16 +139,16 @@ Source: Wikimedia Foundation</p>
 
 <h4 id="set-cardinality-and-powersets">Set Cardinality and Powersets</h4>
 
-<p>The number of elements in a set <script type="math/tex" id="MathJax-Element-166">A</script> is the <em>cardinality</em> of the set. We denote <script type="math/tex" id="MathJax-Element-167">\|A\| = x</script></p>
+<p>The number of elements in a set <script type="math/tex" id="MathJax-Element-35">A</script> is the <em>cardinality</em> of the set. We denote <script type="math/tex" id="MathJax-Element-36">\|A\| = x</script></p>
 
-<p>The set of all subsets of set <script type="math/tex" id="MathJax-Element-168">A</script> is called the <em>powerset</em> of <script type="math/tex" id="MathJax-Element-169">A</script>.  We denote <script type="math/tex" id="MathJax-Element-170">\mathcal{P}(A) = \{B \subseteq A\}</script>.</p>
+<p>The set of all subsets of set <script type="math/tex" id="MathJax-Element-37">A</script> is called the <em>powerset</em> of <script type="math/tex" id="MathJax-Element-38">A</script>.  We denote <script type="math/tex" id="MathJax-Element-39">\mathcal{P}(A) = \{B \subseteq A\}</script>.</p>
 
-<p><script type="math/tex" id="MathJax-Element-171">\|\mathcal{P}(A)\| = 2^{\|A\|}</script> because of the following</p>
+<p><script type="math/tex" id="MathJax-Element-40">\|\mathcal{P}(A)\| = 2^{\|A\|}</script> because of the following</p>
 
 <blockquote>
-  <p>let <script type="math/tex" id="MathJax-Element-172">A</script> be an arbitrary finite set with <script type="math/tex" id="MathJax-Element-173">\|A\| = n (n \in \Bbb{N})</script> with elements <script type="math/tex" id="MathJax-Element-174">\{a_1; a_2; a_3; ...; a_n\}</script></p>
+  <p>let <script type="math/tex" id="MathJax-Element-41">A</script> be an arbitrary finite set with <script type="math/tex" id="MathJax-Element-42">\|A\| = n (n \in \Bbb{N})</script> with elements <script type="math/tex" id="MathJax-Element-43">\{a_1; a_2; a_3; ...; a_n\}</script></p>
   
-  <p><script type="math/tex; mode=display" id="MathJax-Element-175">
+  <p><script type="math/tex; mode=display" id="MathJax-Element-44">
 A' = A \backslash \{a_n\}\\
 B = \{\{a_n\}; \{a_1; a_n\}; \{a_2; a_n\}; ...; \{a_1; a_2; ... ; a_n\}\} = \{b \cup \{a_n\} \forall b \in \mathcal{P} (A')\}\\
 \|B\| = \|\mathcal{P}(A')\|\\
@@ -165,13 +165,13 @@ Q.E.D
 
 <h4 id="laws-of-de-morgan">Laws of de Morgan</h4>
 
-<p>Given two sets <script type="math/tex" id="MathJax-Element-176">A</script> and <script type="math/tex" id="MathJax-Element-177">B</script></p>
+<p>Given two sets <script type="math/tex" id="MathJax-Element-57">A</script> and <script type="math/tex" id="MathJax-Element-58">B</script></p>
 
 <p></p><ul> <br>
-<li><p><script type="math/tex" id="MathJax-Element-178">\overline{A \cup B} = \overline{A} \cap \overline{B}</script></p></li></ul><p></p>
+<li><p><script type="math/tex" id="MathJax-Element-59">\overline{A \cup B} = \overline{A} \cap \overline{B}</script></p></li></ul><p></p>
 
 <blockquote>
-  <p><script type="math/tex; mode=display" id="MathJax-Element-179">
+  <p><script type="math/tex; mode=display" id="MathJax-Element-60">
 x \in \overline{A \cup B}\\\iff x \not \in (A \cup B)\\
 \iff x \not \in A \land x \not \in B\\
 \iff x \in \overline{A} \land x \in \overline{B}\\
@@ -180,11 +180,11 @@ x \in \overline{A \cup B}\\\iff x \not \in (A \cup B)\\
 Q.E.D.
 </script></p>
 </blockquote>
-<li><p><script type="math/tex" id="MathJax-Element-180">\overline{A \cap B} = \overline{A} \cup \overline{B}</script> <br>
+<li><p><script type="math/tex" id="MathJax-Element-61">\overline{A \cap B} = \overline{A} \cup \overline{B}</script> <br>
 
 </p><blockquote>
   <br>
-  <script type="math/tex; mode=display" id="MathJax-Element-181">
+  <script type="math/tex; mode=display" id="MathJax-Element-62">
 x \in \overline{A \cap B}\\
 \iff x \not \in A \lor x \not \in B\\
 \iff x \in \overline{A} \lor x \in \overline{B}\\
@@ -195,10 +195,100 @@ Q.E.D.
   
   
 
+<h3 id="proof-of-induction">Proof of induction</h3>
+
+<p>Example:</p>
+
+<p>Let’s prove that <script type="math/tex" id="MathJax-Element-109">0 + 1 + 2 + 3 + \dots + n = {n(n+1) \over 2}</script> or:</p>
+
+<p><script type="math/tex; mode=display" id="MathJax-Element-82">\sum_{1}^{n}(k) = {n(n+1) \over 2}</script></p>
+
+<h4 id="step-1-show-the-assumption-holds-for-an-example">Step 1: Show the assumption holds for an example</h4>
+
+<p>Let <script type="math/tex" id="MathJax-Element-148">n</script> be <script type="math/tex" id="MathJax-Element-149">0</script>.</p>
+
+<p>Then</p>
+
+
+
+<p><script type="math/tex; mode=display" id="MathJax-Element-158"> 0 = {0(0+1) \over 2}</script></p>
+
+<p>This is a true statement, therefore the assumption holds for <script type="math/tex" id="MathJax-Element-159">n = 0</script></p>
+
+<h4 id="step-2-assume-that-the-assumption-is-correct-for-any-integer-n">Step 2: Assume that the assumption is correct for any integer n</h4>
+
+<p>Let <script type="math/tex" id="MathJax-Element-168">n_1</script> be arbitrary, and assume the statement holds, so:</p>
+
+<p><script type="math/tex; mode=display" id="MathJax-Element-164">\sum_{1}^{n_1}(k) = {n_1(n_1+1) \over 2}</script></p>
+
+<h4 id="step-3-show-that-the-assumption-therefore-holds-for-another-integer-n1">Step 3: Show that the assumption therefore holds for another integer n+1</h4>
+
+<p>Now we have to prove, that form the previous assumption follows that it holds for <script type="math/tex" id="MathJax-Element-174">n_2 = n_1+1</script>:</p>
+
+<p><script type="math/tex; mode=display" id="MathJax-Element-346">
+\sum_{1}^{n_1}(k) = {n_1(n_1+1) \over 2} \Rightarrow \sum_{1}^{n_2}(k) = {n_2(n_2+1) \over 2}\\
+n_2 = n_1+1 \Rightarrow \sum_{1}^{n_2}(k) = \sum_{1}^{n_1}(k)+n_2\\
+\Rightarrow \sum_{1}^{n_2}(k) = {n_1(n_1+1) \over 2}+n_1+1 = {n_1(n_1+1) + 2(n_1 + 1) \over 2}\\
+= {(n_1 + 1)(n_1 + 2) \over 2} = {n_2(n_2+1) \over 2}\\
+\Rightarrow \sum_{1}^{n_2}(k) = {n_2(n_2+1) \over 2}\\
+Q.E.D
+</script></p>
+
+<p>The proposition is proven, because it holds for <script type="math/tex" id="MathJax-Element-347">0</script> and any integer greater than that (as we can just repeatedly apply the previous formula to add one to the number and the proof would still hold). In general a proposition proven by induction holds for all integers that are greater than the element we have chosen in step 1.</p>
+
+<p><em>Fun times.</em></p>
+
+
+
+<h3 id="the-cartesian-product">The Cartesian product</h3>
+
+<blockquote>
+  <p>The <strong>Cartesian product</strong> or <em>product set</em> of two sets <script type="math/tex" id="MathJax-Element-519">A</script> and <script type="math/tex" id="MathJax-Element-520">B</script> is a set of the form <br>
+  <script type="math/tex; mode=display" id="MathJax-Element-521">
+\{(a, b): a \in A; b \in B\}
+</script></p>
+</blockquote>
+
+<h3 id="russels-paradox">Russel’s paradox</h3>
+
+<p><script type="math/tex; mode=display" id="MathJax-Element-523">
+\text{let } R = \{S: S \not \in S\} \text{be a set of all sets that do not contain themselves}\\
+\text{Then } R \in R \iff R \not \in R
+</script></p>
+
+<p>This is a <a href="https://en.wikipedia.org/wiki/Russell%27s_paradox">logical paradox</a>.</p>
+
+<p>A real-life interpretation of Russel’s paradox is the <a href="https://en.wikipedia.org/wiki/Barber_paradox">barbers paradox</a>. The proposition is the following</p>
+
+<blockquote>
+  <p>A barber who shaves everyone who does not shave themselves, shave himself?</p>
+</blockquote>
+
+
+
+<h3 id="the-unit-circle">The Unit Circle</h3>
+
+<p><script type="math/tex; mode=display" id="MathJax-Element-577">
+A = B = \Bbb{R}\\
+S \subseteq A \times B\\
+S = \{(x,y): x^2+y^2 = 1: x \in \Bbb{R}; x \in \Bbb{R}\}
+</script></p>
+
+
+
+<h3 id="generalization-of-the-cartesian-product-in-n-dimensions">Generalization of the Cartesian Product in n-dimensions</h3>
+
+<p>Given sets <script type="math/tex" id="MathJax-Element-598">M_1; M_2; \dots ; M_n</script> <br>
+Cartesian Product of all is represented as <script type="math/tex" id="MathJax-Element-599">M_1 \times M_2 \times \dots \times M_n</script></p>
 
 <h2 id="relations">Relations</h2>
 
-
+<blockquote>
+  <p>A binary <strong>relation</strong> is a subset of a product set. Alternatively: <br>
+  <script type="math/tex; mode=display" id="MathJax-Element-789">
+R \subseteq A \times B
+</script></p>
+</blockquote>
 
 <h2 id="special-relations">Special Relations</h2>
 
