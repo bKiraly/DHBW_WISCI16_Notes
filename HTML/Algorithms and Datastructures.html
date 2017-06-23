@@ -36,5 +36,128 @@
 <ul>
 <li>Lecturer: Claudia Kausch</li>
 <li>Company: MID</li>
-</ul></div></body>
+</ul>
+
+<p>Introduction to Quantities</p>
+
+<h2 id="introduction">Introduction</h2>
+
+<h3 id="case-study-google">Case Study: Google</h3>
+
+<p>Within one second Google can find a million results from billions of pages.</p>
+
+<h3 id="algorithm">Algorithm</h3>
+
+<blockquote>
+  <p>An <strong>algorithm</strong> is a defined set of actions for solving a problem.</p>
+</blockquote>
+
+<p>In general algorithms include:</p>
+
+<ul>
+<li>Input data (parameter)</li>
+<li>Output data (result)</li>
+<li>Working steps and intermediate results</li>
+</ul>
+
+<h3 id="pseudocode">Pseudocode</h3>
+
+<ol>
+<li>// codes a comment</li>
+<li>:= assignment</li>
+<li>[i] field of an array</li>
+<li>Data-structures have properties (attributes). These can be called by functions</li>
+</ol>
+
+<h3 id="analyzing-algorithms">Analyzing algorithms</h3>
+
+<p>A good algorithm is:</p>
+
+<ul>
+<li>fast (low number of steps)</li>
+<li>Random access machine</li>
+<li>Not hardware-specific</li>
+</ul>
+
+<h4 id="random-access-machine">Random access machine</h4>
+
+<ul>
+<li>Executes each instruction in order</li>
+<li>Each execution costs <script type="math/tex" id="MathJax-Element-599">c_i</script></li>
+<li>The process of evaluating run-time complexity <br>
+<ul><li>Examining the structure of the algorithm</li>
+<li>Making some simplifying assumptions</li></ul></li>
+</ul>
+
+<h4 id="problems-of-analyzing-algorithms">Problems of analyzing algorithms</h4>
+
+<ul>
+<li>The number of elements depends on the series itself</li>
+<li>With the same number of elements the same algorithm needs a different number of steps (eg. a sorted list gets sorted quickly)</li>
+</ul>
+
+<h4 id="assumptions">Assumptions</h4>
+
+<h5 id="best-case">Best-case</h5>
+
+<p>Describes the algorithms behavior under optimal conditions</p>
+
+<h5 id="worst-case">Worst-case</h5>
+
+<p>Describes the algorithms behavior under the worst conditions</p>
+
+
+
+<h5 id="average-case">Average case</h5>
+
+<p>Describes the average runtime for any input. It is difficult.</p>
+
+<dl>
+<dt>Example</dt>
+<dd>Insertion sort: <br>
+Best-case: linear relationship <br>
+Worst-case: n-square relationship <br>
+Average case: n-square relationship</dd>
+</dl>
+
+
+
+<h4 id="theta-notation"><script type="math/tex" id="MathJax-Element-1210">\Theta</script> notation</h4>
+
+<ul>
+<li>We ignore constants</li>
+<li>Due to the point that <script type="math/tex" id="MathJax-Element-1211">n^2</script> grows faster than <script type="math/tex" id="MathJax-Element-1212">n</script>, we ignore all linear constants</li>
+<li>We are then left with the fastest-growing characteristic of the running time of the algorithm</li>
+<li>We denote: <script type="math/tex" id="MathJax-Element-1213">\Theta</script> (Big-O notation)</li>
+<li>The faster the most significant function grows, the higher the runtime of the algorithm for large <script type="math/tex" id="MathJax-Element-1214">n</script></li>
+</ul>
+
+<dl>
+<dt>Example</dt>
+<dd>Insertion sort has an average complexity of <script type="math/tex" id="MathJax-Element-1215">\Theta(n^2)</script> <br>
+In contrast Bogosort has an average complexity of <script type="math/tex" id="MathJax-Element-1216">\Theta(n!)</script> <br>
+<script type="math/tex" id="MathJax-Element-1217">n!</script> grows faster than <script type="math/tex" id="MathJax-Element-1218">n^2</script>, therefore Insertion sort is faster than Bogosort for large lists</dd>
+</dl>
+
+<h4 id="analyzing-algorithms-based-on-design-methodology-or-paradigm">Analyzing Algorithms Based on Design Methodology or Paradigm</h4>
+
+<p>There are a few structured algorithms and paradigms <br>
+One common paradigm is <strong>divide and conquer</strong>:</p>
+
+<ul>
+<li>Divide up the problem into subproblems</li>
+<li>“Conquer” said subproblems</li>
+<li>Combine the subporblems</li>
+</ul>
+
+<dl>
+<dt>Example</dt>
+<dd>Mergesort <br>
+Mergesort divides the list into two sub-list <br>
+Then it calls itself on the sub-lists to sort it, until the sub-list has size one <br>
+Then it combines the two sorted lists into a sorted list and returns that <br>
+Assumptions: <script type="math/tex" id="MathJax-Element-1176">n = k^2</script> <br>
+Thus, the number of recursions is <script type="math/tex" id="MathJax-Element-1177">\log_2(n)</script> <br>
+Thus the whole algorithm has a time complexity of <script type="math/tex" id="MathJax-Element-1178">\Theta(n*\log(n))</script></dd>
+</dl></div></body>
 </html>
