@@ -62,6 +62,18 @@ Accounting
 
 > **Conceptual Framework** *for Financial Reporting* (CF) is the foundation of IFRS. these are the base concepts for evaluation and development of standards and interpretations.
 
+Parts:
+
+1. Objective (new)
+2. The reporting entity (empty)
+3. Qualitative characteristics of useful financial information (new)
+4. Old framework
+	1. Assumptions
+	2. Elements
+	3. Recognition
+	4. Measurements
+	5. Capital maintenance
+
 Concepts currently contained in the CF:
 
 * Objectives of general purpose financial reporting
@@ -79,17 +91,7 @@ Concepts currently contained in the CF:
 > The **objective** of General Purpose Financial Reporting is to provide useful financial information about the company to outside observers.
 
 
-Parts:
 
-1. Objective (new)
-2. The reporting entity (empty)
-3. Qualitative characteristics of useful financial information (new)
-4. Old framework
-	1. Assumptions
-	2. Elements
-	3. Recognition
-	4. Measurements
-	5. Capital maintenance
 
 ### Objectives
 > The **objective** of financial statements is to provide useful financial information about the company to outside observers.
@@ -156,7 +158,9 @@ Information needs to be
 	* Information needs to be available in time for users to be able to use it
 * Understandable
 	* Clear and understandable
+
 ##### The cost constraints of useful information
+
 * Market values
 * Accepted formulas
 * Detailed information
@@ -192,36 +196,77 @@ The **objective of financial statements** is to be a structured representation o
 * the statement of cash flows (SOCF)
 * the notes to the financial statements (Notes)
 
-#### The 8 general features of financial statements:
+#### Accounting chain
+* Transaction
+* Source document
+* Journal
+* Ledger
+* Trial Balance
+* Detailed internal financial statements
+* External financial statements
 
+#### The 8 general features of financial statements:
 * fair presentation & compliance with IFRS
+	* Comply with international guidelines, fairly present your numbers.
+	* In very extreme circumstances management may decide to deviate from IFRS if it wouldn't represent the financial data faithfully
+	* Needs:
+		* compliance with IFRS
+		* 1 fundamental QC: 
+			* faithful representation
+		* 3 enhancing QCs:
+			* relevance
+			* comparability
+			* understandability 			
 * going concern
+	* The going concern assumption states that the company will stay in market and not liquidate its assets in the foreseeable future (defined usually as one or two years).
 * accrual basis
+	* Everything is reported when it occurs.
 * materiality and aggregation
 * offsetting
+	* subtracting an expense from an income or subtracting a liability from an asset, and showing the net amount
 * frequency of reporting
+	* Entities are required to produce financial statements at least annually. 
+	* Entities are allowed, for practical reasons, to report on a 52-week period rather than a 365-day period.
+	* for deviation a reason must be given and it has to be disclosed
 * comparative information
+	* Comparative information comes in three forms:
+		* Minimum comparative information
+			* We must show prior year information (for numerical and narrative information)
+			* Prior year info for narrative info is only needed if relevant
+			* Comparisons may be needed in reverse...
+		* Voluntary additional comparative information
+			* Extra comparative years can be given if we wish (e.g. 2 prior periods (PP) instead of just the minimum 1 PP)
+			* We can give extra comparatives for
+				* just 1 statement if we wish, but
+				* the notes supporting this statement must include all PPs
+			* All PPs must comply with IFRS
+		* Compulsory additional comparative information
+			* used when there are changes in accounting policy and reclassification of items
+			* An extra comparative year must be given if a ‘material retrospective adjustment’ is made
+			* This extra comparative year refers to the opening balances of the prior period (i.e. the closing balances of the period prior to the prior period)
+			* This extra comparative year:
+				* only applies to the SOFP
+				* but does not apply to the notes
 * consistency of presentation
+	* Consistency refers to:
+	* presentation/classification of items being the same
+	* from one period to the next
+	* it is essential for comparability
+	* thus, if presentation or classification must change, it is accounted for as a reclassification
 
 
-### Underlying assumptions
-##### Going concern assumption
-> The **going concern** assumption states that the company will stay in market and not liquidate its assets in the foreseeable future (defined usually as one or two years).
+###Financial Statements in General
 
-### Elements of financial information
-> **Assets** are resources controlled by the entity as a result of a past event from which future economic benefit is expected.
+Anual report includes the 5 main statements and other documents voluntarily, due to legal requirements, due to cmmunity concerns.
 
-&nbsp;
+####Financial statements must have:
+* the name of the entity
+* the fact that the financial statements apply to an individual entity or a group of entities;
+* relevant dates: date of the end of the reporting period for the statement of financial position or the period covered for other statements (e.g. statement of cash flows);
+* presentation currency (e.g. pounds, dollars, rands); and the
+* level of rounding used (i.e. figures in a column that are rounded to the nearest thousand, such as C100 000 shown as C100, should be headed up ‘C’000’)
 
-> **Liabilities** are present obligations of the entity as a result of a past event the settlement of which is expected to result in an outflow of resources.
-
-&nbsp;
-
-> **Net income** is the net increase in economic benefits during the accounting period during the accounting period in the form of increase in assets or decrease in liabilities resulting in an increase in equity other than the contributions from equity participants. Positive net income is called **income**, negative net income is called **expense**.
-
-&nbsp;
-
->**Equity** is residual assets after removing liabilities.
+#### Elements of financial information
 
 * Recognition
 	* Record probable events, you may also report possible events
@@ -234,7 +279,7 @@ The **objective of financial statements** is to be a structured representation o
 * Disclosure
 	* Detail about an event
 
-### Measurements
+#### Measurements
 
 * Historical cost method
 	* Original buying price
@@ -255,75 +300,96 @@ Requirement: Directors approval
 Group financial statements -> grouped by year and detailed breakdowns
 Different year layouts
 
+> **Assets** are resources controlled by the entity as a result of a past event from which future economic benefit is expected.
 
-### Standards
+&nbsp;
 
-> The **standards** in IFRS are called IAS1. It describes how to prepare financial statements. If there is a clash between the *conceptual framework* and the standards, the standard takes priority.
+> **Liabilities** are present obligations of the entity as a result of a past event the settlement of which is expected to result in an outflow of resources.
 
-#### Financial statement
-* Statement of Financial Position (Balance sheet)
-* Statement of Comprehensive Income (Income statement)
-* Statement of Changes in Equity (Owners Equity report)
-* Statement of Cash Flows (Cash flow report)
+&nbsp;
 
-#### Fair presentation
-Comply with international guidelines, fairly present your numbers.
+>**Equity** is residual assets after removing liabilities.
 
-#### Departure from IFRS
-A reason needs to be given
+&nbsp;
 
-#### Going Concern
-The operation is required for one year. Entity is going concern if the management does not plan to liquidate assets and/or cease trading.
+> **Net income** is the net increase in economic benefits during the accounting period during the accounting period in the form of increase in assets or decrease in liabilities resulting in an increase in equity other than the contributions from equity participants. Positive net income is called **income**, negative net income is called **expense**.
 
-#### Accrual basis
-Everything is reported when it occurs.
 
-#### Accounting chain
-* Transaction
-* Source document
-* Journal
-* Ledger
-* Trial Balance
-* Detailed internal financial statements
-* External financial statements
 
-#### Credit losses
+## Accounting policies, estimates and errors (IAS 8)
 
-Allowance for credit losses / doubtful debts
+### Accounting policies
 
-#### Compulsory additional information
+> **Accounting policies** are the specific principles, bases, conventions, rules and practices applied by an entity in preparing and presenting financial statements.
 
-Corrections -> Must be disclosed to be comparable
-Annual report
+#### Choosing and applying accounting policies:
+* Find a relevant IFRS and apply the policies contained therein
+* If the IFRS contains guidance that is integral, any requirements contained in the guidance must also be applied
+* If there is no relevant IFRS, then there aren't any compulsory requirements
+	* You have to develop your own policy, that is relevant and reliable
+		* Faithful representation
+		* Neutral
+		* Complete
+	* Development guidelines:
+		* Similar issues in IFRS
+		* CF
+		* Other standard setters
+		* Industry accepted practices
+		* Accounting literature		
 
-Current assets/liabilities $\rightarrow$ Short-term assets/liabilities
+#### Accounting policies in the IFRSs:
+* Some IFRSs give you no choice in AP (e.g. inventories must be measured at the lower of cost and net realizable value)
+* Some IFRSs give you a choice of AP (e,g. PPE may be measured using the cost model or the revaluation model)
 
-Dividends must be approved and disclosed in the statement of changes in equity or in the notes
 
-## Accounting policies and correcting errors
+#### Accounting policies must include the:
+* measurement basis (or bases) used
+* other accounting policies used that are considered relevant
 
-### Accounting standards
-Standards for reporting accounting information.
+#### A change in accounting policy is either:
+* compulsory: if required by an IFRS
+* voluntary: if it provides information that is
+	* reliable and
+	* more relevant.
 
-The accounting standard needs to be consistent, changes need to have a good reason.
+*Changes must be disclosed*
+	
+> **Transitional provisions** are the instructions that are sometimes included in a new IFRS on how to account for the change from the old IFRS to the new IFRS
+*If Transitional provisions are given, they take precedence*
 
-All accounting policies need to be relevant and reliable.
+&nbsp;
 
-Accounting policy needs to be disclosed.
+> The general guidance in IAS 8 requires that a change in accounting policy be applied retrospectively, unless it is impracticable to do so.
 
-Changes in accounting policies
+&nbsp;
+
+> It is **impracticable** for an entity to apply a requirement in IFRSs if the entity ‘cannot apply it after making every reasonable effort to do so’.
 
 * Retro $\rightarrow$ Change the accounting standard for the past two years as well
 	* Previous years financial records are *fixed*. They cannot retroactively be changed
 	* Adjustments need to be added to previous years in the current report
 * Pro $\rightarrow$ Change is effective only *after the decision to change.* Previous years are unaffected.
 
-### Changing Estimates
 
-Changes in estimates are always pro. 
+#### Disclosure of a change in Accounting Policy includes:
 
-Gross amount - Amount *before* adjustment
-Carrying amount - Amount carried over to the financial statements.
+* Description of what policy changed
+* Explanation of *why* (unless it was a compulsory change)
+* Effect on each line item
+* Extra comparative yr in the SOFP
+
+### Estimates
+
+> A change in **estimate** is an adjustment of the carrying amount of an asset or a liability, or the amount of the periodic consumption of an asset, that results from the assessment of the present status of, and expected future benefits and obligations associated with, assets and liabilities.
+*Changes in estimates are always pro.* 
+
+&nbsp;
+
+> **Gross amount** - Amount *before* adjustment
+
+&nbsp;
+
+> **Carrying amount** - Amount carried over to the financial statements.
 
 Two methods:
 
@@ -333,15 +399,56 @@ Two methods:
 * Cumulative catch-up
 	* Assume the old estimate is wrong, and correct it in the current year based on that
 
+
+#### Disclosure of a change in accounting estimate includes:
+
+* Brief description of ‘what’
+* Effect on each line item
+
 ### Correction of Errors
+
+
+#### There are essentially three categories of errors:
+
+* Current period errors
+	* errors, that happen and are discovered in the current year
+	* no disclosure needed
+* Prior period errors that are immaterial
+* Prior period errors that are material
+
+> Prior period errors are errors that happened before the current year but which are only discovered in the current year. 
+Such errors include the effects of: 
+* mathematical mistakes
+* mistakes in applying accounting policies
+* oversights 
+* misinterpretations of facts
+* fraud.
+
+*Since IFRSs only ever apply to material items, immaterial prior period errors are not corrected in terms of this standard. Meaning they have to be corrected, but not disclosed.*
+
+> **Retrospective restatement** is defined as correcting the recognition, measurement and disclosure of elements in the financial statements as if a prior period error had never occurred.
 
 Errors are all retro. (restate figures)
 Restated figures are on the new report.
 
-## Foreign transactions
+#### Disclosure of a correction of error includes:
+
+* Brief descript of ‘what’
+* Effect on each line item
+* Two years of comparatives in the SOFP
+
+## Foreign Currency Transaction (IAS 21, IFRS 7, IFRS 9)
 
 > **Foreign currency** is a currency other than the functional currency of the entity.
 > **Functional currency** is defined as the currency of the primary economic activities of the entity.
+
+&nbsp;
+
+> A **foreign currency transaction** is a transaction that is denominated or requires settlement in a foreign currency.
+
+&nbsp;
+
+> An exchange difference is the difference resulting from translating a given number of units of one currency into another currency at different exchange rates.
 
 #### Monetary items and non-monetary items
 
@@ -354,7 +461,7 @@ Restated figures are on the new report.
 
 &nbsp;
 
->**Exchange rate** is the ratio of exchange between the two currencies
+> **Exchange rate** is the ratio of exchange between the two currencies
 
 #### Dates
 
@@ -370,6 +477,25 @@ Different dates need to be determined, because the *exchange rate* fluctuates.
 			* The risk transfers at arrival
 		* DDP (Delivered, Duty Payed)
 			* The risk transfers when all duties are cleared and the item is picked up
+
+			
+> **Settlement date** is the date on which payment changes hands
+
+&nbsp;
+
+> **Reporting date** is the financial year-end of the local entity (or any other date upon which the financial information is to be reported).
+
+&nbsp;
+
+> Spot exchange rate is the exchange rate for immediate delivery.
+
+&nbsp;
+
+> **Monetary items** must be translated at the end of each reporting period, at the closing rate.
+
+&nbsp;
+
+> **Closing rate** is defined as the spot exchange rate at reporting date.
 
 Depending on the current state of delivery the books need to be adjusted for the exchange rate
 
@@ -410,15 +536,22 @@ These are not affected by exchange rate (i.e. they are accounted for at the *pri
 
 All transactions need to be calculated in the functional currency, and then converted to any presentation currency in the reports.
 
-### Statement of Cash Flows
+## Statement of cash flows (IAS 7)
 
 > **Cash and cash equivalents** are currency assets, or assets quickly convertible to currency.
+
+&nbsp;
+
+> **Cash flows** are inflows and outflows of cash and cash equivalents
 
 #### Types of Activities in the Statement of Cash Flows
 
 * Operating activities
+	* are principle revenue producing activities and other activities.
 * Investment activities
+	* are the acquisition and disposal of long term assets and other investments not included in cash equivalents.
 * Financing activities
+	* result in changes in size, composition of the contributed equity and borrowings of the entity.
 
 #### The Methods of Stating Cash Flows
 
@@ -619,7 +752,7 @@ Periodic system
 
 > In a **suspense account** we use the *normal amount* as the basis, and adjust based on that.
 
-Underproduction leads to underabsorption and needs to be written off as an expense. These are used in conjunction with the *budget* of the company to determine the actual production. This can be applied for manufacturing costs among others.
+Underproduction leads to under absorption and needs to be written off as an expense. These are used in conjunction with the *budget* of the company to determine the actual production. This can be applied for manufacturing costs among others.
 
 #### Inventory balances and stock theft
 
