@@ -1,0 +1,1564 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Communication Systems</title>
+<link rel="stylesheet" href="https://stackedit.io/res-min/themes/base.css" />
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body><div class="container"><h1 id="communication-systems">Communication Systems</h1>
+
+<blockquote>
+  <p><strong>Disclaimer</strong> <br>
+  These are notes created for my personal use. They mostly cover the contents of the lectures. I take no responsibility for the correctness of anything stated in the contents, although I strive for making them as accurate as possible. If you find any factual or formal mistakes in these notes, please don’t hesitate to contact me at <a href="mailto:kiraly.bence.1025@gmail.com">kiraly.bence.1025@gmail.com</a>.</p>
+</blockquote>
+
+
+
+<h2 id="table-of-contents">Table of Contents</h2>
+
+<p><div class="toc">
+<ul>
+<li><a href="#communication-systems">Communication Systems</a><ul>
+<li><a href="#table-of-contents">Table of Contents</a></li>
+<li><a href="#literature">Literature</a></li>
+<li><a href="#introduction">Introduction</a><ul>
+<li><a href="#definition-of-computer-networks">Definition of Computer Networks</a><ul>
+<li><a href="#uses-of-computer-networks">Uses of Computer networks</a></li>
+</ul>
+</li>
+<li><a href="#network-hardware">Network hardware</a></li>
+<li><a href="#network-software">Network Software</a><ul>
+<li><a href="#protocol-layers">Protocol layers</a></li>
+<li><a href="#design-issues-for-the-layers">Design Issues for the Layers</a></li>
+<li><a href="#connection-oriented-vs-connectionless">Connection-oriented vs Connectionless</a></li>
+<li><a href="#service-primitive">Service primitive</a></li>
+</ul>
+</li>
+<li><a href="#reference-models">Reference Models</a><ul>
+<li><a href="#osi-model">OSI Model</a></li>
+<li><a href="#tcp-ip-model">TCP-IP model</a></li>
+<li><a href="#model-used-in-this-course">Model used in this course</a></li>
+<li><a href="#critique-of-osi-and-tcp-ip">Critique of OSI and TCP-IP</a></li>
+</ul>
+</li>
+<li><a href="#examples-of-networks">Examples of Networks</a><ul>
+<li><a href="#the-internet">The Internet</a></li>
+<li><a href="#3g-mobile-networks">3G Mobile Networks</a></li>
+<li><a href="#wireless-lan">Wireless LAN</a></li>
+<li><a href="#network-standardization">Network Standardization</a></li>
+<li><a href="#metric-units">Metric units</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#the-physical-layer">The Physical Layer</a><ul>
+<li><a href="#theoretical-basis-for-data-communications">Theoretical Basis for Data Communications</a></li>
+<li><a href="#guided-transmission-media">Guided Transmission Media</a><ul>
+<li><a href="#reality-check">Reality check</a></li>
+<li><a href="#wires">Wires</a></li>
+<li><a href="#fiber-cables">Fiber cables</a></li>
+</ul>
+</li>
+<li><a href="#wireless-transmission">Wireless Transmission</a><ul>
+<li><a href="#electromagnetic-spectrum">Electromagnetic spectrum</a></li>
+<li><a href="#radio-transmission">Radio transmission</a></li>
+<li><a href="#microwave-transmission">Microwave transmission</a></li>
+<li><a href="#light-transmission">Light transmission</a></li>
+<li><a href="#wireless-vs-wired">Wireless vs Wired</a></li>
+</ul>
+</li>
+<li><a href="#communication-satellites">Communication Satellites</a><ul>
+<li><a href="#types-of-satellites">Types of Satellites</a></li>
+</ul>
+</li>
+<li><a href="#public-switched-telephone-network-pstn">Public Switched Telephone Network (PSTN)</a><ul>
+<li><a href="#structure-of-the-telephone-systemű">Structure of the telephone systemű</a></li>
+<li><a href="#politics-of-telephones">Politics of telephones</a></li>
+<li><a href="#local-loop-adsl-ftth">Local loop (ADSL, FttH)</a></li>
+<li><a href="#switching">Switching</a></li>
+</ul>
+</li>
+<li><a href="#mobile-telephone-systems">Mobile Telephone Systems</a><ul>
+<li><a href="#1g-analog-voice">1G, analog voice</a></li>
+<li><a href="#2g-analog">2G, analog</a></li>
+<li><a href="#3g-digital-voice-and-data">3G, digital voice and data</a></li>
+<li><a href="#4g-digital-data-including-voice">4G, digital data including voice</a></li>
+<li><a href="#cellular-mobile-systems">Cellular mobile systems</a></li>
+</ul>
+</li>
+<li><a href="#cable-television">Cable television</a><ul>
+<li><a href="#internet-over-cable">Internet over Cable</a></li>
+<li><a href="#cable-modem">Cable modem</a></li>
+<li><a href="#cable-vs-dsl">Cable vs DSL</a></li>
+</ul>
+</li>
+<li><a href="#digital-modulation-and-multiplexing">Digital Modulation and Multiplexing</a></li>
+</ul>
+</li>
+<li><a href="#the-data-link-layer">The Data Link Layer</a><ul>
+<li><ul>
+<li><a href="#frames">Frames</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#framing-methods">Framing methods</a></li>
+</ul>
+</li>
+<li><a href="#error-detection-and-correction">Error- Detection and Correction</a><ul>
+<li><a href="#flow-control">Flow control</a></li>
+<li><a href="#error-detection-vs-error-correction">Error Detection vs Error correction</a></li>
+</ul>
+</li>
+<li><a href="#link-layer-environment">Link Layer Environment</a><ul>
+<li><a href="#utopian-simplex-protocol">Utopian simplex protocol</a></li>
+<li><a href="#sliding-window-concept">Sliding window concept</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#medium-access-control-sublayer">Medium Access Control Sublayer</a><ul>
+<li><a href="#channel-allocation-problem">Channel Allocation Problem</a><ul>
+<li><a href="#multiple-access-protocols">Multiple Access Protocols</a></li>
+</ul>
+</li>
+<li><a href="#ethernet">Ethernet</a><ul>
+<li><a href="#classic-ethernet">Classic Ethernet</a></li>
+<li><a href="#switched-fast-ethernet">Switched / Fast Ethernet</a></li>
+<li><a href="#gigabit-10-gigabit-ethernet">Gigabit / 10 Gigabit Ethernet</a></li>
+</ul>
+</li>
+<li><a href="#data-link-layer-switching">Data Link Layer Switching</a><ul>
+<li><a href="#bridges">Bridges</a></li>
+<li><a href="#learning-bridges">Learning Bridges</a></li>
+<li><a href="#spanning-tree-problem">Spanning tree problem</a></li>
+<li><a href="#network-interconnecting-devices">Network interconnecting devices</a></li>
+<li><a href="#virtual-lan-valn">Virtual LAN (VALN)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#network-layer">Network Layer</a><ul>
+<li><a href="#design-and-issues">Design and issues</a><ul>
+<li><a href="#store-and-forward-packet-switching">Store and forward packet switching</a></li>
+<li><a href="#virtual-circuit-tags">Virtual circuit tags</a></li>
+</ul>
+</li>
+<li><a href="#routing-algorithms">Routing algorithms</a><ul>
+<li><a href="#the-optimality-principle">The optimality principle</a></li>
+<li><a href="#shortest-path-algorithms">Shortest path algorithms</a></li>
+</ul>
+</li>
+<li><a href="#flooding">Flooding</a><ul>
+<li><a href="#distance-vector-routing">Distance Vector Routing</a></li>
+<li><a href="#hierarchical-routing">Hierarchical routing</a></li>
+<li><a href="#routing-for-mobile-hosts">Routing for Mobile Hosts</a></li>
+<li><a href="#traffic-aware-routing">Traffic-Aware Routing</a></li>
+</ul>
+</li>
+<li><a href="#quality-of-service-qos">Quality of Service (QoS)</a><ul>
+<li><a href="#application-requirements">Application Requirements</a></li>
+<li><a href="#traffic-shaping">Traffic shaping</a></li>
+<li><a href="#packets-scheduling">Packets scheduling</a></li>
+</ul>
+</li>
+<li><a href="#internetworking">Internetworking</a><ul>
+<li><a href="#differences-between-networks">Differences between networks</a></li>
+<li><a href="#connecting-networks">Connecting networks</a></li>
+<li><a href="#tunneling">Tunneling</a></li>
+<li><a href="#packet-fragmentation">Packet fragmentation</a></li>
+</ul>
+</li>
+<li><a href="#network-layer-on-the-internet">Network layer on the Internet</a><ul>
+<li><a href="#ipv4">IPv4</a></li>
+<li><a href="#ip-addresses">IP Addresses</a></li>
+<li><a href="#ipv6">IPv6</a></li>
+<li><a href="#internet-control-protocols">Internet Control Protocols</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</p>
+
+
+
+<h2 id="literature">Literature</h2>
+
+<p>Tennenbaum - Computer networks (up until network security chapter)</p>
+
+<p><a href="http://slideplayer.com/slide/3607059/">This slideshow on the internet</a> among others apparently</p>
+
+
+
+<h2 id="introduction">Introduction</h2>
+
+
+
+<h3 id="definition-of-computer-networks">Definition of Computer Networks</h3>
+
+<blockquote>
+  <p>A <strong>computer network</strong> is a collection of autonomous computers. It is used to share resources across different computers.</p>
+</blockquote>
+
+
+
+<h4 id="uses-of-computer-networks">Uses of Computer networks</h4>
+
+<ul>
+<li>Business Applications <br>
+<ul><li>Generally use the Client-Server model</li></ul></li>
+<li>Home Applications <br>
+<ul><li>Consumption and users</li>
+<li>Some P2P services</li></ul></li>
+<li>Mobile Users <br>
+<ul><li>Wireless networks</li></ul></li>
+</ul>
+
+<p>Problems: Social issues (lack of connectivity)</p>
+
+<ul>
+<li>Net neutrality</li>
+<li>Content ownership</li>
+<li>Anonymity</li>
+<li>Privacy</li>
+<li>Illegal activity</li>
+</ul>
+
+
+
+<h3 id="network-hardware">Network hardware</h3>
+
+<p>Network classification by scale:</p>
+
+<ul>
+<li>Personal AN (Area Network) <br>
+<ul><li>Devices connected to a single device</li></ul></li>
+<li>Local AN <br>
+<ul><li>A single building</li>
+<li>802</li></ul></li>
+<li>Metropolitan AN <br>
+<ul><li>Run by a cable provider</li></ul></li>
+<li>Wide AN <br>
+<ul><li>Run across a country</li></ul></li>
+<li>The internet</li>
+</ul>
+
+
+
+<h3 id="network-software">Network Software</h3>
+
+
+
+<h4 id="protocol-layers">Protocol layers</h4>
+
+<blockquote>
+  <p>The <strong>protocol layering</strong> method is the main method for structuring the network. Each protocol communicates with its peer using the protocol below.  The lower-level layers are accessed via an <em>interface</em>. The lowest layer is the physical medium.</p>
+</blockquote>
+
+
+
+<h5 id="header-and-trailer-information">Header and Trailer Information</h5>
+
+<blockquote>
+  <p><strong>Header information</strong> is extra information added to the beginning of the message by each layer before passing it on to the next. This header information is treated as part of the data by the next layer. <strong>Trailer information</strong> behaves in the same way as headers, but is appended to the end of the message. It is generally used for checking the correctness of the message</p>
+</blockquote>
+
+
+
+<h5 id="splitting-messages">Splitting messages</h5>
+
+<blockquote>
+  <p>If a message is too large to be transmitted in the lower layer, the current layer may <strong>split the message</strong>.</p>
+</blockquote>
+
+
+
+<h4 id="design-issues-for-the-layers">Design Issues for the Layers</h4>
+
+<ul>
+<li>Reliability despite failures</li>
+<li>Network growth and evolution</li>
+<li>Allocation of resources</li>
+<li>Security</li>
+</ul>
+
+
+
+<h4 id="connection-oriented-vs-connectionless">Connection-oriented vs Connectionless</h4>
+
+<blockquote>
+  <p>A <strong>connection oriented</strong> protocol must be set up for the ongoing use. A <strong>connectionless</strong> protocol does not have a setup.</p>
+</blockquote>
+
+
+
+<h4 id="service-primitive">Service primitive</h4>
+
+<blockquote>
+  <p><strong>Service primitives</strong> are basic instructions implemented in the layer provided by the layer below.</p>
+</blockquote>
+
+
+
+<h3 id="reference-models">Reference Models</h3>
+
+
+
+<h4 id="osi-model">OSI Model</h4>
+
+<blockquote>
+  <p>The <strong>OSI Model</strong> is an international standard for connecting two hosts using seven layers.</p>
+</blockquote>
+
+<ul>
+<li>Application <br>
+<ul><li>Functions to the user</li></ul></li>
+<li>Presentation <br>
+<ul><li>Converts different representations</li></ul></li>
+<li>Session <br>
+<ul><li>Manages sessions</li></ul></li>
+<li>Transport <br>
+<ul><li>Transports the data to its specified destination</li></ul></li>
+<li>Network <br>
+<ul><li>Send packets over multiple links (finds next link)</li></ul></li>
+<li>Data link <br>
+<ul><li>Combines to data into frames (gives data a beginning and an end)</li></ul></li>
+<li>Physical <br>
+<ul><li>Electric voltages</li></ul></li>
+</ul>
+
+
+
+<h4 id="tcp-ip-model">TCP-IP model</h4>
+
+<ul>
+<li>Application <br>
+<ul><li>ex. HTML</li></ul></li>
+<li>Transport <br>
+<ul><li>TCP or UDP</li></ul></li>
+<li>Internet <br>
+<ul><li>IP, ICMP (Internet Control Messaging Protocol)</li></ul></li>
+<li>Link <br>
+<ul><li>DSL</li>
+<li>802</li></ul></li>
+</ul>
+
+
+
+<h4 id="model-used-in-this-course">Model used in this course</h4>
+
+<ul>
+<li>Application</li>
+<li>Transport</li>
+<li>Network</li>
+<li>Link</li>
+<li>Physical</li>
+</ul>
+
+
+
+<h4 id="critique-of-osi-and-tcp-ip">Critique of OSI and TCP-IP</h4>
+
+<p>OSI</p>
+
+<ul>
+<li>Influential, clear concepts</li>
+<li>Models, protocols and adoption are hindered by complexity</li>
+</ul>
+
+<p>TCP/IP</p>
+
+<ul>
+<li>Widely adopted</li>
+<li>Weak model derived after the fact</li>
+</ul>
+
+
+
+<h3 id="examples-of-networks">Examples of Networks</h3>
+
+
+
+<h4 id="the-internet">The Internet</h4>
+
+<ul>
+<li>ARPANET (US military network, robust against nuclear attacks)</li>
+<li>NSFNET (High-speed backbones between central locations)</li>
+<li>Modern Internet <br>
+<ul><li>ISPs maintain networks</li>
+<li>Route traffic between each other using IXPs</li>
+<li>Inside networks routers switch packets</li>
+<li>Between networks business agreements regulate data exchange</li>
+<li>Customers connect at the edge</li>
+<li>Data centers concentrate many servers</li>
+<li>Most traffic is content from data centers</li>
+<li>Architecture continues to evolve</li></ul></li>
+</ul>
+
+
+
+<h4 id="3g-mobile-networks">3G Mobile Networks</h4>
+
+<ul>
+<li>Divided into cells</li>
+<li>Each cell is covered by a base-station</li>
+<li>The phone is connected to the base-station</li>
+<li>Upon passing from one cell to another, you get handed over to the next base station</li>
+<li>RNC connects the base stations</li>
+</ul>
+
+
+
+<h4 id="wireless-lan">Wireless LAN</h4>
+
+<ul>
+<li>Defined by the 802.11 standard</li>
+<li>Access points serve the client</li>
+<li>Multiple paths</li>
+<li>Interference is a problem (Carrier Sense Multiple Access designs are used)</li>
+</ul>
+
+
+
+<h4 id="network-standardization">Network Standardization</h4>
+
+<p>Standards define what is needed for <em>interoperability</em></p>
+
+<table>
+<thead>
+<tr>
+  <th>Body</th>
+  <th>Area</th>
+  <th>Examples</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>ITU</td>
+  <td>Telecom</td>
+  <td>ADSL, H.264</td>
+</tr>
+<tr>
+  <td>IEEE</td>
+  <td>Communication</td>
+  <td>802 (Ethernet)</td>
+</tr>
+<tr>
+  <td>IETF</td>
+  <td>Internet</td>
+  <td>RFC 2616, HTTP/1.1</td>
+</tr>
+<tr>
+  <td>W3C</td>
+  <td>Web</td>
+  <td>HTML5, CSS</td>
+</tr>
+</tbody></table>
+
+
+
+
+<h4 id="metric-units">Metric units</h4>
+
+<ul>
+<li>Regular metric prefixes</li>
+<li>Powers of 10 for rates, powers of 2 for storage</li>
+<li>B for bytes, b for bits</li>
+</ul>
+
+
+
+<h2 id="the-physical-layer">The Physical Layer</h2>
+
+
+
+<h3 id="theoretical-basis-for-data-communications">Theoretical Basis for Data Communications</h3>
+
+
+
+<h3 id="guided-transmission-media">Guided Transmission Media</h3>
+
+
+
+<h4 id="reality-check">Reality check</h4>
+
+<p>Storage media</p>
+
+<ul>
+<li>Send data on tape/disk</li>
+<li>Pingtime is high</li>
+</ul>
+
+
+
+<h4 id="wires">Wires</h4>
+
+
+
+<h5 id="twisted-pairs">Twisted pairs</h5>
+
+<ul>
+<li>Twisted to cancel interference</li>
+<li>Most common</li>
+<li>Shielded</li>
+<li>Links <br>
+<ul><li>Full-duplex <br>
+<ul><li>Transmission both ways</li></ul></li>
+<li>Half-duplex <br>
+<ul><li>Both directions, but not at the same time</li></ul></li>
+<li>Simplex <br>
+<ul><li>Only one direction</li></ul></li></ul></li>
+</ul>
+
+
+
+<h5 id="coaxial-cable">Coaxial cable</h5>
+
+<ul>
+<li>Also common</li>
+<li>Two conductors are outside and inside</li>
+<li>Higher bandwidths</li>
+</ul>
+
+
+
+<h5 id="power-lines">Power lines</h5>
+
+<ul>
+<li>Encode the signal in the power</li>
+<li>Prone to interference</li>
+</ul>
+
+
+
+<h4 id="fiber-cables">Fiber cables</h4>
+
+<ul>
+<li>Cover longer distances</li>
+<li>Higher transmission speeds</li>
+</ul>
+
+
+
+<h3 id="wireless-transmission">Wireless Transmission</h3>
+
+
+
+<h4 id="electromagnetic-spectrum">Electromagnetic spectrum</h4>
+
+<p>There are a limited number of frequencies that can be used to communicate simultaneously without interfering with each other.</p>
+
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/EM_Spectrum_Properties_edit.svg" alt="Electromagnetic frequencies" title=""></p>
+
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/United_States_Frequency_Allocations_Chart_2011_-_The_Radio_Spectrum.pdf/page1-1200px-United_States_Frequency_Allocations_Chart_2011_-_The_Radio_Spectrum.pdf.jpg" alt="Frequency usage" title=""></p>
+
+
+
+<h5 id="unallocated-frequency-bands-ism">Unallocated frequency bands (ISM)</h5>
+
+<p>2.4 GHz, 5 GHz</p>
+
+<p><img src="http://www.peterpaulengelen.com/wp-content/uploads/2013/11/Wireless-radio.jpg" alt="ISM bands" title=""></p>
+
+
+
+<h4 id="radio-transmission">Radio transmission</h4>
+
+<p>Radio signals penetrate buildings, but over long distances the curvature of the earth gets in the way <br>
+Solution: HF radio waves can be bounced off the ionosphere to reach over-the-horizon listeners</p>
+
+
+
+<h4 id="microwave-transmission">Microwave transmission</h4>
+
+<p>Different paths, that might interfere with each other.</p>
+
+
+
+<h4 id="light-transmission">Light transmission</h4>
+
+<p>Non-fiber light transmissions <br>
+Lasers-Photodetectors can be used for high-bandwidth transfer <br>
+Disturbances in the air cause problems with the transmission</p>
+
+
+
+<h4 id="wireless-vs-wired">Wireless vs Wired</h4>
+
+<ul>
+<li>Wireless <br>
+<ul><li>Easy and inexpensive</li>
+<li>Naturally supports mobility</li>
+<li>Naturally supports broadcast</li>
+<li>Transmissions interfere and must be managed</li>
+<li>Signal strengths and data rates degrade depending on distance</li></ul></li>
+<li>Wired <br>
+<ul><li>Easy to engineer with fixed data rate point-to-point links</li>
+<li>Can be relatively expensive</li>
+<li>Doesn’t support mobility or broadcast</li></ul></li>
+</ul>
+
+
+
+<h3 id="communication-satellites">Communication Satellites</h3>
+
+
+
+<h4 id="types-of-satellites">Types of Satellites</h4>
+
+
+
+<h5 id="geostationary-satellites-geo">Geostationary satellites (GEO)</h5>
+
+<p>Latency: 270ms <br>
+Satellites for global coverage: 3 <br>
+Altitude: 35 000km</p>
+
+<p>VSAT computers</p>
+
+
+
+<h5 id="low-earth-orbit-satellites-leo">Low-Earth Orbit satellites (LEO)</h5>
+
+<p>Latency: 1-7ms <br>
+Satellites needed for global coverage: 50 <br>
+Altitude: &lt;5 000km</p>
+
+<p>Iridium service</p>
+
+
+
+<h5 id="satellite-vs-fiber">Satellite vs Fiber</h5>
+
+<ul>
+<li>Satellite <br>
+<ul><li>Can be set-up anywhere</li>
+<li>Covers large regions</li>
+<li>Bandwidth is limited</li></ul></li>
+<li>Fiber <br>
+<ul><li>Large bandwidth</li>
+<li>Needs installation</li></ul></li>
+</ul>
+
+
+
+<h3 id="public-switched-telephone-network-pstn">Public Switched Telephone Network (PSTN)</h3>
+
+
+
+<h4 id="structure-of-the-telephone-systemű">Structure of the telephone systemű</h4>
+
+<p>Hierarchical system carrying voice calls:</p>
+
+<ul>
+<li>Local loops, mostly analog twisted pair</li>
+<li>Trunks, digital fiber optics</li>
+<li>Switching offices that move calls around trunks</li>
+</ul>
+
+
+
+<h4 id="politics-of-telephones">Politics of telephones</h4>
+
+
+
+<h4 id="local-loop-adsl-ftth">Local loop (ADSL, FttH)</h4>
+
+
+
+<h5 id="modems">Modems</h5>
+
+<p>Rates: &lt;56kb/s <br>
+Uses analog voice to transmit data</p>
+
+
+
+<h5 id="dynamic-subscriber-line">Dynamic Subscriber Line</h5>
+
+<p>Uses frequencies that are unused by the voice communication <br>
+A(Asymmetric) DSL: 12Mb/s <br>
+VDSL: 100 Mb/s</p>
+
+
+
+<h5 id="fiber-to-the-home">Fiber to the Home</h5>
+
+<p>Fiberoptic cables <br>
+High bandwidth <br>
+Expensive <br>
+Passive, no amplifiers, one wavelength among many houses</p>
+
+
+
+<h4 id="switching">Switching</h4>
+
+<p>PSTN uses <em>circuit switching</em>, the internet uses <em>packet switching</em>.</p>
+
+<blockquote>
+  <p><strong>Circuit switching</strong> describes the concept of directly connecting two hosts on a single circuit</p>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<blockquote>
+  <p><strong>Packet switching</strong> describes the concept of the data being broken up into different <em>packets</em>, that take different routes to the destination</p>
+</blockquote>
+
+<ul>
+<li>Circuit switching requires an initial setup and connection time, as the host looks for an outgoing trunk</li>
+<li>Packet switching treats data independently, suffering queuing delay on the way</li>
+</ul>
+
+
+
+<h3 id="mobile-telephone-systems">Mobile Telephone Systems</h3>
+
+
+
+<h4 id="1g-analog-voice">1G, analog voice</h4>
+
+<ul>
+<li>AMPS</li>
+</ul>
+
+
+
+<h4 id="2g-analog">2G, analog</h4>
+
+<ul>
+<li>GSM (Global System for Mobile communications)</li>
+</ul>
+
+
+
+<h4 id="3g-digital-voice-and-data">3G, digital voice and data</h4>
+
+<ul>
+<li>UTMS</li>
+</ul>
+
+
+
+<h4 id="4g-digital-data-including-voice">4G, digital data including voice</h4>
+
+<ul>
+<li>LTE</li>
+</ul>
+
+
+
+<h4 id="cellular-mobile-systems">Cellular mobile systems</h4>
+
+<ul>
+<li>All based on spatially separated cells</li>
+<li>Devices switch between these cells using <em>handoffs</em></li>
+<li>Frequencies are reused across non-adjacent cells</li>
+</ul>
+
+<p><strong>The prof skipped a whole bunch of stuff here, see the slides for this one ¯\_(ツ)_/¯</strong></p>
+
+
+
+<h3 id="cable-television">Cable television</h3>
+
+
+
+<h4 id="internet-over-cable">Internet over Cable</h4>
+
+<ul>
+<li>Many customers share the same line</li>
+<li>Higher bandwidth</li>
+<li>The frequencies are mostly used for downstream data (Asymmetric data rates)</li>
+</ul>
+
+
+
+<h4 id="cable-modem">Cable modem</h4>
+
+<ul>
+<li>Physical layer DOCSYS standard (?)</li>
+</ul>
+
+
+
+<h4 id="cable-vs-dsl">Cable vs DSL</h4>
+
+<ul>
+<li>Cable <br>
+<ul><li>Uses coaxial cable to customers (Bandwidth)</li>
+<li>Data is broadcast to all customers</li>
+<li>Bandwidth is shared between all customers</li></ul></li>
+<li>DSL <br>
+<ul><li>Bandwidth dedicated to each customer</li>
+<li>Point-to-Point link does not broadcast data</li>
+<li>Twisted pair to customers <script type="math/tex" id="MathJax-Element-1">\rightarrow</script> lower bandwidth</li></ul></li>
+</ul>
+
+
+
+<h3 id="digital-modulation-and-multiplexing">Digital Modulation and Multiplexing</h3>
+
+<p><strong>I’m pretty sure we skipped this one as well</strong></p>
+
+
+
+<h2 id="the-data-link-layer">The Data Link Layer</h2>
+
+<blockquote>
+  <p>The <strong>data link layer</strong> delivers <em>frames</em> of information across a single link. It handles transmission errors, and connection across a link.</p>
+</blockquote>
+
+
+
+<h4 id="frames">Frames</h4>
+
+<blockquote>
+  <p><strong>Frames</strong> are chunks of data of specific length with a header and a footer.</p>
+</blockquote>
+
+
+
+<h4 id="services">Services</h4>
+
+<ul>
+<li>Unacknowledged connectionless service <br>
+<ul><li>Frame is sent without any connection and error recovery</li>
+<li>Ethernet</li></ul></li>
+<li>Acknowledgement connectionless service <br>
+<ul><li>Message is acknowledged</li>
+<li>802.11</li></ul></li>
+<li>Acknowledged connection oriented service</li>
+</ul>
+
+
+
+<h4 id="framing-methods">Framing methods</h4>
+
+
+
+<h5 id="byte-count">Byte count</h5>
+
+<p>Start of the frame has the number of bytes in the frame <br>
+Simple, but difficult to resynchronize after an error</p>
+
+
+
+<h5 id="flag-bytes-and-byte-stuffing">Flag bytes and byte stuffing</h5>
+
+<p>Special <em>flag</em> byte delimits the frames, the same byte pattern in message must be <em>escaped</em>. <br>
+Longer, but easily resynchronized after error.</p>
+
+
+
+<h5 id="flag-bits-and-bit-stuffing">Flag bits and bit stuffing</h5>
+
+<p>Stuffing is done on a bit level</p>
+
+<ul>
+<li>Frame flag has six consecutive ones</li>
+<li>On transmit after 5 ones of data, a zero is added</li>
+<li>On receive the zero is discarded</li>
+</ul>
+
+
+
+<h5 id="physical-layer-violations">Physical layer violations</h5>
+
+<p>Changes in the specification on a physical level (different voltage, etc.)</p>
+
+
+
+<h3 id="error-detection-and-correction">Error- Detection and Correction</h3>
+
+<p>Repairs frames received with an error</p>
+
+<ul>
+<li>Requires errors to be received</li>
+<li>Typically retransmit the unacknowledged messages</li>
+<li>Timer protects against lost acknowledgements</li>
+</ul>
+
+<p>Detecting errors and retransmission is paramount</p>
+
+
+
+<h4 id="flow-control">Flow control</h4>
+
+<blockquote>
+  <p><strong>Flow control</strong> prevents fast sender from out-pacing the slow receiver.</p>
+</blockquote>
+
+<ul>
+<li>Receiver gives feedback on the data it can accept</li>
+<li>Rare in Link layer, as Network Interface Cards (NICs) run at “wire speed” <br>
+<ul><li>Receiver can take data as fast as it can be sent</li></ul></li>
+</ul>
+
+<p>Flow control is mostly used on the Transport layers</p>
+
+
+
+<h4 id="error-detection-vs-error-correction">Error Detection vs Error correction</h4>
+
+<blockquote>
+  <p><strong>Error codes</strong> add structured redundancy to data sot that errors can be detected and corrected</p>
+</blockquote>
+
+<ul>
+<li>Error correction codes (we skip those as well ¯\_(ツ)_/¯) <br>
+<ul><li>Hamming codes</li>
+<li>Binary convolutional codes</li>
+<li>Reed-Solomon and Low-Density Parity Check codes <br>
+<ul><li>Mathematically complex</li></ul></li></ul></li>
+<li>Error detection codes <br>
+<ul><li>Parity <br>
+<ul><li>XOR all bits, add result to the end</li>
+<li>Detection checks if last bit is XOR of all previous ones</li></ul></li>
+<li>Checksums <br>
+<ul><li>Treats message as N-bit words, and adds N check bits that are modulo <script type="math/tex" id="MathJax-Element-2">2^n</script> szn if the words</li></ul></li>
+<li>Cyclic Redundancy Codes (CRC) <br>
+<ul><li>Adds bits to the transmitted frame</li>
+<li>The data is treated as a binary polynomial, and divided by another, resulting in a remainder</li>
+<li>Detection does the CRC again, and compares with the transmitted CRC code</li>
+<li>Used by ethernet</li>
+<li>Can detect all double-bit errors</li>
+<li>Not susceptible to symmetric errors</li></ul></li></ul></li>
+</ul>
+
+<p><strong>We skipped some stuff here too…</strong></p>
+
+
+
+<h3 id="link-layer-environment">Link Layer Environment</h3>
+
+<p>Driver and NIC implement the Data-Link layer</p>
+
+<p><strong>Skipped some stuff again…</strong></p>
+
+
+
+<h4 id="utopian-simplex-protocol">Utopian simplex protocol</h4>
+
+<ul>
+<li>An optimistic protocol (p1) to get us started <br>
+<ul><li>Assumes no errors, and receiver as fast as sender</li>
+<li>Considers one-way data transfer</li>
+<li>Comments are additions for flow control</li></ul></li>
+</ul>
+
+
+
+<pre class="prettyprint"><code class="language-c hljs "><span class="hljs-keyword">void</span> sender1(<span class="hljs-keyword">void</span>)
+{
+    frame s;
+    packet buffer;
+    <span class="hljs-comment">//event.type event;</span>
+    <span class="hljs-keyword">while</span>(<span class="hljs-keyword">true</span>){
+        from.network.layer(&amp;buffer);
+        s.info = buffer;
+        to.physical.layer(&amp;s);
+        <span class="hljs-comment">//wait.for.event(&amp;event);</span>
+    }
+}</code></pre>
+
+
+
+<pre class="prettyprint"><code class="language-c hljs "><span class="hljs-keyword">void</span> receiver1(<span class="hljs-keyword">void</span>)
+{
+    frame r;
+    <span class="hljs-comment">//frame s;</span>
+    Event.type event;
+    <span class="hljs-keyword">while</span>(<span class="hljs-keyword">true</span>){
+        wait.<span class="hljs-keyword">for</span>.event(&amp;event);
+        from.physical.layer(&amp;r);
+        to.network.layer(&amp;r.info);
+        <span class="hljs-comment">//to.physical.layer(&amp;s);</span>
+    }
+}</code></pre>
+
+
+
+<h4 id="sliding-window-concept">Sliding window concept</h4>
+
+<ul>
+<li>Sender maintains window of frames <br>
+<ul><li>Only sends if ack is received</li></ul></li>
+<li>Receiver acknowledges when it’s done processing</li>
+</ul>
+
+<p>Larger windows enable <em>pipelining</em> for efficient ling use</p>
+
+<ul>
+<li>Stop and wait is inefficient</li>
+<li>Best window depends on bandwidth delay</li>
+<li>Wand w &gt; 2BD+1 to ensure high link utilization</li>
+</ul>
+
+<p>Pipelining leads to different choices for errors/buffering</p>
+
+
+
+<h2 id="medium-access-control-sublayer">Medium Access Control Sublayer</h2>
+
+<blockquote>
+  <p>The <strong>Medium Access Control</strong> (MAC) sublayer decides who sends next on a multi-access link. Important for LAN.</p>
+</blockquote>
+
+
+
+<h3 id="channel-allocation-problem">Channel Allocation Problem</h3>
+
+<ul>
+<li>For fixed channel and traffic N users <br>
+<ul><li>Divide up bandwidth using FTM, TDM, CDMA, etc.</li>
+<li>This is static allocation (ex. FM radio)</li></ul></li>
+<li>This static allocation is ill-suited for bursty traffic <br>
+<ul><li>Allocations will sometimes go unused</li></ul></li>
+</ul>
+
+<blockquote>
+  <p><strong>Dynamic allocation</strong> gives the channel to a user when they need it. Potentially N times as efficient for N users.</p>
+</blockquote>
+
+<p>Schemes vary with assumptions</p>
+
+<ul>
+<li>Independent traffic <br>
+<ul><li>Often not a good model, but permits analysis</li></ul></li>
+<li>Single channel <br>
+<ul><li>No external way to coordinate senders</li></ul></li>
+<li>Observable collisions <br>
+<ul><li>Needed for reliability; mechanisms vary</li></ul></li>
+<li>Continuous or slotted time <br>
+<ul><li>Slotting may improve performance</li></ul></li>
+<li>Carrier sense <br>
+<ul><li>The sender is aware of the availability of the channel</li>
+<li>Can improve performance if available</li></ul></li>
+</ul>
+
+
+
+<h4 id="multiple-access-protocols">Multiple Access Protocols</h4>
+
+
+
+<h5 id="aloha">ALOHA</h5>
+
+<ul>
+<li>Transmit frames whenever they have data</li>
+<li>Retry after a random time for collisions</li>
+<li>Collision happens, if frames are transmitted during vulnerable times</li>
+<li>Slotted ALOHA gains higher efficiency by slotting the times</li>
+</ul>
+
+
+
+<h5 id="csma">CSMA</h5>
+
+<ul>
+<li>Improvement: Sensing channel <br>
+<ul><li>User doesn’t send if there is something going on</li></ul></li>
+<li>Variations on what to do if the channel is busy <br>
+<ul><li>I-presistent (greedy) sebds as soon as idle</li>
+<li>Nonpresistent waist for a random time</li>
+<li>Sends with p probability</li></ul></li>
+<li>Used in todays LAN</li>
+</ul>
+
+<p><img src="http://www.pling.org.uk/cs/ndsimg/csmautilisation.png" alt="Graphs comparing different protocols at different traffic levels" title=""></p>
+
+
+
+<h6 id="collision-detection">Collision detection</h6>
+
+<p>CSMA/CD improvement detects/aborts collisions <br>
+<script type="math/tex" id="MathJax-Element-3">\rightarrow</script> reduced contention times improve performance</p>
+
+
+
+<h5 id="collision-free-protocols">Collision-free protocols</h5>
+
+<ul>
+<li>Collision-free protocols avoid collisions entirely <br>
+<ul><li>Senders must know when it’s their turn to send</li></ul></li>
+<li>Token rings <br>
+<ul><li>Station with token may send a frame before passing</li>
+<li>Idea can be used without a ring (ex. token bus)</li></ul></li>
+</ul>
+
+
+
+<h5 id="limited-contention-protocols">Limited-contention protocols</h5>
+
+<p><em>* We skipped this too…*</em></p>
+
+
+
+<h5 id="wireless-lan-protocols">Wireless LAN protocols</h5>
+
+
+
+<h6 id="hidden-terminals">Hidden terminals</h6>
+
+<ul>
+<li>The signal range may cause one of the hosts to not detect the collision, while the message is still lost to the recipient</li>
+</ul>
+
+
+
+<h6 id="exposed-terminals">Exposed terminals</h6>
+
+<ul>
+<li>The host may detect a collision, even when the interference is outside the signal range for the receiver</li>
+</ul>
+
+
+
+<h6 id="maca">MACA</h6>
+
+<ul>
+<li>Grants access for A to send to B <br>
+<ul><li>A sends RTS to B; B replies with CTS</li>
+<li>A can send with exposed but not hidden terminals</li></ul></li>
+</ul>
+
+
+
+<h3 id="ethernet">Ethernet</h3>
+
+
+
+<h4 id="classic-ethernet">Classic Ethernet</h4>
+
+<ul>
+<li>One coaxial cable with all hosts attached <br>
+<ul><li>Up to 10 Mbps, with Manchester encoding</li>
+<li>Hosts ran the classic Ethernet protocol for access</li>
+<li>A transceiver sends the data to the coax</li>
+<li>Every participant sees every message, and decides based on content if it’s for them</li>
+<li>Later coax was replaced by antenna cables</li>
+<li>Very unreliable</li></ul></li>
+</ul>
+
+<p><img src="http://slideplayer.com/slide/4195093/14/images/91/Classic+Ethernet+Physical+Layer.jpg" alt="Classic Ethernet topology" title=""></p>
+
+<p>Addressing scheme</p>
+
+<ul>
+<li>MAC protocol as CSMA/CD (see above)</li>
+<li>Random delay (backoff) after collision is computed using BEP (Binary Exponential backoff)</li>
+<li>Frame format is still used in modern Ethernet (IEEE 802.3)</li>
+</ul>
+
+<p><img src="http://i.cloud.opensystemsmedia.com/i__src348cc73403da619e46bf4af301f8b441_par1a3c1eb4506a5f22486e2677b9cb9c0d.jpeg" alt="Ethernet packet layout" title=""></p>
+
+<table>
+<thead>
+<tr>
+  <th>Field</th>
+  <th>Size</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>Preamble (opt)</td>
+  <td>8</td>
+</tr>
+<tr>
+  <td>SoF (opt)</td>
+  <td>^</td>
+</tr>
+<tr>
+  <td>Destination address</td>
+  <td>6</td>
+</tr>
+<tr>
+  <td>Source address</td>
+  <td>6</td>
+</tr>
+<tr>
+  <td>Length</td>
+  <td>2</td>
+</tr>
+<tr>
+  <td>Data</td>
+  <td>0-1500</td>
+</tr>
+<tr>
+  <td>Pad (opt)</td>
+  <td>0-46</td>
+</tr>
+<tr>
+  <td>Checksum (opt)</td>
+  <td>4</td>
+</tr>
+</tbody></table>
+
+
+<p><img src="https://networklessons.com/wp-content/uploads/2014/02/wireshark-ip-tcp-ethernet-bytes-length.png" alt="Wireshark capture of an Ethernet package" title=""></p>
+
+<p>Collisions can arrive in <script type="math/tex" id="MathJax-Element-4">2\tau</script> (twice the time for the message to arrive). Message size should be chosen accordingly.</p>
+
+<p>Ethernet is efficient with large frames even with many senders. Smaller frames are worse.</p>
+
+
+
+<h4 id="switched-fast-ethernet">Switched / Fast Ethernet</h4>
+
+<ul>
+<li>Hubs wire lines into a single CSMA/CD domain (star topology) <br>
+<ul><li>Every packet is <em>still</em> sent to all connected hosts</li></ul></li>
+<li>Switches isolate each port to a separate domain <br>
+<ul><li>Much greater throughput for multiple ports</li>
+<li>No need for CSMA/CD with duplex lines</li>
+<li>They only send packets to the intended recipient</li>
+<li>Broadcast address is also available, the destination address is FF:FF:FF:FF:FF:FF</li></ul></li>
+<li>10 to 100 Mbps, mostly twisted pair Cat5 cables</li>
+<li>Fiberoptical sub-protocol (up to 2km cable lengths)</li>
+</ul>
+
+
+
+<h4 id="gigabit-10-gigabit-ethernet">Gigabit / 10 Gigabit Ethernet</h4>
+
+<p>Switched Gigabit Ethernet is now ubiquitous, full-duplex lines between computers/switches <br>
+Same type of cabling as Fast Ethernet, additional multi-km fiber cables exist for these networks <br>
+* CAT 6a UTP cable <br>
+* 40/100 Gbps Ethernet is under development</p>
+
+
+
+<h3 id="data-link-layer-switching">Data Link Layer Switching</h3>
+
+
+
+<h4 id="bridges">Bridges</h4>
+
+<blockquote>
+  <p><strong>Bridges</strong> are auxiliary switches or hubs that concentrate network traffic on single lines before attaching to the main switch</p>
+</blockquote>
+
+
+
+<h4 id="learning-bridges">Learning Bridges</h4>
+
+<blockquote>
+  <p><strong>Bridge</strong> operates as a switch, and <em>“learn”</em> which ports are associated with which addresses.</p>
+</blockquote>
+
+
+
+<h4 id="spanning-tree-problem">Spanning tree problem</h4>
+
+<p><strong>Skipped</strong></p>
+
+
+
+<h4 id="network-interconnecting-devices">Network interconnecting devices</h4>
+
+<ul>
+<li>Physical layer: Repeater, Hub</li>
+<li>Data Link Layer: Bridge, Switch</li>
+<li>Network Layer: Router</li>
+<li>Transport Layer: Transport Gateway</li>
+<li>Application Layer: Application Gateway</li>
+</ul>
+
+
+
+<h4 id="virtual-lan-valn">Virtual LAN (VALN)</h4>
+
+<blockquote>
+  <p><strong>VLAN</strong> splits a physical LAN into multiple logical LANs to ease management, ports are color-coded according to their VLAN. VLAN header is added to the Frame to identify the VLAN.</p>
+</blockquote>
+
+<p>Described in IEEE 802.1Q</p>
+
+
+
+<h2 id="network-layer">Network Layer</h2>
+
+<blockquote>
+  <p>The <strong>Network Layer</strong> is responsible for delivering packets between endpoints over multiple links.</p>
+</blockquote>
+
+
+
+<h3 id="design-and-issues">Design and issues</h3>
+
+
+
+<h4 id="store-and-forward-packet-switching">Store and forward packet switching</h4>
+
+<p><em>Hosts</em> send <em>packets</em> into the network that are <em>stored</em> and forwarded by routers.</p>
+
+<p>Packets are forwarded based on the <em>routing table</em>, not all packets take the same path.</p>
+
+
+
+<h4 id="virtual-circuit-tags">Virtual circuit tags</h4>
+
+<blockquote>
+  <p>The <strong>Virtual circuit tag</strong> determines the packets route before sending, it is therefore faster, but less flexible than datagram subnets</p>
+</blockquote>
+
+<p>Advantages and disadvantages of virtual circuit networks</p>
+
+<p><img src="http://computing.dcu.ie/~humphrys/Notes/Networks/tanenbaum/5-04.jpg" alt="Advantages and disadvantages" title=""></p>
+
+
+
+<h3 id="routing-algorithms">Routing algorithms</h3>
+
+<blockquote>
+  <p><strong>Routing</strong> is the process of discovering network paths</p>
+</blockquote>
+
+<ul>
+<li>Model a network graph of nodes and links</li>
+<li>Optimize for fairness or efficiency</li>
+<li>Update on changes (failures)</li>
+<li><em>Forwarding</em> is sending packets along a path</li>
+</ul>
+
+
+
+<h4 id="the-optimality-principle">The optimality principle</h4>
+
+<p>Each portion of the best path is also a best path (Best might mean fewest hops)</p>
+
+<blockquote>
+  <p>The union of all best paths is called a <strong>sink tree</strong></p>
+</blockquote>
+
+
+
+<h4 id="shortest-path-algorithms">Shortest path algorithms</h4>
+
+
+
+<h5 id="dijkstras-algorithm">Dijkstra’s algorithm</h5>
+
+<ul>
+<li>Each link is assigned a non-negative weight/distance</li>
+<li>Shortest path is the one with the lowest total weight</li>
+<li>Using weights of 1 gives the fewest hops (since each hop costs 1)</li>
+</ul>
+
+
+
+<h5 id="algorithm">Algorithm</h5>
+
+<ul>
+<li>Start with sink, set all distances to infinity</li>
+<li>When a node is reached via some path from the reachable nodes (ones with non infinite distances) and no shorter path already exists <br>
+<ul><li>Set the distance of the node the distance of the intermediary + the distance from the intermediary</li>
+<li>Set the path-to value of the node to the path-to value of the node to the intermediary node</li></ul></li>
+<li>Repeat until all reachable nodes are mapped</li>
+</ul>
+
+<p><img src="http://cs.smith.edu/~streinu/Teaching/Courses/274/Spring98/Projects/Philip/fp/dijkstra.jpg" alt="Dijkstra's algorithm explained" title=""></p>
+
+<p>See this video for a more detailed explanation on Dijkstra’s algorithm. <br>
+</p><center><iframe src="https://www.youtube.com/embed/GazC3A4OQTE" allowfullscreen="" width="560" height="315"></iframe></center><p></p>
+
+
+
+<h3 id="flooding">Flooding</h3>
+
+<blockquote>
+  <p><strong>*Flooding</strong> is a simple method to send a packet to all network nodes. Each node floods a new packet received on an incoming link to all other links. Nodes keep track of flood packets, and employ hop limits to prevent loops.</p>
+</blockquote>
+
+
+
+<h4 id="distance-vector-routing">Distance Vector Routing</h4>
+
+<blockquote>
+  <p><strong>Distance vector</strong> is a distributed routing algorithm, that splits the shortest path calculation between nodes.</p>
+</blockquote>
+
+
+
+<h5 id="the-algorithm">The Algorithm</h5>
+
+<ul>
+<li>Each node knows the distance between itself and its neighboring nodes</li>
+<li>Each node advertises distances to all known nodes</li>
+<li>Each node updates the distance from all connected nodes based on the information from other nodes</li>
+</ul>
+
+<p><img src="https://image.slidesharecdn.com/distancevectorrouting-140108002558-phpapp02/95/distance-vector-routing-2-638.jpg?cb=1395479151" alt="DV routing" title=""></p>
+
+
+
+<h5 id="the-count-to-infinity-problem">The Count-to-Infinity problem</h5>
+
+<p>Failures can cause DV to “count to infinity” while seeking a path to an unreachable node, leading of a slow propagation of increasing access times</p>
+
+<p><img src="https://qph.ec.quoracdn.net/main-qimg-461f25bd2385ac40c92f4b1a7b1e867b-c" alt="Count to infinity example" title=""></p>
+
+
+
+<h4 id="hierarchical-routing">Hierarchical routing</h4>
+
+<blockquote>
+  <p>The <strong>hierarchical routing</strong> concept describes a network <em>hierarchy</em>, whereby not all nodes are connected to all other nodes, instead they are hierarchically nested in <em>subnets</em>. Only the destination <em>subnet</em> needs to be stored and computed, thus </p>
+</blockquote>
+
+<p>Hierarchical routing reduces the work of route computation, but may result in slightly longer path.</p>
+
+<p><img src="http://s.hswstatic.com/gif/routing-algorithm10.gif" alt="Hierarchical routing" title=""></p>
+
+
+
+<h4 id="routing-for-mobile-hosts">Routing for Mobile Hosts</h4>
+
+<ul>
+<li>Mobile hosts can be reached via a home agent (proxy) <br>
+<ul><li>Fixed home agent tunnels packets to the mobile host and optimizes route based on response</li>
+<li>The outside host uses a regular routing protocol</li></ul></li>
+</ul>
+
+
+
+<h4 id="traffic-aware-routing">Traffic-Aware Routing</h4>
+
+<p>Choose routes depending on traffic, not just topology. (Avoid overloading lines)</p>
+
+
+
+<h3 id="quality-of-service-qos">Quality of Service (QoS)</h3>
+
+
+
+<h4 id="application-requirements">Application Requirements</h4>
+
+<p>Different applications have different network requirements, all should get what they need.</p>
+
+<p><img src="http://www.networkinginfoblog.com/contentsimages/Requirements%20of%20selected%20network%20applications.JPG" alt="" title=""></p>
+
+<p>Network provides different QoS to different services, for example a constant bitrate to telephony.</p>
+
+
+
+<h4 id="traffic-shaping">Traffic shaping</h4>
+
+<p>Traffic shaping regulates the average rate of data that enters the network</p>
+
+<p>Token/Leaky bucket limits both average rate (R) and short-term burst (B) of traffic.</p>
+
+<p><img src="http://ecomputernotes.com/images/Leaky-Bucket.jpg" alt="Leaky bucket" title=""></p>
+
+<p><strong>Skipped stuff</strong></p>
+
+
+
+<h4 id="packets-scheduling">Packets scheduling</h4>
+
+<p>FIFO or prioritize (Round Robin’, Fair queuing (WFQ))</p>
+
+<p><strong>Skipped stuff*</strong></p>
+
+
+
+<h3 id="internetworking">Internetworking</h3>
+
+<blockquote>
+  <p><strong>Internetworking</strong> connects multiple different networks to a single, larger networks</p>
+</blockquote>
+
+
+
+<h4 id="differences-between-networks">Differences between networks</h4>
+
+<p>Differences between networks (architecture, implemented protocols, offered services, packet sizes, etc.) make internetworking complicated</p>
+
+
+
+<h4 id="connecting-networks">Connecting networks</h4>
+
+<p>Different networks use the same network layer.</p>
+
+<p><img src="http://images.slideplayer.com/13/3607059/slides/slide_57.jpg" alt="Network layer internetworking" title=""></p>
+
+
+
+<h4 id="tunneling">Tunneling</h4>
+
+<blockquote>
+  <p><strong>Tunneling</strong> connects two network through a middle one (packets are encapsulated over the middle)</p>
+</blockquote>
+
+<p><img src="http://player.slideplayer.com/13/3607059/data/images/img50.jpg" alt="Tunneling" title=""></p>
+
+
+
+<h4 id="packet-fragmentation">Packet fragmentation</h4>
+
+<blockquote>
+  <p><strong>Packet fragmentation</strong> refers to the process of breaking up a packet into smaller packets to conform with a networks frame size requirements.</p>
+</blockquote>
+
+<p>The start offset is the place of the message that is being sent.</p>
+
+<blockquote>
+  <p><strong>Max Transmission Unit (MTU)</strong> analyzes the network to get the maximal size packets that can be transmitted over the network.</p>
+</blockquote>
+
+
+
+<h3 id="network-layer-on-the-internet">Network layer on the Internet</h3>
+
+
+
+<h4 id="ipv4">IPv4</h4>
+
+<p>IP has been shaped by the following guiding principles</p>
+
+<ul>
+<li>Make sure it works</li>
+<li>Keep it simple</li>
+<li>Make it clear</li>
+<li>Exploit modularity</li>
+<li>Expect heterogenity</li>
+<li>Avoid static options and parameters</li>
+<li>Look for good design</li>
+<li>Strict sending, tolerant receiving</li>
+<li>Scalability</li>
+<li>Performance and cost</li>
+</ul>
+
+
+
+<h4 id="ip-addresses">IP Addresses</h4>
+
+<p>IPv4 header carries the following data:</p>
+
+<p><img src="http://static.thegeekstuff.com/wp-content/uploads/2012/03/ip-header-2.png" alt="IPv4" title=""></p>
+
+<ul>
+<li>Version (v4 or v6)</li>
+<li>IHL (Header length)</li>
+<li>Differentiated services</li>
+<li>Total length (message length)</li>
+<li>ID</li>
+<li>Flags (Fragmentation flags)</li>
+<li>Fragment offset</li>
+<li>Time To Live (hop count)</li>
+<li>Protocol (UDP / TCP)</li>
+<li>Header checksum</li>
+<li>Source IP</li>
+<li>Destination IP</li>
+<li>Options / Padding</li>
+</ul>
+
+
+
+<h4 id="ipv6">IPv6</h4>
+
+
+
+<h4 id="internet-control-protocols">Internet Control Protocols</h4></div></body>
+</html>

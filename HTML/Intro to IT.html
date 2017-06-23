@@ -1,0 +1,1387 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intro to IT</title>
+<link rel="stylesheet" href="https://stackedit.io/res-min/themes/base.css" />
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body><div class="container"><h1 id="intro-to-it">Intro to IT</h1>
+
+<blockquote>
+  <p><strong>Disclaimer</strong> <br>
+  These notes are translated and compiled on the courtesy of Dávid Lázár based on the notes of the German course by Julius Englert. I take no responsibility for the correctness of anything stated in the contents, although I strive for making them as accurate as possible. If you find any factual or formal mistakes in these notes, please don’t hesitate to contact me at <a href="mailto:kiraly.bence.1025@gmail.com">kiraly.bence.1025@gmail.com</a>.</p>
+</blockquote>
+
+
+
+<h2 id="table-of-contents">Table of Contents</h2>
+
+<p><div class="toc">
+<ul>
+<li><a href="#intro-to-it">Intro to IT</a><ul>
+<li><a href="#table-of-contents">Table of Contents</a></li>
+<li><a href="#basics-of-it-intro-to-computer-systems">Basics of IT – Intro to Computer Systems</a></li>
+<li><a href="#history-of-computers">History of Computers</a></li>
+<li><a href="#basic-terms-from-data-processing">Basic terms from Data Processing</a></li>
+<li><a href="#main-areas">Main areas</a><ul>
+<li><a href="#technical-computer-science">Technical computer science</a></li>
+<li><a href="#practical-computer-science">Practical computer science</a></li>
+<li><a href="#theoretical-computer-science">Theoretical computer science</a></li>
+<li><a href="#applied-computer-science">Applied computer science</a></li>
+<li><a href="#other-areas">Other areas:</a></li>
+<li><a href="#computer">Computer</a></li>
+</ul>
+</li>
+<li><a href="#computer-architectures">Computer architectures</a><ul>
+<li><ul>
+<li><a href="#classification-according-to-flynn">Classification according to Flynn</a></li>
+</ul>
+</li>
+<li><a href="#computer-architecture-von-neumann-architecture">Computer architecture, von Neumann architecture</a><ul>
+<li><a href="#components-of-neumann-architecture">Components of Neumann architecture</a></li>
+<li><a href="#the-processor">The processor</a></li>
+<li><a href="#types-of-memory">Types of memory</a></li>
+<li><a href="#memory-hierarchy">Memory Hierarchy</a></li>
+<li><a href="#von-neumann-cycle">Von Neumann Cycle</a></li>
+</ul>
+</li>
+<li><a href="#harvard-architecture">Harvard Architecture</a></li>
+</ul>
+</li>
+<li><a href="#measures-of-implementation-times">Measures of implementation times</a><ul>
+<li><a href="#machine-cycle-time">Machine Cycle Time</a></li>
+</ul>
+</li>
+<li><a href="#clock-speed">Clock Speed</a></li>
+<li><a href="#moores-law">Moore’s law</a></li>
+<li><a href="#computer-types">Computer Types</a></li>
+<li><a href="#who-is-who-in-computer-science">Who is who in Computer Science?</a></li>
+<li><a href="#it-service-management-according-to-itil">IT service management according to ITIL</a></li>
+<li><a href="#standards-in-it">Standards in IT</a></li>
+<li><a href="#categories-of-standards">Categories of standards</a><ul>
+<li><a href="#de-facto-standards">De-facto Standards:</a></li>
+<li><a href="#de-jure-standard">De-jure Standard:</a></li>
+<li><a href="#international-bodies">International bodies:</a></li>
+<li><a href="#examples">Examples</a></li>
+</ul>
+</li>
+<li><a href="#practical-part">Practical Part</a></li>
+<li><a href="#units">Units</a></li>
+<li><a href="#number-system-conversion">Number system conversion</a><ul>
+<li><a href="#decimal-to-other-base-system">Decimal to Other Base System</a></li>
+<li><a href="#other-base-system-to-decimal-system">Other Base System to Decimal System</a></li>
+<li><a href="#other-base-system-to-non-decimal-system">Other Base System to Non-Decimal System</a></li>
+</ul>
+</li>
+<li><a href="#unicode-characters">Unicode characters</a><ul>
+<li><a href="#ascii-characters">ASCII characters</a></li>
+<li><a href="#creation-of-utf-8-characters">Creation of UTF-8 characters</a></li>
+</ul>
+</li>
+<li><a href="#presentation-of-data-types">Presentation of data types</a><ul>
+<li><a href="#data-types">Data Types</a></li>
+<li><a href="#integer-types-byte-char-short-int-long">Integer Types (byte, char, short, int, long)</a></li>
+<li><a href="#floating-point-types-float-double">Floating-point types (float, double)</a></li>
+</ul>
+</li>
+<li><a href="#logical-operations-circuit-algebra">Logical operations (circuit algebra)</a><ul>
+<li><a href="#unary-operations">Unary operations</a></li>
+<li><a href="#binary-operations">Binary operations</a></li>
+</ul>
+</li>
+<li><a href="#circuit">Circuit</a><ul>
+<li><a href="#basic-circuit-elements">Basic circuit elements</a></li>
+<li><a href="#diods-and-transistors">Diods and Transistors</a></li>
+<li><a href="#basic-gates">Basic gates</a></li>
+<li><a href="#basic-circuits">Basic circuits</a><ul>
+<li><a href="#rs-latch-jk-flip-flop">RS-Latch / JK flip-flop</a></li>
+<li><a href="#a-4-bit-synchronous-counter-using-jk-flip-flops">A 4-bit synchronous counter using JK flip-flops</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</p>
+
+
+
+<h2 id="basics-of-it-intro-to-computer-systems">Basics of IT – Intro to Computer Systems</h2>
+
+
+
+<h2 id="history-of-computers">History of Computers</h2>
+
+<table>
+<thead>
+<tr>
+  <th>Generation</th>
+  <th>Duration</th>
+  <th>Technology</th>
+  <th>Operations/sec</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>0</td>
+  <td>-1944</td>
+  <td>Relays, Mechanic</td>
+  <td>~100</td>
+</tr>
+<tr>
+  <td>1</td>
+  <td>1945-1954</td>
+  <td>Electron tubes</td>
+  <td>40 000</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>1955-1964</td>
+  <td>Transistors</td>
+  <td>200 000</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td>1964-1970</td>
+  <td>Chip</td>
+  <td>1 000 000</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td>From 1971</td>
+  <td>Highly integrated Chip</td>
+  <td>10 000 000+</td>
+</tr>
+</tbody></table>
+
+
+
+
+<h2 id="basic-terms-from-data-processing">Basic terms from Data Processing</h2>
+
+<p>Data Processing in Modern Days:</p>
+
+<ul>
+<li>Data as an input in a Computer</li>
+<li>Data that is processed by a Computer</li>
+<li>Data that is prodused by a Computer</li>
+</ul>
+
+<blockquote>
+  <p><strong>Data</strong> Characters without kontext</p>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<blockquote>
+  <p><strong>Information</strong> Kontext orientated Data</p>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<blockquote>
+  <p><strong>Character</strong> Elements for presenting Information (this has to be previously agreed on)</p>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<blockquote>
+  <p><strong>Character set</strong> Limited ammout of characters</p>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<blockquote>
+  <p><strong>News</strong> A combination of Characters, its primary purpose is transfering Information</p>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<blockquote>
+  <p><strong>Data processing</strong> A process which relates to the acquisition, storage, transmission and transformation</p>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<blockquote>
+  <p><strong>Transmission</strong> Mapping ensures correct data transmission between two systems</p>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<blockquote>
+  <p><strong>EDI</strong> Electronic Data Interchange</p>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<blockquote>
+  <p><strong>EDP</strong> Electronic Data Processing</p>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<blockquote>
+  <p><strong>Algorithm</strong> Well-defined, finite, terminating, (non)deterministic process.</p>
+</blockquote>
+
+<p>Data processing systems</p>
+
+<ul>
+<li>Electronically working unit, which automatically processes data with stored programs</li>
+<li>Mathematical, forming, transferring storing operations</li>
+<li>Advantages: Automatic and fast execution of operations</li>
+</ul>
+
+<blockquote>
+  <p><strong>Computer Science</strong> The science of processing data with computers</p>
+</blockquote>
+
+
+
+<h2 id="main-areas">Main areas</h2>
+
+
+
+<h3 id="technical-computer-science">Technical computer science</h3>
+
+<ul>
+<li>Hardware</li>
+<li>Technology</li>
+<li>Phisics</li>
+<li>Electricity</li>
+<li>Construction</li>
+<li>Processors</li>
+</ul>
+
+
+
+<h3 id="practical-computer-science">Practical computer science</h3>
+
+<ul>
+<li>Software <br>
+<ul><li>Operating Systems</li>
+<li>Programs</li></ul></li>
+<li>Compiler</li>
+</ul>
+
+
+
+<h3 id="theoretical-computer-science">Theoretical computer science</h3>
+
+<ul>
+<li>Formal languages</li>
+<li>Automation Theory</li>
+<li>Proofs</li>
+</ul>
+
+
+
+<h3 id="applied-computer-science">Applied computer science</h3>
+
+<ul>
+<li>Use of computers in different areas</li>
+<li>Robots, AIs,…</li>
+</ul>
+
+
+
+<h3 id="other-areas">Other areas:</h3>
+
+<ul>
+<li>Business informatics</li>
+<li>Legal c.s.</li>
+<li>…</li>
+</ul>
+
+
+
+<h3 id="computer">Computer</h3>
+
+<blockquote>
+  <p>A <strong>computer</strong> is a memory-programmable calculation system</p>
+</blockquote>
+
+<p>A computer must</p>
+
+<ul>
+<li>Freely programmable</li>
+<li>Memory for recording programs</li>
+<li>Connect devices for input and output of data</li>
+</ul>
+
+<p>Outline of a Computer</p>
+
+<ul>
+<li>Hardware</li>
+<li>System software (operating system)</li>
+<li>Application software</li>
+</ul>
+
+<blockquote>
+  <p><strong>Hardware</strong> Physical devices forming the system</p>
+  
+  <p>&nbsp; <br>
+  <strong>System software</strong> It is connecting the applications to the hardware and telling the hardware what to do.</p>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<blockquote>
+  <p><strong>Applications</strong> Serves the special data processing application</p>
+</blockquote>
+
+
+
+<h2 id="computer-architectures">Computer architectures</h2>
+
+<blockquote>
+  <p><strong>Computer architectures</strong> Technical realization of data processing systems</p>
+</blockquote>
+
+<p>Definition of the display of the internal data <br>
+Definition of the representation of the external data</p>
+
+<ul>
+<li>CPU</li>
+<li>machine instructions (format of the instructions)</li>
+<li>Interfaces (internal and external)</li>
+</ul>
+
+<p>Construction plan, according to which the functional units are assembled</p>
+
+
+
+<h4 id="classification-according-to-flynn">Classification according to Flynn</h4>
+
+<ul>
+<li>Machine processes only one command or more at a given time</li>
+<li>Machine processes only one or more data at a time (date with files)</li>
+</ul>
+
+<blockquote>
+  <p><strong>SISD Architecture</strong> Single Instruction Single Data Stream <br>
+  <strong>SIMD Architecture</strong> Single Instruction Multiple Data Stream <br>
+  <strong>MISD Architecture</strong> Multiple Instruction Single Data Stream <br>
+  <strong>MIMD Architecture</strong> Multiple Instruction Multiple Data Stream</p>
+</blockquote>
+
+
+
+<h3 id="computer-architecture-von-neumann-architecture">Computer architecture, von Neumann architecture</h3>
+
+<ul>
+<li>Most of today’s computers are built according to the “Neumann architecture” principle</li>
+<li>This principle implements the EVA principle </li>
+</ul>
+
+
+
+<h4 id="components-of-neumann-architecture">Components of Neumann architecture</h4>
+
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Von_Neumann_Architecture.svg/510px-Von_Neumann_Architecture.svg.png" alt="Von-Neumann architecture" title=""></p>
+
+<ul>
+<li>Arithmatic unit <br>
+<ul><li>Execution of the arithmetic and logical operations</li></ul></li>
+<li>Control unit <br>
+<ul><li>Initiates the transfer of the instructions from the main memory into the processor</li>
+<li>Interpret (decode) the encoded statements</li>
+<li>Initializes the components necessary for executing the instructions via the control signal</li></ul></li>
+<li>Memory unit <br>
+<ul><li>Also main memory or memory</li>
+<li>Programs and data are stored here</li></ul></li>
+<li>Input Device <br>
+<ul><li>Data and programs are entered into the computer system and run into the memory via data paths(BUS)</li></ul></li>
+<li>Output Device <br>
+<ul><li>Output of results and / or data</li>
+<li>The results calculated by the CPU are transferred to the output via data paths</li></ul></li>
+</ul>
+
+
+
+<h4 id="the-processor">The processor</h4>
+
+<ul>
+<li>Central component of the computer system</li>
+<li>The actual data processing takes place here</li>
+<li>The execution unit for arithmetic operations is the Arithmetical-Logical-Unit (ALU)</li>
+<li>Data and instructions loaded from the main memory are temporarily stored in memory records in the register</li>
+<li>Today, a distinction is made between two process location architectures</li>
+<li>RISC Reduced Instruction Set Computing</li>
+<li>CISC Complex Instruction Set Computing</li>
+</ul>
+
+
+
+<h4 id="types-of-memory">Types of memory</h4>
+
+<ul>
+<li>Volatile Memory (RAM)</li>
+<li>Non-volatile memories (ROM)</li>
+<li>Network storage (NAS, SAN)</li>
+<li>RAID systems</li>
+</ul>
+
+<blockquote>
+  <p><strong>NAS Network Attached Storage</strong> Special servers in a network that are optimized as a file server</p>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<blockquote>
+  <p><strong>SAN Storage Area Network</strong> Network structure in which servers of a computer network are connected to storage units via a separate high-performance network</p>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<blockquote>
+  <p><strong>RAID systems</strong> Redundant Array of Independent Disks</p>
+</blockquote>
+
+
+
+<h4 id="memory-hierarchy">Memory Hierarchy</h4>
+
+<p>The memory of the computer is divided into several, progressively slower and higher-capacity chunks.</p>
+
+<ul>
+<li>Registers (&lt;=1ns, 100s of Bytes)</li>
+<li>Cache: L1 (~5ns, 16KiB), L2 -&gt; SRAM (~10ns, 1MiB) and L3 -&gt;DRAM (30 ns, 16 MiB)</li>
+<li>RAM (~100ns, ~8GB) <br>
+<ul><li>Core memory</li></ul></li>
+<li>Flash memory (100 microSec, ~0.5TB)</li>
+<li>Permanent storage -&gt; Usually HDDs (~4ms, Terabytes)</li>
+<li>Archival storage (minutes, &gt;= 1PB)</li>
+</ul>
+
+<p>This is illustrated on the following picture <br>
+<img src="http://cse1.net/recaps/img/4-hierarchy.jpg" alt="Memory levels" title=""></p>
+
+
+
+<h4 id="von-neumann-cycle">Von Neumann Cycle</h4>
+
+<ul>
+<li>FETCH instruction from memory <br>
+<ul><li>The content of the storage cell determined by the Instruction-Counter (IC) is loaded from the working memory into the instruction register (IR)</li></ul></li>
+<li>DECODE instructions  <br>
+<ul><li>FETCH OPERANDS from memory </li></ul></li>
+<li>EXECUTE </li>
+<li>WRITE BACK result </li>
+<li>UPDATE INSTRUCTION POINTER </li>
+</ul>
+
+
+
+<h3 id="harvard-architecture">Harvard Architecture</h3>
+
+<pre><code>Programs and data in separate memory 
+</code></pre>
+
+
+
+<h2 id="measures-of-implementation-times">Measures of implementation times</h2>
+
+
+
+<h3 id="machine-cycle-time">Machine Cycle Time</h3>
+
+<ul>
+<li>The time at which a run of instructions is measured</li>
+<li>Cycle time can also be measured in MIPS (Millions of Instructions per Second)</li>
+</ul>
+
+
+
+<h2 id="clock-speed">Clock Speed</h2>
+
+<ul>
+<li>Each CPU generates a series of electronic pulses according to a pre-determined Rate -&gt; Clock Speed</li>
+<li>The control unit in the CPU manages the stages of the machine run by following predefined internal instructions -&gt; Microcode</li>
+<li>Microcode are predefined, elementary circuits, and logical operations that the processor runs through when executing instructions</li>
+</ul>
+
+
+
+<h2 id="moores-law">Moore’s law</h2>
+
+<ul>
+<li>Every 12 months, the chip’s transistor density is doubled</li>
+</ul>
+
+
+
+<h2 id="computer-types">Computer Types</h2>
+
+<ul>
+<li>Supercomputer</li>
+<li>Mainframe</li>
+<li>Minicomputer</li>
+<li>Macrocomputer</li>
+</ul>
+
+
+
+<h2 id="who-is-who-in-computer-science">Who is who in Computer Science?</h2>
+
+<ul>
+<li>User <br>
+<ul><li>Users of the applications</li></ul></li>
+<li>System administrator <br>
+<ul><li>Maintenance and support of operating systems</li>
+<li>Management of system users</li>
+<li>Network management</li>
+<li>Administration of servers</li>
+<li>Manage access rights to databases</li></ul></li>
+</ul>
+
+<blockquote>
+  <p>Access Control List (<strong>ACL</strong>)</p>
+  
+  <ul>
+  <li>Helpdesk  <br>
+  <ul><li>Central office to help employees and customers</li>
+  <li>According to ITIL: Sing Point of Contact</li></ul></li>
+  <li>ITIL  <br>
+  <ul><li>Infrastructure Information Library</li>
+  <li>Best practice standard of IT service management</li></ul></li>
+  </ul>
+</blockquote>
+
+
+
+<h2 id="it-service-management-according-to-itil">IT service management according to ITIL</h2>
+
+<ol>
+<li>Single Point of Contac - Incident Management: <br>
+<ul><li>Customer logs in at helpdesk</li></ul></li>
+<li>First-Level Support - Problem Management: <br>
+<ul><li>Helpdesk looks for solution (previous problems)</li></ul></li>
+<li>Second-Level Support - Laboratory: <br>
+<ul><li>Helpdesk ticket goes to the department</li></ul></li>
+<li>Third-level support. <br>
+<ul><li>Laboratory / Development solves the problem</li></ul></li>
+</ol>
+
+<p>In the worst case, a series must be recalled</p>
+
+
+
+<h2 id="standards-in-it">Standards in IT</h2>
+
+<blockquote>
+  <p>Standards make it much easier for IT, because this way we don’t have to define that many exceptions!</p>
+</blockquote>
+
+
+
+<h2 id="categories-of-standards">Categories of standards</h2>
+
+
+
+<h3 id="de-facto-standards">De-facto Standards:</h3>
+
+<ul>
+<li>Standardization was done without conceptual preliminary work and formal plan as such.</li>
+</ul>
+
+
+
+<h3 id="de-jure-standard">De-jure Standard:</h3>
+
+<ul>
+<li>Formal, legal standardization, authorized by authorized Bodies</li>
+</ul>
+
+
+
+<h3 id="international-bodies">International bodies:</h3>
+
+<ul>
+<li>Bodies established by government agreements</li>
+<li>Bodies not governed by government agreements</li>
+</ul>
+
+
+
+<h3 id="examples">Examples</h3>
+
+<ul>
+<li>ITU  <br>
+<ul><li>International Telecommunication Union</li>
+<li>International allocation and registration of broadcast- and reception frequencies</li></ul></li>
+<li>IEEE:  <br>
+<ul><li>Institute of Electrical and Electronics Engineers</li>
+<li>Working groups develop standards for specific areas</li></ul></li>
+<li>ISO:  <br>
+<ul><li>Internation Standards Organization</li>
+<li>Association of standardization organizations</li>
+<li>E.g., B. ISO OSI model</li></ul></li>
+</ul>
+
+
+
+<h2 id="practical-part">Practical Part</h2>
+
+<ul>
+<li>number system conversion</li>
+<li>units (kilo, mega, giga)</li>
+<li>logical operations (circuit algebra)</li>
+<li>unicode chars</li>
+<li>floating point conversion</li>
+<li>circuit elements</li>
+</ul>
+
+
+
+<h2 id="units">Units</h2>
+
+<blockquote>
+  <p>A <strong>Bit</strong> is the smallest amount of data, it can have the value 1 or 0, short “b”.</p>
+  
+  <p>A <strong>Byte</strong> it 8 bits.</p>
+</blockquote>
+
+<table>
+<thead>
+<tr>
+  <th>Symbol</th>
+  <th>Prefix (SI/Binary)</th>
+  <th>SI Meaning</th>
+  <th>Binary meaning</th>
+  <th>Size difference (sidenote)</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>k</td>
+  <td>kilo/kibi</td>
+  <td>10^3</td>
+  <td>2^10</td>
+  <td>2,40%</td>
+</tr>
+<tr>
+  <td>M</td>
+  <td>mega/mebi</td>
+  <td>10^6</td>
+  <td>2^20</td>
+  <td>4,86%</td>
+</tr>
+<tr>
+  <td>G</td>
+  <td>giga/gibi</td>
+  <td>10^9</td>
+  <td>2^30</td>
+  <td>7,37%</td>
+</tr>
+<tr>
+  <td>T</td>
+  <td>tera/tebi</td>
+  <td>10^12</td>
+  <td>2^40</td>
+  <td>9,95%</td>
+</tr>
+<tr>
+  <td>P</td>
+  <td>peta/pebi</td>
+  <td>10^15</td>
+  <td>2^50</td>
+  <td>12,59%</td>
+</tr>
+<tr>
+  <td>E</td>
+  <td>exa/exbi</td>
+  <td>10^18</td>
+  <td>2^60</td>
+  <td>15,29%</td>
+</tr>
+<tr>
+  <td>Z</td>
+  <td>zetta/zebi</td>
+  <td>10^21</td>
+  <td>2^70</td>
+  <td>18,06%</td>
+</tr>
+<tr>
+  <td>Y</td>
+  <td>yotta/yobi</td>
+  <td>10^24</td>
+  <td>2^80</td>
+  <td>20,89%</td>
+</tr>
+</tbody></table>
+
+
+
+
+<h2 id="number-system-conversion">Number system conversion</h2>
+
+
+
+<h3 id="decimal-to-other-base-system">Decimal to Other Base System</h3>
+
+<ul>
+<li><strong>Step 1</strong> - Divide the decimal number to be converted by the value of the new base.</li>
+<li><strong>Step 2</strong> - Get the remainder from Step 1 as the rightmost digit (least significant digit) of new base number.</li>
+<li><strong>Step 3</strong> - Divide the quotient of the previous divide by the new base.</li>
+<li><strong>Step 4</strong> - Record the remainder from Step 3 as the next digit (to the left) of the new base number.</li>
+</ul>
+
+<p>Repeat Steps 3 and 4, getting remainders from right to left, until the quotient becomes zero in Step 3.</p>
+
+<p><strong>Example</strong> (29 in Binary)</p>
+
+<table>
+<thead>
+<tr>
+  <th>Operation</th>
+  <th>Result</th>
+  <th>Remainder</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>29 / 2</td>
+  <td>14</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>14 / 2</td>
+  <td>7</td>
+  <td>0</td>
+</tr>
+<tr>
+  <td>7 / 2</td>
+  <td>3</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>3 / 2</td>
+  <td>1</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>1 / 2</td>
+  <td>0</td>
+  <td>1</td>
+</tr>
+</tbody></table>
+
+
+<p><em>29</em> in binary is <em>11101</em>.</p>
+
+
+
+<h3 id="other-base-system-to-decimal-system">Other Base System to Decimal System</h3>
+
+<ul>
+<li><strong>Step 1</strong> - Determine the column (positional) value of each digit (this depends on the position of the digit and the base of the number system).</li>
+<li><strong>Step 2</strong> - Multiply the obtained column values (in Step 1) by the digits in the corresponding columns.</li>
+<li><strong>Step 3</strong> - Sum the products calculated in Step 2. The total is the equivalent value in decimal.</li>
+</ul>
+
+<p><strong>Example</strong> (11101 to decimal)</p>
+
+<p>in base 2 = in base 10</p>
+
+<p><script type="math/tex" id="MathJax-Element-141">11101 = ((1 × 2^4) + (1 × 2^3) + (1 × 2^2) + (0 × 2^1) + (1 × 2^0))</script></p>
+
+
+
+<h3 id="other-base-system-to-non-decimal-system">Other Base System to Non-Decimal System</h3>
+
+<pre><code>* **Step 1** - Convert the original number to a decimal number (base 10).
+* **Step 2** - Convert the decimal number so obtained to the new base number.
+</code></pre>
+
+
+
+<h2 id="unicode-characters">Unicode characters</h2>
+
+
+
+<h3 id="ascii-characters">ASCII characters</h3>
+
+<blockquote>
+  <p><strong>ASCII</strong> stands for American Standard Code for Information Interchange and its the the most basic 7 bit table.</p>
+</blockquote>
+
+<p><strong>ASCII table breakdown</strong></p>
+
+<ul>
+<li><strong>0-31</strong> and 127 are controll characters</li>
+<li><strong>32-126</strong> Symbols and Alphanumeric characters <br>
+<ul><li><strong>48-57</strong> Numbers</li>
+<li><strong>65-90</strong> Capital leters from the american alphabet</li>
+<li><strong>97-122</strong> small leters from the american alphabet</li>
+<li><strong>rest</strong> Symbols</li></ul></li>
+</ul>
+
+
+
+<h3 id="creation-of-utf-8-characters">Creation of UTF-8 characters</h3>
+
+<table>
+<thead>
+<tr>
+  <th>Number of bytes</th>
+  <th>Bits for code print</th>
+  <th>First code point</th>
+  <th>Last code point</th>
+  <th>Byte 1</th>
+  <th>Byte 2</th>
+  <th>Byte 3</th>
+  <th>Byte 4</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>1 [0]</td>
+  <td>7</td>
+  <td>U+0000</td>
+  <td>U+007F</td>
+  <td>0xxxxxxx</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>11</td>
+  <td>U+0080</td>
+  <td>U+07FF</td>
+  <td>110xxxxx</td>
+  <td>10xxxxxx</td>
+  <td>-</td>
+  <td>-</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td>16</td>
+  <td>U+0800</td>
+  <td>U+FFFF</td>
+  <td>1110xxxx</td>
+  <td>10xxxxxx</td>
+  <td>10xxxxxx</td>
+  <td>-</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td>21</td>
+  <td>U+10000</td>
+  <td>U+10FFFF</td>
+  <td>11110xxx</td>
+  <td>10xxxxxx</td>
+  <td>10xxxxxx</td>
+  <td>10xxxxxx</td>
+</tr>
+</tbody></table>
+
+
+<p>[0] Theese are the ASCII characters</p>
+
+<p>In UTF-8 the byte tells how many bytes a character consists of </p>
+
+<ul>
+<li><strong>0xxxxxxx</strong> means that its the first byte of a1 byte character</li>
+<li><strong>110xxxxx</strong> means that its the first byte of a 2 byte character, because it starts with 2 *1*s and a *0*s</li>
+<li><strong>1110xxxx</strong> means that its the first byte of a 3 byte character, because it starts with 3 *1*s and a *0*s</li>
+<li><strong>…</strong></li>
+<li><strong>11111110</strong> means that its the first byte of a 7 byte character, because it starts with 7 *1*s and a *0*s (this is a VERY rare case)</li>
+<li><strong>10xxxxxx</strong> means that its a trailing byte in a multi byte character</li>
+</ul>
+
+
+
+<h2 id="presentation-of-data-types">Presentation of data types</h2>
+
+
+
+<h3 id="data-types">Data Types</h3>
+
+<table>
+<thead>
+<tr>
+  <th>Types</th>
+  <th>Size (bits)</th>
+  <th>Minimum Value</th>
+  <th>Maximum Value</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>byte</td>
+  <td>8</td>
+  <td>-128</td>
+  <td>127</td>
+</tr>
+<tr>
+  <td>char</td>
+  <td>16</td>
+  <td>0</td>
+  <td>2^16-1</td>
+</tr>
+<tr>
+  <td>short</td>
+  <td>16</td>
+  <td>-2^15</td>
+  <td>2^15-1</td>
+</tr>
+<tr>
+  <td>int</td>
+  <td>32</td>
+  <td>-2^31</td>
+  <td>2^31-1</td>
+</tr>
+<tr>
+  <td>long</td>
+  <td>64</td>
+  <td>-2^63</td>
+  <td>2^63-1</td>
+</tr>
+<tr>
+  <td>float</td>
+  <td>32</td>
+  <td>-2^149</td>
+  <td>complicated</td>
+</tr>
+<tr>
+  <td>double</td>
+  <td>64</td>
+  <td>-2^1074</td>
+  <td>complicated</td>
+</tr>
+<tr>
+  <td>boolean</td>
+  <td>1</td>
+  <td>0 / false</td>
+  <td>1 / true</td>
+</tr>
+</tbody></table>
+
+
+
+
+<h3 id="integer-types-byte-char-short-int-long">Integer Types (byte, char, short, int, long)</h3>
+
+<blockquote>
+  <p><strong>Sign</strong> if its 0 than the number is positive if its 1 its negative.</p>
+</blockquote>
+
+<p>An integer type is stored this way: <br>
+<em>Note char is an unsigned short, meaning it has no sign bit.</em></p>
+
+<table>
+<thead>
+<tr>
+  <th>Sign</th>
+  <th>Digits</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>1 bit</td>
+  <td>rest of the bits</td>
+</tr>
+<tr>
+  <td>0 bit</td>
+  <td>all of the bits</td>
+</tr>
+</tbody></table>
+
+
+
+
+<h3 id="floating-point-types-float-double">Floating-point types (float, double)</h3>
+
+<blockquote>
+  <p>In computing, <strong>floating-point</strong> arithmetic is arithmetic using formulaic representation of real numbers as an approximation so as to support a trade-off between range and precision. Its elements are always integers.</p>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<blockquote>
+  <p><strong>Significant digits</strong> (significand) are the first few digits of a number (it can’t start with a zero).</p>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<blockquote>
+  <p><strong>Base</strong> is the base of the number System, in <em>decimal</em> its <em>10</em>.</p>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<blockquote>
+  <p><strong>Exponent</strong> is the base to the power of that integer.</p>
+</blockquote>
+
+<p>Floating point types are stored like this</p>
+
+<table>
+<thead>
+<tr>
+  <th>Type</th>
+  <th>Sign</th>
+  <th>Exponent</th>
+  <th>Significand field</th>
+  <th>Total bits</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>Single(float)</td>
+  <td>1</td>
+  <td>8</td>
+  <td>23</td>
+  <td>32</td>
+</tr>
+<tr>
+  <td>Double</td>
+  <td>1</td>
+  <td>11</td>
+  <td>52</td>
+  <td>64</td>
+</tr>
+</tbody></table>
+
+
+
+
+<h2 id="logical-operations-circuit-algebra">Logical operations (circuit algebra)</h2>
+
+<blockquote>
+  <p>Any logical statement which contains a finite number of logical variables can be analyzed using a table which lists all possible values of the variables: a <strong>truth table</strong>.</p>
+</blockquote>
+
+
+
+<h3 id="unary-operations">Unary operations</h3>
+
+<blockquote>
+  <p><strong>Unary operations</strong> are operations with only one argument.</p>
+</blockquote>
+
+<table>
+<thead>
+<tr>
+  <th>Name</th>
+  <th>Short</th>
+  <th>Description</th>
+  <th>Symbol</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>Tautology</td>
+  <td>true</td>
+  <td>The output is allways true</td>
+  <td><script type="math/tex" id="MathJax-Element-142">1</script></td>
+</tr>
+<tr>
+  <td>Never true/unary falsum</td>
+  <td>false</td>
+  <td>The output is allways false</td>
+  <td><script type="math/tex" id="MathJax-Element-143">0</script></td>
+</tr>
+<tr>
+  <td>Unary(or logical) Identity / Projection</td>
+  <td>eq</td>
+  <td>output = input</td>
+  <td></td>
+</tr>
+<tr>
+  <td>Unary(or logical) negation (NOT)</td>
+  <td>NOT</td>
+  <td>output = the oposite of the input</td>
+  <td><script type="math/tex" id="MathJax-Element-144">\lnot</script></td>
+</tr>
+</tbody></table>
+
+
+
+
+<h3 id="binary-operations">Binary operations</h3>
+
+<table>
+<thead>
+<tr>
+  <th>Operation name</th>
+  <th>Short name</th>
+  <th>Symbol</th>
+  <th>q/p</th>
+  <th>T/T</th>
+  <th>T/F</th>
+  <th>F/T</th>
+  <th>F/F</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>Contridiction</td>
+  <td>false</td>
+  <td><script type="math/tex" id="MathJax-Element-145">0</script></td>
+  <td>-</td>
+  <td>F</td>
+  <td>F</td>
+  <td>F</td>
+  <td>F</td>
+</tr>
+<tr>
+  <td>Tautology</td>
+  <td>true</td>
+  <td><script type="math/tex" id="MathJax-Element-146">1</script></td>
+  <td>-</td>
+  <td>T</td>
+  <td>T</td>
+  <td>T</td>
+  <td>T</td>
+</tr>
+<tr>
+  <td>Logical disjunction</td>
+  <td>OR</td>
+  <td><script type="math/tex" id="MathJax-Element-147">\lor</script></td>
+  <td>-</td>
+  <td>T</td>
+  <td>T</td>
+  <td>T</td>
+  <td>F</td>
+</tr>
+<tr>
+  <td>Logical NOR</td>
+  <td>NOR</td>
+  <td><script type="math/tex" id="MathJax-Element-148">\lnot\lor</script></td>
+  <td>-</td>
+  <td>F</td>
+  <td>F</td>
+  <td>F</td>
+  <td>T</td>
+</tr>
+<tr>
+  <td>Exclusive disjunction</td>
+  <td>XOR</td>
+  <td><script type="math/tex" id="MathJax-Element-149">\lxor</script></td>
+  <td>-</td>
+  <td>F</td>
+  <td>T</td>
+  <td>T</td>
+  <td>F</td>
+</tr>
+<tr>
+  <td>Logical biconditional</td>
+  <td>XNOR</td>
+  <td>iff*</td>
+  <td>-</td>
+  <td>T</td>
+  <td>F</td>
+  <td>F</td>
+  <td>T</td>
+</tr>
+<tr>
+  <td>Logical Conjunction</td>
+  <td>AND</td>
+  <td><script type="math/tex" id="MathJax-Element-150">\land</script></td>
+  <td>-</td>
+  <td>T</td>
+  <td>F</td>
+  <td>F</td>
+  <td>F</td>
+</tr>
+<tr>
+  <td>Logical NAND</td>
+  <td>NAND</td>
+  <td><script type="math/tex" id="MathJax-Element-151">\lnot\land</script></td>
+  <td>-</td>
+  <td>F</td>
+  <td>T</td>
+  <td>T</td>
+  <td>T</td>
+</tr>
+<tr>
+  <td>Material implication</td>
+  <td>implication</td>
+  <td><script type="math/tex" id="MathJax-Element-152">\Rightarrow</script></td>
+  <td>-</td>
+  <td>T</td>
+  <td>F</td>
+  <td>T</td>
+  <td>T</td>
+</tr>
+<tr>
+  <td>Material nonimplication</td>
+  <td>nonimplication</td>
+  <td><script type="math/tex" id="MathJax-Element-153">\not\Rightarrow</script></td>
+  <td>-</td>
+  <td>F</td>
+  <td>T</td>
+  <td>F</td>
+  <td>F</td>
+</tr>
+<tr>
+  <td>Converse implication</td>
+  <td>reverse implication</td>
+  <td><script type="math/tex" id="MathJax-Element-154">\Leftarrow</script></td>
+  <td>-</td>
+  <td>T</td>
+  <td>T</td>
+  <td>F</td>
+  <td>T</td>
+</tr>
+<tr>
+  <td>Converse nonimplication</td>
+  <td>reverse nonimplication</td>
+  <td><script type="math/tex" id="MathJax-Element-155">\not\Leftarrow</script></td>
+  <td>-</td>
+  <td>F</td>
+  <td>F</td>
+  <td>T</td>
+  <td>F</td>
+</tr>
+</tbody></table>
+
+
+<blockquote>
+  <p><strong>OR</strong> means, that its true, if one of the inputs is true.</p>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<blockquote>
+  <p><strong>XOR</strong> means, that its true, if only one of the inputs is true.</p>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<blockquote>
+  <p><strong>XNOR</strong>, is the same eqvivalence, meaning ((A→B) ∧ (B→A)), but it also means NOT XOR. </p>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<blockquote>
+  <p><strong>AND</strong> means, that its true, if all inputs are true.</p>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<blockquote>
+  <p><strong>Implication</strong> means, that its true, if the <em>if A, then B</em> is true. </p>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<blockquote>
+  <p><strong>Converse implication</strong> is implication to the other direction.</p>
+</blockquote>
+
+
+
+<h2 id="circuit">Circuit</h2>
+
+
+
+<h3 id="basic-circuit-elements">Basic circuit elements</h3>
+
+<table>
+<thead>
+<tr>
+  <th>Name</th>
+  <th>Description</th>
+  <th>Looks</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>Switch</td>
+  <td>A basic switch that opens and closes the circuit</td>
+  <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/SPST-Switch.svg/150px-SPST-Switch.svg.png" alt="Switch circuit representation" title=""></td>
+</tr>
+<tr>
+  <td>Diode</td>
+  <td>It restricts the current to flow only in one direction</td>
+  <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Diode_symbol.svg/180px-Diode_symbol.svg.png" alt="Diode circuit representation" title=""></td>
+</tr>
+<tr>
+  <td>Transistor</td>
+  <td>It is an electronic switch or in circuit algebra an AND (used in computers</td>
+  <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/BJT_PNP_symbol.svg/120px-BJT_PNP_symbol.svg.png" alt="Transistor circuit representation" title=""></td>
+</tr>
+<tr>
+  <td>Electron Tube</td>
+  <td>An earlier version of transistors, still used in audio engineering</td>
+  <td></td>
+</tr>
+<tr>
+  <td>Relay</td>
+  <td>The earliest version of transistors, still used in high voltage switches</td>
+  <td></td>
+</tr>
+</tbody></table>
+
+
+
+
+<h3 id="diods-and-transistors">Diods and Transistors</h3>
+
+<p></p><center><iframe src="https://www.youtube.com/embed/7ukDKVHnac4" allowfullscreen="" width="560" height="315"></iframe></center><p></p>
+
+<h3 id="basic-gates">Basic gates</h3>
+
+<table>
+<thead>
+<tr>
+  <th>Name (Circuit Algebra equivalent)</th>
+  <th>Looks(old)</th>
+  <th>Looks(new)</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>NOT</td>
+  <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/NOT_ANSI.svg/150px-NOT_ANSI.svg.png" alt="" title=""></td>
+  <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/NOT_IEC.svg/150px-NOT_IEC.svg.png" alt="" title=""></td>
+</tr>
+<tr>
+  <td>AND</td>
+  <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/AND_ANSI.svg/150px-AND_ANSI.svg.png" alt="" title=""></td>
+  <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/AND_IEC.svg/150px-AND_IEC.svg.png" alt="" title=""></td>
+</tr>
+<tr>
+  <td>OR</td>
+  <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/OR_ANSI.svg/150px-OR_ANSI.svg.png" alt="" title=""></td>
+  <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/OR_IEC.svg/150px-OR_IEC.svg.png" alt="" title=""></td>
+</tr>
+<tr>
+  <td>XOR</td>
+  <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/XOR_ANSI.svg/150px-XOR_ANSI.svg.png" alt="" title=""></td>
+  <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/XOR_IEC.svg/150px-XOR_IEC.svg.png" alt="" title=""></td>
+</tr>
+<tr>
+  <td>NAND</td>
+  <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/NAND_ANSI.svg/150px-NAND_ANSI.svg.png" alt="" title=""></td>
+  <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/NAND_IEC.svg/150px-NAND_IEC.svg.png" alt="" title=""></td>
+</tr>
+<tr>
+  <td>NOR</td>
+  <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/NOR_ANSI.svg/150px-NOR_ANSI.svg.png" alt="" title=""></td>
+  <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/NOR_IEC.svg/150px-NOR_IEC.svg.png" alt="" title=""></td>
+</tr>
+<tr>
+  <td>XNOR</td>
+  <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/XNOR_ANSI.svg/150px-XNOR_ANSI.svg.png" alt="" title=""></td>
+  <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/XNOR_IEC.svg/150px-XNOR_IEC.svg.png" alt="" title=""></td>
+</tr>
+</tbody></table>
+
+
+
+
+<h3 id="basic-circuits">Basic circuits</h3>
+
+
+
+<h4 id="rs-latch-jk-flip-flop">RS-Latch / JK flip-flop</h4>
+
+<p><a href="https://upload.wikimedia.org/wikipedia/commons/1/14/Transistor_Bistable_interactive_animated_EN.svg"><img src="https://upload.wikimedia.org/wikipedia/commons/1/14/Transistor_Bistable_interactive_animated_EN.svg" alt="" title=""></a> <br>
+Click the picture for interactive animation.</p>
+
+
+
+<h4 id="a-4-bit-synchronous-counter-using-jk-flip-flops">A 4-bit synchronous counter using JK flip-flops</h4>
+
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/4-bit-jk-flip-flop_V1.1.svg/921px-4-bit-jk-flip-flop_V1.1.svg.png" alt="" title=""></p></div></body>
+</html>

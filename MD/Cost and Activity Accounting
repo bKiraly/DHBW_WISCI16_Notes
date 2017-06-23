@@ -1,0 +1,188 @@
+Cost and Activity Accounting
+===========================
+
+> **Disclaimer**
+> These are notes created for my personal use. They mostly cover the contents of the lectures. I take no responsibility for the correctness of anything stated in the contents, although I strive for making them as accurate as possible. If you find any factual or formal mistakes in these notes, please don't hesitate to contact me at [kiraly.bence.1025@gmail.com](mailto:kiraly.bence.1025@gmail.com).
+
+## Table of Contents
+
+[TOC]
+
+## Accounting Information Systems
+
+### Fundamental System Principles
+* Control
+	* Management can control and monitor activities
+* Relevance
+	* Useful, understandable data
+* Flexibility
+	* Adapt to change
+* Compatibility
+	* Fit into the company
+* Cost-Benefit Principle
+	* Net benefit needs to be positive
+
+### Ledgers and Journals
+Special Journals
+
+* Sales journal
+* Cash receipts journal
+* Purchases journal
+* Cash disbursements journal
+* General journal
+
+Subsidiary ledgers
+
+* Collect similar accounts
+* These appear as one item in the general ledger
+* Can be looked up in the subsidiary ledger
+
+Digital divide $\rightarrow$ Divide between people who have access to IT systems, and those who don't.
+
+### IT in Accounting
+
+* Off-the-shelf software
+* Integrated software
+
+## Analysis of Financial statement
+
+### Basics of Analysis
+
+> **Analysis** transforms data with analytic tools to reduce uncertainty.
+
+### Blocks of Analysis
+
+* Liquidity and efficiency
+* Solvency
+* Profitability
+* Market prospects
+
+### Standards for comparison
+Comparison benchmarks:
+
+* Intracompany
+* Competitors
+* Industry
+* Guidelines
+
+### Tools for analysis
+
+* Horizontal analysis (Comparing to the previous temporal unit)
+* Vertical analysis (Comparing the base amount)
+* Ratio analysis (Relations of key items between financial statements ex. Cash/Assets)
+
+> **Common-size Statements** express the accounts as a percentage of a set total.
+
+&nbsp;
+
+> **Comparative balance sheets** are balance sheets with multiple different values for the same indicators, that contrast one another.
+
+#### Ratio analysis
+
+> **Disclaimer:** Every ratio will be included on the last page of the test.
+
+* Liquidity and efficiency
+	* Liquidity-Profit ratio
+	* Ratios
+		* $\text{Current ratio} = {\text{Current Assets}\over\text{Current Liabilities}}$
+			* Shows the ability of a company to fulfill *short-term* obligations
+			* higher is better
+		* $\text{Acid-test ratio} = {Cash+\text{Short-term investments}+\text{Current receivables} \over \text{Current liabilities}}$
+			* Shows the ability of a company to fulfill *short-term* investments, assuming a sale of assets
+			* higher is better
+			* aka. Quick ratio
+		* $\text{Accounts Receivable Turnover} = {\text{Net sales}\over\text{Average accounts receivables net}}$
+			* Indicates the ability of the company to collect on their debt
+			* Average AR = Arithmetic mean of the starting AR and ending AR
+		* $\text{Inventory Turnover} = {\text{Cost of goods sold}\over\text{Average inventory}}$
+		* higher is better
+			* Average inventory is the arithmetic mean of the beginning an the ending inventory
+		* $\text{Days sales outstanding} = {\text{Accounts receivable net}\over\text{Net sales}}*365$
+			* Indicates how frequently the company collects its accounts receivable
+			* Lower is better
+			* aka. Aging report
+			* Monitored at a daily basis
+		* $\text{Total Asset Turnover} = {\text{Net sales}\over \text{Average total assets}}$
+			* It measures the amount of profits generated from the assets of the company
+* Solvency
+	* Liability-Solvency ratio
+	* Debt ratio ${Liabilities \over Liability + Equity}$
+	* Equity ratio ${Equity\over Liability + Equity}$
+
+* Profitability
+	* Profit Margin = ${\text{Net income} \over \text{Net sales}}$
+		* Described the companies ability to earn net income on each sales dollar
+	* Return on Total Assets = ${\text{Net income} \over \text{Average total assets}}$
+		* Measures how well assets have been employed
+	* Return on common stockholders' equity = ${\text{Net income - Preferred dividends} \over \text{Average common stockholders' equity}}$
+* Market Prospects
+	* Price-Earnings ratio ${\text{Market price per common share} \over \text{Earnings per share}}$
+		* General gauge for investors on stock value
+	* Dividend Yield ${\text{Annual cash dividends per share} \over \text{Market price per share}}$
+		* Shows how profitable each share is
+
+
+## Cost-Volume-Profit Analysis
+
+$\text{Total cots} = \text{Fixed costs}+\text{Variable costs}(+\text{Target Profit})$
+$Profit = Income - Costs$
+$Profit = 0 \Rightarrow \text{Break-Even point}$
+
+![Break even point graph](http://www.velaction.com/lean-information/wp-content/uploads/2014/10/break-even-chart.png)
+
+### Step-wise costs
+
+> **Step-wise costs** are costs that are *constant* for in isolated regions, but on the boundaries of these regions they change value.
+
+### Measuring costs
+
+1. Scatter diagrams
+	* Use proper scatterplots, don't just draw a line through data like the prof did. **Seriously, don't do what the prof did in your thesis.**
+2. High-low method
+	* You take the highest and lowest datapoint and draw a line through both. **Don't use this. Ever.**
+3. Least-square regression
+	* Here you look at the line with the lowest average deviation from all points, and Excel does it for you automatically. This one you can actually use, it makes a lot of sense. Be sure to note your $R^2$ rate.
+
+### Calculating the Break-Even point
+
+#### Contribution margin
+
+$$
+\text{Contribution margin} = \text{Sales revenue per unit} - \text{Variable costs per unit} \\
+\text{Contribution margin ratio} = {\text{Contribution margin} \over \text{Sales revenue per unit}}
+$$
+
+#### The Break-Even point
+
+$$
+\text{Break-Even point} = {\text{Fixed costs} \over \text{Contribution margin per unit}} = {\text{Fixed costs} \over \text{Sales revenue per unit - Variable costs per unit}}\\
+\text{Break-Even point Revenue} = {\text{Fixed costs} \over \text{Contribution margin ratio}}
+$$
+
+## Master Budgets and Planning
+
+The budgeting is done on multiple levels.
+It enhances communication between management levels, and sets goals.
+
+> The budget, in which all other budgets are consolidated in, is called a **master budget**.
+
+> The **Budget committee** is the group of managers from all departments of the company that discuss the budgets, and make sure all of them are coordinated and realistic.
+
+Budgeting is a *bottom-up* process.
+
+> A **fixed budget** is a budget that does not change.
+
+> A **rolling budget** is a budget that can be reviewed and reevaluated as needed.
+
+The annual budget may be divided into smaller (eg. quarterly) budgets.
+
+Types of budgets
+
+* Operating budget
+	* Sales budget
+		* Estimated unit sales
+		* Estimated unit price
+	* Cash budget
+		* Actual columns
+* CapEx (capital expenditure)
+* Financial budget

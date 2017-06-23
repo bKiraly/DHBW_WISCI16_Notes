@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>System Analysis and Design</title>
+<link rel="stylesheet" href="https://stackedit.io/res-min/themes/base.css" />
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body><div class="container"><h1 id="system-analysis-and-design">System Analysis and Design</h1>
+
+<blockquote>
+  <p><strong>Disclaimer</strong> <br>
+  These are notes created for my personal use. They mostly cover the contents of the lectures. I take no responsibility for the correctness of anything stated in the contents, although I strive for making them as accurate as possible. If you find any factual or formal mistakes in these notes, please don’t hesitate to contact me at <a href="mailto:kiraly.bence.1025@gmail.com">kiraly.bence.1025@gmail.com</a>.</p>
+</blockquote>
+
+<h2 id="table-of-contents">Table of Contents</h2>
+
+<p><div class="toc">
+<ul>
+<li><a href="#system-analysis-and-design">System Analysis and Design</a><ul>
+<li><a href="#table-of-contents">Table of Contents</a></li>
+<li><a href="#general-info">General Info</a></li>
+<li><a href="#phases-of-software-life-cycle">Phases of Software Life Cycle</a><ul>
+<li><a href="#development-phase">Development Phase</a><ul>
+<li><a href="#software-development-models">Software development models</a></li>
+<li><a href="#software-testing">Software testing</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#object-oriented-method">Object-Oriented Method</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</p>
+
+
+
+<h2 id="general-info">General Info</h2>
+
+<p>System Analysis and Design are the first two phases of software development.</p>
+
+
+
+<h2 id="phases-of-software-life-cycle">Phases of Software Life Cycle</h2>
+
+<ul>
+<li>Concept</li>
+<li>Development <br>
+<ul><li>Program release to the customer</li></ul></li>
+<li>Usage <br>
+<ul><li>Defect report</li>
+<li>Feature request</li></ul></li>
+<li>Support <br>
+<ul><li>Upgrades and Updates</li></ul></li>
+</ul>
+
+<p>Length of the software LC</p>
+
+<ul>
+<li>Usage</li>
+<li>Usability</li>
+<li>From a few weeks to multiple years</li>
+<li>The maintenance is not done by the original developers</li>
+</ul>
+
+
+
+<h3 id="development-phase">Development Phase</h3>
+
+<ul>
+<li>Precise definition</li>
+<li>Clear structuring of the program</li>
+<li>Complete documentation</li>
+</ul>
+
+
+
+<h4 id="software-development-models">Software development models</h4>
+
+<ul>
+<li>Waterfall model (Basic + Royce) <br>
+<ul><li>Basic <br>
+<ul><li>Only move forward to the next phase</li>
+<li>Never move back</li></ul></li>
+<li>Royce <br>
+<ul><li>Moving back to the <em>directly preceding</em> node is possible</li></ul></li>
+<li>Requirements need to be clearly defined in the beginning</li>
+<li>Unsuitable for large projects due to changing requirements</li></ul></li>
+<li>Iterative model <br>
+<ul><li>Iterates between different phases</li>
+<li>Can go forwards and back between phases</li>
+<li>Can handle small changes to the requirements</li></ul></li>
+<li>Prototyping (What is a prototype? Varieties of prototypes) <br>
+<ul><li>Creating a basic working model of the project to establish ideas</li>
+<li>Types of prototypes <br>
+<ul><li>Horizontal prototype <br>
+<ul><li>Covers a broad range of functionality</li>
+<li>Does not go into detail about the implementation</li></ul></li>
+<li>Vertical prototype <br>
+<ul><li>Detailed testing of a single functionality</li></ul></li></ul></li></ul></li>
+<li>Evolution model</li>
+<li>V model</li>
+<li>Agile methods <br>
+<ul><li>Extreme programming (XP)</li>
+<li>SCRUM</li></ul></li>
+<li>Design thinking</li>
+</ul>
+
+<p>Testing</p>
+
+<ul>
+<li>Aim / Goal of testing</li>
+<li>Definition of testing</li>
+<li>Structure of a test-case</li>
+<li>Manual / Automatic tests - Difference, Pros, Cons</li>
+<li>Test techniques: Black box / White box</li>
+<li>Test varieties <br>
+<ul><li>Performance</li>
+<li>Desktop</li>
+<li>Regression</li>
+<li>Positive/negative</li></ul></li>
+</ul>
+
+<hr>
+
+
+
+<h4 id="software-testing">Software testing</h4>
+
+<dl>
+<dt>Definition</dt>
+<dd><blockquote>
+  <strong>Software testing</strong> is a process of executing a program or application with the intent of finding the unintended features.
+</blockquote></dd>
+</dl>
+
+<p>It can also be stated as the process of validating and verifying that a software:</p>
+
+<ul>
+<li>Meets the business and technical requirements that guided it’s design and development</li>
+<li>Works as expected</li>
+<li>Can be implemented with the same characteristic. </li>
+</ul>
+
+<p>Test properties <br>
+* Continuously performed <br>
+* Planed (conditions, type,…) <br>
+* Types: Static/Dynamic </p>
+
+<p>Structure of a test case</p>
+
+<ul>
+<li>Inputs</li>
+<li>Execution parameters</li>
+<li>Expected outputs</li>
+</ul>
+
+<p>Manual test</p>
+
+<ul>
+<li>The tester plays the role of the end user themselves</li>
+<li>+ Low cost</li>
+<li>+ Versatile</li>
+<li>- Can be run less often</li>
+<li>- Limitations on simulated scenarios</li>
+<li>- Takes time</li>
+</ul>
+
+<p>Automatic tests</p>
+
+<ul>
+<li>An automatic tool tests the program whenever a change is made</li>
+<li>+ Can test often</li>
+<li>+ Provides results immediately</li>
+<li>+ Can simulate any scenario (large-scale load test, race conditions)</li>
+<li>- Development of automated tests costs money and time</li>
+<li>- Changes to the program require the test suit to be readjusted</li>
+<li>- Might not check scenarios a human tester would</li>
+</ul>
+
+<hr>
+
+
+
+<h2 id="object-oriented-method">Object-Oriented Method</h2>
+
+<blockquote>
+  <p>A <strong>method</strong> is a series of steps to reach a desired output. In CS it is usually used for a collection of concepts, representations and processes that reach a certain goal.</p>
+</blockquote>
+
+<p>Concepts of Object Oriented Development</p>
+
+<ul>
+<li>Found in all phases of development</li>
+<li>They were designed for object oriented programming languages</li>
+<li>Programming languages that implement only a subset of object-oriented principles are called <strong>object-based programming languages</strong></li>
+</ul>
+
+<p>Steps of the Object Oriented process</p>
+
+<ul>
+<li>Modelling of a specification <br>
+<ul><li>Implementation is ignored</li>
+<li>Object-oriented analysis is used to represent the specification</li>
+<li>Semantic data modelling should be used for this <br>
+<ul><li>Static concepts <br>
+<ul><li>Associations</li>
+<li>Packages</li></ul></li>
+<li>Dynamic concepts <br>
+<ul><li>State machines</li>
+<li>Requirements</li></ul></li></ul></li></ul></li>
+</ul>
+
+<p>Notation</p>
+
+<ul>
+<li>Graphics</li>
+<li>Texts</li>
+<li>UML</li>
+</ul>
+
+<p>Methodical development</p>
+
+<ul>
+<li>Application of rules that fit the situation</li>
+<li>No given sequence</li>
+<li>Use previous solutions</li>
+<li>Recognizing patterns</li>
+</ul>
+
+<p>Development method of (Balter 1999)</p>
+
+<ul>
+<li>Establishing goals <br>
+<ul><li>Division of Analysis and Design</li>
+<li>Establish an interface between the two</li></ul></li>
+<li>Person groups in the project <br>
+<ul><li>Specialists <br>
+<ul><li>Are aware of the business problem</li>
+<li>Provided by the customer</li>
+<li>Knows what the solution should achieve</li></ul></li>
+<li>OOA Experts <br>
+<ul><li>Know the process of OO development</li>
+<li>Support the specialists to use the right methods</li></ul></li>
+<li>Software developers <br>
+<ul><li>Involved in the design phase</li>
+<li>They will develop the software</li></ul></li>
+<li>Software specialists <br>
+<ul><li>Code the project</li>
+<li>Help design complex systems</li></ul></li></ul></li>
+<li>Properties of this method <br>
+<ul><li>Object-Oriented</li>
+<li>Use UML</li>
+<li>Using design patterns</li>
+<li>OO analysis</li>
+<li>3 tier architecture</li>
+<li>Communication between UI and back-end</li>
+<li>Relational or OO databases</li>
+<li>Using Java or C++</li>
+<li>QA</li></ul></li>
+</ul>
+
+<h3 id="object-oriented-analysis">Object Oriented Analysis</h3>
+
+<p>Goals of the System Analysis</p>
+
+<ul>
+<li>Find the problem that needs to be fixed</li>
+<li>Creation of a conceptual model <br>
+<ul><li>Consistency</li>
+<li>Completeness</li>
+<li>Clarity</li>
+<li>Feasibility</li></ul></li>
+</ul>
+
+<p>This phase <em>deliberately ignores</em> all implementation aspects</p>
+
+<p>The requirements are</p>
+
+<ul>
+<li>unclear</li>
+<li>use-cases</li>
+<li>contradictory</li>
+<li>different levels of abstraction</li>
+</ul>
+
+<p>Properties of the OO analysis approach</p>
+
+<ul>
+<li>Use objects</li>
+<li>Abstraction of the real world through objects</li>
+</ul>
+
+
+
+<h4 id="results-of-the-analysis">Results of the analysis</h4>
+
+<ul>
+<li>Specification <br>
+<ul><li>This is the basis for the contract</li>
+<li>Modelling of the project <br>
+<ul><li>Object Oriented concepts</li>
+<li>Static model <br>
+<ul><li>Class system</li>
+<li>Associations</li>
+<li>Inheritance</li>
+<li>Packaging</li>
+<li>Data</li></ul></li>
+<li>Dynamic model <br>
+<ul><li>Workflows</li>
+<li>Business processes</li>
+<li>State automata</li></ul></li></ul></li></ul></li>
+</ul>
+
+<p>Prototypes</p>
+
+<ul>
+<li>UI prototype</li>
+<li>Horizontal prototype</li>
+</ul>
+
+<h4 id="people-in-the-ooa-team">People in the OOA Team</h4>
+
+<ul>
+<li>System analyst</li>
+<li>Specialist</li>
+<li>Future users</li>
+</ul>
+
+<h3 id="object-oriented-design">Object Oriented Design</h3>
+
+<ul>
+<li>Technical environment and implementation details are taken into account</li>
+<li>Standardization</li>
+</ul>
+
+<h4 id="3-tier-architecture">3 tier architecture</h4>
+
+<ul>
+<li>Front-end <br>
+<ul><li>User Interface</li></ul></li>
+<li>Middleware <br>
+<ul><li>Program</li></ul></li>
+<li>Back-end <br>
+<ul><li>Data</li></ul></li>
+</ul>
+
+<p>Products of the OOD</p>
+
+<ul>
+<li>OOD model</li>
+<li>Describes how the code will function in the future</li>
+<li>Interaction of different elements</li>
+</ul>
+
+<p>Parts of the OOD model</p>
+
+<ul>
+<li>Static model <br>
+<ul><li>3 tier model</li>
+<li>Divided into parts (packages)</li>
+<li>Dynamic model</li></ul></li>
+<li>Dynamic model <br>
+<ul><li>Describes the structure of the program</li></ul></li>
+</ul>
+
+<h2 id="analysis-process">Analysis process</h2></div></body>
+</html>
