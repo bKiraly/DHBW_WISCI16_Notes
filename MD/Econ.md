@@ -1115,6 +1115,8 @@ If the exchange rate of a currency in indirect notation *increases*, the currenc
 
 > The **textbook notation** displays the conversion rate as a fraction, and needs to be interpreted as proper SI combined ration unit. (Example: $1.12 {USD \over EUR}$). Anther advantage is the reverse exchange rate with the proper unit can be obtained by taking the reciprocal.
 
+**I will use this notation in my examples, and convert all other notations to this.**
+
 #### Spot FX trading
 
 * In the interbank market the standard trade size is $10m
@@ -1127,6 +1129,7 @@ If the exchange rate of a currency in indirect notation *increases*, the currenc
 
 The bank buys the currency at a cheaper price than it is willing to sell it for.
 
+We convert the base currency notation to textbook notation.
 USD: 10 000 000 CAD / 1.3462 ${CAD\over USD}$ = 7 428 316,74 USD
 CAD: 7 428 316,74 USD * 1.3464 ${CAD\over USD}$ = 10 001 485,66 CAD
 Profit: 1485,66
