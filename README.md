@@ -2,6 +2,8 @@
 
 Lecture notes for the WISCI16 classes at DHBW
 
+Take a look at [this branch](https://github.com/bKiraly/DHBW_WISCI16_Notes/blob/new_no/README.md) for the newest updates.
+
 > **Disclaimer**  
 > These are notes created for my personal use. They mostly cover the contents of the lectures. I take no responsibility for the correctness of anything stated in the contents, although I strive for making them as accurate as possible. If you find any factual or formal mistakes in these notes, please don't hesitate to open an issue or suggest fixes using a pull request.
 
