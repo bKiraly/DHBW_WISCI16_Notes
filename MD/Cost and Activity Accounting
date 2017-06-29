@@ -186,3 +186,47 @@ Types of budgets
 		* Actual columns
 * CapEx (capital expenditure)
 * Financial budget
+
+## Capital Budgeting and Managerial Decisions
+
+### Investment Factors
+
+* Country risk
+* Inflation rate
+* Behavior of the market
+
+### Capital Budgeting
+
+> **Capital budgeting** refers to analyzing alternative long-term investments and deciding which assets to acquire or sell.
+
+#### Factors
+
+> **Book value** describes the *current depreciated value* of the item. It appears in financial statements.
+
+&nbsp;
+
+> **Salvage value** (alternatively *residual value*) describes the value of the item once it has been completely depreciated.
+
+* Payback Period (PP)
+	* Expected time to recover the initial amount
+	* Ignores the Theory of the Time Value of Money
+		* The value of money changes as a function of time
+	* $Payback Period = {Cost Of Investment \over Annual Net Cash Flow}$ in case of linear cash flows
+	* Ignores cash flows after the payback period
+	* Double Decline Balance Depreciation (DDB Depreciation)
+		* Declines by percentage of remainder each year
+* Account Rate of Return (ARR)
+	* $ARR = {Annual Net Income \over Annual Average Investment}$
+	* Factors
+		* Risk
+		* PP
+		* Return for long time period
+	* $Annual Average Investment = {Initial Investment + Scrap Value \over 2}$ for linear depreciation
+* **Net Present Value (NPV) and Profitability Index**
+	* Present Value Factor (PVF)
+		* $PVF = {1 \over (1+rr)^n}$
+		* $r$ is the interest rate; $n$ is the time to pass to regain the money
+		* $PV = PVF * FV$
+		* $FV$ is future value
+		* Profitability Index: $Profitability Index = NPV / Investment$
+* **Internal Rate of Return (IRR)**
