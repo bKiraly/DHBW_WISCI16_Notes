@@ -14,6 +14,8 @@
   These are notes created for my personal use. They mostly cover the contents of the lectures. I take no responsibility for the correctness of anything stated in the contents, although I strive for making them as accurate as possible. If you find any factual or formal mistakes in these notes, please don’t hesitate to contact me at <a href="mailto:kiraly.bence.1025@gmail.com">kiraly.bence.1025@gmail.com</a>.</p>
 </blockquote>
 
+
+
 <h2 id="table-of-contents">Table of Contents</h2>
 
 <p><div class="toc">
@@ -29,7 +31,59 @@
 </li>
 </ul>
 </li>
-<li><a href="#object-oriented-method">Object-Oriented Method</a></li>
+<li><a href="#object-oriented-method">Object-Oriented Method</a><ul>
+<li><a href="#object-oriented-analysis">Object Oriented Analysis</a><ul>
+<li><a href="#results-of-the-analysis">Results of the analysis</a></li>
+<li><a href="#people-in-the-ooa-team">People in the OOA Team</a></li>
+</ul>
+</li>
+<li><a href="#object-oriented-design">Object Oriented Design</a><ul>
+<li><a href="#3-tier-architecture">3 tier architecture</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#analysis-process">Analysis process</a><ul>
+<li><a href="#customer-requirements">Customer requirements</a><ul>
+<li><a href="#structure-of-customer-requirements">Structure of customer requirements</a></li>
+</ul>
+</li>
+<li><a href="#methodical-structure">Methodical structure</a></li>
+<li><a href="#definition-of-the-analysis-process">Definition of the Analysis Process</a></li>
+<li><a href="#balanced-macroprocess">Balanced Macroprocess</a><ul>
+<li><a href="#analysis-in-general">Analysis in General</a></li>
+<li><a href="#steps-of-developing-a-static-model">Steps of developing a static model</a></li>
+<li><a href="#steps-of-developing-a-dynamic-model">Steps of developing a dynamic model</a></li>
+<li><a href="#alternative-macroprocesses">Alternative Macroprocesses</a></li>
+</ul>
+</li>
+<li><a href="#common-mistakes-in-the-analysis-process">Common mistakes in the analysis process</a><ul>
+<li><a href="#100-syndrome">100% syndrome</a></li>
+<li><a href="#premature-optimization">Premature optimization</a></li>
+<li><a href="#bureaucratic-following-of-a-method">Bureaucratic following of a method</a></li>
+<li><a href="#mixing-the-phases">Mixing the phases</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#basic-concepts-of-object-oriented-analysis">Basic concepts of Object-oriented Analysis</a><ul>
+<li><a href="#objects">Objects</a><ul>
+<li><a href="#uml-notation-of-objects">UML notation of Objects</a></li>
+</ul>
+</li>
+<li><a href="#classes">Classes</a></li>
+<li><a href="#attributes">Attributes</a></li>
+<li><a href="#operation">Operation</a></li>
+</ul>
+</li>
+<li><a href="#static-concepts-in-ood">Static Concepts in OOD</a><ul>
+<li><a href="#association">Association</a></li>
+<li><a href="#roles">Roles</a></li>
+<li><a href="#associative-class">Associative Class</a></li>
+<li><a href="#aggregation-and-composition">Aggregation and Composition</a></li>
+<li><a href="#inheritance">Inheritance</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -263,6 +317,8 @@
 <li>QA</li></ul></li>
 </ul>
 
+
+
 <h3 id="object-oriented-analysis">Object Oriented Analysis</h3>
 
 <p>Goals of the System Analysis</p>
@@ -322,6 +378,8 @@
 <li>Horizontal prototype</li>
 </ul>
 
+
+
 <h4 id="people-in-the-ooa-team">People in the OOA Team</h4>
 
 <ul>
@@ -330,12 +388,16 @@
 <li>Future users</li>
 </ul>
 
+
+
 <h3 id="object-oriented-design">Object Oriented Design</h3>
 
 <ul>
 <li>Technical environment and implementation details are taken into account</li>
 <li>Standardization</li>
 </ul>
+
+
 
 <h4 id="3-tier-architecture">3 tier architecture</h4>
 
@@ -367,5 +429,461 @@
 <ul><li>Describes the structure of the program</li></ul></li>
 </ul>
 
-<h2 id="analysis-process">Analysis process</h2></div></body>
+
+
+<h2 id="analysis-process">Analysis process</h2>
+
+
+
+<h3 id="customer-requirements">Customer requirements</h3>
+
+
+
+<h4 id="structure-of-customer-requirements">Structure of customer requirements</h4>
+
+<ul>
+<li>Setting goals <br>
+<ul><li>Must-criteria <br>
+<ul><li>Requirements. These have to be delivered</li></ul></li>
+<li>Optional criteria <br>
+<ul><li>Things that you should aim to deliver, but can be cut if necessary</li></ul></li>
+<li>Things that are excluded</li></ul></li>
+<li>Usage <br>
+<ul><li>Usage area <br>
+<ul><li>Where will the system be used?</li></ul></li>
+<li>Target group <br>
+<ul><li>Who will use the program</li></ul></li>
+<li>Details of usage <br>
+<ul><li>Time constraints, etc.</li></ul></li></ul></li>
+<li>Environment <br>
+<ul><li>Software</li>
+<li>Hardware</li>
+<li>Orgware</li></ul></li>
+<li>Functionality <br>
+<ul><li>Precise description</li>
+<li>Typical workflows</li></ul></li>
+<li>Data <br>
+<ul><li>What kind of data is stored, how much and how long</li></ul></li>
+<li>Delivery <br>
+<ul><li>What exactly should be delivered</li></ul></li>
+<li>UI <br>
+<ul><li>What should the UI look like</li></ul></li>
+<li>QA <br>
+<ul><li>What is used for QA</li></ul></li>
+<li>Additions</li>
+</ul>
+
+
+
+<h3 id="methodical-structure">Methodical structure</h3>
+
+<ul>
+<li>To an extend rules should be followed</li>
+<li>Creativity is also required</li>
+</ul>
+
+<p>Types of people</p>
+
+<ul>
+<li>Anarchists <br>
+<ul><li>Does not follow rules</li></ul></li>
+<li>Behaviorists <br>
+<ul><li>Clear roles</li>
+<li>Clear responsibilities</li></ul></li>
+<li>Storyboarder <br>
+<ul><li>Deals with business processes</li></ul></li>
+<li>Information modeler <br>
+<ul><li>Deals with data</li></ul></li>
+<li>Architects <br>
+<ul><li>Frameworks and Patterns</li></ul></li>
+</ul>
+
+
+
+<h3 id="definition-of-the-analysis-process">Definition of the Analysis Process</h3>
+
+<blockquote>
+  <p>An <strong>analysis process</strong> is the process to create an OO analysis.</p>
+</blockquote>
+
+<p>Properties of a good model</p>
+
+<ul>
+<li>Understandable</li>
+<li>Simple</li>
+<li>Accurate</li>
+<li>Requires a lot of effort</li>
+<li>Specialists are needed to design it</li>
+<li>It should not be too flexible</li>
+<li>Each addition needs to justify the complexity it adds</li>
+</ul>
+
+
+
+<h3 id="balanced-macroprocess">Balanced Macroprocess</h3>
+
+<ul>
+<li>Identification of business processes</li>
+<li>Creation of classes for business processes</li>
+<li>Build static models</li>
+<li>Build dynamic models</li>
+<li>Parallel development of the two</li>
+</ul>
+
+<p>Normally static models are used first, then the dynamic models</p>
+
+<p>Integrating QA</p>
+
+
+
+<h4 id="analysis-in-general">Analysis in General</h4>
+
+<ul>
+<li>Realizing business processes</li>
+<li>Building packages</li>
+</ul>
+
+
+
+<h4 id="steps-of-developing-a-static-model">Steps of developing a static model</h4>
+
+<ol>
+<li>Identify classes <br>
+<ul><li>Abstract objects</li>
+<li>Class diagram</li>
+<li>Description of class</li></ul></li>
+<li>Identify associations <br>
+<ul><li>Connections in Class Diagram</li></ul></li>
+<li>Identify attributes <br>
+<ul><li>See what is an attribute, and what is a class</li></ul></li>
+<li>Define inheritance <br>
+<ul><li>Classes might inherit from each other</li></ul></li>
+<li>Specialize associations <br>
+<ul><li>Work out the exact correlations</li></ul></li>
+<li>Specify attributes</li>
+</ol>
+
+
+
+<h4 id="steps-of-developing-a-dynamic-model">Steps of developing a dynamic model</h4>
+
+<ol>
+<li>Create scenarios <br>
+<ul><li>Sequence diagram</li>
+<li>Communication diagram</li></ul></li>
+<li>Create state automata <br>
+<ul><li>State diagram</li></ul></li>
+<li>Describe operations <br>
+<ul><li>Activity diagram</li></ul></li>
+</ol>
+
+
+
+<h4 id="alternative-macroprocesses">Alternative Macroprocesses</h4>
+
+<ul>
+<li>Scenario based macroprocess <br>
+<ul><li>Based on Business process</li></ul></li>
+<li>Data based macroprocess <br>
+<ul><li>Based on Data</li></ul></li>
+</ul>
+
+
+
+<h3 id="common-mistakes-in-the-analysis-process">Common mistakes in the analysis process</h3>
+
+
+
+<h4 id="100-syndrome">100% syndrome</h4>
+
+<ul>
+<li>Stuff doesn’t need to be perfect right away</li>
+<li>Further iteration could correct that</li>
+</ul>
+
+
+
+<h4 id="premature-optimization">Premature optimization</h4>
+
+<ul>
+<li>“Premature optimization is the root of all evil.”</li>
+<li>Too heavy QA too early</li>
+</ul>
+
+
+
+<h4 id="bureaucratic-following-of-a-method">Bureaucratic following of a method</h4>
+
+<ul>
+<li>Following the method too closely</li>
+<li>Use creativity</li>
+</ul>
+
+
+
+<h4 id="mixing-the-phases">Mixing the phases</h4>
+
+<ul>
+<li>Clean separation of Design- and Analysis phases</li>
+</ul>
+
+<hr>
+
+<ul>
+<li>Token</li>
+<li>Field</li>
+<li>Dice</li>
+</ul>
+
+
+
+<h2 id="basic-concepts-of-object-oriented-analysis">Basic concepts of Object-oriented Analysis</h2>
+
+
+
+<h3 id="objects">Objects</h3>
+
+<blockquote>
+  <p>An <strong>Object</strong> is an entity of interest of a measurement.</p>
+</blockquote>
+
+<dl>
+<dt>Example</dt>
+<dd>
+<ul>
+<li>Person</li>
+<li>Abstract concept</li>
+</ul>
+</dd>
+</dl>
+
+<blockquote>
+  <p>And <strong>Object in Object-oriented programming</strong> consist of a <em>state</em> and a pre-defined <em>behavior</em>. Every object has an <em>identity</em> (unique identifier), and can be <em>linked</em> to other objects.</p>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<blockquote>
+  <p>The <strong>state</strong> of an object consists of the values of the attributes of the object. It can be changed through the <em>behavior</em> of the object.</p>
+</blockquote>
+
+
+
+<h4 id="uml-notation-of-objects">UML notation of Objects</h4>
+
+<p>We call UML diagrams with objects <strong>object diagrams</strong>.</p>
+
+<p>Just like classes, except we use</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs bash"><span class="hljs-variable">$objectName</span> : <span class="hljs-variable">$ClassName</span></code></pre>
+
+<p>For the name</p>
+
+<p><img src="https://www.tutorialspoint.com/uml/images/uml_object_diagram.jpg" alt="UML object diagram" title=""></p>
+
+<blockquote>
+  <p>The <strong>object identity</strong> uniquely identifies the object.</p>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<blockquote>
+  <p><strong>Object equality</strong> describes two objects, whose all attributes <em>except for the identities</em> are the same.</p>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<blockquote>
+  <p>The <strong>secrecy principle</strong> describes the process of disallowing objects from accessing outside objects, as well as outside objects from directly accessing data in the object</p>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<blockquote>
+  <p><strong>External objects</strong> are objects, that have real-world equivalents. <strong>Internal objects</strong> are objects that are only used for OOA convenience.</p>
+</blockquote>
+
+
+
+<h3 id="classes">Classes</h3>
+
+<blockquote>
+  <p>A <strong>class</strong> is a definition for a set of objects, that has a <em>structure</em>, <em>behavior</em> and <em>relationships</em> (eg. inheritance). A class also has a way of creating new objects.</p>
+</blockquote>
+
+<p>In UML classes have class names.</p>
+
+<blockquote>
+  <p><strong>Abstract classes</strong> are classes, that can not be used for object creation. These are useful for inheritance.</p>
+</blockquote>
+
+<p>In UML abstract classnames are in <em>italics</em>.</p>
+
+
+
+<h3 id="attributes">Attributes</h3>
+
+<p>In UML Attribute names are in lower case, the attribute name within a class has to be unique. To access use ClassName.attributeName</p>
+
+<blockquote>
+  <p><strong>Class attributes</strong> are attributes that are the same for each object. In UML they are underlined.</p>
+</blockquote>
+
+
+
+<h3 id="operation">Operation</h3>
+
+<blockquote>
+  <p><strong>Operations</strong> of an object are blocks of behavior, that can be executed independently. They have access to the objects state. The collection of all operations of an object is called the <em>behavior</em> of the object.</p>
+</blockquote>
+
+<p>The object must exist to use an operation. The deletion of the object is also an operation.</p>
+
+<blockquote>
+  <p><strong>Class operations</strong> are operations, which can be run on the class instead of the object. This affects class attributes.</p>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<blockquote>
+  <p>The <strong>constructor operation</strong> is an operation for creating objects. All non-abstract classes must have one.</p>
+</blockquote>
+
+<dl>
+<dt>Example</dt>
+<dd>Class diagram <br>
+<img src="https://raw.githubusercontent.com/bKiraly/DHBW_WISCI16_Notes/master/IMG/System%20Analysis%20and%20Design/UML_Classdiagram.PNG" alt="Class Diagram" title=""> <br>
+Object diagram <br>
+<img src="https://raw.githubusercontent.com/bKiraly/DHBW_WISCI16_Notes/master/IMG/System%20Analysis%20and%20Design/UML_Objectdiagram.PNG" alt="Object diagram" title=""></dd>
+</dl>
+
+
+
+<h2 id="static-concepts-in-ood">Static Concepts in OOD</h2>
+
+
+
+<h3 id="association">Association</h3>
+
+<blockquote>
+  <p>An <strong>association</strong> is a connection between two <em>objects</em>. If the two objects are of the same class, the association is called <em>reflexive</em>.</p>
+</blockquote>
+
+<p>Associations are represented by a solid line between the two objects in an object diagram. In a class diagram the <em>cardinality</em> is usually also denoted, as well as the <em>name</em> of the association.</p>
+
+<blockquote>
+  <p><strong>Cardinality</strong> described the number of objects that can be associated with each other. It is denoted with * for anything, number for the number of objects, or x..y for a range.</p>
+</blockquote>
+
+
+
+<h3 id="roles">Roles</h3>
+
+<blockquote>
+  <p><strong>Roles</strong> are associations that have special behavior with the object.</p>
+</blockquote>
+
+<p>Reflexive roles are a behave according to the rules of reflexive associations.</p>
+
+
+
+<h3 id="associative-class">Associative Class</h3>
+
+<blockquote>
+  <p><strong>Associative Classes</strong> are classes for the creation of objects that are assigned to an association.</p>
+</blockquote>
+
+
+
+<h3 id="aggregation-and-composition">Aggregation and Composition</h3>
+
+<blockquote>
+  <p>An <strong>aggregation</strong> implies multiple parts of the same object. It is a close association.</p>
+</blockquote>
+
+<p>An aggregation is represented by a white paralellogram.</p>
+
+<blockquote>
+  <p>A <strong>composition</strong> is a special case of aggregations. The aggregate class is composed of the part-class. If the aggregate object is deleted, all its part-objects are also deleted.</p>
+</blockquote>
+
+<p>A composition is represented by a black paralellogram.</p>
+
+
+
+<h3 id="inheritance">Inheritance</h3>
+
+<blockquote>
+  <p><strong>Inheritance</strong> describes a relation between a more general class called the <em>superclass</em> and a more specialized class called a <em>subclass</em>. It is called an <em>is-a-relation</em>. Subclasses inherit every property of the superclass.</p>
+</blockquote>
+
+<p>Single inheritance means a subclass may only inherit from a single superclass. This is usually used, as multiple inheritance is difficult to implement.</p>
+
+<p>For more information see Java slides.</p>
+
+<p>In UML inheritance is denoted with a white triangle pointing at the superclass on a line connecting the subclass to the superclass.</p>
+
+<ul>
+<li>Advantages <br>
+<ul><li>Reusability</li>
+<li>Changeability</li></ul></li>
+<li>Disadvantages <br>
+<ul><li>The <em>Secret principle</em> is lost</li>
+<li>The ability to isolate classes is lost</li></ul></li>
+</ul>
+
+<p>An inherited operation can be redefined.</p>
+
+<h2 id="dynamic-concepts-of-ood">Dynamic Concepts of OOD</h2>
+
+<h3 id="use-case">Use Case</h3>
+
+<ul>
+<li>Identification of use-cases <br>
+<ul><li>In IT <br>
+<ul><li>Sequence of Transactions</li>
+<li>Done by an actor</li>
+<li>Transactions are closed, only after all steps are done</li></ul></li>
+<li>In a Company <br>
+<ul><li>A business process</li>
+<li>Activities to satisfy customers</li></ul></li></ul></li>
+<li>Specification of use-cases <br>
+<ul><li>Separating functionality from User Interface (UI)</li>
+<li>Types <br>
+<ul><li>Informal</li>
+<li>Semi-formal <br>
+<ul><li>Definitions</li>
+<li>Success conditions</li>
+<li>Failure conditions</li></ul></li></ul></li></ul></li>
+<li><p>Creation of a Sequence- and Communications diagram</p>
+
+<ul><li>Sequence diagram <br>
+<ul><li>Messages between the actor and the objects</li>
+<li>Object lines vs time</li>
+<li>Operations go between object lines</li>
+<li>If a message reaches the object, the object will be activated</li>
+<li>Small rectangle symbolizes the running time of the operation</li>
+<li>Control is symbolized by an arrow</li>
+<li>Messages on the sequence diagram need to be represented 1:1 on the class diagram</li>
+<li>Sequence diagrams use <em>objects</em></li></ul></li></ul></li>
+<li><p>Creation of State diagrams</p></li>
+</ul>
+
+<h3 id="message">Message</h3>
+
+
+
+<h3 id="scenario">Scenario</h3>
+
+
+
+<h3 id="sequence-and-communications-diagrams">Sequence- and Communications Diagrams</h3>
+
+<h3 id="state-automaton">State Automaton</h3>
+
+
+
+<h3 id="activity-diagram">Activity Diagram</h3></div></body>
 </html>
