@@ -754,7 +754,7 @@ See this video for a more detailed explanation on Dijkstra's algorithm.
 
 ### Flooding
 
->***Flooding** is a simple method to send a packet to all network nodes. Each node floods a new packet received on an incoming link to all other links. Nodes keep track of flood packets, and employ hop limits to prevent loops.
+>**Flooding** is a simple method to send a packet to all network nodes. Each node floods a new packet received on an incoming link to all other links. Nodes keep track of flood packets, and employ hop limits to prevent loops.
 
 #### Distance Vector Routing
 
@@ -846,6 +846,14 @@ The start offset is the place of the message that is being sent.
 
 > **Max Transmission Unit (MTU)** analyzes the network to get the maximal size packets that can be transmitted over the network.
 
+##### Transparent Fragmentation
+
+Fragments are assembled before being sent on through the next link. This is slower but allows more efficient splitting of packets.
+
+##### Non-Transparent Fragmentation
+
+Each fragment is re-fragmented separately. This means the fragments can be forwarded without delay, but it may *double* the load on the link on misconfigured MTUs.
+
 ### Network layer on the Internet
 
 #### IPv4
@@ -883,5 +891,272 @@ IPv4 header carries the following data:
 * Destination IP
 * Options / Padding
 
+##### IP Address Blocks
+
+* Has $2^L$ addresses aligned on that boundary.
+* Written in address/length (18.0.31.0/24)
+* Prefix is determined by the network portion
+* IPs are dynamically assigned
+
+> A **subnet mask** is a string of ones and zeroes denoting the *network address* and *host address*. Any bits in the IP that have a one in the corresponding bit in the subnet mask, it is part of the network address. If the corresponding element is zero, it is part of the host address.
+
+&nbsp;
+
+> A **subnet** is a smaller segment of a network, given a specific IP prefix. The aggregation of networks is also possible. This is called *supernet*.
+
+###### Classes of networks
+
+The first few bits determine the class of the network.
+
+* Class A. starts with a zero, and has a 7 bit network part, leaving a 24 bit host address
+* Class B: starts with 10, and has a 14 bit network part, leaving 16 bits for host address
+* Class C: starts with 110, and has a 21 bit network part, leaving 8 bits for host address
+* Class D: starts with 1110. leaving the entire address to multicast
+* Class E: starts with 11111, and is reserved for future use
+
+##### Network Address Translation (NAT)
+
+> **Network Address Translation (NAT)** refers to mapping internal addresses (some addresses are reserved for internal use) to external address-port pairs. This means an entire network can communicate with another through a single IP address.
+
+##### Reserved Network Addresses
+
+> The **subnet mask** (or netmask, short NM) determines which part of the address refers to the network, and which one refers to the host. It can be written in form /n, where the first n bits designate the network. It can also be written as a decimal representation of each byte, similar to IPs.
+
+&nbsp;
+
+> The **network address** describes a specific network. It is obtained by taking any address A and computing $A \land NM$.
+
+&nbsp;
+
+> The **broadcast address** is an address that is routed to all hosts on a specific network. It is obtained by taking any address A on the network, and computing $A \lor \lnot NM$.
+
+Example
+: Compute the Network Address and Broadcast Address of the following address: 192.168.1.38/27
+| Name			|		|		|		|	  |
+|-----------------------|--------------:|--------------:|--------------:|--------:|
+| Address		| 11000000	| 10101000	| 00000001	| 00100110|
+| 			| 192		| 168		| 1		| 38	  |
+| Mask			| 11111111	| 11111111	| 11111111	| 11100000|
+|			| 255		| 255		| 255		| 224	  |
+| BC Address		| 11000000	| 10101000	| 00000001	| 00111111|
+|			| 192		| 168		| 1		| 63	  |
+| Network Adderss	| 11000000	| 10101000	| 00000001 	| 00100000|
+|			| 192 		| 168		| 1		| 32  	  |
+
+##### Advantages of Subnets
+
+* Subnets enable an easier management of multiple groups of hosts
+* They allow control of communications between the networks, improving security
+
 #### IPv6
+
+IPv6 has a longer address, 128 bits, meaning that all computers in the world can get a unique address
+Effort that started 1990, due to address exhaustion
+
+* Supports billions of hosts
+* Reduces routing table size
+* Simplify protocol
+* Better security
+* QoS considerations
+* AID multicasting (compromise between broadcast and single host networking)
+* Roaming hosts without changing addresses
+* Permit coexistence with other protocols
+
+Deployment has been slow
+
+##### Header Structure
+
+* Version
+* Diff. Serv.
+* Flow label (Identifies packet flow, enables smarter routing)
+* Payload length
+* Extension headers
+	* Hop-by-Hop options
+	* Destination options
+	* Routing
+	* Fragmentation
+	* Authentication
+	* Encrypted security payload
+* Hop limit
+* Source address
+* Destination address
+
 #### Internet Control Protocols
+
+* ICMP (Internet Control Message Protocol)
+	* returns error info
+	* Required in many services (i.e. traceroute)
+* ARP (Address Resolution Protocol)
+	* finds Ethernet address of a local IP address
+	* Enables hosts to communicate by getting the Ethernet address of the host
+* DHCP (Dynamic Host Configuration Protocol)
+	* Automatically assigns IP addresses to hosts
+
+##### Routing protocols
+
+* OSPF
+	* Open Shortest Path First
+	* Internal routing
+* BGP
+	* Border Gateway Protocol
+	* Inter-domain routing
+	* Respects network policy constraints
+
+
+## Transport Layer
+
+### Transport Service
+
+#### Services provided to the Upper Layer
+
+* Delivers data to the destination reliably
+	* Communicates only with its peer
+	* Adds reliability (connectionless or connection oriented)
+* Multiple addresses on the same machine
+* Units of data: **Segment**
+
+#### Transport Service Primitives
+
+* *Primitives* are functions provided to the upper layer
+	* LISTEN
+	* CONNECT
+	* SEND
+	* RECEIVE
+	* DISCONNECT
+
+#### Berkeley Sockets
+
+* SOCKET: Create a new communication endpoint
+* BIND: Associate address with socket
+* LISTEN
+* ACCEPT
+* CONNECT
+* SEND
+* RECEIVE
+* CLOSE
+
+#### Socket Example: Internet File Server
+
+See slides for C code example
+
+### Elements of Transport Protocols
+
+#### Addressing
+
+* Extended to TSAPs
+* Multiple clients and servers run on a single host with a single IP
+* TSAPs are **ports** for TCP/UDP
+
+#### Connection Establishment
+
+Key problem is to ensure reliability even though packets might be *lost*, *corrupted*, *delayed*, and *duplicated*
+
+* Do not take duplicated packets as new
+* Use checksums
+
+Approach
+
+* Sequence number
+* Three-way-handshake
+	* CR (Connection Request) with seq (sequence number)
+	* ACK (Acknowledgement) with previous seq and new seq
+	* DATA (Acknowledgement) with previous seq and new seq
+* Connection release
+
+#### QoS
+
+* Sliding window principle
+* Flow control -> buffering at sender and receiver
+	* Variable-sized sliding window
+
+**Skipped a *whole* bunch of stuff**
+
+### Congestion Control
+
+**Skipped completely**
+
+### UDP (User Datagram Protocol)
+
+* No delivery control
+* No flow control
+* Connectionless
+* Fast
+
+##### Header
+
+* Source port
+* Destination port
+* UDP length
+* Checksum
+
+#### Remote Procedure Call
+
+* RPC connects applications over the network with procedure calls
+	* Uses UDP for low-latency transport
+
+#### Real-Time Transport
+
+**Skipped a whole bunch of stuff again**
+
+### TCP (Transmission Control Protocol)
+
+#### The TCP service model
+
+* Reliable bytestreams between processes
+* Popular services run on well-known ports [see this list](https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers)
+* Segmentation is done implicitly, the hosts only access byte streams
+
+#### The TCP segment header
+
+* Source port
+* Destination port
+* Acknowledgement number
+* Data offset
+* Fags
+	* NS
+	* CWR
+	* ECE
+	* URG
+	* ACK
+	* PSH
+	* RST
+	* SYN
+	* FIN
+* Window size
+* Urgent pointer
+* Options
+
+#### TCP connection establishment
+
+* Three way handshake
+* Setting of flags
+	* SYN
+	* ACK
+	* ACK
+
+#### TCP connection state modeling
+
+**Skipped**
+
+#### Flow Control
+
+* TCP adds flow control to the sliding window
+* ACK+WIN is the senders limit
+* Only send until WIN = 0
+* If read from the buffer client sends new buffer state
+* Client is ready to receive more data
+
+Some crazy configurations might lead to inefficient transfer
+
+#### Congestion Control
+
+TCP uses AIMD with loss signal to control congestion
+
+* Congestion window (cwnd)
+* Doubles RTT while keeping the ACK clock going 
+
+**Skipped a whole bunch**
+
+#### Performance issues
+
+**Skipped a whole bunch**
