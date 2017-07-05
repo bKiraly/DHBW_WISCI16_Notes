@@ -1153,9 +1153,20 @@ Solution
 * Around 160 exchange rates are represented
 
 -------
-Homework:
+TIPSE
 
-Do profitable trade with the other currencies
-Prepare the questions: 1-3 (only questions about ECB), 5-8
-Solve the following problems in Ch. 26: 1-9
-Inflation rate in Syria
+* Tastes
+* Income
+* Population
+* Substitute
+* Expectations
+
+PIGTEST
+
+* Prodcution
+* Investment
+* Govt. Expenditure
+* Taxes
+* Expectations
+* Sellers
+* Technology
