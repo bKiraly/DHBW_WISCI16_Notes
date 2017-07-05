@@ -656,10 +656,12 @@ Features of money
 
 ### 1.4 Money Creation
 M1 = Banknotes + Overnight deposits
+
 * Bank notes can be issued by the central bank
 * Commercial banks responsible for the overnight deposits
 
 Central bank can influence overnight deposits by adjusting
+
 * Reserve requirements
 * Open market operations
 * Determining the refinancing rate
@@ -1102,7 +1104,7 @@ Example
 > **Indirect quotation** (aka. American quotation) describes the price of the home currency expressed in foreign currency.
 
 Example
-:
+: 
 1 EUR = 1.12 USD
 
 ##### Convention
