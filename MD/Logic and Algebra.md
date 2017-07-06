@@ -51,12 +51,15 @@ A \subset B \iff A \subseteq B \land B \not = A\\
 A \cup B = \{x: x \in A \lor x \in B\}\\
 A \cap B = \{x: x \in A \land x \in B\}\\
 A \backslash B = \{x: x \in A \land x \not \in B\}\text{ alternative notation: } A - B\\
-\overline{A} = U\backslash A
+\overline{A} = U\backslash A\\
+A \Delta B = (A \backslash B) \cup (B \backslash A)
 $$
 
 $\subseteq$ read *is a subset of*
 $\subset$ read *is exclusive subset of*
 $\cup$ read *union*
+$\cap$ read *intersection*
+$\Delta$ read *symmetrical difference*
 
 #### Illustration Using Venn-diagrams
 
@@ -201,5 +204,35 @@ $$
 R \subseteq A \times B
 $$
 
+[Wiki link](https://en.wikipedia.org/wiki/Binary_relation#Relations_over_a_set)
+
+Tables in relational databases are *sets*.
+
+### Multiplying relations
+
+Let $R_1 \subseteq M_1\times M_2$; $R_2 \subseteq M_2\times M_3$
+Then $R_1 \circ R_2 = \{(x,y) | (x,z) \in R_1; (z,y) \in R_2\}$
+
+### Using Matrices to represent Relations
+
+> A **relation matrix** may be used for representing a relation between the two sets
+
 ## Special Relations
+
+> A relation is **reflexive** if all members of its base set are related to themselves. Formally: $\forall x \in M: (x,x) \in R$
+
+&nbsp;
+
+> A relation is **symmetric** if the inverse of the relation is the equal to the relation itself. Formally: $\forall (x; y) \in R: (y;x) \in R$
+
+&nbsp;
+
+> A relation is **asymmetric** if $\forall (x;y) \in R: (y;x) \not \in R$
+
+ &nbsp;
+
+> A relation is **transitive** if one element being related to another, and that other element being related to a third, it means that the first element is also related to the third. Formally: $(x;y); (y;z) \in R \Rightarrow (x;z) \in R$
+
+More information on special kinds of relations are found on the [binary relations Wikipedia page](https://en.wikipedia.org/wiki/Binary_relation#Relations_over_a_set).
+
 ## Basic Logic
