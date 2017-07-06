@@ -230,3 +230,76 @@ Types of budgets
 		* $FV$ is future value
 		* Profitability Index: $Profitability Index = NPV / Investment$
 * **Internal Rate of Return (IRR)**
+	* The interest rate, which makes the NPV = 0
+	* Present value of annuity table
+		* $PV = {1-{1 \over r}\over r}$
+	* Uneven cash flows $\rightarrow$ spreadsheets/brute force
+	* There is a *hurdle rate*, which is the limit of the IRR
+
+## Decision making
+
+* Define task
+* Identify alternative actions
+* Collect relevant information
+* Select the course of action
+* Analyze and assess decisions made
+
+### Relevant costs
+
+* Costs that are applicable to a particular application
+* Costs that Costs that are available
+* Costs that influence decisions
+* Future costs differ between alternatives
+
+> **Sunk costs** are the results of past decisions and can not change by any current or future decisions. They are *irrelevant.*
+
+&nbsp;
+
+> **Out-of-Pocket costs** are future outlays of cash associated with a decision. They are *relevant.*
+
+&nbsp;
+
+> **Opportunity costs** are the potential benefits given up to take the current decision. They are *relevant.*
+
+### Make or Buy decisions
+
+> **Make or Buy decisions** are decisions about whether to develop something in-house, or outsource it/buy it on the market.
+
+* Incremental costs need to be taken into account
+* Cost must include
+	* Direct material costs
+	* Direct labor costs
+	* *Incremental overhead*
+* The predetermined overhead rate should not be used to determine the product cost
+
+### Scrap or Rework decisions
+
+> **Scrap or Rework decisions** are decisions on when to abandon a failed project or product, and when to try to save it.
+
+&nbsp;
+
+> As long as the *rework costs* are covered through the sale of the product, and rework does not interfere with normal production, it is worth it to rework the product.
+
+### Sell or Process decisions
+
+> **Sell or Process decisions** are decisions on whether to *process the product* into something more valuable, or to sell it at its normal price.
+
+### Sales Mix Selection
+
+* Product portfolio
+* Informed managerial decision about
+	* Contribution margin of each product
+	* Facilities to produce each product
+	* Demand for each product
+
+### Quality Factors in Decisions
+
+* Quality
+* Delivery
+* Supplier reputation
+* Employee morale
+* Customer opinion
+
+### Break-Even point
+
+The point at which the 
