@@ -18,7 +18,7 @@
 
 <h2 id="table-of-contents">Table of Contents</h2>
 
-<p><div class="toc">
+<p><div class="toc"><div class="toc">
 <ul>
 <li><a href="#system-analysis-and-design">System Analysis and Design</a><ul>
 <li><a href="#table-of-contents">Table of Contents</a></li>
@@ -84,9 +84,19 @@
 <li><a href="#inheritance">Inheritance</a></li>
 </ul>
 </li>
+<li><a href="#dynamic-concepts-of-ood">Dynamic Concepts of OOD</a><ul>
+<li><a href="#use-case">Use Case</a></li>
+<li><a href="#message">Message</a></li>
+<li><a href="#scenario">Scenario</a></li>
+<li><a href="#sequence-and-communications-diagrams">Sequence- and Communications Diagrams</a></li>
+<li><a href="#state-automaton">State Automaton</a></li>
+<li><a href="#activity-diagram">Activity Diagram</a></li>
 </ul>
 </li>
 </ul>
+</li>
+</ul>
+</div>
 </div>
 </p>
 
@@ -836,7 +846,11 @@ Object diagram <br>
 
 <p>An inherited operation can be redefined.</p>
 
+
+
 <h2 id="dynamic-concepts-of-ood">Dynamic Concepts of OOD</h2>
+
+
 
 <h3 id="use-case">Use Case</h3>
 
@@ -871,19 +885,67 @@ Object diagram <br>
 <li><p>Creation of State diagrams</p></li>
 </ul>
 
+
+
 <h3 id="message">Message</h3>
+
+<blockquote>
+  <p>A <strong>message</strong> opens and runs an operation with the same name as the message</p>
+</blockquote>
+
+<p>Lifetime of the object is denoted with</p>
+
+<ul>
+<li>{new} if the object is created during the  sequence</li>
+<li>{destroyed} if the object is destroyed during the sequence</li>
+<li>{transient} if the object is created and destroyed during the sequence</li>
+</ul>
+
+<p>Permanent and temporary relations</p>
+
+<ul>
+<li>Permanent relations are associations between the classes</li>
+<li>Temporary relations only exist during the sequence</li>
+</ul>
 
 
 
 <h3 id="scenario">Scenario</h3>
 
+<p>Not sure if we skipped this? It might have been a bad translation for use-cases.</p>
+
 
 
 <h3 id="sequence-and-communications-diagrams">Sequence- and Communications Diagrams</h3>
 
+<blockquote>
+  <p><strong>Communications- and Sequence diagrams</strong> describe what might be called during execution.</p>
+</blockquote>
+
+<p>Difference between the two: Sequence diagram shows a specific timeline, the communications diagram is general</p>
+
+
+
 <h3 id="state-automaton">State Automaton</h3>
 
+<blockquote>
+  <p>A <strong>state automaton</strong> consists of states and state changes. <strong>States</strong> is a time period, in which the object waits for an event.</p>
+</blockquote>
+
+<p>The lifecycle of each element can be represented with a state automaton</p>
+
+<ul>
+<li>Entry</li>
+<li>Exit</li>
+<li>Do</li>
+<li>Include</li>
+</ul>
 
 
-<h3 id="activity-diagram">Activity Diagram</h3></div></body>
+
+<h3 id="activity-diagram">Activity Diagram</h3>
+
+<blockquote>
+  <p>An <strong>activity diagram</strong> is a special case of a state diagram used for actions.</p>
+</blockquote></div></body>
 </html>
