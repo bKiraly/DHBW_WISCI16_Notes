@@ -574,10 +574,40 @@ An inherited operation can be redefined.
 
 ### Message
 
+> A **message** opens and runs an operation with the same name as the message
+
+Lifetime of the object is denoted with
+
+* {new} if the object is created during the  sequence
+* {destroyed} if the object is destroyed during the sequence
+* {transient} if the object is created and destroyed during the sequence
+
+Permanent and temporary relations
+
+* Permanent relations are associations between the classes
+* Temporary relations only exist during the sequence
+
 ### Scenario
+
+Not sure if we skipped this? It might have been a bad translation for use-cases.
 
 ### Sequence- and Communications Diagrams
 
+> **Communications- and Sequence diagrams** describe what might be called during execution.
+
+Difference between the two: Sequence diagram shows a specific timeline, the communications diagram is general
+
 ### State Automaton
 
+> A **state automaton** consists of states and state changes. **States** is a time period, in which the object waits for an event.
+
+The lifecycle of each element can be represented with a state automaton
+
+* Entry
+* Exit
+* Do
+* Include
+
 ### Activity Diagram
+
+> An **activity diagram** is a special case of a state diagram used for actions.
