@@ -183,3 +183,62 @@ An *ordered tree* is a rooted tree with ordered child nodes.
 
 A *binary tree* is an ordered rooted tree with each node having 0 to 2 children. The node has a left and right child. In a *complete binary tree* every inner node has 2 child nodes.
 
+### Presentations
+
+### Datastructures
+
+#### Fields
+
+* Arrays
+* Advantages
+	* Direct random access
+	* Sequential reads
+* Disadvantages
+	* Static size
+	* Element ordering is expensive
+
+#### Lists
+
+* Linked lists
+* Attributes
+	* Head/Tail (first/last element)
+	* Follower/predecessor (next/prev)
+	* Key (key(x))
+* Operations
+	* search
+	* insert
+	* delete
+* Advantages
+	* Dynamic
+	* Elements can be added/removed as desired
+	* Changing order of elements is easier
+* Disadvantages
+	* Search
+
+#### Stacks and Queues
+
+* Queues $\rightarrow$ FIFO
+	* Head/Tail
+	* Enqueue
+	* Dequeue
+* Stacks $\rightarrow$ LIFO
+	* Top
+	* stack-empty
+	* push
+	* pop
+
+### Search Trees and Hash Tables Presentations
+
+#### Search Trees
+
+* Binary search trees
+* Balanced search trees
+* Red-Black trees
+
+#### Hash Tables
+
+Mapping a unique key to a specific value
+
+* Direct Addressing
+* Indirect Addressing
+* Open Addressing
