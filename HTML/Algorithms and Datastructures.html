@@ -31,8 +31,24 @@
 <li><a href="#random-access-machine">Random access machine</a></li>
 <li><a href="#problems-of-analyzing-algorithms">Problems of analyzing algorithms</a></li>
 <li><a href="#assumptions">Assumptions</a></li>
-<li><a href="#theta-notation"><script type="math/tex" id="MathJax-Element-60">\Theta</script> notation</a></li>
+<li><a href="#theta-notation"><script type="math/tex" id="MathJax-Element-1">\Theta</script> notation</a></li>
 <li><a href="#analyzing-algorithms-based-on-design-methodology-or-paradigm">Analyzing Algorithms Based on Design Methodology or Paradigm</a></li>
+</ul>
+</li>
+<li><a href="#explanations-of-symbols-of-mathematical-definitions">Explanations of Symbols of Mathematical definitions</a></li>
+<li><a href="#relations">Relations</a></li>
+<li><a href="#trees-and-graphs">Trees and Graphs</a></li>
+<li><a href="#forests-and-trees">Forests and trees</a></li>
+<li><a href="#presentations">Presentations</a></li>
+<li><a href="#datastructures">Datastructures</a><ul>
+<li><a href="#fields">Fields</a></li>
+<li><a href="#lists">Lists</a></li>
+<li><a href="#stacks-and-queues">Stacks and Queues</a></li>
+</ul>
+</li>
+<li><a href="#search-trees-and-hash-tables-presentations">Search Trees and Hash Tables Presentations</a><ul>
+<li><a href="#search-trees">Search Trees</a></li>
+<li><a href="#hash-tables">Hash Tables</a></li>
 </ul>
 </li>
 </ul>
@@ -109,7 +125,7 @@
 
 <ul>
 <li>Executes each instruction in order</li>
-<li>Each execution costs <script type="math/tex" id="MathJax-Element-61">c_i</script></li>
+<li>Each execution costs <script type="math/tex" id="MathJax-Element-2">c_i</script></li>
 <li>The process of evaluating run-time complexity <br>
 <ul><li>Examining the structure of the algorithm</li>
 <li>Making some simplifying assumptions</li></ul></li>
@@ -156,21 +172,21 @@ Average case: n-square relationship</dd>
 
 
 
-<h4 id="theta-notation"><script type="math/tex" id="MathJax-Element-92">\Theta</script> notation</h4>
+<h4 id="theta-notation"><script type="math/tex" id="MathJax-Element-3">\Theta</script> notation</h4>
 
 <ul>
 <li>We ignore constants</li>
-<li>Due to the point that <script type="math/tex" id="MathJax-Element-93">n^2</script> grows faster than <script type="math/tex" id="MathJax-Element-94">n</script>, we ignore all linear constants</li>
+<li>Due to the point that <script type="math/tex" id="MathJax-Element-4">n^2</script> grows faster than <script type="math/tex" id="MathJax-Element-5">n</script>, we ignore all linear constants</li>
 <li>We are then left with the fastest-growing characteristic of the running time of the algorithm</li>
-<li>We denote: <script type="math/tex" id="MathJax-Element-95">\Theta</script> (Big-O notation)</li>
-<li>The faster the most significant function grows, the higher the runtime of the algorithm for large <script type="math/tex" id="MathJax-Element-96">n</script></li>
+<li>We denote: <script type="math/tex" id="MathJax-Element-6">\Theta</script> (Big-O notation)</li>
+<li>The faster the most significant function grows, the higher the runtime of the algorithm for large <script type="math/tex" id="MathJax-Element-7">n</script></li>
 </ul>
 
 <dl>
 <dt>Example</dt>
-<dd>Insertion sort has an average complexity of <script type="math/tex" id="MathJax-Element-97">\Theta(n^2)</script> <br>
-In contrast Bogosort has an average complexity of <script type="math/tex" id="MathJax-Element-98">\Theta(n!)</script> <br>
-<script type="math/tex" id="MathJax-Element-99">n!</script> grows faster than <script type="math/tex" id="MathJax-Element-100">n^2</script>, therefore Insertion sort is faster than Bogosort for large lists</dd>
+<dd>Insertion sort has an average complexity of <script type="math/tex" id="MathJax-Element-8">\Theta(n^2)</script> <br>
+In contrast Bogosort has an average complexity of <script type="math/tex" id="MathJax-Element-9">\Theta(n!)</script> <br>
+<script type="math/tex" id="MathJax-Element-10">n!</script> grows faster than <script type="math/tex" id="MathJax-Element-11">n^2</script>, therefore Insertion sort is faster than Bogosort for large lists</dd>
 </dl>
 
 
@@ -192,32 +208,38 @@ One common paradigm is <strong>divide and conquer</strong>:</p>
 Mergesort divides the list into two sub-list <br>
 Then it calls itself on the sub-lists to sort it, until the sub-list has size one <br>
 Then it combines the two sorted lists into a sorted list and returns that <br>
-Assumptions: <script type="math/tex" id="MathJax-Element-1012">n = k^2</script> <br>
-Thus, the number of recursions is <script type="math/tex" id="MathJax-Element-1013">\log_2(n)</script> <br>
-Thus the whole algorithm has a time complexity of <script type="math/tex" id="MathJax-Element-1014">\Theta(n*\log(n))</script></dd>
+Assumptions: <script type="math/tex" id="MathJax-Element-12">n = k^2</script> <br>
+Thus, the number of recursions is <script type="math/tex" id="MathJax-Element-13">\log_2(n)</script> <br>
+Thus the whole algorithm has a time complexity of <script type="math/tex" id="MathJax-Element-14">\Theta(n*\log(n))</script></dd>
 </dl>
 
-<p><script type="math/tex" id="MathJax-Element-1015">O(n)</script> Describes the <em>upper bound</em> of the runtime of the algorithm <br>
-<script type="math/tex" id="MathJax-Element-1016">\Omega(n)</script> describes the <em>lower bound</em> of the runtime of the algorithm <br>
-<script type="math/tex" id="MathJax-Element-1017">\Theta(n)</script> describes an upper <em>and</em> a lower limit of the runtime</p>
+<p><script type="math/tex" id="MathJax-Element-15">O(n)</script> Describes the <em>upper bound</em> of the runtime of the algorithm <br>
+<script type="math/tex" id="MathJax-Element-16">\Omega(n)</script> describes the <em>lower bound</em> of the runtime of the algorithm <br>
+<script type="math/tex" id="MathJax-Element-17">\Theta(n)</script> describes an upper <em>and</em> a lower limit of the runtime</p>
 
-<p>For more information on the <script type="math/tex" id="MathJax-Element-1018">\Theta</script> notation is found on <a href="https://en.wikipedia.org/wiki/Big_O_notation">this Wikipedia page</a>.</p>
+<p>For more information on the <script type="math/tex" id="MathJax-Element-18">\Theta</script> notation is found on <a href="https://en.wikipedia.org/wiki/Big_O_notation">this Wikipedia page</a>.</p>
+
+
 
 <h3 id="explanations-of-symbols-of-mathematical-definitions">Explanations of Symbols of Mathematical definitions</h3>
 
-<p><script type="math/tex" id="MathJax-Element-1019">\Omega \dots</script> Omega (Capital Greek letter) <br>
-<script type="math/tex" id="MathJax-Element-1020">f(x) \dots</script> f of x (The function f with the value x) <br>
-<script type="math/tex" id="MathJax-Element-1021">| \dots</script> Is in the set if the following is true <br>
-<script type="math/tex" id="MathJax-Element-1022">\exists \dots</script> There exists <br>
-<script type="math/tex" id="MathJax-Element-1023">\forall \dots</script> For all <br>
-<script type="math/tex" id="MathJax-Element-1024">: \dots</script> The following applies <br>
-<script type="math/tex" id="MathJax-Element-1025">\land \dots</script> And <br>
-<script type="math/tex" id="MathJax-Element-1026">\lor \dots</script> Or <br>
-<script type="math/tex" id="MathJax-Element-1027">\iff \dots</script> Is equivalent with</p>
+<p><script type="math/tex" id="MathJax-Element-19">\Omega \dots</script> Omega (Capital Greek letter) <br>
+<script type="math/tex" id="MathJax-Element-20">f(x) \dots</script> f of x (The function f with the value x) <br>
+<script type="math/tex" id="MathJax-Element-21">| \dots</script> Is in the set if the following is true <br>
+<script type="math/tex" id="MathJax-Element-22">\exists \dots</script> There exists <br>
+<script type="math/tex" id="MathJax-Element-23">\forall \dots</script> For all <br>
+<script type="math/tex" id="MathJax-Element-24">: \dots</script> The following applies <br>
+<script type="math/tex" id="MathJax-Element-25">\land \dots</script> And <br>
+<script type="math/tex" id="MathJax-Element-26">\lor \dots</script> Or <br>
+<script type="math/tex" id="MathJax-Element-27">\iff \dots</script> Is equivalent with</p>
+
+
 
 <h3 id="relations">Relations</h3>
 
 <p>See the <a href="Logic%20and%20Algebra.html">Logic and Algebra</a></p>
+
+
 
 <h3 id="trees-and-graphs">Trees and Graphs</h3>
 
@@ -226,7 +248,7 @@ Thus the whole algorithm has a time complexity of <script type="math/tex" id="Ma
   
   <ul>
   <li>V (Vertices) is an endless set</li>
-  <li>E (Edges) is a binary relation (u,v) to V with <script type="math/tex" id="MathJax-Element-2200">E \subseteq V \times V</script></li>
+  <li>E (Edges) is a binary relation (u,v) to V with <script type="math/tex" id="MathJax-Element-28">E \subseteq V \times V</script></li>
   <li>Edges define connections between vertices in <em>specific directions</em></li>
   </ul>
 </blockquote>
@@ -250,24 +272,24 @@ Thus the whole algorithm has a time complexity of <script type="math/tex" id="Ma
 </ul>
 
 <blockquote>
-  <p>A <strong>path</strong> with length k from an vertex <script type="math/tex" id="MathJax-Element-2201">u</script> to a vertex <script type="math/tex" id="MathJax-Element-2202">u'</script> in a graph G is a <em>sequence of vertices</em> with the following characteristics:</p>
+  <p>A <strong>path</strong> with length k from an vertex <script type="math/tex" id="MathJax-Element-29">u</script> to a vertex <script type="math/tex" id="MathJax-Element-30">u'</script> in a graph G is a <em>sequence of vertices</em> with the following characteristics:</p>
   
   <ul>
-  <li><script type="math/tex" id="MathJax-Element-2203">v_0 = u</script>: start vertex</li>
-  <li><script type="math/tex" id="MathJax-Element-2204">v_k = u'</script>: end vertex</li>
-  <li><script type="math/tex" id="MathJax-Element-2205">v_i</script> is element in the set E for 0 &lt; i &lt; k</li>
+  <li><script type="math/tex" id="MathJax-Element-31">v_0 = u</script>: start vertex</li>
+  <li><script type="math/tex" id="MathJax-Element-32">v_k = u'</script>: end vertex</li>
+  <li><script type="math/tex" id="MathJax-Element-33">v_i</script> is element in the set E for 0 &lt; i &lt; k</li>
   </ul>
 </blockquote>
 
-<p>Path length is the number of intermediate vertex <script type="math/tex" id="MathJax-Element-2206">v_i</script></p>
+<p>Path length is the number of intermediate vertex <script type="math/tex" id="MathJax-Element-34">v_i</script></p>
 
-<p><script type="math/tex" id="MathJax-Element-2207">u</script> has to be reachable from <script type="math/tex" id="MathJax-Element-2208">u'</script>. The path is <em>simple</em> if it contains no vertex more than once.</p>
+<p><script type="math/tex" id="MathJax-Element-35">u</script> has to be reachable from <script type="math/tex" id="MathJax-Element-36">u'</script>. The path is <em>simple</em> if it contains no vertex more than once.</p>
 
 <blockquote>
-  <p>A <strong>cycle</strong> is a path with <script type="math/tex" id="MathJax-Element-2209">u =u'</script>. A graph with a cycle is called a <em>cyclic graph</em>; one without is called an <em>acyclic graph</em></p>
+  <p>A <strong>cycle</strong> is a path with <script type="math/tex" id="MathJax-Element-37">u =u'</script>. A graph with a cycle is called a <em>cyclic graph</em>; one without is called an <em>acyclic graph</em></p>
 </blockquote>
 
-<p>A simple cycle only contains equal vertices <script type="math/tex" id="MathJax-Element-2210">u</script> and <script type="math/tex" id="MathJax-Element-2211">u'</script>.</p>
+<p>A simple cycle only contains equal vertices <script type="math/tex" id="MathJax-Element-38">u</script> and <script type="math/tex" id="MathJax-Element-39">u'</script>.</p>
 
 <p>If all edges are reachable in a graph the graph is called <em>connected.</em></p>
 
@@ -291,5 +313,91 @@ Thus the whole algorithm has a time complexity of <script type="math/tex" id="Ma
 
 <p>An <em>ordered tree</em> is a rooted tree with ordered child nodes.</p>
 
-<p>A <em>binary tree</em> is an ordered rooted tree with each node having 0 to 2 children. The node has a left and right child. In a <em>complete binary tree</em> every inner node has 2 child nodes.</p></div></body>
+<p>A <em>binary tree</em> is an ordered rooted tree with each node having 0 to 2 children. The node has a left and right child. In a <em>complete binary tree</em> every inner node has 2 child nodes.</p>
+
+
+
+<h3 id="presentations">Presentations</h3>
+
+
+
+<h3 id="datastructures">Datastructures</h3>
+
+
+
+<h4 id="fields">Fields</h4>
+
+<ul>
+<li>Arrays</li>
+<li>Advantages <br>
+<ul><li>Direct random access</li>
+<li>Sequential reads</li></ul></li>
+<li>Disadvantages <br>
+<ul><li>Static size</li>
+<li>Element ordering is expensive</li></ul></li>
+</ul>
+
+
+
+<h4 id="lists">Lists</h4>
+
+<ul>
+<li>Linked lists</li>
+<li>Attributes <br>
+<ul><li>Head/Tail (first/last element)</li>
+<li>Follower/predecessor (next/prev)</li>
+<li>Key (key(x))</li></ul></li>
+<li>Operations <br>
+<ul><li>search</li>
+<li>insert</li>
+<li>delete</li></ul></li>
+<li>Advantages <br>
+<ul><li>Dynamic</li>
+<li>Elements can be added/removed as desired</li>
+<li>Changing order of elements is easier</li></ul></li>
+<li>Disadvantages <br>
+<ul><li>Search</li></ul></li>
+</ul>
+
+
+
+<h4 id="stacks-and-queues">Stacks and Queues</h4>
+
+<ul>
+<li>Queues <script type="math/tex" id="MathJax-Element-40">\rightarrow</script> FIFO <br>
+<ul><li>Head/Tail</li>
+<li>Enqueue</li>
+<li>Dequeue</li></ul></li>
+<li>Stacks <script type="math/tex" id="MathJax-Element-41">\rightarrow</script> LIFO <br>
+<ul><li>Top</li>
+<li>stack-empty</li>
+<li>push</li>
+<li>pop</li></ul></li>
+</ul>
+
+
+
+<h3 id="search-trees-and-hash-tables-presentations">Search Trees and Hash Tables Presentations</h3>
+
+
+
+<h4 id="search-trees">Search Trees</h4>
+
+<ul>
+<li>Binary search trees</li>
+<li>Balanced search trees</li>
+<li>Red-Black trees</li>
+</ul>
+
+
+
+<h4 id="hash-tables">Hash Tables</h4>
+
+<p>Mapping a unique key to a specific value</p>
+
+<ul>
+<li>Direct Addressing</li>
+<li>Indirect Addressing</li>
+<li>Open Addressing</li>
+</ul></div></body>
 </html>
