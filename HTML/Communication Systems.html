@@ -209,6 +209,24 @@
 </li>
 </ul>
 </li>
+<li><a href="#application-layer">Application Layer</a><ul>
+<li><a href="#dns-domain-name-system">DNS (Domain Name System)</a><ul>
+<li><a href="#dns-name-space">DNS name space</a></li>
+<li><a href="#domain-resource-records">Domain Resource records</a></li>
+<li><a href="#name-servers">Name servers</a></li>
+</ul>
+</li>
+<li><a href="#the-world-wide-web">The World Wide Web</a><ul>
+<li><a href="#architectural-overview">Architectural Overview</a></li>
+<li><a href="#static-webpages">Static Webpages</a></li>
+<li><a href="#dynamic-pages-and-web-applications">Dynamic Pages and Web Applications</a></li>
+<li><a href="#http-hyper-text-transfer-protocol">HTTP (Hyper-Text Transfer Protocol)</a></li>
+<li><a href="#the-mobile-web">The Mobile Web</a></li>
+<li><a href="#web-search">Web Search</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -220,6 +238,8 @@
 <h2 id="literature">Literature</h2>
 
 <p>Tennenbaum - Computer networks (up until network security chapter)</p>
+
+
 
 <h2 id="introduction">Introduction</h2>
 
@@ -590,6 +610,8 @@
 
 <p><img src="https://www.peterpaulengelen.com/wp-content/uploads/2013/11/Wireless-radio.jpg" alt="ISM bands" title=""></p>
 
+
+
 <h4 id="radio-transmission">Radio transmission</h4>
 
 <p>Radio signals penetrate buildings, but over long distances the curvature of the earth gets in the way <br>
@@ -819,7 +841,7 @@ Passive, no amplifiers, one wavelength among many houses</p>
 <li>DSL <br>
 <ul><li>Bandwidth dedicated to each customer</li>
 <li>Point-to-Point link does not broadcast data</li>
-<li>Twisted pair to customers <script type="math/tex" id="MathJax-Element-42">\rightarrow</script> lower bandwidth</li></ul></li>
+<li>Twisted pair to customers <script type="math/tex" id="MathJax-Element-1">\rightarrow</script> lower bandwidth</li></ul></li>
 </ul>
 
 
@@ -943,7 +965,7 @@ Longer, but easily resynchronized after error.</p>
 <ul><li>XOR all bits, add result to the end</li>
 <li>Detection checks if last bit is XOR of all previous ones</li></ul></li>
 <li>Checksums <br>
-<ul><li>Treats message as N-bit words, and adds N check bits that are modulo <script type="math/tex" id="MathJax-Element-43">2^n</script> szn if the words</li></ul></li>
+<ul><li>Treats message as N-bit words, and adds N check bits that are modulo <script type="math/tex" id="MathJax-Element-2">2^n</script> szn if the words</li></ul></li>
 <li>Cyclic Redundancy Codes (CRC) <br>
 <ul><li>Adds bits to the transmitted frame</li>
 <li>The data is treated as a binary polynomial, and divided by another, resulting in a remainder</li>
@@ -1095,10 +1117,12 @@ Longer, but easily resynchronized after error.</p>
 
 <p><img src="http://www.pling.org.uk/cs/ndsimg/csmautilisation.png" alt="Graphs comparing different protocols at different traffic levels" title=""></p>
 
+
+
 <h6 id="collision-detection">Collision detection</h6>
 
 <p>CSMA/CD improvement detects/aborts collisions <br>
-<script type="math/tex" id="MathJax-Element-44">\rightarrow</script> reduced contention times improve performance</p>
+<script type="math/tex" id="MathJax-Element-3">\rightarrow</script> reduced contention times improve performance</p>
 
 
 
@@ -1222,9 +1246,11 @@ Longer, but easily resynchronized after error.</p>
 
 <p><img src="https://networklessons.com/wp-content/uploads/2014/02/wireshark-ip-tcp-ethernet-bytes-length.png" alt="Wireshark capture of an Ethernet package" title=""></p>
 
-<p>Collisions can arrive in <script type="math/tex" id="MathJax-Element-50">2\tau</script> (twice the time for the message to arrive). Message size should be chosen accordingly.</p>
+<p>Collisions can arrive in <script type="math/tex" id="MathJax-Element-4">2\tau</script> (twice the time for the message to arrive). Message size should be chosen accordingly.</p>
 
 <p>Ethernet is efficient with large frames even with many senders. Smaller frames are worse.</p>
+
+
 
 <h4 id="switched-fast-ethernet">Switched / Fast Ethernet</h4>
 
@@ -1593,7 +1619,7 @@ Same type of cabling as Fast Ethernet, additional multi-km fiber cables exist fo
 <h5 id="ip-address-blocks">IP Address Blocks</h5>
 
 <ul>
-<li>Has <script type="math/tex" id="MathJax-Element-46">2^L</script> addresses aligned on that boundary.</li>
+<li>Has <script type="math/tex" id="MathJax-Element-5">2^L</script> addresses aligned on that boundary.</li>
 <li>Written in address/length (18.0.31.0/24)</li>
 <li>Prefix is determined by the network portion</li>
 <li>IPs are dynamically assigned</li>
@@ -1642,13 +1668,13 @@ Same type of cabling as Fast Ethernet, additional multi-km fiber cables exist fo
 <p>&nbsp;</p>
 
 <blockquote>
-  <p>The <strong>network address</strong> describes a specific network. It is obtained by taking any address A and computing <script type="math/tex" id="MathJax-Element-47">A \land NM</script>.</p>
+  <p>The <strong>network address</strong> describes a specific network. It is obtained by taking any address A and computing <script type="math/tex" id="MathJax-Element-6">A \land NM</script>.</p>
 </blockquote>
 
 <p>&nbsp;</p>
 
 <blockquote>
-  <p>The <strong>broadcast address</strong> is an address that is routed to all hosts on a specific network. It is obtained by taking any address A on the network, and computing <script type="math/tex" id="MathJax-Element-48">A \lor \lnot NM</script>.</p>
+  <p>The <strong>broadcast address</strong> is an address that is routed to all hosts on a specific network. It is obtained by taking any address A on the network, and computing <script type="math/tex" id="MathJax-Element-7">A \lor \lnot NM</script>.</p>
 </blockquote>
 
 <dl>
@@ -2038,6 +2064,8 @@ Effort that started 1990, due to address exhaustion</p>
 
 <p><strong>Skipped a whole bunch</strong></p>
 
+
+
 <h2 id="application-layer">Application Layer</h2>
 
 <p>Uses transport services to build distributed applications</p>
@@ -2078,6 +2106,8 @@ e.g.: amazon.co.uk is amazon (lowest level domain) which is a corporation (highe
 <li>TXT (Descriptive ASCII text)</li>
 </ul>
 
+
+
 <h4 id="name-servers">Name servers</h4>
 
 <p>Name servers <em>resolve</em> domain names to IP addresses</p>
@@ -2096,7 +2126,11 @@ e.g.: amazon.co.uk is amazon (lowest level domain) which is a corporation (highe
 <li>Caches name server answers for better performance</li>
 </ul>
 
+
+
 <h3 id="the-world-wide-web">The World Wide Web</h3>
+
+
 
 <h4 id="architectural-overview">Architectural Overview</h4>
 
@@ -2170,6 +2204,8 @@ Hypertext, hyperlinks</p>
 <li>Client sends cookies back to the server</li>
 </ul>
 
+
+
 <h4 id="static-webpages">Static Webpages</h4>
 
 <ul>
@@ -2179,6 +2215,8 @@ Hypertext, hyperlinks</p>
 </ul>
 
 <p>HTML generations (The more the richer the content)</p>
+
+
 
 <h4 id="dynamic-pages-and-web-applications">Dynamic Pages and Web Applications</h4>
 
@@ -2202,6 +2240,8 @@ Hypertext, hyperlinks</p>
 <ul><li>Client-side scripting language</li></ul></li>
 <li>And many more</li>
 </ul>
+
+
 
 <h4 id="http-hyper-text-transfer-protocol">HTTP (Hyper-Text Transfer Protocol)</h4>
 
@@ -2272,6 +2312,8 @@ Hypertext, hyperlinks</p>
 <li>Only re-fetches page on request if the cache expires</li>
 </ul>
 
+
+
 <h4 id="the-mobile-web">The Mobile Web</h4>
 
 <p>Mobile clients are challenging</p>
@@ -2285,6 +2327,8 @@ Hypertext, hyperlinks</p>
 </ul>
 
 <p>May be mitigated by specialized content</p>
+
+
 
 <h4 id="web-search">Web Search</h4>
 
