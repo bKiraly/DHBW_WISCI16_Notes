@@ -611,3 +611,15 @@ The lifecycle of each element can be represented with a state automaton
 ### Activity Diagram
 
 > An **activity diagram** is a special case of a state diagram used for actions.
+
+## Modeling Business processes
+
+* Identify actors
+* Analyze events in the business process
+* Formulate use-cases
+* Include relations
+* Extend relations
+* Validate
+* Create a class diagram
+* Create an object diagram
+* Look for sources of errors
