@@ -66,6 +66,14 @@ For more details see my [Economics notes](https://rawgit.com/bKiraly/DHBW_WISCI1
 			* Cash/Cash equivalents
 			* Inventories
 			* Receivables
+* Equity is split into the following groups
+	* Nominal capital
+	* Retained earnings
+	* Current profit
+* Liabilities
+	* Loan
+	* Liabilities
+	* Provision
 
 For more detail on Assets, Liabilities and Capital see the Financial Accounting notes
 
@@ -200,6 +208,8 @@ The *fungibility* of a share is an important factor for selling shares.
 				* information
 				* dividends
 				* issue new shares in case of increase of capital stock (subscription rights)
+					* $Subscription Ratio = Relative Increase In Shares$
+					* $Price Of Shares = $ Weighted average of  the nominal price and market price weighted by the subscription ratio
 				* prorated process in case of liquidations
 			* Fungability of shares is extremely high
 			* Highly regulated to avoid *insider trading*
@@ -208,6 +218,26 @@ The *fungibility* of a share is an important factor for selling shares.
 				* 25%+ shares has blocking minority
 				* 50%+ shares has majority
 				* 95%+ shares gives public offer to acquire the rest of the shares
+			* Share types
+				* Standard shares (bearer shares)
+					* Anonymous
+				* Registered shares
+					* Registered in the companies books
+				* Registered shares with limited transferability
+					* Needs permission to sell the share
+				* Preferential shares
+					* More dividend, less control
+			* IPO
+				* Professional bankers provide these services
+				* Usually take a cut off of the profit
+				* Investors start making offers for how much they would buy shares, and how many
+				* The nominal value is set at a value that gets the most investors
+			* $Equity Quota = {Equity \over \sum Balance sheet}$
+			* Capital increases
+				* Ordinary CE
+				* Conditional CE
+				* Approved CE
+				* Nominal CE
 
 ### Valuation of a Company
 
@@ -222,3 +252,8 @@ Depends on the profit and the interest rate
 * Then we discount future cash flows to the same point in time we're calculating from.
 * Then we get a total discounted cash flow.
 * This is a good indication of the valuation of the company
+
+* Interest rate
+	* Price for borrowing cash
+	* Risk surcharge depending on the financial standing of the debtor
+	* Overhead + Profit
