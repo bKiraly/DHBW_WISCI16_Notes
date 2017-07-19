@@ -251,4 +251,8 @@ M_1 \cup M_2 \cup M_3 \cup \dots \cup M_i = M\\
 \land \forall M_i| \forall M_j| j \not = i: M_i \cap M_j = \emptyset
 $$
 
+&nbsp;
+
+> An **order** of a set is a relation that establishes an *order* between the elements of the set. They are required to be *antisymmetric* and *transitive* (also *reflexive* in partial order, which we seem to use ([learn more](https://en.wikipedia.org/wiki/Order_theory#Basic_definitions))).
+
 ## Basic Logic
