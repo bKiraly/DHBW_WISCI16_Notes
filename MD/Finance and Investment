@@ -257,3 +257,106 @@ Depends on the profit and the interest rate
 	* Price for borrowing cash
 	* Risk surcharge depending on the financial standing of the debtor
 	* Overhead + Profit
+
+
+---
+### Debt vs. Equity
+
+* Debt
+	* Comes from creditors
+	* No liability
+	* No part of profit
+* Equity
+	* Participates in management
+	* Share of profit
+	* Fully taxable
+	* Liability
+
+Loan factors
+
+* Term
+* Interest
+* Repayment
+* Amount
+
+Long-term financing
+
+* Standard
+	* Standard credit, use credit discounting formula
+* Special
+	* Support small enterprises
+* Bond
+	* No fungability
+	* <15 years
+* Debenture (fixed income payment)
+	* Issued by entities
+	* Exchange rate
+	* Interest
+
+| Thing 	| Stocks	| Bonds		|
+|---------------|---------------|---------------|
+| Investor	| Owner		| Creditor	|
+| Return	| Dividend	| Fixed interest|
+| Trading	| Stock exchange| =		|
+| Identifier	| ISIN		| =		|
+| Term		| Open-end	| Maturity date	|
+| Market price	| Currency	| Percent	|
+| Drivers	| Expectations	| Rating, nominal interest - prime rate|
+
+
+### Repayment models
+
+* Block repayment
+	* All debt is repayed all at once at the end of the period
+* Equal installments
+	* Pay a constant amount on regular intervals
+* Repayment in annuities
+	* $A = {c \over LoanTerm}$
+	* Paid in regular intervals
+	* $A = Interest + Repayment Components$
+	* $A = L{(1+i)^n*i \over (1+i)^n-1}$
+	* The repayment component grows progressively
+	* The residual debt also decreases progressively
+	* Extraordinary repayment $\rightarrow$ *Fun times*
+
+### Short-term credit financing
+
+* Supplier credit
+	* Full repayment within 30 days
+	* 2% cash discount within 10 days
+	* Annual interest rate: ${DiscountRate \over 1-DiscuntRate} * {360 \over PaymentTerm - DiscountTerm}$
+* Bill of Exchange
+	* Amount
+		* Written on the bill, includes interest
+	* Seller
+		* Can *go to protest* on non-payment
+			* Gets hold of the buyers property without court proceedings
+	* Maturity
+		* On end of term
+		* Can be sold early for proportional interest
+	* Buyer
+* Lombardloan
+	* Collateralized by physical good
+	* Fixed term
+	* Example: pawnshop
+* Guaranteed credit
+	* Debtor does not receive cash, but financial standing of the creditor
+	* Per se on financing, financing starts when the bond is drawn by the beneficiary
+	* Akzeptkredit
+	* Milestone payments $\rightarrow$ Advances received: Liabilities
+	* Guaranteed by *on-demand bonds*
+		* Cost money to the contractor
+		* Has a per year fee of 0.25%-1%
+		* Maturity $\rightarrow$ Extend or pay
+		* Secure competition of contract issued by supplier, beneficiary is customer
+		* Secure payment issued by the customer, beneficiary is supplier
+	* Contingent liability $\rightarrow$
+		* For the issuing bank
+		* For the banks customer
+		* If all goes well the liability is removed
+		* Not in accounts, but listed in footnotes to Bill of Exchange
+	* Insurance against unfair calling
+* Documentary letter of credit
+	* Payment is tied to the submission by the beneficiary of well-defined documents
+	* If payment is due immediately after submission of documents, the L/C has no financing effect
+	* Main feature of L/C is payment securely
