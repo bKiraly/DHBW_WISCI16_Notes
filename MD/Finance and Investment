@@ -293,6 +293,26 @@ Long-term financing
 	* Exchange rate
 	* Interest
 
+#### Calculating the RoI of Bonds
+
+* Nominal value $n$
+* Buying price $b$
+* Selling price $s$
+* Term $t$
+* Interest $i$
+
+$$n*i*t - b+s$$
+
+#### Calculating the RoI of Stocks
+
+* Buying price $b$
+* Selling price $s$
+* Dividend $d$
+
+$$\sum (d)-b+s$$
+
+### Difference between Stocks and Bonds
+
 | Thing 	| Stocks	| Bonds		|
 |---------------|---------------|---------------|
 | Investor	| Owner		| Creditor	|
@@ -360,3 +380,58 @@ Long-term financing
 	* Payment is tied to the submission by the beneficiary of well-defined documents
 	* If payment is due immediately after submission of documents, the L/C has no financing effect
 	* Main feature of L/C is payment securely
+
+### Loan substitutes
+
+#### Factoring
+
+* Ongoing purchase of receivables by a factoring company from a seller of goods and services
+* The agreement between the factoring company and seller can include service functions and credit insurance functions
+* Types of factoring
+	* Hidden factoring: Customer is *not* aware
+		* Cheaper
+		* Default risk stays with the contractor
+	* Open factoring: Customer is aware
+		* More expensive
+		* Default risk (along with the receivable) is transferred to the factoring company
+		* Write invoices
+		* Accounting for debtors a/c receivable
+		* Cash management
+		* These are expenses
+* Bridge payment
+* Factoring company pays the contractor immediately, customer pays later, contractor returns full price to factoring company
+* Factors influencing the fee of the factoring company
+	* Duration
+	* Interest rate
+	* No. of defaults
+
+#### Asset-Backed Securities
+
+* Bonds backed by real assets
+* e.g. Bonds backed by receivables (see economic crisis)
+* See [this page](https://en.wikipedia.org/wiki/Collateralized_debt_obligation)
+
+#### Leasing
+
+* Operational leasing
+	* Rental agreement
+	* Transfer of use
+	* Term normally shorter than economic use
+	* Juridical & Economic owner: Lessor
+* Financial
+	* Transfer of ownership
+	* Purchase with instruments afterwards
+	* Firm leasing period, during which the lessee can not get out of the contract
+	* Things payed by the leasing fee (full amortization)
+		* Price
+		* Financing cost
+		* OH + Profit
+	* Juridical owner: Lessor
+	* Economic owner: Lessee
+
+##### Types of ownership
+
+* Economic owner
+	* Responsible for the profit an loss of the asset
+* Juridic owner
+	* Purchaser or manufacturer
