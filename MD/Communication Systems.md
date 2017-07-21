@@ -294,7 +294,7 @@ Iridium service
 
 ### Public Switched Telephone Network (PSTN)
 
-#### Structure of the telephone systemű
+#### Structure of the telephone system
 
 Hierarchical system carrying voice calls:
 
@@ -570,7 +570,7 @@ Schemes vary with assumptions
 * Improvement: Sensing channel
 	* User doesn't send if there is something going on
 * Variations on what to do if the channel is busy
-	* I-presistent (greedy) sebds as soon as idle
+	* I-presistent (greedy) sends as soon as idle
 	* Nonpresistent waist for a random time
 	* Sends with p probability
 * Used in todays LAN
@@ -590,7 +590,7 @@ $\rightarrow$ reduced contention times improve performance
 	* Idea can be used without a ring (ex. token bus)
 
 ##### Limited-contention protocols
-** We skipped this too...**
+**We skipped this too...**
 
 ##### Wireless LAN protocols
 
