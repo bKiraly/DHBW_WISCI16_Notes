@@ -71,7 +71,7 @@ Source: Wikimedia Foundation
 $$
 \text{for } \emptyset = \{\}\\
 \emptyset \subseteq \emptyset \text{ is the only subset of } \emptyset\\
-\emptyset \in A \forall A \\
+\emptyset \subseteq A \forall A \\
 \emptyset \not \in \emptyset
 $$
 
@@ -79,7 +79,7 @@ $$
 
 The number of elements in a set $A$ is the *cardinality* of the set. We denote $\|A\| = x$
 
-The set of all subsets of set $A$ is called the *powerset* of $A$.  We denote $\mathcal{P}(A) = \{B \subseteq A\}$.
+The set of all subsets of set $A$ is called the *powerset* of $A$.  We denote $\mathcal{P}(A) = \{B:B \subseteq A\}$.
 
 $\|\mathcal{P}(A)\| = 2^{\|A\|}$ because of the following
 
