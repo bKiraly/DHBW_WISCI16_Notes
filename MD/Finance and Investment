@@ -236,8 +236,13 @@ The *fungibility* of a share is an important factor for selling shares.
 			* Capital increases
 				* Ordinary CE
 				* Conditional CE
+					* Serves to fulfill certain conditions
+						* Shares of employees
+						* Repayment of a convertible bond
+						* Generation of acquisition currency
 				* Approved CE
 				* Nominal CE
+					* Retained earnings are converted into capital
 
 ### Valuation of a Company
 
@@ -490,6 +495,11 @@ The last group is called *financial surplus* and needs to be accumulated until t
 * Reduction of inventories
 * order-to-cash-cycle
 
+##### Pareto analysis
+
+Analyzes the usefulness of different product lines to improve turnover
+[See](https://en.wikipedia.org/wiki/Pareto_analysis)
+
 #### Weighted Average Cost of Capital (WACC)
 
 ${Equity \over Debt}$ = capital structure
@@ -500,4 +510,4 @@ Debt analysis
 
 Leverage effect $\rightarrow$ Use debt to increase equity by increasing the return on shares
 
-Fusel Anleihe - youtube
+ Fusel Anleihe - youtube
