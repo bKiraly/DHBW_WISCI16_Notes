@@ -263,7 +263,73 @@ Depends on the profit and the interest rate
 	* Risk surcharge depending on the financial standing of the debtor
 	* Overhead + Profit
 
+### Loan/credit financing
+	
+donor can't be in management and is entiteled to repayment principle
 
+* use:
+	* fixed assets
+	* current assets
+	* bridge financing
+	* consumer credit
+	
+* time period
+	* long (4+ year)	
+	* megium (1-4 year)
+	* short (0-1 year))
+	
+* Credit worthiness of debitor
+	* legaly credible
+	* trustworthy
+	* (company profitability)
+	* collateral
+		* ensurance from the debitor, that the loan will be repayed, if the debitor can't pay, in form of a given asset (car, house, machine...)
+		* types:
+			* Bond
+			* Gurantee
+				* no legal regulations
+			* Bill of exchange
+				* donor accepts a bill of exchange as colleteral, but as surety only
+			* Pledge 
+				* mobile things/rights are handed over and the donor can get it back by fullfiling the pledge
+			* Encumbrence on land 
+				* right in rem over immovable property (entry in land register)
+				
+* Loan details
+	* amount
+	* interst rate
+	* term
+	* repayment plan
+	* sigitures
+	
+#### Types of long term financing
+* Debenture bonds
+	* Industrial bonds
+	* Municipal bonds, covered bonds, public bonds, federal bonds
+	* Variants: warrant bonds, convertible bonds, participating bonds, zero bonds, floating rate notes
+* Bonded loans
+	* Donors are private cash collectors, not the anonymous capital market
+	* No value paper, therefore no fungibility
+	* Term < 15 years
+	* No access to stock exchange and no disclosure obligation
+* Special loans
+	* Loans from public institutions in support of e.g. SME
+	* Loans in support of export business combined with export credit insurance
+
+#### Return of investment on fixed income payment (only retro actively)
+
+	nominal interest: 4%
+	nominal value: 5000
+	holding period: 3 years
+	buy price: 105% = 5250
+	sell price: 102% = 5100
+	
+	return = sell price - buy price + holding period * nominal intrest * nominal value = 450
+	raturn rate = (return/buy price)/holding period
+	
+
+market price * number issued = current company value
+emission price * number issued = emission volume
 ---
 ### Debt vs. Equity
 
