@@ -40,7 +40,7 @@ Developed in the 19th century by Georg Cantor
 ### Set Operations
 
 If $x$ is one of the objects inside a set $A$, we call it an *element* of $A$. We denote $x \in A$.
-If a set $\Phi$ or $\emptyset$ contains no elements, we call it an *empty set*. We denote $\Phi = \{\}$
+If a set $\emptyset$ or $\Phi$ contains no elements, we call it an *empty set*. We denote $\emptyset = \{\}$
 
 Given two sets $A$ and $B$, we say:
 
@@ -51,12 +51,15 @@ A \subset B \iff A \subseteq B \land B \not = A\\
 A \cup B = \{x: x \in A \lor x \in B\}\\
 A \cap B = \{x: x \in A \land x \in B\}\\
 A \backslash B = \{x: x \in A \land x \not \in B\}\text{ alternative notation: } A - B\\
-\overline{A} = U\backslash A
+\overline{A} = U\backslash A\\
+A \Delta B = (A \backslash B) \cup (B \backslash A)
 $$
 
 $\subseteq$ read *is a subset of*
 $\subset$ read *is exclusive subset of*
 $\cup$ read *union*
+$\cap$ read *intersection*
+$\Delta$ read *symmetrical difference*
 
 #### Illustration Using Venn-diagrams
 
@@ -66,17 +69,17 @@ Source: Wikimedia Foundation
 #### Special Cases with the Empty Set
 
 $$
-\text{for } \Phi = \{\}\\
-\Phi \subseteq \Phi \text{ is the only subset of } \Phi\\
-\Phi \in A \forall A \\
-\Phi \not \in \Phi
+\text{for } \emptyset = \{\}\\
+\emptyset \subseteq \emptyset \text{ is the only subset of } \emptyset\\
+\emptyset \subseteq A \forall A \\
+\emptyset \not \in \emptyset
 $$
 
 #### Set Cardinality and Powersets
 
 The number of elements in a set $A$ is the *cardinality* of the set. We denote $\|A\| = x$
 
-The set of all subsets of set $A$ is called the *powerset* of $A$.  We denote $\mathcal{P}(A) = \{B \subseteq A\}$.
+The set of all subsets of set $A$ is called the *powerset* of $A$.  We denote $\mathcal{P}(A) = \{B:B \subseteq A\}$.
 
 $\|\mathcal{P}(A)\| = 2^{\|A\|}$ because of the following
 
@@ -88,8 +91,8 @@ B = \{\{a_n\}; \{a_1; a_n\}; \{a_2; a_n\}; ...; \{a_1; a_2; ... ; a_n\}\} = \{b 
 \|B\| = \|\mathcal{P}(A')\|\\
 \mathcal{P} (A) = \mathcal{P} (A') \cup B\\
 \|\mathcal{P}(A)\| = 2*\|\mathcal{P}(A')\|\\
-\mathcal{P}(\Phi) = \{\Phi\}\\
-\|\mathcal{P}(\Phi)\| = 1\\
+\mathcal{P}(\emptyset) = \{\emptyset\}\\
+\|\mathcal{P}(\emptyset)\| = 1\\
 \Rightarrow \mathcal{P}(A) = 2^n\\
 Q.E.D
 $$
@@ -201,5 +204,55 @@ $$
 R \subseteq A \times B
 $$
 
+[Wiki link](https://en.wikipedia.org/wiki/Binary_relation#Relations_over_a_set)
+
+Tables in relational databases are *sets*.
+
+### Multiplying relations
+
+Let $R_1 \subseteq M_1\times M_2$; $R_2 \subseteq M_2\times M_3$
+Then $R_1 \circ R_2 = \{(x,y) | (x,z) \in R_1; (z,y) \in R_2\}$
+
+### Using Matrices to represent Relations
+
+> A **relation matrix** may be used for representing a relation between the two sets
+
 ## Special Relations
+
+> A relation is **reflexive** if all members of its base set are related to themselves. Formally: $\forall x \in M: (x,x) \in R$
+
+&nbsp;
+
+> A relation is **symmetric** if the inverse of the relation is the equal to the relation itself. Formally: $\forall (x; y) \in R: (y;x) \in R$
+
+&nbsp;
+
+> A relation is **asymmetric** if $\forall (x;y) \in R: (y;x) \not \in R$
+
+ &nbsp;
+
+> A relation is **antisymmetric** if $\forall (x;y) \in R| \exists (y;x) \in R: x = y$
+
+> A relation is **transitive** if one element being related to another, and that other element being related to a third, it means that the first element is also related to the third. Formally: $(x;y); (y;z) \in R \Rightarrow (x;z) \in R$
+
+More information on special kinds of relations are found on the [binary relations Wikipedia page](https://en.wikipedia.org/wiki/Binary_relation#Relations_over_a_set).
+
+> The **identity relation** is defined as $(x;x) \in R$
+
+&nbsp;
+
+> The **equivalence relation** is a way of defining equality on general sets. It is true if the relation is *reflexive*, *transitive* and *symmetric*.
+
+&nbsp;
+
+> A **partition** of a set is a set of subsets of the original set, whose union is equal to the set itself, and who are mutually disjunctive. Formally:
+> $$
+M_1 \cup M_2 \cup M_3 \cup \dots \cup M_i = M\\
+\land \forall M_i| \forall M_j| j \not = i: M_i \cap M_j = \emptyset
+$$
+
+&nbsp;
+
+> An **order** of a set is a relation that establishes an *order* between the elements of the set. They are required to be *antisymmetric* and *transitive* (also *reflexive* in partial order, which we seem to use ([learn more](https://en.wikipedia.org/wiki/Order_theory#Basic_definitions))).
+
 ## Basic Logic

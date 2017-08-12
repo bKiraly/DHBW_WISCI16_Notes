@@ -32,13 +32,13 @@ Data Processing in Modern Days:
 > **Data** Characters without kontext
 
 &nbsp;
-> **Information** Kontext orientated Data
+> **Information** Context orientated Data
 
 &nbsp;
 > **Character** Elements for presenting Information (this has to be previously agreed on)
 
 &nbsp;
-> **Character set** Limited ammout of characters
+> **Character set** Limited amount of characters
 
 &nbsp;
 > **News** A combination of Characters, its primary purpose is transfering Information

@@ -11,8 +11,6 @@ Communication Systems
 ## Literature
 Tennenbaum - Computer networks (up until network security chapter)
 
-[This slideshow on the internet](http://slideplayer.com/slide/3607059/) among others apparently
-
 ## Introduction
 
 ### Definition of Computer Networks
@@ -234,7 +232,7 @@ There are a limited number of frequencies that can be used to communicate simult
 
 2.4 GHz, 5 GHz
 
-![ISM bands](http://www.peterpaulengelen.com/wp-content/uploads/2013/11/Wireless-radio.jpg)
+![ISM bands](https://www.peterpaulengelen.com/wp-content/uploads/2013/11/Wireless-radio.jpg)
 
 #### Radio transmission
 
@@ -296,7 +294,7 @@ Iridium service
 
 ### Public Switched Telephone Network (PSTN)
 
-#### Structure of the telephone systemű
+#### Structure of the telephone system
 
 Hierarchical system carrying voice calls:
 
@@ -572,7 +570,7 @@ Schemes vary with assumptions
 * Improvement: Sensing channel
 	* User doesn't send if there is something going on
 * Variations on what to do if the channel is busy
-	* I-presistent (greedy) sebds as soon as idle
+	* I-presistent (greedy) sends as soon as idle
 	* Nonpresistent waist for a random time
 	* Sends with p probability
 * Used in todays LAN
@@ -592,7 +590,7 @@ $\rightarrow$ reduced contention times improve performance
 	* Idea can be used without a ring (ex. token bus)
 
 ##### Limited-contention protocols
-** We skipped this too...**
+**We skipped this too...**
 
 ##### Wireless LAN protocols
 
@@ -754,7 +752,7 @@ See this video for a more detailed explanation on Dijkstra's algorithm.
 
 ### Flooding
 
->***Flooding** is a simple method to send a packet to all network nodes. Each node floods a new packet received on an incoming link to all other links. Nodes keep track of flood packets, and employ hop limits to prevent loops.
+>**Flooding** is a simple method to send a packet to all network nodes. Each node floods a new packet received on an incoming link to all other links. Nodes keep track of flood packets, and employ hop limits to prevent loops.
 
 #### Distance Vector Routing
 
@@ -846,6 +844,14 @@ The start offset is the place of the message that is being sent.
 
 > **Max Transmission Unit (MTU)** analyzes the network to get the maximal size packets that can be transmitted over the network.
 
+##### Transparent Fragmentation
+
+Fragments are assembled before being sent on through the next link. This is slower but allows more efficient splitting of packets.
+
+##### Non-Transparent Fragmentation
+
+Each fragment is re-fragmented separately. This means the fragments can be forwarded without delay, but it may *double* the load on the link on misconfigured MTUs.
+
 ### Network layer on the Internet
 
 #### IPv4
@@ -883,5 +889,483 @@ IPv4 header carries the following data:
 * Destination IP
 * Options / Padding
 
+##### IP Address Blocks
+
+* Has $2^L$ addresses aligned on that boundary.
+* Written in address/length (18.0.31.0/24)
+* Prefix is determined by the network portion
+* IPs are dynamically assigned
+
+> A **subnet mask** is a string of ones and zeroes denoting the *network address* and *host address*. Any bits in the IP that have a one in the corresponding bit in the subnet mask, it is part of the network address. If the corresponding element is zero, it is part of the host address.
+
+&nbsp;
+
+> A **subnet** is a smaller segment of a network, given a specific IP prefix. The aggregation of networks is also possible. This is called *supernet*.
+
+###### Classes of networks
+
+The first few bits determine the class of the network.
+
+* Class A. starts with a zero, and has a 7 bit network part, leaving a 24 bit host address
+* Class B: starts with 10, and has a 14 bit network part, leaving 16 bits for host address
+* Class C: starts with 110, and has a 21 bit network part, leaving 8 bits for host address
+* Class D: starts with 1110. leaving the entire address to multicast
+* Class E: starts with 11111, and is reserved for future use
+
+##### Network Address Translation (NAT)
+
+> **Network Address Translation (NAT)** refers to mapping internal addresses (some addresses are reserved for internal use) to external address-port pairs. This means an entire network can communicate with another through a single IP address.
+
+##### Reserved Network Addresses
+
+> The **subnet mask** (or netmask, short NM) determines which part of the address refers to the network, and which one refers to the host. It can be written in form /n, where the first n bits designate the network. It can also be written as a decimal representation of each byte, similar to IPs.
+
+&nbsp;
+
+> The **network address** describes a specific network. It is obtained by taking any address A and computing $A \land NM$.
+
+&nbsp;
+
+> The **broadcast address** is an address that is routed to all hosts on a specific network. It is obtained by taking any address A on the network, and computing $A \lor \lnot NM$.
+
+Example
+: Compute the Network Address and Broadcast Address of the following address: 192.168.1.38/27
+| Name			|		|		|		|	  |
+|-----------------------|--------------:|--------------:|--------------:|--------:|
+| Address		| 11000000	| 10101000	| 00000001	| 00100110|
+| 			| 192		| 168		| 1		| 38	  |
+| Mask			| 11111111	| 11111111	| 11111111	| 11100000|
+|			| 255		| 255		| 255		| 224	  |
+| BC Address		| 11000000	| 10101000	| 00000001	| 00111111|
+|			| 192		| 168		| 1		| 63	  |
+| Network Adderss	| 11000000	| 10101000	| 00000001 	| 00100000|
+|			| 192 		| 168		| 1		| 32  	  |
+
+##### Advantages of Subnets
+
+* Subnets enable an easier management of multiple groups of hosts
+* They allow control of communications between the networks, improving security
+
 #### IPv6
+
+IPv6 has a longer address, 128 bits, meaning that all computers in the world can get a unique address
+Effort that started 1990, due to address exhaustion
+
+* Supports billions of hosts
+* Reduces routing table size
+* Simplify protocol
+* Better security
+* QoS considerations
+* AID multicasting (compromise between broadcast and single host networking)
+* Roaming hosts without changing addresses
+* Permit coexistence with other protocols
+
+Deployment has been slow
+
+##### Header Structure
+
+* Version
+* Diff. Serv.
+* Flow label (Identifies packet flow, enables smarter routing)
+* Payload length
+* Extension headers
+	* Hop-by-Hop options
+	* Destination options
+	* Routing
+	* Fragmentation
+	* Authentication
+	* Encrypted security payload
+* Hop limit
+* Source address
+* Destination address
+
 #### Internet Control Protocols
+
+* ICMP (Internet Control Message Protocol)
+	* returns error info
+	* Required in many services (i.e. traceroute)
+* ARP (Address Resolution Protocol)
+	* finds Ethernet address of a local IP address
+	* Enables hosts to communicate by getting the Ethernet address of the host
+* DHCP (Dynamic Host Configuration Protocol)
+	* Automatically assigns IP addresses to hosts
+
+##### Routing protocols
+
+* OSPF
+	* Open Shortest Path First
+	* Internal routing
+* BGP
+	* Border Gateway Protocol
+	* Inter-domain routing
+	* Respects network policy constraints
+
+
+## Transport Layer
+
+### Transport Service
+
+#### Services provided to the Upper Layer
+
+* Delivers data to the destination reliably
+	* Communicates only with its peer
+	* Adds reliability (connectionless or connection oriented)
+* Multiple addresses on the same machine
+* Units of data: **Segment**
+
+#### Transport Service Primitives
+
+* *Primitives* are functions provided to the upper layer
+	* LISTEN
+	* CONNECT
+	* SEND
+	* RECEIVE
+	* DISCONNECT
+
+#### Berkeley Sockets
+
+* SOCKET: Create a new communication endpoint
+* BIND: Associate address with socket
+* LISTEN
+* ACCEPT
+* CONNECT
+* SEND
+* RECEIVE
+* CLOSE
+
+#### Socket Example: Internet File Server
+
+See slides for C code example
+
+### Elements of Transport Protocols
+
+#### Addressing
+
+* Extended to TSAPs
+* Multiple clients and servers run on a single host with a single IP
+* TSAPs are **ports** for TCP/UDP
+
+#### Connection Establishment
+
+Key problem is to ensure reliability even though packets might be *lost*, *corrupted*, *delayed*, and *duplicated*
+
+* Do not take duplicated packets as new
+* Use checksums
+
+Approach
+
+* Sequence number
+* Three-way-handshake
+	* CR (Connection Request) with seq (sequence number)
+	* ACK (Acknowledgement) with previous seq and new seq
+	* DATA (Acknowledgement) with previous seq and new seq
+* Connection release
+
+#### QoS
+
+* Sliding window principle
+* Flow control -> buffering at sender and receiver
+	* Variable-sized sliding window
+
+**Skipped a *whole* bunch of stuff**
+
+### Congestion Control
+
+**Skipped completely**
+
+### UDP (User Datagram Protocol)
+
+* No delivery control
+* No flow control
+* Connectionless
+* Fast
+
+##### Header
+
+* Source port
+* Destination port
+* UDP length
+* Checksum
+
+#### Remote Procedure Call
+
+* RPC connects applications over the network with procedure calls
+	* Uses UDP for low-latency transport
+
+#### Real-Time Transport
+
+**Skipped a whole bunch of stuff again**
+
+### TCP (Transmission Control Protocol)
+
+#### The TCP service model
+
+* Reliable bytestreams between processes
+* Popular services run on well-known ports [see this list](https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers)
+* Segmentation is done implicitly, the hosts only access byte streams
+
+#### The TCP segment header
+
+* Source port
+* Destination port
+* Acknowledgement number
+* Data offset
+* Fags
+	* NS
+	* CWR
+	* ECE
+	* URG
+	* ACK
+	* PSH
+	* RST
+	* SYN
+	* FIN
+* Window size
+* Urgent pointer
+* Options
+
+#### TCP connection establishment
+
+* Three way handshake
+* Setting of flags
+	* SYN
+	* ACK
+	* ACK
+
+#### TCP connection state modeling
+
+**Skipped**
+
+#### Flow Control
+
+* TCP adds flow control to the sliding window
+* ACK+WIN is the senders limit
+* Only send until WIN = 0
+* If read from the buffer client sends new buffer state
+* Client is ready to receive more data
+
+Some crazy configurations might lead to inefficient transfer
+
+#### Congestion Control
+
+TCP uses AIMD with loss signal to control congestion
+
+* Congestion window (cwnd)
+* Doubles RTT while keeping the ACK clock going 
+
+**Skipped a whole bunch**
+
+#### Performance issues
+
+**Skipped a whole bunch**
+
+## Application Layer
+
+Uses transport services to build distributed applications
+
+### DNS (Domain Name System)
+
+The DNS resolves high-level human readable names to low-level machine readable addresses
+
+#### DNS name space
+
+Hierarchical, root to leafs from TLDs (Top Level Domains) to lower level domains
+e.g.: amazon.co.uk is amazon (lowest level domain) which is a corporation (higher level domain) in the UK (TLD)
+
+![Hierarchy example](http://homepages.herts.ac.uk/~comqrgd/docs/network-notes/network-notes-img115.png)
+
+The TLDs are controlled by ICANN.
+
+#### Domain Resource records
+
+The key resource records in the namespace are IP addresses and name servers
+
+* SOA (Start of Authority)
+* A (IPv4 Address)
+* AAAA (IPv6 Address)
+* MX (Mail exchange)
+* NS (Name Server)
+* CNAME (Domain Name)
+* PTR (Alias for IP)
+* SPF (Text encoding for mail policy)
+* SRV (Service Description)
+* TXT (Descriptive ASCII text)
+
+#### Name servers
+
+Name servers *resolve* domain names to IP addresses
+
+* Computer requests local name server to resolve 
+* Local name server asks the root name server
+* Root returns the name server for a lower zone
+* Continue down zones until name server can answer
+
+DNS protocol
+
+* Runs on UDP port 53, retransmits lost messages
+* Caches name server answers for better performance
+
+### The World Wide Web
+
+#### Architectural Overview
+
+HTTP transfers pages from servers to browsers
+Hypertext, hyperlinks
+
+**Uniform Resource Locators (URLs)** identify the pages to look for
+
+* Protocol
+	* Mostly HTTP or HTTPS
+	* FTP (file transfer) or mailto (e-mail), file (local file), about (browser information) are also possible
+* Server Domain name
+* URI (page on server)
+
+Steps to connect
+
+* Determine protocol
+* Get the IP address from DNS
+* Makes a TCP connection to the server
+* Send request for the page, server responds
+* Fetch URLs needed to display the page
+* Close idle TCP connections
+
+Steps a server takes to serve pages
+
+* Accept TCP from client
+* Get page request and map it to resource
+* Get the resource
+* Send contents of the resource to the client
+* Release idle TCP connections
+
+Content type and MIME types
+
+* Browser takes the appropriate action to display the content
+* Plug-ins / Helpers extend the browser for new types
+
+To scale performance web servers can use
+
+* Caching
+* Multiple threads
+* Front-end interfaces
+
+Cached steps for the server
+
+* Resolve name of webpage requested
+* Perform access control
+* Check cache
+* Fetch requested page from disk or run program
+* Determine rest of the response
+* Return response to the client
+* Make entry in the server log
+
+HTTP is a stateless protocol
+
+* Each request is treated individually
+* *Cookies* can be used to carry state information
+* Client stores cookies across page fetches
+* Client sends cookies back to the server
+
+#### Static Webpages
+
+* Simple files
+	* Have the same content for each request
+* Can be rich and interactive
+
+HTML generations (The more the richer the content)
+
+#### Dynamic Pages and Web Applications
+
+* Generated by programs running on the server (e.g. PHP)
+* Pages are different for other requests
+
+Technologies in dynamic webpages
+
+* HTML (HyperText Manipulating Language)
+	* See above
+* DOM (Document Object model)
+	* Tree-like structure of the document
+* XML (Generic Markup language)
+	* Strict HTML-like transfer format with custom tags
+* AJAX (Asynchronous JavaScript And XML)
+	* Makes asynchronous requests to the web server
+* JS (JavaScript)
+	* Client-side scripting language
+* And many more
+
+#### HTTP (Hyper-Text Transfer Protocol)
+
+* Request-response protocol
+* Runs on top of TCP
+* Uses persistent connections to improve performance
+
+Request methods
+
+* GET (Returns webpage)
+* HEAD (Returns header)
+* POST (Send data)
+* PUT (Store data)
+* (DELETE
+* TRACE
+* CONNECT
+* OPTIONS)
+
+HTTP response codes
+
+* 1xx - Information
+* 2xx - Success
+* 3xx - Redirect
+* 4xx - Client error
+* 5xx - Server error
+
+HTTP headers
+
+* Browser capabilities
+	* User-Agent
+	* Accept
+		* Encoding
+		* Language
+		* Charset
+* Caching related
+	* If-Modified-Since
+	* If-None-Match
+	* Date
+	* Last-modified
+	* Expires
+	* Cache-control
+	* ETag
+* Browser context
+	* Cookie
+	* Referer
+	* Authorization
+	* Host
+* Content delivery
+	* Content-Encoding
+	* Content-Length
+	* Content-Type
+	* Content-Language
+	* Content-Range
+	* Set-Cookie
+
+Caching
+
+* Stores pages locally, for quick delivery next time
+* Only re-fetches page on request if the cache expires
+
+#### The Mobile Web
+
+Mobile clients are challenging
+
+* Small screens
+* Limited input capabilities
+* Limited network bandwidth
+* Connections may be interrupted
+* Limited computing power
+
+May be mitigated by specialized content
+
+#### Web Search
+
+* Search is a simple interface to browse the web
+* Search engines require
+	* Content from all sites, accessed by *crawling*
+	* Indexing

@@ -408,6 +408,218 @@ Integrating QA
 
 * Clean separation of Design- and Analysis phases
 
+-----
+
 * Token
 * Field
 * Dice
+
+
+## Basic concepts of Object-oriented Analysis
+
+### Objects
+> An **Object** is an entity of interest of a measurement.
+
+Example
+: 
+
+* Person
+* Abstract concept
+
+> And **Object in Object-oriented programming** consist of a *state* and a pre-defined *behavior*. Every object has an *identity* (unique identifier), and can be *linked* to other objects.
+
+&nbsp;
+
+> The **state** of an object consists of the values of the attributes of the object. It can be changed through the *behavior* of the object.
+
+#### UML notation of Objects
+
+We call UML diagrams with objects **object diagrams**.
+
+Just like classes, except we use
+```
+$objectName : $ClassName
+```
+For the name
+
+![UML object diagram](https://www.tutorialspoint.com/uml/images/uml_object_diagram.jpg)
+
+> The **object identity** uniquely identifies the object.
+
+&nbsp;
+> **Object equality** describes two objects, whose all attributes *except for the identities* are the same.
+
+&nbsp;
+> The **secrecy principle** describes the process of disallowing objects from accessing outside objects, as well as outside objects from directly accessing data in the object
+
+&nbsp;
+> **External objects** are objects, that have real-world equivalents. **Internal objects** are objects that are only used for OOA convenience.
+
+### Classes
+
+> A **class** is a definition for a set of objects, that has a *structure*, *behavior* and *relationships* (eg. inheritance). A class also has a way of creating new objects.
+
+In UML classes have class names.
+
+> **Abstract classes** are classes, that can not be used for object creation. These are useful for inheritance.
+
+In UML abstract classnames are in *italics*.
+
+### Attributes
+
+In UML Attribute names are in lower case, the attribute name within a class has to be unique. To access use ClassName.attributeName
+
+> 
+> **Class attributes** are attributes that are the same for each object. In UML they are underlined.
+
+### Operation
+
+> **Operations** of an object are blocks of behavior, that can be executed independently. They have access to the objects state. The collection of all operations of an object is called the *behavior* of the object.
+
+The object must exist to use an operation. The deletion of the object is also an operation.
+
+> **Class operations** are operations, which can be run on the class instead of the object. This affects class attributes.
+
+&nbsp;
+> The **constructor operation** is an operation for creating objects. All non-abstract classes must have one.
+
+Example
+: 
+Class diagram
+![Class Diagram](https://raw.githubusercontent.com/bKiraly/DHBW_WISCI16_Notes/master/IMG/System%20Analysis%20and%20Design/UML_Classdiagram.PNG)
+Object diagram
+![Object diagram](https://raw.githubusercontent.com/bKiraly/DHBW_WISCI16_Notes/master/IMG/System%20Analysis%20and%20Design/UML_Objectdiagram.PNG)
+
+## Static Concepts in OOD
+
+### Association
+
+> An **association** is a connection between two *objects*. If the two objects are of the same class, the association is called *reflexive*.
+
+Associations are represented by a solid line between the two objects in an object diagram. In a class diagram the *cardinality* is usually also denoted, as well as the *name* of the association.
+
+> **Cardinality** described the number of objects that can be associated with each other. It is denoted with * for anything, number for the number of objects, or x..y for a range.
+
+### Roles
+
+> **Roles** are associations that have special behavior with the object.
+
+Reflexive roles are a behave according to the rules of reflexive associations.
+
+### Associative Class
+
+> **Associative Classes** are classes for the creation of objects that are assigned to an association.
+
+### Aggregation and Composition
+
+> An **aggregation** implies multiple parts of the same object. It is a close association.
+
+An aggregation is represented by a white paralellogram.
+
+> A **composition** is a special case of aggregations. The aggregate class is composed of the part-class. If the aggregate object is deleted, all its part-objects are also deleted.
+
+A composition is represented by a black paralellogram.
+
+### Inheritance
+
+> **Inheritance** describes a relation between a more general class called the *superclass* and a more specialized class called a *subclass*. It is called an *is-a-relation*. Subclasses inherit every property of the superclass.
+
+Single inheritance means a subclass may only inherit from a single superclass. This is usually used, as multiple inheritance is difficult to implement.
+
+For more information see Java slides.
+
+In UML inheritance is denoted with a white triangle pointing at the superclass on a line connecting the subclass to the superclass.
+
+* Advantages
+	* Reusability
+	* Changeability
+* Disadvantages
+	* The *Secret principle* is lost
+	* The ability to isolate classes is lost
+
+An inherited operation can be redefined.
+
+## Dynamic Concepts of OOD
+
+### Use Case
+
+* Identification of use-cases
+	* In IT
+		* Sequence of Transactions
+		* Done by an actor
+		* Transactions are closed, only after all steps are done
+	* In a Company
+		* A business process
+		* Activities to satisfy customers
+* Specification of use-cases
+	* Separating functionality from User Interface (UI)
+	* Types
+		* Informal
+		* Semi-formal
+			* Definitions
+			* Success conditions
+			* Failure conditions
+* Creation of a Sequence- and Communications diagram
+	* Sequence diagram
+		* Messages between the actor and the objects
+		* Object lines vs time
+		* Operations go between object lines
+		* If a message reaches the object, the object will be activated
+		* Small rectangle symbolizes the running time of the operation
+		* Control is symbolized by an arrow
+		* Messages on the sequence diagram need to be represented 1:1 on the class diagram
+		* Sequence diagrams use *objects*
+
+* Creation of State diagrams
+
+### Message
+
+> A **message** opens and runs an operation with the same name as the message
+
+Lifetime of the object is denoted with
+
+* {new} if the object is created during the  sequence
+* {destroyed} if the object is destroyed during the sequence
+* {transient} if the object is created and destroyed during the sequence
+
+Permanent and temporary relations
+
+* Permanent relations are associations between the classes
+* Temporary relations only exist during the sequence
+
+### Scenario
+
+Not sure if we skipped this? It might have been a bad translation for use-cases.
+
+### Sequence- and Communications Diagrams
+
+> **Communications- and Sequence diagrams** describe what might be called during execution.
+
+Difference between the two: Sequence diagram shows a specific timeline, the communications diagram is general
+
+### State Automaton
+
+> A **state automaton** consists of states and state changes. **States** is a time period, in which the object waits for an event.
+
+The lifecycle of each element can be represented with a state automaton
+
+* Entry
+* Exit
+* Do
+* Include
+
+### Activity Diagram
+
+> An **activity diagram** is a special case of a state diagram used for actions.
+
+## Modeling Business processes
+
+* Identify actors
+* Analyze events in the business process
+* Formulate use-cases
+* Include relations
+* Extend relations
+* Validate
+* Create a class diagram
+* Create an object diagram
+* Look for sources of errors

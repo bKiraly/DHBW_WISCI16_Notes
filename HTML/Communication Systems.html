@@ -74,7 +74,7 @@
 </ul>
 </li>
 <li><a href="#public-switched-telephone-network-pstn">Public Switched Telephone Network (PSTN)</a><ul>
-<li><a href="#structure-of-the-telephone-systemű">Structure of the telephone systemű</a></li>
+<li><a href="#structure-of-the-telephone-system">Structure of the telephone system</a></li>
 <li><a href="#politics-of-telephones">Politics of telephones</a></li>
 <li><a href="#local-loop-adsl-ftth">Local loop (ADSL, FttH)</a></li>
 <li><a href="#switching">Switching</a></li>
@@ -177,6 +177,56 @@
 </li>
 </ul>
 </li>
+<li><a href="#transport-layer">Transport Layer</a><ul>
+<li><a href="#transport-service">Transport Service</a><ul>
+<li><a href="#services-provided-to-the-upper-layer">Services provided to the Upper Layer</a></li>
+<li><a href="#transport-service-primitives">Transport Service Primitives</a></li>
+<li><a href="#berkeley-sockets">Berkeley Sockets</a></li>
+<li><a href="#socket-example-internet-file-server">Socket Example: Internet File Server</a></li>
+</ul>
+</li>
+<li><a href="#elements-of-transport-protocols">Elements of Transport Protocols</a><ul>
+<li><a href="#addressing">Addressing</a></li>
+<li><a href="#connection-establishment">Connection Establishment</a></li>
+<li><a href="#qos">QoS</a></li>
+</ul>
+</li>
+<li><a href="#congestion-control">Congestion Control</a></li>
+<li><a href="#udp-user-datagram-protocol">UDP (User Datagram Protocol)</a><ul>
+<li><a href="#remote-procedure-call">Remote Procedure Call</a></li>
+<li><a href="#real-time-transport">Real-Time Transport</a></li>
+</ul>
+</li>
+<li><a href="#tcp-transmission-control-protocol">TCP (Transmission Control Protocol)</a><ul>
+<li><a href="#the-tcp-service-model">The TCP service model</a></li>
+<li><a href="#the-tcp-segment-header">The TCP segment header</a></li>
+<li><a href="#tcp-connection-establishment">TCP connection establishment</a></li>
+<li><a href="#tcp-connection-state-modeling">TCP connection state modeling</a></li>
+<li><a href="#flow-control-1">Flow Control</a></li>
+<li><a href="#congestion-control-1">Congestion Control</a></li>
+<li><a href="#performance-issues">Performance issues</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#application-layer">Application Layer</a><ul>
+<li><a href="#dns-domain-name-system">DNS (Domain Name System)</a><ul>
+<li><a href="#dns-name-space">DNS name space</a></li>
+<li><a href="#domain-resource-records">Domain Resource records</a></li>
+<li><a href="#name-servers">Name servers</a></li>
+</ul>
+</li>
+<li><a href="#the-world-wide-web">The World Wide Web</a><ul>
+<li><a href="#architectural-overview">Architectural Overview</a></li>
+<li><a href="#static-webpages">Static Webpages</a></li>
+<li><a href="#dynamic-pages-and-web-applications">Dynamic Pages and Web Applications</a></li>
+<li><a href="#http-hyper-text-transfer-protocol">HTTP (Hyper-Text Transfer Protocol)</a></li>
+<li><a href="#the-mobile-web">The Mobile Web</a></li>
+<li><a href="#web-search">Web Search</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -188,8 +238,6 @@
 <h2 id="literature">Literature</h2>
 
 <p>Tennenbaum - Computer networks (up until network security chapter)</p>
-
-<p><a href="http://slideplayer.com/slide/3607059/">This slideshow on the internet</a> among others apparently</p>
 
 
 
@@ -560,7 +608,7 @@
 
 <p>2.4 GHz, 5 GHz</p>
 
-<p><img src="http://www.peterpaulengelen.com/wp-content/uploads/2013/11/Wireless-radio.jpg" alt="ISM bands" title=""></p>
+<p><img src="https://www.peterpaulengelen.com/wp-content/uploads/2013/11/Wireless-radio.jpg" alt="ISM bands" title=""></p>
 
 
 
@@ -648,7 +696,7 @@ Altitude: &lt;5 000km</p>
 
 
 
-<h4 id="structure-of-the-telephone-systemű">Structure of the telephone systemű</h4>
+<h4 id="structure-of-the-telephone-system">Structure of the telephone system</h4>
 
 <p>Hierarchical system carrying voice calls:</p>
 
@@ -1061,7 +1109,7 @@ Longer, but easily resynchronized after error.</p>
 <li>Improvement: Sensing channel <br>
 <ul><li>User doesn’t send if there is something going on</li></ul></li>
 <li>Variations on what to do if the channel is busy <br>
-<ul><li>I-presistent (greedy) sebds as soon as idle</li>
+<ul><li>I-presistent (greedy) sends as soon as idle</li>
 <li>Nonpresistent waist for a random time</li>
 <li>Sends with p probability</li></ul></li>
 <li>Used in todays LAN</li>
@@ -1092,7 +1140,7 @@ Longer, but easily resynchronized after error.</p>
 
 <h5 id="limited-contention-protocols">Limited-contention protocols</h5>
 
-<p><em>* We skipped this too…*</em></p>
+<p><strong>We skipped this too…</strong></p>
 
 
 
@@ -1368,7 +1416,7 @@ Same type of cabling as Fast Ethernet, additional multi-km fiber cables exist fo
 <h3 id="flooding">Flooding</h3>
 
 <blockquote>
-  <p><strong>*Flooding</strong> is a simple method to send a packet to all network nodes. Each node floods a new packet received on an incoming link to all other links. Nodes keep track of flood packets, and employ hop limits to prevent loops.</p>
+  <p><strong>Flooding</strong> is a simple method to send a packet to all network nodes. Each node floods a new packet received on an incoming link to all other links. Nodes keep track of flood packets, and employ hop limits to prevent loops.</p>
 </blockquote>
 
 
@@ -1509,6 +1557,18 @@ Same type of cabling as Fast Ethernet, additional multi-km fiber cables exist fo
 
 
 
+<h5 id="transparent-fragmentation">Transparent Fragmentation</h5>
+
+<p>Fragments are assembled before being sent on through the next link. This is slower but allows more efficient splitting of packets.</p>
+
+
+
+<h5 id="non-transparent-fragmentation">Non-Transparent Fragmentation</h5>
+
+<p>Each fragment is re-fragmented separately. This means the fragments can be forwarded without delay, but it may <em>double</em> the load on the link on misconfigured MTUs.</p>
+
+
+
 <h3 id="network-layer-on-the-internet">Network layer on the Internet</h3>
 
 
@@ -1556,9 +1616,726 @@ Same type of cabling as Fast Ethernet, additional multi-km fiber cables exist fo
 
 
 
+<h5 id="ip-address-blocks">IP Address Blocks</h5>
+
+<ul>
+<li>Has <script type="math/tex" id="MathJax-Element-5">2^L</script> addresses aligned on that boundary.</li>
+<li>Written in address/length (18.0.31.0/24)</li>
+<li>Prefix is determined by the network portion</li>
+<li>IPs are dynamically assigned</li>
+</ul>
+
+<blockquote>
+  <p>A <strong>subnet mask</strong> is a string of ones and zeroes denoting the <em>network address</em> and <em>host address</em>. Any bits in the IP that have a one in the corresponding bit in the subnet mask, it is part of the network address. If the corresponding element is zero, it is part of the host address.</p>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<blockquote>
+  <p>A <strong>subnet</strong> is a smaller segment of a network, given a specific IP prefix. The aggregation of networks is also possible. This is called <em>supernet</em>.</p>
+</blockquote>
+
+
+
+<h6 id="classes-of-networks">Classes of networks</h6>
+
+<p>The first few bits determine the class of the network.</p>
+
+<ul>
+<li>Class A. starts with a zero, and has a 7 bit network part, leaving a 24 bit host address</li>
+<li>Class B: starts with 10, and has a 14 bit network part, leaving 16 bits for host address</li>
+<li>Class C: starts with 110, and has a 21 bit network part, leaving 8 bits for host address</li>
+<li>Class D: starts with 1110. leaving the entire address to multicast</li>
+<li>Class E: starts with 11111, and is reserved for future use</li>
+</ul>
+
+
+
+<h5 id="network-address-translation-nat">Network Address Translation (NAT)</h5>
+
+<blockquote>
+  <p><strong>Network Address Translation (NAT)</strong> refers to mapping internal addresses (some addresses are reserved for internal use) to external address-port pairs. This means an entire network can communicate with another through a single IP address.</p>
+</blockquote>
+
+
+
+<h5 id="reserved-network-addresses">Reserved Network Addresses</h5>
+
+<blockquote>
+  <p>The <strong>subnet mask</strong> (or netmask, short NM) determines which part of the address refers to the network, and which one refers to the host. It can be written in form /n, where the first n bits designate the network. It can also be written as a decimal representation of each byte, similar to IPs.</p>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<blockquote>
+  <p>The <strong>network address</strong> describes a specific network. It is obtained by taking any address A and computing <script type="math/tex" id="MathJax-Element-6">A \land NM</script>.</p>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<blockquote>
+  <p>The <strong>broadcast address</strong> is an address that is routed to all hosts on a specific network. It is obtained by taking any address A on the network, and computing <script type="math/tex" id="MathJax-Element-7">A \lor \lnot NM</script>.</p>
+</blockquote>
+
+<dl>
+<dt>Example</dt>
+<dd>Compute the Network Address and Broadcast Address of the following address: 192.168.1.38/27</dd>
+</dl>
+
+<table>
+<thead>
+<tr>
+  <th>Name</th>
+  <th align="right"></th>
+  <th align="right"></th>
+  <th align="right"></th>
+  <th align="right"></th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>Address</td>
+  <td align="right">11000000</td>
+  <td align="right">10101000</td>
+  <td align="right">00000001</td>
+  <td align="right">00100110</td>
+</tr>
+<tr>
+  <td></td>
+  <td align="right">192</td>
+  <td align="right">168</td>
+  <td align="right">1</td>
+  <td align="right">38</td>
+</tr>
+<tr>
+  <td>Mask</td>
+  <td align="right">11111111</td>
+  <td align="right">11111111</td>
+  <td align="right">11111111</td>
+  <td align="right">11100000</td>
+</tr>
+<tr>
+  <td></td>
+  <td align="right">255</td>
+  <td align="right">255</td>
+  <td align="right">255</td>
+  <td align="right">224</td>
+</tr>
+<tr>
+  <td>BC Address</td>
+  <td align="right">11000000</td>
+  <td align="right">10101000</td>
+  <td align="right">00000001</td>
+  <td align="right">00111111</td>
+</tr>
+<tr>
+  <td></td>
+  <td align="right">192</td>
+  <td align="right">168</td>
+  <td align="right">1</td>
+  <td align="right">63</td>
+</tr>
+<tr>
+  <td>Network Adderss</td>
+  <td align="right">11000000</td>
+  <td align="right">10101000</td>
+  <td align="right">00000001</td>
+  <td align="right">00100000</td>
+</tr>
+<tr>
+  <td></td>
+  <td align="right">192</td>
+  <td align="right">168</td>
+  <td align="right">1</td>
+  <td align="right">32</td>
+</tr>
+</tbody></table>
+
+
+
+
+<h5 id="advantages-of-subnets">Advantages of Subnets</h5>
+
+<ul>
+<li>Subnets enable an easier management of multiple groups of hosts</li>
+<li>They allow control of communications between the networks, improving security</li>
+</ul>
+
+
+
 <h4 id="ipv6">IPv6</h4>
 
+<p>IPv6 has a longer address, 128 bits, meaning that all computers in the world can get a unique address <br>
+Effort that started 1990, due to address exhaustion</p>
+
+<ul>
+<li>Supports billions of hosts</li>
+<li>Reduces routing table size</li>
+<li>Simplify protocol</li>
+<li>Better security</li>
+<li>QoS considerations</li>
+<li>AID multicasting (compromise between broadcast and single host networking)</li>
+<li>Roaming hosts without changing addresses</li>
+<li>Permit coexistence with other protocols</li>
+</ul>
+
+<p>Deployment has been slow</p>
 
 
-<h4 id="internet-control-protocols">Internet Control Protocols</h4></div></body>
+
+<h5 id="header-structure">Header Structure</h5>
+
+<ul>
+<li>Version</li>
+<li>Diff. Serv.</li>
+<li>Flow label (Identifies packet flow, enables smarter routing)</li>
+<li>Payload length</li>
+<li>Extension headers <br>
+<ul><li>Hop-by-Hop options</li>
+<li>Destination options</li>
+<li>Routing</li>
+<li>Fragmentation</li>
+<li>Authentication</li>
+<li>Encrypted security payload</li></ul></li>
+<li>Hop limit</li>
+<li>Source address</li>
+<li>Destination address</li>
+</ul>
+
+
+
+<h4 id="internet-control-protocols">Internet Control Protocols</h4>
+
+<ul>
+<li>ICMP (Internet Control Message Protocol) <br>
+<ul><li>returns error info</li>
+<li>Required in many services (i.e. traceroute)</li></ul></li>
+<li>ARP (Address Resolution Protocol) <br>
+<ul><li>finds Ethernet address of a local IP address</li>
+<li>Enables hosts to communicate by getting the Ethernet address of the host</li></ul></li>
+<li>DHCP (Dynamic Host Configuration Protocol) <br>
+<ul><li>Automatically assigns IP addresses to hosts</li></ul></li>
+</ul>
+
+
+
+<h5 id="routing-protocols">Routing protocols</h5>
+
+<ul>
+<li>OSPF <br>
+<ul><li>Open Shortest Path First</li>
+<li>Internal routing</li></ul></li>
+<li>BGP <br>
+<ul><li>Border Gateway Protocol</li>
+<li>Inter-domain routing</li>
+<li>Respects network policy constraints</li></ul></li>
+</ul>
+
+
+
+<h2 id="transport-layer">Transport Layer</h2>
+
+
+
+<h3 id="transport-service">Transport Service</h3>
+
+
+
+<h4 id="services-provided-to-the-upper-layer">Services provided to the Upper Layer</h4>
+
+<ul>
+<li>Delivers data to the destination reliably <br>
+<ul><li>Communicates only with its peer</li>
+<li>Adds reliability (connectionless or connection oriented)</li></ul></li>
+<li>Multiple addresses on the same machine</li>
+<li>Units of data: <strong>Segment</strong></li>
+</ul>
+
+
+
+<h4 id="transport-service-primitives">Transport Service Primitives</h4>
+
+<ul>
+<li><em>Primitives</em> are functions provided to the upper layer <br>
+<ul><li>LISTEN</li>
+<li>CONNECT</li>
+<li>SEND</li>
+<li>RECEIVE</li>
+<li>DISCONNECT</li></ul></li>
+</ul>
+
+
+
+<h4 id="berkeley-sockets">Berkeley Sockets</h4>
+
+<ul>
+<li>SOCKET: Create a new communication endpoint</li>
+<li>BIND: Associate address with socket</li>
+<li>LISTEN</li>
+<li>ACCEPT</li>
+<li>CONNECT</li>
+<li>SEND</li>
+<li>RECEIVE</li>
+<li>CLOSE</li>
+</ul>
+
+
+
+<h4 id="socket-example-internet-file-server">Socket Example: Internet File Server</h4>
+
+<p>See slides for C code example</p>
+
+
+
+<h3 id="elements-of-transport-protocols">Elements of Transport Protocols</h3>
+
+
+
+<h4 id="addressing">Addressing</h4>
+
+<ul>
+<li>Extended to TSAPs</li>
+<li>Multiple clients and servers run on a single host with a single IP</li>
+<li>TSAPs are <strong>ports</strong> for TCP/UDP</li>
+</ul>
+
+
+
+<h4 id="connection-establishment">Connection Establishment</h4>
+
+<p>Key problem is to ensure reliability even though packets might be <em>lost</em>, <em>corrupted</em>, <em>delayed</em>, and <em>duplicated</em></p>
+
+<ul>
+<li>Do not take duplicated packets as new</li>
+<li>Use checksums</li>
+</ul>
+
+<p>Approach</p>
+
+<ul>
+<li>Sequence number</li>
+<li>Three-way-handshake <br>
+<ul><li>CR (Connection Request) with seq (sequence number)</li>
+<li>ACK (Acknowledgement) with previous seq and new seq</li>
+<li>DATA (Acknowledgement) with previous seq and new seq</li></ul></li>
+<li>Connection release</li>
+</ul>
+
+
+
+<h4 id="qos">QoS</h4>
+
+<ul>
+<li>Sliding window principle</li>
+<li>Flow control -&gt; buffering at sender and receiver <br>
+<ul><li>Variable-sized sliding window</li></ul></li>
+</ul>
+
+<p><strong>Skipped a <em>whole</em> bunch of stuff</strong></p>
+
+
+
+<h3 id="congestion-control">Congestion Control</h3>
+
+<p><strong>Skipped completely</strong></p>
+
+
+
+<h3 id="udp-user-datagram-protocol">UDP (User Datagram Protocol)</h3>
+
+<ul>
+<li>No delivery control</li>
+<li>No flow control</li>
+<li>Connectionless</li>
+<li>Fast</li>
+</ul>
+
+
+
+<h5 id="header">Header</h5>
+
+<ul>
+<li>Source port</li>
+<li>Destination port</li>
+<li>UDP length</li>
+<li>Checksum</li>
+</ul>
+
+
+
+<h4 id="remote-procedure-call">Remote Procedure Call</h4>
+
+<ul>
+<li>RPC connects applications over the network with procedure calls <br>
+<ul><li>Uses UDP for low-latency transport</li></ul></li>
+</ul>
+
+
+
+<h4 id="real-time-transport">Real-Time Transport</h4>
+
+<p><strong>Skipped a whole bunch of stuff again</strong></p>
+
+
+
+<h3 id="tcp-transmission-control-protocol">TCP (Transmission Control Protocol)</h3>
+
+
+
+<h4 id="the-tcp-service-model">The TCP service model</h4>
+
+<ul>
+<li>Reliable bytestreams between processes</li>
+<li>Popular services run on well-known ports <a href="https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers">see this list</a></li>
+<li>Segmentation is done implicitly, the hosts only access byte streams</li>
+</ul>
+
+
+
+<h4 id="the-tcp-segment-header">The TCP segment header</h4>
+
+<ul>
+<li>Source port</li>
+<li>Destination port</li>
+<li>Acknowledgement number</li>
+<li>Data offset</li>
+<li>Fags <br>
+<ul><li>NS</li>
+<li>CWR</li>
+<li>ECE</li>
+<li>URG</li>
+<li>ACK</li>
+<li>PSH</li>
+<li>RST</li>
+<li>SYN</li>
+<li>FIN</li></ul></li>
+<li>Window size</li>
+<li>Urgent pointer</li>
+<li>Options</li>
+</ul>
+
+
+
+<h4 id="tcp-connection-establishment">TCP connection establishment</h4>
+
+<ul>
+<li>Three way handshake</li>
+<li>Setting of flags <br>
+<ul><li>SYN</li>
+<li>ACK</li>
+<li>ACK</li></ul></li>
+</ul>
+
+
+
+<h4 id="tcp-connection-state-modeling">TCP connection state modeling</h4>
+
+<p><strong>Skipped</strong></p>
+
+
+
+<h4 id="flow-control-1">Flow Control</h4>
+
+<ul>
+<li>TCP adds flow control to the sliding window</li>
+<li>ACK+WIN is the senders limit</li>
+<li>Only send until WIN = 0</li>
+<li>If read from the buffer client sends new buffer state</li>
+<li>Client is ready to receive more data</li>
+</ul>
+
+<p>Some crazy configurations might lead to inefficient transfer</p>
+
+
+
+<h4 id="congestion-control-1">Congestion Control</h4>
+
+<p>TCP uses AIMD with loss signal to control congestion</p>
+
+<ul>
+<li>Congestion window (cwnd)</li>
+<li>Doubles RTT while keeping the ACK clock going </li>
+</ul>
+
+<p><strong>Skipped a whole bunch</strong></p>
+
+
+
+<h4 id="performance-issues">Performance issues</h4>
+
+<p><strong>Skipped a whole bunch</strong></p>
+
+
+
+<h2 id="application-layer">Application Layer</h2>
+
+<p>Uses transport services to build distributed applications</p>
+
+
+
+<h3 id="dns-domain-name-system">DNS (Domain Name System)</h3>
+
+<p>The DNS resolves high-level human readable names to low-level machine readable addresses</p>
+
+
+
+<h4 id="dns-name-space">DNS name space</h4>
+
+<p>Hierarchical, root to leafs from TLDs (Top Level Domains) to lower level domains <br>
+e.g.: amazon.co.uk is amazon (lowest level domain) which is a corporation (higher level domain) in the UK (TLD)</p>
+
+<p><img src="http://homepages.herts.ac.uk/~comqrgd/docs/network-notes/network-notes-img115.png" alt="Hierarchy example" title=""></p>
+
+<p>The TLDs are controlled by ICANN.</p>
+
+
+
+<h4 id="domain-resource-records">Domain Resource records</h4>
+
+<p>The key resource records in the namespace are IP addresses and name servers</p>
+
+<ul>
+<li>SOA (Start of Authority)</li>
+<li>A (IPv4 Address)</li>
+<li>AAAA (IPv6 Address)</li>
+<li>MX (Mail exchange)</li>
+<li>NS (Name Server)</li>
+<li>CNAME (Domain Name)</li>
+<li>PTR (Alias for IP)</li>
+<li>SPF (Text encoding for mail policy)</li>
+<li>SRV (Service Description)</li>
+<li>TXT (Descriptive ASCII text)</li>
+</ul>
+
+
+
+<h4 id="name-servers">Name servers</h4>
+
+<p>Name servers <em>resolve</em> domain names to IP addresses</p>
+
+<ul>
+<li>Computer requests local name server to resolve </li>
+<li>Local name server asks the root name server</li>
+<li>Root returns the name server for a lower zone</li>
+<li>Continue down zones until name server can answer</li>
+</ul>
+
+<p>DNS protocol</p>
+
+<ul>
+<li>Runs on UDP port 53, retransmits lost messages</li>
+<li>Caches name server answers for better performance</li>
+</ul>
+
+
+
+<h3 id="the-world-wide-web">The World Wide Web</h3>
+
+
+
+<h4 id="architectural-overview">Architectural Overview</h4>
+
+<p>HTTP transfers pages from servers to browsers <br>
+Hypertext, hyperlinks</p>
+
+<p><strong>Uniform Resource Locators (URLs)</strong> identify the pages to look for</p>
+
+<ul>
+<li>Protocol <br>
+<ul><li>Mostly HTTP or HTTPS</li>
+<li>FTP (file transfer) or mailto (e-mail), file (local file), about (browser information) are also possible</li></ul></li>
+<li>Server Domain name</li>
+<li>URI (page on server)</li>
+</ul>
+
+<p>Steps to connect</p>
+
+<ul>
+<li>Determine protocol</li>
+<li>Get the IP address from DNS</li>
+<li>Makes a TCP connection to the server</li>
+<li>Send request for the page, server responds</li>
+<li>Fetch URLs needed to display the page</li>
+<li>Close idle TCP connections</li>
+</ul>
+
+<p>Steps a server takes to serve pages</p>
+
+<ul>
+<li>Accept TCP from client</li>
+<li>Get page request and map it to resource</li>
+<li>Get the resource</li>
+<li>Send contents of the resource to the client</li>
+<li>Release idle TCP connections</li>
+</ul>
+
+<p>Content type and MIME types</p>
+
+<ul>
+<li>Browser takes the appropriate action to display the content</li>
+<li>Plug-ins / Helpers extend the browser for new types</li>
+</ul>
+
+<p>To scale performance web servers can use</p>
+
+<ul>
+<li>Caching</li>
+<li>Multiple threads</li>
+<li>Front-end interfaces</li>
+</ul>
+
+<p>Cached steps for the server</p>
+
+<ul>
+<li>Resolve name of webpage requested</li>
+<li>Perform access control</li>
+<li>Check cache</li>
+<li>Fetch requested page from disk or run program</li>
+<li>Determine rest of the response</li>
+<li>Return response to the client</li>
+<li>Make entry in the server log</li>
+</ul>
+
+<p>HTTP is a stateless protocol</p>
+
+<ul>
+<li>Each request is treated individually</li>
+<li><em>Cookies</em> can be used to carry state information</li>
+<li>Client stores cookies across page fetches</li>
+<li>Client sends cookies back to the server</li>
+</ul>
+
+
+
+<h4 id="static-webpages">Static Webpages</h4>
+
+<ul>
+<li>Simple files <br>
+<ul><li>Have the same content for each request</li></ul></li>
+<li>Can be rich and interactive</li>
+</ul>
+
+<p>HTML generations (The more the richer the content)</p>
+
+
+
+<h4 id="dynamic-pages-and-web-applications">Dynamic Pages and Web Applications</h4>
+
+<ul>
+<li>Generated by programs running on the server (e.g. PHP)</li>
+<li>Pages are different for other requests</li>
+</ul>
+
+<p>Technologies in dynamic webpages</p>
+
+<ul>
+<li>HTML (HyperText Manipulating Language) <br>
+<ul><li>See above</li></ul></li>
+<li>DOM (Document Object model) <br>
+<ul><li>Tree-like structure of the document</li></ul></li>
+<li>XML (Generic Markup language) <br>
+<ul><li>Strict HTML-like transfer format with custom tags</li></ul></li>
+<li>AJAX (Asynchronous JavaScript And XML) <br>
+<ul><li>Makes asynchronous requests to the web server</li></ul></li>
+<li>JS (JavaScript) <br>
+<ul><li>Client-side scripting language</li></ul></li>
+<li>And many more</li>
+</ul>
+
+
+
+<h4 id="http-hyper-text-transfer-protocol">HTTP (Hyper-Text Transfer Protocol)</h4>
+
+<ul>
+<li>Request-response protocol</li>
+<li>Runs on top of TCP</li>
+<li>Uses persistent connections to improve performance</li>
+</ul>
+
+<p>Request methods</p>
+
+<ul>
+<li>GET (Returns webpage)</li>
+<li>HEAD (Returns header)</li>
+<li>POST (Send data)</li>
+<li>PUT (Store data)</li>
+<li>(DELETE</li>
+<li>TRACE</li>
+<li>CONNECT</li>
+<li>OPTIONS)</li>
+</ul>
+
+<p>HTTP response codes</p>
+
+<ul>
+<li>1xx - Information</li>
+<li>2xx - Success</li>
+<li>3xx - Redirect</li>
+<li>4xx - Client error</li>
+<li>5xx - Server error</li>
+</ul>
+
+<p>HTTP headers</p>
+
+<ul>
+<li>Browser capabilities <br>
+<ul><li>User-Agent</li>
+<li>Accept <br>
+<ul><li>Encoding</li>
+<li>Language</li>
+<li>Charset</li></ul></li></ul></li>
+<li>Caching related <br>
+<ul><li>If-Modified-Since</li>
+<li>If-None-Match</li>
+<li>Date</li>
+<li>Last-modified</li>
+<li>Expires</li>
+<li>Cache-control</li>
+<li>ETag</li></ul></li>
+<li>Browser context <br>
+<ul><li>Cookie</li>
+<li>Referer</li>
+<li>Authorization</li>
+<li>Host</li></ul></li>
+<li>Content delivery <br>
+<ul><li>Content-Encoding</li>
+<li>Content-Length</li>
+<li>Content-Type</li>
+<li>Content-Language</li>
+<li>Content-Range</li>
+<li>Set-Cookie</li></ul></li>
+</ul>
+
+<p>Caching</p>
+
+<ul>
+<li>Stores pages locally, for quick delivery next time</li>
+<li>Only re-fetches page on request if the cache expires</li>
+</ul>
+
+
+
+<h4 id="the-mobile-web">The Mobile Web</h4>
+
+<p>Mobile clients are challenging</p>
+
+<ul>
+<li>Small screens</li>
+<li>Limited input capabilities</li>
+<li>Limited network bandwidth</li>
+<li>Connections may be interrupted</li>
+<li>Limited computing power</li>
+</ul>
+
+<p>May be mitigated by specialized content</p>
+
+
+
+<h4 id="web-search">Web Search</h4>
+
+<ul>
+<li>Search is a simple interface to browse the web</li>
+<li>Search engines require <br>
+<ul><li>Content from all sites, accessed by <em>crawling</em></li>
+<li>Indexing</li></ul></li>
+</ul></div></body>
 </html>

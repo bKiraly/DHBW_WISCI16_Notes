@@ -389,6 +389,7 @@ Therefore the costs of the company relative to the profit decreases, therefore t
 * Menu costs
 
 Consequence is a *relative price distortion*
+
 * The longer the price remains, the lower it will be compared to competitors
 	* Demand increases
 	* Company replies with higher supply
@@ -655,10 +656,12 @@ Features of money
 
 ### 1.4 Money Creation
 M1 = Banknotes + Overnight deposits
+
 * Bank notes can be issued by the central bank
 * Commercial banks responsible for the overnight deposits
 
 Central bank can influence overnight deposits by adjusting
+
 * Reserve requirements
 * Open market operations
 * Determining the refinancing rate
@@ -828,7 +831,7 @@ The HCPI usually follows the money supply in 3 to 6 months (The companies need t
 
 A high inflation rate causes people to buy things more often
 
-* Wasted tome
+* Wasted time
 
 #### Menu costs
 
@@ -838,6 +841,7 @@ Price tags need to be changed very often
 
 Companies change prices at different times
 Consumers buy goods at companies with lower prices
+
 * Consumers invest more time in searching for cheap products
 * Demand at company changes often, this creates distortions
 
@@ -848,11 +852,13 @@ Capital gains tax changes based on the change in prices $\rightarrow$ the effect
 Therefore the state is motivated to have a higher interest rate
 
 In the long run everyone loses:
+
 * The investors have a lower interest rate
 * The investment will be lower
 * The whole economy stagnates
 
 Income tax is also affected because of *progressive tax*
+
 * The inflation rate pushes the person in a higher tax bracket
 * The higher tax bracket has a higher tax rate
 * State benefits from higher tax income
@@ -869,6 +875,7 @@ Tax brackets in Germany
 #### Confusion and inconvenience
 
 Prices change often
+
 * Consumers have problems to compare prices
 * Companies have problems to determine the prices and profit
 
@@ -1097,7 +1104,7 @@ Example
 > **Indirect quotation** (aka. American quotation) describes the price of the home currency expressed in foreign currency.
 
 Example
-:
+: 
 1 EUR = 1.12 USD
 
 ##### Convention
@@ -1148,9 +1155,20 @@ Solution
 * Around 160 exchange rates are represented
 
 -------
-Homework:
+TIPSE
 
-Do profitable trade with the other currencies
-Prepare the questions: 1-3 (only questions about ECB), 5-8
-Solve the following problems in Ch. 26: 1-9
-Inflation rate in Syria
+* Tastes
+* Income
+* Population
+* Substitute
+* Expectations
+
+PIGTEST
+
+* Prodcution
+* Investment
+* Govt. Expenditure
+* Taxes
+* Expectations
+* Sellers
+* Technology

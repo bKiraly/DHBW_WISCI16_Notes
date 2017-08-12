@@ -779,7 +779,7 @@ All methods used for creating the financial statements must be disclosed.
 
 * Theory
 	* IFRS framework
-	* IAS1
+	* IAS1 Guidelines
 	* Annual Financial Statements
 	* Details coming soon
 * Practical assignments
