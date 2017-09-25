@@ -1,12 +1,12 @@
 public class Ex1_Inheritence{
 	public static void main(String args[]){
 		Admin admin = new Admin();
-		admin.username = "sajt";												//Here we show that we can access the inherited attributes of user from admin
+		admin.username = "sajt";						//Here we show that we can access the inherited attributes of user from admin
 		admin.password = "sajt";
 		admin.adminPass = "sajt";
-		System.out.println(admin.login("sajt","sajt"));							//Here we show that we can access the inherited method of user from admin
+		System.out.println(admin.login("sajt","sajt"));				//Here we show that we can access the inherited method of user from admin
 		User user = admin.addUser("sonka", "sonka@sonka.com", "sonka", "sajt");
-		System.out.println(user.login("sonka", "sonka"));						//Here we show we can still use admin methods to create a user
+		System.out.println(user.login("sonka", "sonka"));			//Here we show we can still use admin methods to create a user
 	}
 	public static class User{
 	public String username;
