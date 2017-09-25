@@ -7,22 +7,22 @@ class Ex2_Polymorphism{
 	static class Triangle extends Drawable{
 		public void draw() {
 			System.out.println(	"     /|\n"
-					+ 			"    / |\n"
-					+			"   /__|\n");
+					+ 	"    / |\n"
+					+	"   /__|\n");
 		}
 	}
 	static class Rectangle extends Drawable{
 		public void draw() {
 			System.out.println(	"|'''''|\n"
-					+ 			"|     |\n"
-					+			"|_____|\n");
+					+ 	"|     |\n"
+					+	"|_____|\n");
 		}
 	}
 	static class Circle extends Drawable{
 		public void draw() {
 			System.out.println(	" /''\\\n"
-					+ 			"|    |\n"
-					+			" \\__/\n");
+					+ 	"|    |\n"
+					+	" \\__/\n");
 		}
 	}
 	
