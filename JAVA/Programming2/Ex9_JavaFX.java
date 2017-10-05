@@ -6,7 +6,7 @@ import javafx.scene.paint.*;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.stage.*;
-public class JavaFX extends Application{
+public class Ex9_JavaFX extends Application{
 	//Main method
 	public static void main(String[] args) {
 		launch(args);
