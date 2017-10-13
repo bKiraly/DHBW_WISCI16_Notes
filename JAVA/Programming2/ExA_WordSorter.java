@@ -22,9 +22,12 @@ public class EXA_WordSorter extends Application{
 		Text tmpT;
 		
 		//Create the columns
-		for(char i = 'A'; i <= 'Z'+1; i++) {
-			tmpT = new Text(""+(i==('Z'+1)?'?':i));			//If we are in the last column, we write '?'. Otherwise write the i-th letter
-			tmpT.setFont(new Font("Helvetica", 20));		//Make the font large for the headings
+		for(char i = 'A'; i <= 'Z'+1; i++) {			//If we are in the last column, we write '?'. Otherwise write the i-th letter
+			if(i == 'Z'+1)
+				tmpT = new Text("?");
+			else
+				tmpT = new Text(""+i);
+			tmpT.setFont(new Font("Helvetica", 20));	//Make the font large for the headings
 			wordContainer[i-'A'] = new VBox(tmpT);
 		}
 		tableContainer = new HBox(wordContainer);
