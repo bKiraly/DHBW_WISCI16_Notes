@@ -1,6 +1,6 @@
 package JavaCourse;
 
-public class Thread4 {
+public class ExE_Synchronized {
 	static class conflict extends Thread{
 		static int x;
 		static int y;
