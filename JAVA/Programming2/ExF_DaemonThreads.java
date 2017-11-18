@@ -1,6 +1,6 @@
 package JavaCourse;
 
-public class Thread5 {
+public class ExF_DaemonThreads {
 	static class Daemons extends Thread{
 		Daemons(){
 			setDaemon(true);
