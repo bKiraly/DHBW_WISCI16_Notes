@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-public class Threads {
+public class Threads6 {
 	
 	static class LockExample implements Runnable{
 		static String magic = "";
