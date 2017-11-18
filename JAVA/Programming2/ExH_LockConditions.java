@@ -46,9 +46,9 @@ public class ExH_LockConditions {
 			for(int i = 0; i < queue.length-1; i++)
 				queue[i] = queue[i+1];
 			free++;
+			System.out.println(res);
 			c.signal();
 			//System.out.println("Pop unlocking");
-			System.out.println(res);
 			l.unlock();
 			return res;
 			}catch(Exception e) { return 0;}
@@ -68,7 +68,6 @@ public class ExH_LockConditions {
 					Thread.sleep(delay);
 				}
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
