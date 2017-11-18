@@ -4,7 +4,7 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-public class ExH_Threads7 {
+public class ExH_LockConditions {
 	static class RandomProducer extends Thread{
 		int delay;
 		int[] queue;
