@@ -2,7 +2,7 @@ package JavaCourse;
 
 import java.util.Scanner;
 
-public class Thread3 {
+public class ExD_ThreadInterrupts {
 	static Thread t = null;
 	public static void main(String args[]) {
 		t = new Thread(()->{
