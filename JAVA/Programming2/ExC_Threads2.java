@@ -1,6 +1,6 @@
 package JavaCourse;
 
-public class Thread2 {
+public class ExC_Threads2 {
 	public static class MyThread extends Thread{
 		private int stepSize;
 		private String prefix;
