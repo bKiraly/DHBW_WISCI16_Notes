@@ -23,8 +23,8 @@ public class ExG_Locks {
 	}
 	
 	public static void main(String args[]) {
-		new Thread(new LockExample()).start();;
-		new Thread(new LockExample()).start();;
-		new Thread(new LockExample()).start();;
+		new Thread(new LockExample()).start();
+		new Thread(new LockExample()).start();
+		new Thread(new LockExample()).start();
 	}
 }
