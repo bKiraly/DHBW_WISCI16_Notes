@@ -10,7 +10,7 @@ public class ExD_ThreadInterrupts {
 			try {
 				System.out.println("I am eating cookies");
 				while(true) {
-					System.out.println("Ate cookie number "+i++);
+					System.out.println("Ate cookie number "+(i++));
 					Thread.sleep(500);
 				}
 			}catch(InterruptedException e){
