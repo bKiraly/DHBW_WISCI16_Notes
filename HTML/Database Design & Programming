@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Database Design & -Programming</title>
+<link rel="stylesheet" href="https://stackedit.io/res-min/themes/base.css" />
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body><div class="container"><h1 id="database-design-programming">Database Design &amp; -Programming</h1>
+
+<blockquote>
+  <p><strong>Disclaimer</strong> <br>
+  These are notes created for my personal use. They mostly cover the contents of the lectures. I take no responsibility for the correctness of anything stated in the contents, although I strive for making them as accurate as possible. If you find any factual or formal mistakes in these notes, please don’t hesitate to contact me at <a href="mailto:kiraly.bence.1025@gmail.com">kiraly.bence.1025@gmail.com</a>.</p>
+</blockquote>
+
+
+
+<h2 id="table-of-contents">Table of Contents</h2>
+
+<p><div class="toc">
+<ul>
+<li><a href="#database-design-programming">Database Design &amp; -Programming</a><ul>
+<li><a href="#table-of-contents">Table of Contents</a></li>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#database-design">Database Design</a><ul>
+<li><a href="#conceptual-design">Conceptual Design</a></li>
+<li><a href="#logical-design">Logical Design</a></li>
+<li><a href="#physical-design">Physical Design</a></li>
+</ul>
+</li>
+<li><a href="#database-programming">Database Programming</a><ul>
+<li><a href="#sql">SQL</a></li>
+<li><a href="#administration">Administration</a></li>
+<li><a href="#data-structures">Data Structures</a></li>
+<li><a href="#performance-tuning">Performance Tuning</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</p>
+
+
+
+<h2 id="introduction">Introduction</h2>
+
+<p>Recommended book: Information Modeling and Relational Databases by Terry Halpin <br>
+Relational databases - Based on Set theory <br>
+Hierarchical databases <br>
+Blockchain <br>
+NoSQL</p>
+
+<p>A database is the backend of every computing system. <br>
+Persistent data storage for large amounts of data with simple access points <br>
+Data is much harder to recreate than hardware or software <br>
+Database applications are the ‘active’ part of DB systems</p>
+
+<p>History of database systems:</p>
+
+<ul>
+<li>File system <br>
+<ul><li>Limited linkage and integrity management</li>
+<li>Limited access control</li></ul></li>
+<li>Excel files <br>
+<ul><li>Better linkage and integrity</li>
+<li>Problems with data inconsistency</li>
+<li>Security concerns</li>
+<li>No centralized mechanism to replicate data across multiple systems</li></ul></li>
+<li>Relational Databases <br>
+<ul><li>Database language <br>
+<ul><li>Structured Query Language (SQL)</li>
+<li>De-facto standard</li>
+<li>Different dialects</li></ul></li>
+<li>DBMS <br>
+<ul><li>Database management system</li>
+<li>Logically accesses data</li>
+<li>Different from the database itself</li>
+<li>Companies are different</li>
+<li>Different SQL dialects</li></ul></li>
+<li>Database structure <br>
+<ul><li>Responsibility of the database architect</li>
+<li>Logical structure</li></ul></li></ul></li>
+</ul>
+
+<p>Roles of database users</p>
+
+<ul>
+<li>Database administration <br>
+<ul><li>Installation, configuration, maintenance, upgrade</li>
+<li>Administration</li>
+<li>Monitoring and optimization</li>
+<li>Backup and restore</li></ul></li>
+<li>Database architect <br>
+<ul><li>Design and optimize databases</li>
+<li>Structures data logically</li></ul></li>
+<li>Application developer <br>
+<ul><li>Implements business process based on data from database</li></ul></li>
+</ul>
+
+<p>Relational database systems</p>
+
+<ul>
+<li>Commercial <br>
+<ul><li>DB2 (IBM)</li>
+<li>Oracle DB (Oracle)</li>
+<li>SQL Server / Access (Microsoft)</li>
+<li>SQL Anywhere / Adaptive Server (Sybase)</li>
+<li>SAP MaxDB (SAP)</li></ul></li>
+<li>Open-source <br>
+<ul><li>MySQL (Oracle)</li>
+<li>Ingres (Actian)</li>
+<li>PostgreSQL</li>
+<li>MariaDB</li></ul></li>
+</ul>
+
+<p>Features of a DBMS</p>
+
+<ul>
+<li>Consistent data storage / integrity</li>
+<li>Multi-user access</li>
+<li>Backup</li>
+<li>High-availability</li>
+<li>Consistency</li>
+<li>Isolation</li>
+<li>Access permission control</li>
+<li>Authentication</li>
+</ul>
+
+<p>Homework: What data should be put in a database in your area of work?</p>
+
+
+
+<h2 id="database-design">Database Design</h2>
+
+
+
+<h3 id="conceptual-design">Conceptual Design</h3>
+
+
+
+<h3 id="logical-design">Logical Design</h3>
+
+
+
+<h3 id="physical-design">Physical Design</h3>
+
+
+
+<h2 id="database-programming">Database Programming</h2>
+
+
+
+<h3 id="sql">SQL</h3>
+
+
+
+<h3 id="administration">Administration</h3>
+
+
+
+<h3 id="data-structures">Data Structures</h3>
+
+
+
+<h3 id="performance-tuning">Performance Tuning</h3></div></body>
+</html>
