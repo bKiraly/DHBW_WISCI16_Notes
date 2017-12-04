@@ -128,8 +128,6 @@ Database applications are the ‘active’ part of DB systems</p>
 <li>Authentication</li>
 </ul>
 
-<p>Homework: What data should be put in a database in your area of work?</p>
-
 
 
 <h2 id="database-design">Database Design</h2>
@@ -138,15 +136,145 @@ Database applications are the ‘active’ part of DB systems</p>
 
 <h3 id="conceptual-design">Conceptual Design</h3>
 
+<p>ACID properties</p>
+
+<ul>
+<li>Atomicity <br>
+<ul><li>A transaction is either executed completely, or not at all</li></ul></li>
+<li>Consistency <br>
+<ul><li>Integrity constraints are not violated</li></ul></li>
+<li>Isolation <br>
+<ul><li>Separate systems are running as though they were the only instance</li></ul></li>
+<li>Durability <br>
+<ul><li>The results are persistent</li></ul></li>
+</ul>
+
+<p>CAP</p>
+
+<ul>
+<li>Consistency <br>
+<ul><li>All systems have the same state of data</li></ul></li>
+<li>Availability <br>
+<ul><li>Queries against the systems are always answered</li></ul></li>
+<li>Partition tolerance <br>
+<ul><li>The system continues, even if parts are unavailable</li></ul></li>
+</ul>
+
+<p>Theory says that a system might fulfill at most two of them</p>
+
+<ul>
+<li>A and P <br>
+<ul><li>DNS system</li>
+<li>Most web services</li></ul></li>
+<li>C and A <br>
+<ul><li>Enterprise DB systems</li>
+<li>Classical DB systems</li></ul></li>
+<li>C and P <br>
+<ul><li>ATMs</li>
+<li>Blockchain</li></ul></li>
+</ul>
+
+<p>Requirement engineering (Lots of interviews with the customer)</p>
+
+<p>Procedure</p>
+
+<ul>
+<li>Reality</li>
+<li>Identification of subdomain</li>
+<li>Conceptual data model</li>
+<li>Logical data model</li>
+<li>Physical data model</li>
+</ul>
+
+<p><em>Skip, skip</em></p>
+
 
 
 <h3 id="logical-design">Logical Design</h3>
+
+<p>Requirements</p>
+
+<ul>
+<li>Customer Requirements</li>
+<li>Written Documentation of the requirements</li>
+<li>Graphical representation</li>
+<li>Database <br>
+<ul><li>Weak entities</li>
+<li>Not needed for business process</li>
+<li>Is just an implementation artifact</li>
+<li>Structured Attributes (Attributes that consist of multiple other (atomic) attributes)</li>
+<li>Redundancy -&gt; Normal forms</li>
+<li>Relationships are expressed with a verb</li>
+<li>The relation itself may be an entity</li>
+<li>BPMN - Business Process Modeling Notation</li></ul></li>
+</ul>
 
 
 
 <h3 id="physical-design">Physical Design</h3>
 
+<p>Normal forms</p>
 
+
+
+<h4 id="keys">Keys</h4>
+
+
+
+<h5 id="primary-key">Primary Key</h5>
+
+<p>Primary key - Unique identifier of the given element e.g. the ID of a user <br>
+Surrogate primary key - A primary key consisting of multiple attributes (e.g. first name and last name)</p>
+
+
+
+<h5 id="foreign-key">Foreign key</h5>
+
+<p>The primary keys of other tables, used in relations</p>
+
+
+
+<h4 id="attributes">Attributes</h4>
+
+
+
+<h5 id="complex-attributes">Complex attributes</h5>
+
+<p>These attributes can be broken down to different sub-attributes (e.g. Name of a person -&gt; First name, Last name)</p>
+
+<h5 id="atomic-attributes">Atomic attributes</h5>
+
+<p>These attributes can not be logically split any further (e.g. First name of a person)</p>
+
+
+
+<h5 id="null">NULL</h5>
+
+<p>The value <code>NULL</code> is used when the value of the attribute is not known. It can only be used if the attribute is <strong>optional</strong>, that is it is not <strong>mandatory</strong> to fill in the field. It represents <em>no data</em> for the entity, and is thus different from the empty string <code>""</code> and <code>0</code>.</p>
+
+<h4 id="referential-integrity">Referential integrity</h4>
+
+<p>Entities on both sides of the relation must exist according to the rules of the database design</p>
+
+
+
+<h4 id="relationships">Relationships</h4>
+
+<ul>
+<li>[1..1] <br>
+<ul><li>Simple</li>
+<li>The one entity should have a foreign key to another</li></ul></li>
+<li>[1..n] <br>
+<ul><li>The attribute that there are many of includes the a foreign key for the other attribute</li></ul></li>
+<li>[n..m] <br>
+<ul><li>There is an associative table, additional attributes can also be added</li></ul></li>
+<li>Recursive relationship <br>
+<ul><li>The entity has a field for another foreign key to the primary key of its own table.</li></ul></li>
+<li>Dependency relationship <br>
+<ul><li>A depends on B</li>
+<li>Primary Key, Foreign key concept (incomplete)</li>
+<li>Associative table -&gt; complete</li></ul></li>
+</ul>
 
 <h2 id="database-programming">Database Programming</h2>
 
