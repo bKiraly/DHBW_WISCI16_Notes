@@ -84,13 +84,113 @@ Features of a DBMS
 * Access permission control
 * Authentication
 
-Homework: What data should be put in a database in your area of work?
-
 ## Database Design
 
 ### Conceptual Design
+
+ACID properties
+
+* Atomicity
+	* A transaction is either executed completely, or not at all
+* Consistency
+	* Integrity constraints are not violated
+* Isolation
+	* Separate systems are running as though they were the only instance
+* Durability
+	* The results are persistent
+
+CAP
+
+* Consistency
+	* All systems have the same state of data
+* Availability
+	* Queries against the systems are always answered
+* Partition tolerance
+	* The system continues, even if parts are unavailable
+
+Theory says that a system might fulfill at most two of them
+
+* A and P
+	* DNS system
+	* Most web services
+* C and A
+	* Enterprise DB systems
+	* Classical DB systems
+* C and P
+	* ATMs
+	* Blockchain
+
+Requirement engineering (Lots of interviews with the customer)
+
+Procedure
+
+* Reality
+* Identification of subdomain
+* Conceptual data model
+* Logical data model
+* Physical data model
+
+*Skip, skip*
+
 ### Logical Design
+
+Requirements
+
+* Customer Requirements
+* Written Documentation of the requirements
+* Graphical representation
+* Database
+	* Weak entities
+	* Not needed for business process
+	* Is just an implementation artifact
+	* Structured Attributes (Attributes that consist of multiple other (atomic) attributes)
+	* Redundancy -> Normal forms
+	* Relationships are expressed with a verb
+	* The relation itself may be an entity
+	* BPMN - Business Process Modeling Notation
+
+
 ### Physical Design
+
+Normal forms
+
+#### Keys
+##### Primary Key
+Primary key - Unique identifier of the given element e.g. the ID of a user
+Surrogate primary key - A primary key consisting of multiple attributes (e.g. first name and last name)
+
+##### Foreign key
+The primary keys of other tables, used in relations
+
+#### Attributes
+##### Complex attributes
+These attributes can be broken down to different sub-attributes (e.g. Name of a person -> First name, Last name)
+##### Atomic attributes
+These attributes can not be logically split any further (e.g. First name of a person)
+##### NULL
+The value `NULL` is used when the value of the attribute is not known. It can only be used if the attribute is **optional**, that is it is not **mandatory** to fill in the field. It represents *no data* for the entity, and is thus different from the empty string `""` and `0`.
+
+#### Referential integrity
+
+Entities on both sides of the relation must exist according to the rules of the database design
+
+#### Relationships
+
+* [1..1]
+	* Simple
+	* The one entity should have a foreign key to another
+* [1..n]
+	* The attribute that there are many of includes the a foreign key for the other attribute
+* [n..m]
+	* There is an associative table, additional attributes can also be added
+* Recursive relationship
+	* The entity has a field for another foreign key to the primary key of its own table.
+* Dependency relationship
+	* A depends on B
+	* Primary Key, Foreign key concept (incomplete)
+	* Associative table -> complete
+
+
 
 ## Database Programming
 
