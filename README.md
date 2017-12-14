@@ -10,7 +10,7 @@ Take a look at [this branch](https://github.com/bKiraly/DHBW_WISCI16_Notes/blob/
 ### My notes are available for the following courses:
 
 * [Accounting](https://rawgit.com/bKiraly/DHBW_WISCI16_Notes/new_no/HTML/Accounting.html)
-* [Advanced Methods in Managerial Accounting](https://cdn.rawgit.com/bKiraly/DHBW_WISCI16_Notes/new_no/HTML/Advanced%20Methods%20in%20Managerial%20Accounting.html)
+* [Advanced Methods in Management Accounting](https://cdn.rawgit.com/bKiraly/DHBW_WISCI16_Notes/new_no/HTML/Advanced%20Methods%20in%20Management%20Accounting.html)
 * [Algorithms and Datastructures](https://rawgit.com/bKiraly/DHBW_WISCI16_Notes/new_no/HTML/Algorithms%20and%20Datastructures.html)
 * [BI Summary](https://rawgit.com/bKiraly/DHBW_WISCI16_Notes/new_no/HTML/BI%20Summary.html)
 * [Communication Systems](https://rawgit.com/bKiraly/DHBW_WISCI16_Notes/new_no/HTML/Communication%20Systems.html)
