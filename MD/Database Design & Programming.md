@@ -191,6 +191,24 @@ Entities on both sides of the relation must exist according to the rules of the 
 	* Associative table -> complete
 
 
+### Normal Forms
+
+#### 1. Normal form
+
+Attributes must be atomic
+
+#### 2. Normal form
+
+Attributes must be *functionally dependent* from the primary key
+
+#### 3. Normal form
+
+Attributes must be *directly* dependent on the primary key
+
+#### Boyce-Codd Normal form
+
+There must not be any *functional dependency* between different attributes
+
 
 ## Database Programming
 
