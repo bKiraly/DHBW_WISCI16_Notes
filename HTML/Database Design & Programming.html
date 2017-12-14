@@ -26,7 +26,20 @@
 <li><a href="#database-design">Database Design</a><ul>
 <li><a href="#conceptual-design">Conceptual Design</a></li>
 <li><a href="#logical-design">Logical Design</a></li>
-<li><a href="#physical-design">Physical Design</a></li>
+<li><a href="#physical-design">Physical Design</a><ul>
+<li><a href="#keys">Keys</a></li>
+<li><a href="#attributes">Attributes</a></li>
+<li><a href="#referential-integrity">Referential integrity</a></li>
+<li><a href="#relationships">Relationships</a></li>
+</ul>
+</li>
+<li><a href="#normal-forms">Normal Forms</a><ul>
+<li><a href="#1-normal-form">1. Normal form</a></li>
+<li><a href="#2-normal-form">2. Normal form</a></li>
+<li><a href="#3-normal-form">3. Normal form</a></li>
+<li><a href="#boyce-codd-normal-form">Boyce-Codd Normal form</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#database-programming">Database Programming</a><ul>
@@ -242,6 +255,8 @@ Surrogate primary key - A primary key consisting of multiple attributes (e.g. fi
 
 <p>These attributes can be broken down to different sub-attributes (e.g. Name of a person -&gt; First name, Last name)</p>
 
+
+
 <h5 id="atomic-attributes">Atomic attributes</h5>
 
 <p>These attributes can not be logically split any further (e.g. First name of a person)</p>
@@ -251,6 +266,8 @@ Surrogate primary key - A primary key consisting of multiple attributes (e.g. fi
 <h5 id="null">NULL</h5>
 
 <p>The value <code>NULL</code> is used when the value of the attribute is not known. It can only be used if the attribute is <strong>optional</strong>, that is it is not <strong>mandatory</strong> to fill in the field. It represents <em>no data</em> for the entity, and is thus different from the empty string <code>""</code> and <code>0</code>.</p>
+
+
 
 <h4 id="referential-integrity">Referential integrity</h4>
 
@@ -275,6 +292,36 @@ Surrogate primary key - A primary key consisting of multiple attributes (e.g. fi
 <li>Primary Key, Foreign key concept (incomplete)</li>
 <li>Associative table -&gt; complete</li></ul></li>
 </ul>
+
+
+
+<h3 id="normal-forms">Normal Forms</h3>
+
+
+
+<h4 id="1-normal-form">1. Normal form</h4>
+
+<p>Attributes must be atomic</p>
+
+
+
+<h4 id="2-normal-form">2. Normal form</h4>
+
+<p>Attributes must be <em>functionally dependent</em> from the primary key</p>
+
+
+
+<h4 id="3-normal-form">3. Normal form</h4>
+
+<p>Attributes must be <em>directly</em> dependent on the primary key</p>
+
+
+
+<h4 id="boyce-codd-normal-form">Boyce-Codd Normal form</h4>
+
+<p>There must not be any <em>functional dependency</em> between different attributes</p>
+
+
 
 <h2 id="database-programming">Database Programming</h2>
 
