@@ -151,9 +151,142 @@ Ongoing activity throughout the PLC
 * Cheaper
 * Do more
 
+### Business Cases
+
+* Analysis of the organizations value, feasibility, cost, benefit and risk
+* Thorough
+* Clear and Logical
+* Objective
+* Systematic
+* Compares alternatives
+
 ### Developing a business case
 
 1. Define MOV
+	1. Desired area of impact
+		* Customer
+		* Strategic
+		* Financial
+		* Social
+		*  
 2. Form cross-functional business case team
 3. Identify alternatives
+	1. Change the existing process without IT
+	2. Re-engineering system
+	3. Maintaining Status-quo
+	4. Purchase off-the-shelf packages
+	5. Custom solution
 4. Define feasibility and assess risk
+	1. Feasibility
+		* Economic feasibility
+		* Technical feasibility
+		* Organizational feasibility
+		* Other feasibilities
+	2. Risk
+		* Identification
+		* Assessment (likelihood and impact)
+		* Response
+5. Define Cost of Ownership
+	1. Direct or Up-front costs
+	2. Ongoing costs
+	3. Indirect costs
+	4. Benefits
+		* Increasing high-value work
+		* Improving accuracy and efficiency
+		* Improving decision-making
+		* Improving customer service
+7. Analyze alternatives
+	1. Payback Period
+	2. Breakeven analysis
+	3. Project ROI
+	4. NPV
+8. Propose a recommendation
+
+|Time |Benefit |Cost |Net value |Discouting factor | | |
+|-:|-:|-:|-:|:-|:-|
+|0	|0	|150	|-150	|1		|-150
+|1	|80	|35	|45	|1,095		|41,09589041
+|2	|120	|55	|65	|1,199025	|54,21071287
+|3	|200	|90	|110	|1,312932375	|83,78192365
+|4	|250	|140	|110	|1,437660951	|76,51317228
+|	|	|	|	| 		|105,6016992
+
+
+### Project governance
+
+Project needs to be in-line with the organizational governance
+Must define:
+
+* Structure
+* Authorization
+* Oversight and accountability
+* Decision making
+* Resources
+
+Roles (see above)
+
+### Procuring external project resources
+
+Depends on many factors
+Similar to "make or buy" decisions
+Business process outsourcing, including offshoring is one option for acquiring external resources
+
+### Procurement Planning
+
+See if (parts of) the project is outsourced
+Focus on how it is done
+Develop and use Request for Proposal (RFP)
+
+### Project Charter
+
+PMBOK see above
+
+* Project name
+* Project stakeholders
+	* Names
+	* Titles and roles
+	* Contact details
+* Project description
+	* Background
+	* Description of the problem
+	* Desired impact
+* MOV
+* Project Scope
+	* In- and out
+* Project schedule
+	* Project start- and end date
+	* Timeline of milestones
+	* Reviews and review dates
+* Budget
+	* Broken down by phase
+* Quality issues
+	* Specific quality requirements
+* Resources Required
+	* People
+	* Tech
+	* Facilities
+	* Other
+	* Resources to be provided
+* Assumptions and Risks
+	* See above
+* Project administration
+* Acceptance and approval
+* References
+* Terminology and Glossary
+* Appendices
+
+> **Scope** is the work that needs to be done in order to achieve success
+
+> **Work Breakdown Structure (WBS)** is an ordered breakdown of the tasks needed for the project
+
+The iron triangle
+
+* Constraints
+	* Time, resources
+* Driver
+	* The constraint that decides upon the projects success or failure
+* Floats
+	* Flexible in management
+* Trade-offs
+
+> **Statement of Work (SoW)** is a narrative description of the product you are delivering
