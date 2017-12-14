@@ -10,6 +10,7 @@ Take a look at [this branch](https://github.com/bKiraly/DHBW_WISCI16_Notes/blob/
 ### My notes are available for the following courses:
 
 * [Accounting](https://rawgit.com/bKiraly/DHBW_WISCI16_Notes/new_no/HTML/Accounting.html)
+* [Advanced Methods in Managerial Accounting](https://cdn.rawgit.com/bKiraly/DHBW_WISCI16_Notes/new_no/HTML/Advanced%20Methods%20in%20Managerial%20Accounting.html)
 * [Algorithms and Datastructures](https://rawgit.com/bKiraly/DHBW_WISCI16_Notes/new_no/HTML/Algorithms%20and%20Datastructures.html)
 * [BI Summary](https://rawgit.com/bKiraly/DHBW_WISCI16_Notes/new_no/HTML/BI%20Summary.html)
 * [Communication Systems](https://rawgit.com/bKiraly/DHBW_WISCI16_Notes/new_no/HTML/Communication%20Systems.html)
@@ -18,6 +19,7 @@ Take a look at [this branch](https://github.com/bKiraly/DHBW_WISCI16_Notes/blob/
 * [Economics I and II](https://rawgit.com/bKiraly/DHBW_WISCI16_Notes/new_no/HTML/Econ.html)
 * [Finance and Investment](https://rawgit.com/bKiraly/DHBW_WISCI16_Notes/new_no/HTML/Finance%20and%20Investment.html)
 * [Intro to IT](https://rawgit.com/bKiraly/DHBW_WISCI16_Notes/new_no/HTML/Intro%20to%20IT.html)
+* [IT Project Management](https://rawgit.com/bKiraly/DHBW_WISCI16_Notes/new_no/HTML/IT%20Project%20Management.html)
 * [Logic and Algebra](https://rawgit.com/bKiraly/DHBW_WISCI16_Notes/new_no/HTML/Logic%20and%20Algebra.html)
 * [Programming II](https://github.com/bKiraly/DHBW_WISCI16_Notes/tree/new_no/JAVA/Programming2)
 * [System Analysis and Design](https://rawgit.com/bKiraly/DHBW_WISCI16_Notes/new_no/HTML/System%20Analysis%20and%20Design.html)
