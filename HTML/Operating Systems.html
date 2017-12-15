@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Operating Systems</title>
+<link rel="stylesheet" href="https://stackedit.io/res-min/themes/base.css" />
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body><div class="container"><h1 id="operating-systems">Operating Systems</h1>
+
+
+
+<h2 id="introduction">Introduction</h2>
+
+<h3 id="history-of-computers">History of Computers</h3>
+
+<ul>
+<li>1940-1949 - Relay and Vacuum tube computer</li>
+<li>1950-1959 - Transistor computer <br>
+<ul><li>Mainframe computers</li>
+<li>Batch processing</li></ul></li>
+<li>1960-1969 - IC computer <br>
+<ul><li>Minicomputers</li>
+<li>Time-sharing systems</li></ul></li>
+<li>1970-1979 - Microprocessor <br>
+<ul><li>Personal computers</li></ul></li>
+<li>1980-1989 - PCs widespread <br>
+<ul><li>GUIs</li></ul></li>
+<li>1990-1999 - World wide web</li>
+<li>2000-2009 - Mobile computers (smartphones)</li>
+<li>2010-2017 - AI, machine learning, cloud</li>
+<li>2018-? - Quantum computers?</li>
+</ul>
+
+<h3 id="history-of-operating-systems">History of Operating Systems</h3>
+
+<ul>
+<li>No OS, specialized computers</li>
+<li>Monitors <br>
+<ul><li>Allow operators to load and store programs</li>
+<li>Direct memory access</li>
+<li>Search data patterns in memory</li>
+<li>Debug programs</li></ul></li>
+<li>Batch OSes <br>
+<ul><li>Automatically start new program from batch</li>
+<li>Sequential execution</li></ul></li>
+<li>Time-sharing <br>
+<ul><li>Hardware resources are virtualized</li>
+<li>Multiple users can use the system concurrently</li></ul></li>
+<li>Multi-tasking operating systems <br>
+<ul><li>Each user can run multiple programs</li></ul></li>
+<li>Complete virtualization <br>
+<ul><li>Separation of hardware and application layer</li>
+<li>Multiple operating systems on a single computer</li>
+<li>Cluster computers sharing VMs</li></ul></li>
+</ul>
+
+<hr>
+
+<ul>
+<li>Distributed OSes</li>
+<li>Real-time OSes</li>
+</ul>
+
+
+
+<h2 id="fundamental-concepts">Fundamental concepts</h2>
+
+<h3 id="users-of-operating-systems">Users of operating systems</h3>
+
+<ul>
+<li>End users</li>
+<li>Administrators</li>
+<li>Managers, decision makers</li>
+<li>Hardware engineers</li>
+<li>Application programmers</li>
+<li>System programmers</li>
+</ul>
+
+<h3 id="tasks-of-an-os">Tasks of an OS</h3>
+
+<ul>
+<li>Provide a runtime environment</li>
+<li>Provide a UI</li>
+<li>Hide hardware details from programmers/users</li>
+<li>Virtualize the hardware</li>
+<li>Reusable components (libraries)</li>
+<li>Make most efficient use of the hardware</li>
+</ul>
+
+<h3 id="structure-of-an-os">Structure of an OS</h3>
+
+<ul>
+<li>Hardware</li>
+<li>Kernel <br>
+<ul><li>Hardware abstraction layer</li>
+<li>Device drivers</li>
+<li>Scheduler</li>
+<li>Memory Management</li>
+<li>User/Authorization management</li>
+<li>I/O Management <br>
+<ul><li>File system</li></ul></li>
+<li>System services</li>
+<li>System call interface</li></ul></li>
+</ul>
+
+<hr>
+
+<ul>
+<li>System libraries</li>
+<li>Applications</li>
+<li>UI</li>
+</ul>
+
+<h3 id="operating-modes-of-the-cpu">Operating modes of the CPU</h3>
+
+<ul>
+<li>Kernel mode <br>
+<ul><li>Direct access to physical memory</li>
+<li>Direct access to hardware</li>
+<li>Execute all instructions</li></ul></li>
+<li>User mode <br>
+<ul><li>Allow access to virtual memory</li>
+<li>No direct access to hardware</li>
+<li>Execute a subset of instructions</li></ul></li>
+</ul>
+
+<h3 id="types-of-kernels">Types of Kernels</h3>
+
+<ul>
+<li>Monolithic kernels <br>
+<ul><li>Have a lot of responsibilities</li>
+<li>Contain lost of code</li>
+<li>Device drivers run in kernel mode</li></ul></li>
+<li>Microkernel <br>
+<ul><li>Only the most fundamental parts of the OS are in kernel mode</li>
+<li>Device drivers do not run in kernel mode</li>
+<li>Advantages <br>
+<ul><li>Much more stable</li>
+<li>More secure</li>
+<li>More flexible</li>
+<li>Easier to maintain</li></ul></li>
+<li>Disadvantage <br>
+<ul><li>Slower</li></ul></li></ul></li>
+</ul>
+
+
+
+<h2 id="inputoutput">Input/Output</h2>
+
+
+
+<h3 id="von-neumann-architecture">Von Neumann Architecture</h3>
+
+<ul>
+<li>Specific memory addresses are assigned to I/O devices</li>
+</ul>
+
+<h3 id="io-models">I/O models</h3>
+
+<ul>
+<li>Program controlled I/O <br>
+<ul><li>Program loop reads/writes from device</li>
+<li>Program loop reads/writes to memory</li></ul></li>
+<li>Interrupt based I/O <br>
+<ul>*</ul></li>
+</ul></div></body>
+</html>
