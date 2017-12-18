@@ -209,10 +209,82 @@ Attributes must be *directly* dependent on the primary key
 
 There must not be any *functional dependency* between different attributes
 
+### Parts of a database package
+
+* DB Engine
+* DB Design (eg. MySQL Workbench)
+* CLI (eg. mysql)
+* Programming Interface / Connectivity (eg. JDBC)
+* Maintaining / Administration (eg. phpMyAdmin)
+* Development tools (eg. Eclipse, PHP, Python, Notepad++, APEX, PowerBuilder)
 
 ## Database Programming
 
 ### SQL
+
+* Standardization: ISO 9075:yyyy
+* Standard not completely observed by DB vendors
+
+### Extended Backus-Naur-From
+
+* Originally developped by Nikolaus Wirth
+	* Definition language
+	* Standardized
+* EBNF
+
+#### Data definition
+
+##### Schema management
+Create
+`CREATE SCHEMA <Schema-Name>`
+Delete
+`DROP SCHEMA <Schema-Name> [CASCADE | RESTRICT]`
+
+##### Tables
+Create
+```
+CREATE TABLE [Schema-name.]<Table-Name>
+(
+<Attribute-Defintion>,
+[<Table-Integrity-Constraints>]
+)
+```
+Attribute definition
+`<Attribute-Definition> ::= <Attribute-Name> TYPE <Type-Definition>`
+
+##### Data types
+
+* INT
+* SMALLINT
+* BIGINT
+* DEC/NUM (p [,q]) - Fractional number (p digits, out of which q are fractional digits)
+* FLOAT
+* REAL (DOUBLE)
+* CHAR(n) - Character string of length N
+* VARCHAR(n) - *Variable-length* CHAR
+* NVARCHAR(n) - NVARCHAR with *Unicode*
+* CLOB - Character Large Object, stores long texts
+* BLOB - Binary Large Object, stores large binary data (eg. Images)
+* BOOLEAN
+* DATE
+* TIME
+* TIMESTAMP
+
+##### Integrity constraints
+
+* `UNIQUE`
+* `NOT NULL`
+* `DEFAULT`
+* `CHECK (<Condition>)`
+* `PRIMARY KEY`
+* `REFERENCES <Table-Name> [<Attribute-Name>]`
+* `[ON DELETE CASCADE | SET NULL | SET DEFAULT | RESTRICT | NO ACTION]`
+
+#### Foreign keys and referential integrity
+
+* A foreign key in one table *always* points to a foreign key in another table
+* 
+
 ### Administration
 ### Data Structures
 ### Performance Tuning
