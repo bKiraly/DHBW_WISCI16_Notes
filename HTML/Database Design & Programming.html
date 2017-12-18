@@ -323,13 +323,111 @@ Surrogate primary key - A primary key consisting of multiple attributes (e.g. fi
 
 
 
+<h3 id="parts-of-a-database-package">Parts of a database package</h3>
+
+<ul>
+<li>DB Engine</li>
+<li>DB Design (eg. MySQL Workbench)</li>
+<li>CLI (eg. mysql)</li>
+<li>Programming Interface / Connectivity (eg. JDBC)</li>
+<li>Maintaining / Administration (eg. phpMyAdmin)</li>
+<li>Development tools (eg. Eclipse, PHP, Python, Notepad++, APEX, PowerBuilder)</li>
+</ul>
+
 <h2 id="database-programming">Database Programming</h2>
 
 
 
 <h3 id="sql">SQL</h3>
 
+<ul>
+<li>Standardization: ISO 9075:yyyy</li>
+<li>Standard not completely observed by DB vendors</li>
+</ul>
 
+
+
+<h3 id="extended-backus-naur-from">Extended Backus-Naur-From</h3>
+
+<ul>
+<li>Originally developped by Nikolaus Wirth <br>
+<ul><li>Definition language</li>
+<li>Standardized</li></ul></li>
+<li>EBNF</li>
+</ul>
+
+
+
+<h4 id="data-definition">Data definition</h4>
+
+
+
+<h5 id="schema-management">Schema management</h5>
+
+<p>Create <br>
+<code>CREATE SCHEMA &lt;Schema-Name&gt;</code> <br>
+Delete <br>
+<code>DROP SCHEMA &lt;Schema-Name&gt; [CASCADE | RESTRICT]</code></p>
+
+
+
+<h5 id="tables">Tables</h5>
+
+<p>Create</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs sql"><span class="hljs-operator"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> [<span class="hljs-keyword">Schema</span>-name.]&lt;<span class="hljs-keyword">Table</span>-Name&gt;
+(
+&lt;Attribute-Defintion&gt;,
+[&lt;<span class="hljs-keyword">Table</span>-Integrity-<span class="hljs-keyword">Constraints</span>&gt;]
+)</span></code></pre>
+
+<p>Attribute definition <br>
+<code>&lt;Attribute-Definition&gt; ::= &lt;Attribute-Name&gt; TYPE &lt;Type-Definition&gt;</code></p>
+
+<h5 id="data-types">Data types</h5>
+
+<ul>
+<li>INT</li>
+<li>SMALLINT</li>
+<li>BIGINT</li>
+<li>DEC/NUM (p [,q]) - Fractional number (p digits, out of which q are fractional digits)</li>
+<li>FLOAT</li>
+<li>REAL (DOUBLE)</li>
+<li>CHAR(n) - Character string of length N</li>
+<li>VARCHAR(n) - <em>Variable-length</em> CHAR</li>
+<li>NVARCHAR(n) - NVARCHAR with <em>Unicode</em></li>
+<li>CLOB - Character Large Object, stores long texts</li>
+<li>BLOB - Binary Large Object, stores large binary data (eg. Images)</li>
+<li>BOOLEAN</li>
+<li>DATE</li>
+<li>TIME</li>
+<li>TIMESTAMP</li>
+</ul>
+
+
+
+<h5 id="integrity-constraints">Integrity constraints</h5>
+
+<ul>
+<li><code>UNIQUE</code></li>
+<li><code>NOT NULL</code></li>
+<li><code>DEFAULT</code></li>
+<li><code>CHECK (&lt;Condition&gt;)</code></li>
+<li><code>PRIMARY KEY</code></li>
+<li><code>REFERENCES &lt;Table-Name&gt; [&lt;Attribute-Name&gt;]</code></li>
+<li><code>[ON DELETE CASCADE | SET NULL | SET DEFAULT | RESTRICT | NO ACTION]</code></li>
+</ul>
+
+
+
+<h4 id="foreign-keys-and-referential-integrity">Foreign keys and referential integrity</h4>
+
+<ul>
+<li>A foreign key in one table <em>always</em> points to a foreign key in another table</li>
+* 
+</ul>
 
 <h3 id="administration">Administration</h3>
 
