@@ -126,5 +126,118 @@
 <ul><li>SOAP (Simple Object Access Protocol) -&gt; XML</li>
 <li>WSDL (Web Service Description Language) -&gt; XML</li>
 <li>UDDI (Universal Description, Discovery and Integration protocol)</li></ul></li>
-</ul></div></body>
+</ul>
+
+<h3 id="representational-state-transfer">Representational State Transfer</h3>
+
+<ul>
+<li>Architectural style</li>
+<li>Defined in 2000 by Roy Fielding</li>
+<li>RESTful = meets the requirements of the REST paradigm</li>
+</ul>
+
+<h4 id="resources-vs-documents">Resources vs Documents</h4>
+
+<ul>
+<li>Resources can be identified by a URI</li>
+<li>Resource can be represented in different ways</li>
+<li>Resources have a uniform interface</li>
+<li>All actions can be represented by a set of operations</li>
+<li>Concrete semantics must be represented by generic operations</li>
+</ul>
+
+
+
+<h4 id="rest-details">REST details</h4>
+
+<ul>
+<li>Requests all specific information</li>
+<li>Idempotency <br>
+<ul><li>The same request always leads to the same result</li>
+<li>Same destination URI, same method, same data</li></ul></li>
+</ul>
+
+<h4 id="requests-on-http">Requests on HTTP</h4>
+
+<ul>
+<li>GET request <br>
+<ul><li>Reads information about the resource</li>
+<li><code>GET &lt;URI&gt;</code></li></ul></li>
+<li>POST request <br>
+<ul><li>Changes the resource</li>
+<li><code>POST &lt;URI&gt;\r\n\r\n&lt;DATA&gt;</code></li></ul></li>
+<li>PUT <br>
+<ul><li>New representation of an existing resource</li>
+<li><code>PUT &lt;URI&gt;\r\n\r\n&lt;DATA&gt;</code></li></ul></li>
+<li>DELETE <br>
+<ul><li>Removes a resource</li>
+<li><code>DELETE &lt;URI&gt;</code></li></ul></li>
+</ul>
+
+<h3 id="sessions">Sessions</h3>
+
+<h4 id="session">Session</h4>
+
+<ul>
+<li>Store ID data on the client</li>
+<li>Store mapping on the server</li>
+<li>Two methods</li>
+</ul>
+
+<h4 id="cookies">Cookies</h4>
+
+<ul>
+<li>Allow web pages to store key-value pairs locally</li>
+<li>Automatically transferred to the server with each request</li>
+<li>Session cookies are only valid for the session</li>
+<li>Persistent cookies expire at a specific date or after a specific amount of time</li>
+<li>Cookies can be blocked</li>
+</ul>
+
+<h4 id="web-storage">Web Storage</h4>
+
+<ul>
+<li>Allows web pages to store KV pairs</li>
+<li>Storage limits are higher (5MB per origin)</li>
+<li>Data is <strong>not</strong> automatically sent every request</li>
+<li>Web pages can request it any time</li>
+<li>Separate storage area for each origin</li>
+<li>Web Storage API provides two different mechanism <br>
+<ul><li>window.sessoinStorage</li>
+<li>window.localStorage</li></ul></li>
+</ul>
+
+<h3 id="html">HTML</h3>
+
+<h4 id="structure-of-an-html-document">Structure of an HTML document</h4>
+
+
+
+<pre class="prettyprint"><code class=" hljs xml"><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>My HTML Page<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>My page<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Hi there<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span></code></pre>
+
+
+
+<h4 id="structure-of-an-html-tag">Structure of an HTML tag</h4>
+
+<p><code>&lt;tagname attribute=value&gt;</code> <br>
+eg. <br>
+<code>&lt;img src=sajt.png&gt;</code></p>
+
+<h4 id="useful-tags-and-attributes">Useful tags and attributes</h4>
+
+
+
+<pre class="prettyprint"><code class=" hljs coffeescript">&lt;h1&gt;Heading <span class="hljs-keyword">of</span> first level (typically <span class="hljs-reserved">with</span> a large font size)&lt;/h1&gt;
+&lt;h2&gt;Heading <span class="hljs-keyword">of</span> second level (typically <span class="hljs-reserved">with</span> a medium font size)&lt;/h2&gt;
+&lt;a href=<span class="hljs-string">"index.html"</span> title=<span class="hljs-string">"Go to start page"</span> target=<span class="hljs-string">"_self"</span>&gt;Opening <span class="hljs-keyword">in</span> same <span class="hljs-built_in">window</span>&lt;/a&gt;
+&lt;a href=<span class="hljs-string">"index.html"</span> title=<span class="hljs-string">"Go to start page"</span> target=<span class="hljs-string">"_blank"</span>&gt;Opening <span class="hljs-keyword">in</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">window</span>&lt;<span class="hljs-regexp">/a&gt;&lt;imgsrc="example.png" alt="Alternative text" width="10" height="14“ /</span>&gt;
+&lt;br<span class="hljs-regexp">/&gt; &lt;!--This is a comment, explaining that &lt;br/</span>&gt; = <span class="hljs-keyword">break</span> makes a <span class="hljs-keyword">new</span> line -<span class="hljs-function">-&gt;</span>
+&lt;b&gt;Bold text&lt;<span class="hljs-regexp">/b&gt; &lt;i&gt;Italic text&lt;/i</span>&gt; &lt;strong&gt;Strong text&lt;/strong&gt; &lt;em&gt;emphasized text&lt;/em&gt;</code></pre></div></body>
 </html>
