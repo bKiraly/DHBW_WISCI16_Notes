@@ -290,3 +290,54 @@ The iron triangle
 * Trade-offs
 
 > **Statement of Work (SoW)** is a narrative description of the product you are delivering
+
+### Scope
+
+Project oriented
+
+* Support project management of PLC
+* Deliverable Structure Chart
+
+Product oriented
+
+* Specific features and functionality
+* First cut of requirements definitions
+* Use Case Diagram
+
+#### Deliverable Structure Chart
+
+* Structures the deliverables
+* Reflect the project steps
+* Describes what needs to be done by whom, when
+
+#### Scope validation
+
+#### Scope Change Control
+
+Potential issues
+
+* Scope grope - Team can't define scope
+* Scope creep - adding features after scopes approval
+* Scope leap - fundamental change away of the original scope
+
+### Work Breakdown Structure (WBS)
+
+* Represents logical decomposition of work to be performed
+* Focuses on how the product is subdivided
+* Outline of the work to be performed
+* Deliverables (assignment)
+* Team activity
+
+#### Work Packages / Deliverables
+
+* Work packages
+
+
+### Estimation techniques
+
+* Guesstimating -> Just guess
+* Delphi -> Ask experts
+* Time boxing -> Divide everything into time boxes
+* Top down -> Top/Middle managers determine the process, lower managers break it down
+* Bottom up -> 
+* Planning poker -> Subset of the Delphi technique
