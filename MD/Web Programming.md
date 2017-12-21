@@ -75,3 +75,98 @@ TCP and UDP (see Communications Systems)
 	* SOAP (Simple Object Access Protocol) -> XML
 	* WSDL (Web Service Description Language) -> XML
 	* UDDI (Universal Description, Discovery and Integration protocol)
+
+### Representational State Transfer
+
+* Architectural style
+* Defined in 2000 by Roy Fielding
+* RESTful = meets the requirements of the REST paradigm
+
+#### Resources vs Documents
+
+* Resources can be identified by a URI
+* Resource can be represented in different ways
+* Resources have a uniform interface
+* All actions can be represented by a set of operations
+* Concrete semantics must be represented by generic operations
+
+####REST details
+
+* Requests all specific information
+* Idempotency
+	* The same request always leads to the same result
+	* Same destination URI, same method, same data
+
+#### Requests on HTTP
+
+* GET request
+	* Reads information about the resource
+	* `GET <URI>`
+* POST request
+	* Changes the resource
+	* `POST <URI>\r\n\r\n<DATA>`
+* PUT
+	* New representation of an existing resource
+	* `PUT <URI>\r\n\r\n<DATA>`
+* DELETE
+	* Removes a resource
+	* `DELETE <URI>`
+
+### Sessions
+
+#### Session
+
+* Store ID data on the client
+* Store mapping on the server
+* Two methods
+
+#### Cookies
+
+* Allow web pages to store key-value pairs locally
+* Automatically transferred to the server with each request
+* Session cookies are only valid for the session
+* Persistent cookies expire at a specific date or after a specific amount of time
+* Cookies can be blocked
+
+#### Web Storage
+
+* Allows web pages to store KV pairs
+* Storage limits are higher (5MB per origin)
+* Data is **not** automatically sent every request
+* Web pages can request it any time
+* Separate storage area for each origin
+* Web Storage API provides two different mechanism
+	* window.sessoinStorage
+	* window.localStorage
+
+### HTML
+
+#### Structure of an HTML document
+
+```
+<!DOCTYPE html>
+<html>
+	<title>My HTML Page</title>
+	<body>
+		<h1>My page</h1>
+		<p>Hi there</p>
+	</body>
+</html>
+```
+
+#### Structure of an HTML tag
+
+`<tagname attribute=value>`
+eg.
+`<img src=sajt.png>`
+
+#### Useful tags and attributes
+
+```
+<h1>Heading of first level (typically with a large font size)</h1>
+<h2>Heading of second level (typically with a medium font size)</h2>
+<a href="index.html" title="Go to start page" target="_self">Opening in same window</a>
+<a href="index.html" title="Go to start page" target="_blank">Opening in new window</a><imgsrc="example.png" alt="Alternative text" width="10" height="14“ />
+<br/> <!--This is a comment, explaining that <br/> = break makes a new line -->
+<b>Bold text</b> <i>Italic text</i> <strong>Strong text</strong> <em>emphasized text</em>
+```
