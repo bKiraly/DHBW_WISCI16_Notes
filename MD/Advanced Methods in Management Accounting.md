@@ -179,3 +179,92 @@ Non-financial
 		* Costs of components that are scrapped or reworked
 	* External failures
 		* Costs of products that fail at the customer
+
+#### Total Quality Management (TQM)
+
+> Focuses on the prevention of defects
+> Assures low costs with high quality
+
+#### Quality Control Chart
+
+* Statistical plot that measures the amount of defects
+* Compared to the goal
+
+![](https://www.qimacros.com/control-chart/anatomy-of-a-control-chart.jpg)
+
+#### Six Sigma
+
+* Continuous improvement of quality
+* Process to minimize errors
+
+#### Control Cycle Time
+
+* Time taken to complete the product
+* The longer the processing, the higher the costs
+
+#### Control of Productivity
+
+* Measure of inputs and outputs
+* Vary widely according to the type of resource
+* $Productivity = {Outputs\over Inputs}$
+
+Measuring of Productivity depends on the type or resource surveyed
+
+#### Balance scorecard
+
+* Financial and operational measures
+* Links performance to rewards
+* Explicit recognition of organizational goals
+
+##### Key Performance Indicators (KPIs)
+
+* Different aspects
+
+### Service, Government and Nonprofit Organization
+
+* Management control systems is more difficult for these organizations, as they are not interested in financial goals and professionals, as well as the lack of competition
+* They want to create a measure similar to the financial goal
+
+#### Future of Management Control systems
+
+* Organizations must change their Key Success factors
+
+##Basic Concepts of Accounting
+
+See Accounting I and II
+
+### Accrual Basis vs Cash Basis
+
+#### Accrual basis
+
+> Revenue recognized regardless of when the cash is received
+
+#### Cash basis
+
+> Revenue is only recognized when the cash is received
+
+* Incomplete
+* Fails to match efforts to improve financial positions
+
+#### Nonprofit Organizations
+
+* For the most part they used Cash-based accounting
+* Now they are using cash-based accounting
+
+#### Adjustments in accrual accounting
+
+* Explicit transactions (day-to-day routine events), accounted as soon as they occur
+* Implicit transactions (estimates of incoming transactions, not guaranteed), accounted for at the end of the accounting period
+
+### Principal adjustment
+
+* Expiration of unexpired costs
+	* Unexpired costs are costs that are not paid
+* Recognition of unearned revenues (deferred revenues)
+	* Revenue that is not eared yet
+* Accrual of unrecorded earnings and expenses
+	* Interest expense and employee wages
+
+### Dividends
+
+* Reduce retained earnings, but are not expenses
