@@ -7,3 +7,4 @@ Previews:
 * [Task 3](https://cdn.rawgit.com/bKiraly/DHBW_WISCI16_Notes/new_no/HTML_Example/Task_3.html)
 * [Task 4](https://cdn.rawgit.com/bKiraly/DHBW_WISCI16_Notes/new_no/HTML_Example/Task_4.html)
 * [Task 5](https://cdn.rawgit.com/bKiraly/DHBW_WISCI16_Notes/new_no/HTML_Example/Task_5.html)
+* [Task 6](https://cdn.rawgit.com/bKiraly/DHBW_WISCI16_Notes/new_no/HTML_Example/Task_6.html)
