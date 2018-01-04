@@ -1,0 +1,34 @@
+html{
+	background: radial-gradient(#0ce00c,#a0ffa0);
+	background-size: 200px 200px;
+}
+
+h1{
+	font-family:arial;
+	color:darkgreen;
+}
+
+h2{
+	font-size:24px;
+}
+
+.about{
+	font-variant:small-caps;
+}
+
+.buying{
+	color:blue;
+}
+
+th{
+	background-color:green;
+}
+
+td{
+	background-color:lightgreen;
+}
+
+table{
+	border:1px solid black;
+	border-collapse:collapse;
+}
