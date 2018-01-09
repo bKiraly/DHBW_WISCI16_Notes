@@ -13,6 +13,8 @@
 
 <h2 id="introduction">Introduction</h2>
 
+
+
 <h3 id="history-of-computers">History of Computers</h3>
 
 <ul>
@@ -32,6 +34,8 @@
 <li>2010-2017 - AI, machine learning, cloud</li>
 <li>2018-? - Quantum computers?</li>
 </ul>
+
+
 
 <h3 id="history-of-operating-systems">History of Operating Systems</h3>
 
@@ -67,6 +71,8 @@
 
 <h2 id="fundamental-concepts">Fundamental concepts</h2>
 
+
+
 <h3 id="users-of-operating-systems">Users of operating systems</h3>
 
 <ul>
@@ -78,6 +84,8 @@
 <li>System programmers</li>
 </ul>
 
+
+
 <h3 id="tasks-of-an-os">Tasks of an OS</h3>
 
 <ul>
@@ -88,6 +96,8 @@
 <li>Reusable components (libraries)</li>
 <li>Make most efficient use of the hardware</li>
 </ul>
+
+
 
 <h3 id="structure-of-an-os">Structure of an OS</h3>
 
@@ -113,6 +123,8 @@
 <li>UI</li>
 </ul>
 
+
+
 <h3 id="operating-modes-of-the-cpu">Operating modes of the CPU</h3>
 
 <ul>
@@ -125,6 +137,8 @@
 <li>No direct access to hardware</li>
 <li>Execute a subset of instructions</li></ul></li>
 </ul>
+
+
 
 <h3 id="types-of-kernels">Types of Kernels</h3>
 
@@ -157,13 +171,198 @@
 <li>Specific memory addresses are assigned to I/O devices</li>
 </ul>
 
-<h3 id="io-models">I/O models</h3>
+
+
+<h3 id="io-models">I/O Models</h3>
 
 <ul>
 <li>Program controlled I/O <br>
 <ul><li>Program loop reads/writes from device</li>
 <li>Program loop reads/writes to memory</li></ul></li>
 <li>Interrupt based I/O <br>
-<ul>*</ul></li>
-</ul></div></body>
+<ul><li>Interrupt CPU when data is available</li>
+<li>CPU is free to do other things, until the interrupt</li></ul></li>
+<li>Direct memory access <br>
+<ul><li>I/O Devices directly read/write to memory</li>
+<li>Interrupt CPU when read/write is complete</li></ul></li>
+</ul>
+
+
+
+<h3 id="interrupts">Interrupts</h3>
+
+
+
+<h4 id="types-of-interrupts">Types of Interrupts</h4>
+
+<ul>
+<li>Hardware interrupts (asynchronous, external) e.g. User hits key</li>
+<li>Software interrupts (synchronous, internal) e.g. Program wants to access OS resources (System calls)</li>
+<li>Faults (synchronous?, internal?) e.g. Bus faults</li>
+</ul>
+
+
+
+<h4 id="interrupt-vectorization">Interrupt vectorization</h4>
+
+<table>
+<thead>
+<tr>
+  <th>Int #</th>
+  <th>Address</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>0</td>
+  <td>0x00000012</td>
+</tr>
+<tr>
+  <td>1</td>
+  <td>0x10202012</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>0x12345641</td>
+</tr>
+</tbody></table>
+
+
+
+
+<h4 id="masking-of-interrupts">Masking of Interrupts</h4>
+
+<p>Certain bitmasks can be set, to mask interrupts to avoid interrupting time-critical code</p>
+
+
+
+<h4 id="prioritization">Prioritization</h4>
+
+<p>Certain interrupts take precedence over others</p>
+
+
+
+<h4 id="interrupt-handling">Interrupt handling</h4>
+
+<ul>
+<li>Check for interrupts <br>
+<ul><li>If none: continue with cycle</li></ul></li>
+<li>If yes</li>
+<li>Check if interrupt is masked <br>
+<ul><li>If yes: continue with cycle</li></ul></li>
+<li>Check if priority is high enough <br>
+<ul><li>If no: continue with cycle</li></ul></li>
+<li>Save value of IP to stack</li>
+<li>Find cause of interrupt</li>
+<li>Switch to kernel mode</li>
+<li>Jump to interrupt vector</li>
+</ul>
+
+
+
+<h4 id="evolution-of-io-support">Evolution of I/O Support</h4>
+
+<ul>
+<li>No support</li>
+<li>Reuse I/O routines from monitor/early OS</li>
+<li>Mandatory use of OS for I/O</li>
+</ul>
+
+
+
+<h5 id="buffering">Buffering</h5>
+
+<p>Advantages</p>
+
+<ul>
+<li>More efficient when reading multiple times</li>
+<li>More efficient when writing data (writes are non-blocking)</li>
+</ul>
+
+<p>Disadvantages</p>
+
+<ul>
+<li>Danger of losing data</li>
+<li>Danger of data inconsistencies</li>
+<li>Consumes more memory</li>
+</ul>
+
+<p>Buffer locations</p>
+
+<ul>
+<li>Hardware layer (I/O controller)</li>
+<li>Driver layer</li>
+<li>File system layer</li>
+<li>System libraries</li>
+<li>Application layer</li>
+</ul>
+
+
+
+<h4 id="user-interface-evolution">User-interface evolution</h4>
+
+<ul>
+<li>Lights/switches</li>
+<li>Teletypes/printers</li>
+<li>Keyboards/mice</li>
+<li>GUIs</li>
+<li>Voice control</li>
+</ul>
+
+
+
+<h3 id="storage-devices">Storage devices</h3>
+
+
+
+<h4 id="hdds">HDDs</h4>
+
+<ul>
+<li>CHS</li>
+<li>Typical block size: 512 bytes</li>
+<li>PMR</li>
+<li>SMR</li>
+<li>HAMR</li>
+<li>MAMR</li>
+</ul>
+
+
+
+<h3 id="io-scheduling">I/O Scheduling</h3>
+
+<ul>
+<li>FIFO</li>
+<li>Elevator algorithm <br>
+<ul><li>Start going in the direction of the first request</li>
+<li>Keep moving in that direction until you reach the last request in that direction</li>
+<li>Then switch directions and repeat</li></ul></li>
+<li>Priority-based scheduler</li>
+<li>Anticipatory scheduler</li>
+<li>NOOP scheduler</li>
+</ul>
+
+
+
+<h3 id="file-systems-and-fragmentation">File systems and fragmentation</h3>
+
+<blockquote>
+  <p><strong>Internal fragmentatio</strong> is the wasted space on a storage device that arises due to the fact that only whole blocks can be written, and those have a fixed size (usually 512 bytes)</p>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<blockquote>
+  <p><strong>External fragmentation</strong> arises when a file can not be written to a sequence of blocks, and gets broken up into parts that are re-assembled later.</p>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<blockquote>
+  <p><strong>File systems</strong> keep track of where each part of each file is located, along with meta-information about the file.</p>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<blockquote>
+  <p><strong>Files</strong> are abstractions of contiguous data</p>
+</blockquote></div></body>
 </html>
