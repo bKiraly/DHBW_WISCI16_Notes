@@ -21,6 +21,6 @@ Take a look at [this branch](https://github.com/bKiraly/DHBW_WISCI16_Notes/blob/
 * [Intro to IT](https://rawgit.com/bKiraly/DHBW_WISCI16_Notes/new_no/HTML/Intro%20to%20IT.html)
 * [IT Project Management](https://rawgit.com/bKiraly/DHBW_WISCI16_Notes/new_no/HTML/IT%20Project%20Management.html)
 * [Logic and Algebra](https://rawgit.com/bKiraly/DHBW_WISCI16_Notes/new_no/HTML/Logic%20and%20Algebra.html)
-* [Operating Systems](https://rawgit.com/bKiraly/DHBW_WISCI16_Notes/new_no/HTML/Operating%20Systems.html)
+* [Operating Systems](https://cdn.rawgit.com/bKiraly/DHBW_WISCI16_Notes/new_no/HTML/Operating%20Systems.html)
 * [Programming II](https://github.com/bKiraly/DHBW_WISCI16_Notes/tree/new_no/JAVA/Programming2)
 * [System Analysis and Design](https://rawgit.com/bKiraly/DHBW_WISCI16_Notes/new_no/HTML/System%20Analysis%20and%20Design.html)
