@@ -280,10 +280,38 @@ Attribute definition
 * `REFERENCES <Table-Name> [<Attribute-Name>]`
 * `[ON DELETE CASCADE | SET NULL | SET DEFAULT | RESTRICT | NO ACTION]`
 
-#### Foreign keys and referential integrity
+##### Foreign keys and referential integrity
 
 * A foreign key in one table *always* points to a foreign key in another table
-* 
+
+##### Modification of tables
+
+`ALTER TABLE [<Schema-Name>.]<Table-Name> DROP [COLUMN] <Attribute-Name> [CASCADE | RESTRICT]`
+
+##### Views and Indexes
+
+Saved select statement
+`CREATE VIEW <View-Name> [<List-Of-Options>] <Select-Statement>`
+
+##### Table constraints
+
+`CREATE TABLE <Table-Name> (<field> SMALL INT PRIMARY KEY CHECK(<field> between 0 and 100))`
+
+##### Foreign keys
+
+`CREATE TABLE <Table-Name> (ID INT PRIMARY KEY, <field> INT REFERENCES <Other-Table>(<field>))`
+
+##### Complex Primary Keys
+
+`CREATE TABLE <Table-Name> (customer_number INT, company_code INT, PRIMARY KEY(customer_number, company_code))`
+
+#### Indexes
+
+`CREATE [Unique] INDEX <Name> ON <Table> (<Attribute-Name> [ASC-DESC])`
+
+#### Joining tables
+
+`SELECT <Table1>.<field> <Table2>.<field> FROM <Table1> INNER JOIN <Table2>`
 
 ### Administration
 ### Data Structures
