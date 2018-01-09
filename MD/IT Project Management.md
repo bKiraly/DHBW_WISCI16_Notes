@@ -339,5 +339,37 @@ Potential issues
 * Delphi -> Ask experts
 * Time boxing -> Divide everything into time boxes
 * Top down -> Top/Middle managers determine the process, lower managers break it down
-* Bottom up -> 
+* Bottom up -> Experts make estimates
 * Planning poker -> Subset of the Delphi technique
+* Spikes -> Break task down into smaller tasks that need to be done
+
+### Scheduling and Budgeting
+
+* Estimation
+* Sequencing of activities
+* WBS
+* Objective: *realistic* schedule
+
+#### Waterfall or Agile
+
+Waterfall
+
+* Good for well-understood complex requirements
+
+Agile
+
+* More appropriate for uncertainty
+* Tight deadlines
+
+#### Tools for developing a schedule
+
+* Gantt Chart
+	* Time frames for tasks
+* Activity on the Node
+	* Estimated duration
+	* Predecessor
+	* Activity
+	* Identify the critical path -> Shortest time for the projects
+* Critical Path Analysis
+* Program evaluation and review technique
+* Precedence Diagram Method
