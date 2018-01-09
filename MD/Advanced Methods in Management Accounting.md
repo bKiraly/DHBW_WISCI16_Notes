@@ -268,3 +268,55 @@ See Accounting I and II
 ### Dividends
 
 * Reduce retained earnings, but are not expenses
+* Paid out to shareholders
+
+### GAAP
+
+* Accounting is not an exact science
+* It is a set of principles to assess the financial position of the company
+
+### Auditors
+
+* Four external auditors
+* They check the reports of other companies 
+* They sign off on the following of accounting principles
+
+### Accounting standard setters
+
+* There are organizations that set the official standards all organizations are required to oblige by
+
+### Ethics
+
+* Ethical issues can lead to major problems
+* Public-private relationships need to be monitored
+
+### Matching and cost recovery
+
+* Investment is done in hopes of future cash inflows
+* At the end of each period certain assets are written off as expenses for the current period
+
+### Stable monetary unit
+
+* It is assumed that money has constant value
+* Time-value of money -> money later is worth less
+
+### Balance sheet
+
+* Assets
+	* Current
+	* Non-current
+* Liabilities
+	* Current
+	* Non-current
+	* Shareholders Equity
+
+### Different views
+
+* Reported view -> Recorded revenues
+* Underlying view -> Makes retroactive corrections to the books
+	* All costs relevant for the given month are counted for the given month
+
+### Cash equivalents
+
+* Stocks/Bonds of other companies -> debts of other companies
+* Treasury bonds -> Debt securities of the govt.
