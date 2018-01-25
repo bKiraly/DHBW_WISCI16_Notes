@@ -1,5 +1,3 @@
-var firstH1;
-
 window.addEventListener("load", _=>{
 	firstH1 = document.getElementById("sajt");
 	window.addEventListener("mousemove", (e)=>{
