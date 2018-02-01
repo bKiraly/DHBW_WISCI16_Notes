@@ -313,6 +313,95 @@ Saved select statement
 
 `SELECT <Table1>.<field> <Table2>.<field> FROM <Table1> INNER JOIN <Table2>`
 
+#### Native SQL functions
+
+`IN` statement: Selects from a list, returns true if a is found in list b
+
+`AS` Keyword renames columns
+
+`DISTINCT` Keyword ensures records are shown only once
+
+##### Calculations
+
+`SELECT price*1.1 FROM t_products`
+
+##### Aggregate functions
+
+`sum()`
+
+##### LIKE expression
+
+`SELECT City FROM Customer WHERE City LIKE%heim`
+
+#### Grouping results
+
+##### GROUP BY clause
+
+`SELECT ArticleNumber, SUM(Amount) FROM Articles GROUP BY Region`
+
+##### HAVING clause
+
+Filters grouped entries
+
+### Indexes
+
+> **Indexes** are sets of pointers that point to the rows in a database table, in order to optimize access to them. They are based on attributes of the table.
+
+### TREES
+
+* Binary tree (fan out = 2)
+* B-Tree (fo = n, balanced)
+* B+-Tree (B-Tree but data is only on Leaf nodes)
+* B*-Tree (Nodes always filled at 2/3)
+
+### Stored procedures and functions
+
+* Procedures can be stored in a database
+* Single point definition of business logic
+* Can be SQL or other languages
+* Procedures do not return a value, access persistent data
+* Functions have a return value
+
+`CREATE PROCEDURE <name> (IN/OUT/INOUT <varname>) DEFINER (NOT) DETERMINISTIC CONTAINS SQL | NO SQL | READS SQL DATA | MODIFIES SQL DATA SQL SECURITY BEGIN <code> END`
+
+### TRIGGERS
+
+> **Triggers** are procedures that can be attached to a certain *event* in the database. For example if a user is deleted, a procedure runs that deletes all their files.
+
+`CREATE TRIGGER <name> BEFORE INSERT OR UPDATE OF <column> FOR EACH ROW WHEN <check_constraint> <code>`
+
+Advantages:
+
+* Performance
+	* Save network roundtrips -> low latency
+* Portability and reuse
+* Security
+* Maintenance
+* Only DBMS required
+
+Disadvantages
+
+* Overhead
+* Increases database server computing power
+* No clear separation between data and application logic
+* Code possibly needs to be maintained in multiple locations
+* CI?
+* Development
+
 ### Administration
+
+#### Mandatory Access Control
+Access control
+
+> **Permissions** are rights given to a certain user to access certain resources 
+
+&nbsp;
+
+> **Roles** are sets of permissions
+
+&nbsp;
+
+> **Groups** are sets of users
+
 ### Data Structures
 ### Performance Tuning
