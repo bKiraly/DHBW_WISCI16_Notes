@@ -1,80 +1,89 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Operating Systems</title>
-<link rel="stylesheet" href="https://stackedit.io/res-min/themes/base.css" />
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Operating Systems</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
 </head>
-<body><div class="container"><h1 id="operating-systems">Operating Systems</h1>
 
-
-
+<body class="stackedit">
+  <div class="stackedit__html"><h1 id="operating-systems">Operating Systems</h1>
 <h2 id="introduction">Introduction</h2>
-
-
-
 <h3 id="history-of-computers">History of Computers</h3>
-
 <ul>
 <li>1940-1949 - Relay and Vacuum tube computer</li>
-<li>1950-1959 - Transistor computer <br>
-<ul><li>Mainframe computers</li>
-<li>Batch processing</li></ul></li>
-<li>1960-1969 - IC computer <br>
-<ul><li>Minicomputers</li>
-<li>Time-sharing systems</li></ul></li>
-<li>1970-1979 - Microprocessor <br>
-<ul><li>Personal computers</li></ul></li>
-<li>1980-1989 - PCs widespread <br>
-<ul><li>GUIs</li></ul></li>
+<li>1950-1959 - Transistor computer
+<ul>
+<li>Mainframe computers</li>
+<li>Batch processing</li>
+</ul>
+</li>
+<li>1960-1969 - IC computer
+<ul>
+<li>Minicomputers</li>
+<li>Time-sharing systems</li>
+</ul>
+</li>
+<li>1970-1979 - Microprocessor
+<ul>
+<li>Personal computers</li>
+</ul>
+</li>
+<li>1980-1989 - PCs widespread
+<ul>
+<li>GUIs</li>
+</ul>
+</li>
 <li>1990-1999 - World wide web</li>
 <li>2000-2009 - Mobile computers (smartphones)</li>
 <li>2010-2017 - AI, machine learning, cloud</li>
 <li>2018-? - Quantum computers?</li>
 </ul>
-
-
-
 <h3 id="history-of-operating-systems">History of Operating Systems</h3>
-
 <ul>
 <li>No OS, specialized computers</li>
-<li>Monitors <br>
-<ul><li>Allow operators to load and store programs</li>
+<li>Monitors
+<ul>
+<li>Allow operators to load and store programs</li>
 <li>Direct memory access</li>
 <li>Search data patterns in memory</li>
-<li>Debug programs</li></ul></li>
-<li>Batch OSes <br>
-<ul><li>Automatically start new program from batch</li>
-<li>Sequential execution</li></ul></li>
-<li>Time-sharing <br>
-<ul><li>Hardware resources are virtualized</li>
-<li>Multiple users can use the system concurrently</li></ul></li>
-<li>Multi-tasking operating systems <br>
-<ul><li>Each user can run multiple programs</li></ul></li>
-<li>Complete virtualization <br>
-<ul><li>Separation of hardware and application layer</li>
-<li>Multiple operating systems on a single computer</li>
-<li>Cluster computers sharing VMs</li></ul></li>
+<li>Debug programs</li>
 </ul>
-
+</li>
+<li>Batch OSes
+<ul>
+<li>Automatically start new program from batch</li>
+<li>Sequential execution</li>
+</ul>
+</li>
+<li>Time-sharing
+<ul>
+<li>Hardware resources are virtualized</li>
+<li>Multiple users can use the system concurrently</li>
+</ul>
+</li>
+<li>Multi-tasking operating systems
+<ul>
+<li>Each user can run multiple programs</li>
+</ul>
+</li>
+<li>Complete virtualization
+<ul>
+<li>Separation of hardware and application layer</li>
+<li>Multiple operating systems on a single computer</li>
+<li>Cluster computers sharing VMs</li>
+</ul>
+</li>
+</ul>
 <hr>
-
 <ul>
 <li>Distributed OSes</li>
 <li>Real-time OSes</li>
 </ul>
-
-
-
 <h2 id="fundamental-concepts">Fundamental concepts</h2>
-
-
-
 <h3 id="users-of-operating-systems">Users of operating systems</h3>
-
 <ul>
 <li>End users</li>
 <li>Administrators</li>
@@ -83,11 +92,7 @@
 <li>Application programmers</li>
 <li>System programmers</li>
 </ul>
-
-
-
 <h3 id="tasks-of-an-os">Tasks of an OS</h3>
-
 <ul>
 <li>Provide a runtime environment</li>
 <li>Provide a UI</li>
@@ -96,198 +101,180 @@
 <li>Reusable components (libraries)</li>
 <li>Make most efficient use of the hardware</li>
 </ul>
-
-
-
 <h3 id="structure-of-an-os">Structure of an OS</h3>
-
 <ul>
 <li>Hardware</li>
-<li>Kernel <br>
-<ul><li>Hardware abstraction layer</li>
+<li>Kernel
+<ul>
+<li>Hardware abstraction layer</li>
 <li>Device drivers</li>
 <li>Scheduler</li>
 <li>Memory Management</li>
 <li>User/Authorization management</li>
-<li>I/O Management <br>
-<ul><li>File system</li></ul></li>
-<li>System services</li>
-<li>System call interface</li></ul></li>
+<li>I/O Management
+<ul>
+<li>File system</li>
 </ul>
-
+</li>
+<li>System services</li>
+<li>System call interface</li>
+</ul>
+</li>
+</ul>
 <hr>
-
 <ul>
 <li>System libraries</li>
 <li>Applications</li>
 <li>UI</li>
 </ul>
-
-
-
 <h3 id="operating-modes-of-the-cpu">Operating modes of the CPU</h3>
-
 <ul>
-<li>Kernel mode <br>
-<ul><li>Direct access to physical memory</li>
+<li>Kernel mode
+<ul>
+<li>Direct access to physical memory</li>
 <li>Direct access to hardware</li>
-<li>Execute all instructions</li></ul></li>
-<li>User mode <br>
-<ul><li>Allow access to virtual memory</li>
-<li>No direct access to hardware</li>
-<li>Execute a subset of instructions</li></ul></li>
+<li>Execute all instructions</li>
 </ul>
-
-
-
-<h3 id="types-of-kernels">Types of Kernels</h3>
-
+</li>
+<li>User mode
 <ul>
-<li>Monolithic kernels <br>
-<ul><li>Have a lot of responsibilities</li>
+<li>Allow access to virtual memory</li>
+<li>No direct access to hardware</li>
+<li>Execute a subset of instructions</li>
+</ul>
+</li>
+</ul>
+<h3 id="types-of-kernels">Types of Kernels</h3>
+<ul>
+<li>Monolithic kernels
+<ul>
+<li>Have a lot of responsibilities</li>
 <li>Contain lost of code</li>
-<li>Device drivers run in kernel mode</li></ul></li>
-<li>Microkernel <br>
-<ul><li>Only the most fundamental parts of the OS are in kernel mode</li>
+<li>Device drivers run in kernel mode</li>
+</ul>
+</li>
+<li>Microkernel
+<ul>
+<li>Only the most fundamental parts of the OS are in kernel mode</li>
 <li>Device drivers do not run in kernel mode</li>
-<li>Advantages <br>
-<ul><li>Much more stable</li>
+<li>Advantages
+<ul>
+<li>Much more stable</li>
 <li>More secure</li>
 <li>More flexible</li>
-<li>Easier to maintain</li></ul></li>
-<li>Disadvantage <br>
-<ul><li>Slower</li></ul></li></ul></li>
+<li>Easier to maintain</li>
 </ul>
-
-
-
+</li>
+<li>Disadvantage
+<ul>
+<li>Slower</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <h2 id="inputoutput">Input/Output</h2>
-
-
-
 <h3 id="von-neumann-architecture">Von Neumann Architecture</h3>
-
 <ul>
 <li>Specific memory addresses are assigned to I/O devices</li>
 </ul>
-
-
-
 <h3 id="io-models">I/O Models</h3>
-
 <ul>
-<li>Program controlled I/O <br>
-<ul><li>Program loop reads/writes from device</li>
-<li>Program loop reads/writes to memory</li></ul></li>
-<li>Interrupt based I/O <br>
-<ul><li>Interrupt CPU when data is available</li>
-<li>CPU is free to do other things, until the interrupt</li></ul></li>
-<li>Direct memory access <br>
-<ul><li>I/O Devices directly read/write to memory</li>
-<li>Interrupt CPU when read/write is complete</li></ul></li>
+<li>Program controlled I/O
+<ul>
+<li>Program loop reads/writes from device</li>
+<li>Program loop reads/writes to memory</li>
 </ul>
-
-
-
+</li>
+<li>Interrupt based I/O
+<ul>
+<li>Interrupt CPU when data is available</li>
+<li>CPU is free to do other things, until the interrupt</li>
+</ul>
+</li>
+<li>Direct memory access
+<ul>
+<li>I/O Devices directly read/write to memory</li>
+<li>Interrupt CPU when read/write is complete</li>
+</ul>
+</li>
+</ul>
 <h3 id="interrupts">Interrupts</h3>
-
-
-
 <h4 id="types-of-interrupts">Types of Interrupts</h4>
-
 <ul>
 <li>Hardware interrupts (asynchronous, external) e.g. User hits key</li>
 <li>Software interrupts (synchronous, internal) e.g. Program wants to access OS resources (System calls)</li>
 <li>Faults (synchronous?, internal?) e.g. Bus faults</li>
 </ul>
-
-
-
 <h4 id="interrupt-vectorization">Interrupt vectorization</h4>
 
 <table>
 <thead>
 <tr>
-  <th>Int #</th>
-  <th>Address</th>
+<th>Int #</th>
+<th>Address</th>
 </tr>
 </thead>
-<tbody><tr>
-  <td>0</td>
-  <td>0x00000012</td>
+<tbody>
+<tr>
+<td>0</td>
+<td>0x00000012</td>
 </tr>
 <tr>
-  <td>1</td>
-  <td>0x10202012</td>
+<td>1</td>
+<td>0x10202012</td>
 </tr>
 <tr>
-  <td>2</td>
-  <td>0x12345641</td>
+<td>2</td>
+<td>0x12345641</td>
 </tr>
-</tbody></table>
-
-
-
-
-<h4 id="masking-of-interrupts">Masking of Interrupts</h4>
-
+</tbody>
+</table><h4 id="masking-of-interrupts">Masking of Interrupts</h4>
 <p>Certain bitmasks can be set, to mask interrupts to avoid interrupting time-critical code</p>
-
-
-
 <h4 id="prioritization">Prioritization</h4>
-
 <p>Certain interrupts take precedence over others</p>
-
-
-
 <h4 id="interrupt-handling">Interrupt handling</h4>
-
 <ul>
-<li>Check for interrupts <br>
-<ul><li>If none: continue with cycle</li></ul></li>
+<li>Check for interrupts
+<ul>
+<li>If none: continue with cycle</li>
+</ul>
+</li>
 <li>If yes</li>
-<li>Check if interrupt is masked <br>
-<ul><li>If yes: continue with cycle</li></ul></li>
-<li>Check if priority is high enough <br>
-<ul><li>If no: continue with cycle</li></ul></li>
+<li>Check if interrupt is masked
+<ul>
+<li>If yes: continue with cycle</li>
+</ul>
+</li>
+<li>Check if priority is high enough
+<ul>
+<li>If no: continue with cycle</li>
+</ul>
+</li>
 <li>Save value of IP to stack</li>
 <li>Find cause of interrupt</li>
 <li>Switch to kernel mode</li>
 <li>Jump to interrupt vector</li>
 </ul>
-
-
-
 <h4 id="evolution-of-io-support">Evolution of I/O Support</h4>
-
 <ul>
 <li>No support</li>
 <li>Reuse I/O routines from monitor/early OS</li>
 <li>Mandatory use of OS for I/O</li>
 </ul>
-
-
-
 <h5 id="buffering">Buffering</h5>
-
 <p>Advantages</p>
-
 <ul>
 <li>More efficient when reading multiple times</li>
 <li>More efficient when writing data (writes are non-blocking)</li>
 </ul>
-
 <p>Disadvantages</p>
-
 <ul>
 <li>Danger of losing data</li>
 <li>Danger of data inconsistencies</li>
 <li>Consumes more memory</li>
 </ul>
-
 <p>Buffer locations</p>
-
 <ul>
 <li>Hardware layer (I/O controller)</li>
 <li>Driver layer</li>
@@ -295,11 +282,7 @@
 <li>System libraries</li>
 <li>Application layer</li>
 </ul>
-
-
-
 <h4 id="user-interface-evolution">User-interface evolution</h4>
-
 <ul>
 <li>Lights/switches</li>
 <li>Teletypes/printers</li>
@@ -307,15 +290,8 @@
 <li>GUIs</li>
 <li>Voice control</li>
 </ul>
-
-
-
 <h3 id="storage-devices">Storage devices</h3>
-
-
-
 <h4 id="hdds">HDDs</h4>
-
 <ul>
 <li>CHS</li>
 <li>Typical block size: 512 bytes</li>
@@ -324,45 +300,505 @@
 <li>HAMR</li>
 <li>MAMR</li>
 </ul>
-
-
-
 <h3 id="io-scheduling">I/O Scheduling</h3>
-
 <ul>
 <li>FIFO</li>
-<li>Elevator algorithm <br>
-<ul><li>Start going in the direction of the first request</li>
+<li>Elevator algorithm
+<ul>
+<li>Start going in the direction of the first request</li>
 <li>Keep moving in that direction until you reach the last request in that direction</li>
-<li>Then switch directions and repeat</li></ul></li>
+<li>Then switch directions and repeat</li>
+</ul>
+</li>
 <li>Priority-based scheduler</li>
 <li>Anticipatory scheduler</li>
 <li>NOOP scheduler</li>
 </ul>
-
-
-
 <h3 id="file-systems-and-fragmentation">File systems and fragmentation</h3>
-
 <blockquote>
-  <p><strong>Internal fragmentatio</strong> is the wasted space on a storage device that arises due to the fact that only whole blocks can be written, and those have a fixed size (usually 512 bytes)</p>
+<p><strong>Internal fragmentation</strong> is the wasted space on a storage device that arises due to the fact that only whole blocks can be written, and those have a fixed size (usually 512 bytes)</p>
 </blockquote>
-
 <p>&nbsp;</p>
-
 <blockquote>
-  <p><strong>External fragmentation</strong> arises when a file can not be written to a sequence of blocks, and gets broken up into parts that are re-assembled later.</p>
+<p><strong>External fragmentation</strong> arises when a file can not be written to a sequence of blocks, and gets broken up into parts that are re-assembled later.</p>
 </blockquote>
-
 <p>&nbsp;</p>
-
 <blockquote>
-  <p><strong>File systems</strong> keep track of where each part of each file is located, along with meta-information about the file.</p>
+<p><strong>File systems</strong> keep track of where each part of each file is located, along with meta-information about the file.</p>
 </blockquote>
-
 <p>&nbsp;</p>
-
 <blockquote>
-  <p><strong>Files</strong> are abstractions of contiguous data</p>
-</blockquote></div></body>
+<p><strong>Files</strong> are abstractions of contiguous data</p>
+</blockquote>
+<h4 id="contiguous-file-systems">Contiguous file systems</h4>
+<ul>
+<li>ISO 9660</li>
+<li>Used for CDs</li>
+<li>Data is only written, never erased</li>
+</ul>
+<h3 id="first-operating-system-for-microprocessors">First operating system for microprocessors</h3>
+<ul>
+<li>CP/M</li>
+<li>Gary Kildall</li>
+<li>Control Program for Microprocessors (/monitor)</li>
+<li>Linked list file system</li>
+</ul>
+<h4 id="the-origins-of-windows">The origins of Windows</h4>
+<ul>
+<li>Microsoft founded (1975)</li>
+<li>BASIC interpreter (4kiB ROM for Altair microprocessors)</li>
+<li>Microsoft licenses Xenix OS from AT&amp;T</li>
+<li>Seattle Computer Products invents QDOS (Quick and Dirty OS)
+<ul>
+<li>Port of CP/M for 808x microprocessors</li>
+<li>Sold for $50k to Microsoft</li>
+</ul>
+</li>
+<li>New filesystem (FAT - File Allocation Table)
+<ul>
+<li>Table of all blocks and follow-ups stored separately</li>
+<li>All loaded into main memory on startup</li>
+<li>Much faster</li>
+<li>Used for Floppy Disks and HDDs</li>
+<li>Now used in USB sticks and memory cards</li>
+</ul>
+</li>
+<li>DOS is invented</li>
+</ul>
+<h4 id="competitors">Competitors</h4>
+<ul>
+<li>MIT develops CTSS (Compatible Time-Sharing System)</li>
+<li>Compatible with IBM hardware (ITS incompatible)</li>
+<li>MULTICS (Multiple Information Computing Service)
+<ul>
+<li>Cloud Computing</li>
+</ul>
+</li>
+</ul>
+<h4 id="unix">UNIX</h4>
+<ul>
+<li>Developed for PDP-7</li>
+<li>Originally UNICS (Uniplexed Information and Computing System)</li>
+<li>For playing “space travel”</li>
+<li>File system + Bootloader + Scheduler</li>
+<li>Ported to the PDP-11</li>
+<li>Written in C</li>
+</ul>
+<h5 id="the-legacy-of-unix">The legacy of Unix</h5>
+<ul>
+<li>BSD</li>
+<li>Solaris</li>
+<li>AIX</li>
+<li>HP-UX</li>
+<li>GNU (Richard Stallman)</li>
+<li>MINIX (Andrew Tannenbaum)</li>
+<li>Linux (Linus Torvalds)</li>
+</ul>
+<h4 id="ext4">Ext4</h4>
+<ul>
+<li>Inodes</li>
+<li>First 7 blocks direct lookup from inode</li>
+<li>Last 3 blocks are other index nodes</li>
+<li>Superblock - Root to folder structure and blocks</li>
+</ul>
+<h3 id="os-history-roadmap">OS history roadmap</h3>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Mainframe</th>
+<th>Minicomputers</th>
+<th>Microcomputers</th>
+<th>Mobile/Embedded Devices</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>'50</td>
+<td>Many</td>
+<td>Many</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>'60</td>
+<td>OS/360</td>
+<td>MULTICS (MF)</td>
+<td>Many</td>
+<td></td>
+</tr>
+<tr>
+<td>'70</td>
+<td>OS/370</td>
+<td>UNIX/VMS</td>
+<td>CPM</td>
+<td></td>
+</tr>
+<tr>
+<td>'80</td>
+<td></td>
+<td>UNIX clones</td>
+<td>QDOS -&gt; MS-DOS</td>
+<td>Many</td>
+</tr>
+<tr>
+<td>'90</td>
+<td>OS/390</td>
+<td>Linux</td>
+<td>Windows &amp; WinNT</td>
+<td></td>
+</tr>
+<tr>
+<td>'00</td>
+<td>zOS</td>
+<td>MacOS</td>
+<td>WinXP</td>
+<td>iOS, Android, RTOS</td>
+</tr>
+</tbody>
+</table><h4 id="respective-file-systems">Respective file systems</h4>
+<p>Unix</p>
+<ul>
+<li>UFS</li>
+<li>VFS</li>
+<li>FFS</li>
+<li>HFS</li>
+</ul>
+<p>Linux</p>
+<ul>
+<li>ext2</li>
+<li>ext3</li>
+<li>ext4
+<ul>
+<li>I-nodes</li>
+</ul>
+</li>
+<li>ReiserFS</li>
+<li>ZFS</li>
+<li>BtrFS</li>
+</ul>
+<p>DOS/Windows</p>
+<ul>
+<li>NTFS
+<ul>
+<li>MFT</li>
+<li>B+ Tree</li>
+</ul>
+</li>
+<li>ReFS</li>
+</ul>
+<h3 id="journal">Journal</h3>
+<ul>
+<li>Linear recording</li>
+<li>Planned changes</li>
+<li>data/Metadata</li>
+<li>Lets OS reach consistent state faster</li>
+</ul>
+<h3 id="network-file-systems">Network file systems</h3>
+<ul>
+<li>SAN
+<ul>
+<li>Block level</li>
+<li>File channel</li>
+<li>iSCSI</li>
+</ul>
+</li>
+<li>NAS
+<ul>
+<li>NFS</li>
+<li>CIFS</li>
+</ul>
+</li>
+</ul>
+<h2 id="process-management">Process Management</h2>
+<blockquote>
+<p><strong>Processes</strong> are running (runnable) programs as well as their data and metadata</p>
+</blockquote>
+<ul>
+<li>Current program counter value</li>
+<li>Register Values</li>
+<li>Memory Contents</li>
+<li>Resources used (open files)</li>
+<li>Metadata (Process order, Authorizations)</li>
+</ul>
+<h3 id="multitasking">Multitasking</h3>
+<blockquote>
+<p><strong>Multitasking</strong> is the process of running multiple <em>processes</em> at the same time.</p>
+</blockquote>
+<ul>
+<li>No multitasking</li>
+<li>Quasiparallel execution (interleaved)</li>
+<li>Parallel execution (multiple CPUs)</li>
+<li>Cooperative multitasking (processes yield CPU deliberately)</li>
+<li>Preemptive multitasking (OS forces process to yield the CPU)</li>
+</ul>
+<h3 id="process-life-cycle">Process life-cycle</h3>
+<ol>
+<li>Process creation
+<ul>
+<li>OS at system start</li>
+<li>By user</li>
+<li>By other processes
+<ul>
+<li>by System call
+<ul>
+<li>fork (Unix)</li>
+<li>create process (Windows)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Process Termination
+<ul>
+<li>System shutdown</li>
+<li>Regular termination</li>
+<li>Exceptions</li>
+<li>By other processes</li>
+<li>By users / Administrators</li>
+</ul>
+</li>
+</ol>
+<h3 id="process-management-in-unix">Process management in Unix</h3>
+<ul>
+<li>Chaining</li>
+<li>Spawning</li>
+<li>Forking</li>
+<li>Waiting</li>
+<li>Joining</li>
+</ul>
+<h3 id="process-states">Process states</h3>
+<ul>
+<li>Runnable
+<ul>
+<li>Can be run by the scheduler</li>
+</ul>
+</li>
+<li>Running</li>
+<li>Waiting
+<ul>
+<li>When making blocking system calls</li>
+</ul>
+</li>
+<li>Terminated</li>
+</ul>
+<h3 id="policy-vs-mechanism">Policy vs Mechanism</h3>
+<p>Separation of Policy (what to do) and mechanism (how)</p>
+<h3 id="scheduling-mechanism">Scheduling mechanism</h3>
+<ol>
+<li>Interrupt
+<ul>
+<li>Timer interrupt</li>
+<li>System call</li>
+<li>Exception</li>
+</ul>
+<ol>
+<li>Save program counter</li>
+<li>Switch to privileged mode</li>
+<li>Jump to kernel entry (interrupt vector)</li>
+</ol>
+</li>
+<li>Save registers</li>
+<li>Check cause of interrupt</li>
+<li>Handle interrupt</li>
+<li>Figure out which process has been interrupted</li>
+<li>Decide whether the same or different process should be scheduled (see Scheduling policy)</li>
+<li>Save PID of scheduled process, restore CPU registers</li>
+<li>Switch to non-privileged mode</li>
+<li>Jump to where the scheduled process was interrupted</li>
+</ol>
+<h3 id="scheduling-policy">Scheduling policy</h3>
+<h4 id="goals">Goals</h4>
+<ul>
+<li>Prioritization</li>
+<li>Fairness</li>
+<li>Preventing priority inversion</li>
+<li>Efficiency</li>
+<li>Maximize total throughput</li>
+<li>Maximize responsiveness</li>
+<li>No starvation</li>
+<li>Predictability</li>
+<li>Meet deadlines at cost</li>
+</ul>
+<h4 id="policies">Policies</h4>
+<ul>
+<li>FCFS (First Come, First Served)</li>
+<li>SJF (Shortest Job First)</li>
+<li>SRTF (Shortest Remaining Time First)</li>
+<li>Priority first</li>
+<li>NDF (Nearest Deadline First)</li>
+<li>RR (Round Robin)</li>
+<li>ML (Multilevel - RR with priorities)</li>
+<li>RR with dynamic priorities</li>
+<li>MLF (Multilevel with Feedback)</li>
+<li>Random</li>
+</ul>
+<h3 id="ipc">IPC</h3>
+<ul>
+<li>File systems
+<ul>
+<li>Crude</li>
+<li>Archaic</li>
+</ul>
+</li>
+<li>Signals
+<ul>
+<li>e.g. SIGSEGV</li>
+</ul>
+</li>
+<li>Message Queues
+<ul>
+<li>Asynchronous communication</li>
+</ul>
+</li>
+<li>Pipelining</li>
+<li>Socket</li>
+</ul>
+<h3 id="lwp-lightweight-processes---threads">LWP (Lightweight Processes - Threads)</h3>
+<blockquote>
+<p><strong>Threads</strong> are processes that cooperate and share a common address space</p>
+</blockquote>
+<p>Lost update problem<br>
+Inconsistent read problem</p>
+<blockquote>
+<p><strong>Race conditions</strong> occur if two or more threads try to access the same resource, and the result depends on the execution order.</p>
+</blockquote>
+<h4 id="solution-locks">Solution: Locks</h4>
+<ul>
+<li>The critical section is <em>locked</em> in order to prevent out-of-order execution of updates</li>
+<li>Semaphors (term by Dijkstra)
+<ul>
+<li>counter n</li>
+<li>queue</li>
+<li>2 operation</li>
+<li>P -&gt; if n &gt; 0: n-=1 else put operation in queue</li>
+<li>V -&gt; increment n by 1, if there is at least one thread in the waiting queue, wake it</li>
+<li>Special case: Start value of 1 -&gt; mutex (mutual exclusion)</li>
+</ul>
+</li>
+<li>Monitors (invented by Hoare)
+<ul>
+<li>Monitors monitor a certain resource, to make sure it is not accessed in parallel</li>
+</ul>
+</li>
+<li>Implemented using atomic operation on the hardware level -&gt; <code>atomic int</code></li>
+<li>Peterson algorithm -&gt; Spinlock <code>while(turn == task) /*Do nothing*/;</code></li>
+<li>//Therac-25</li>
+</ul>
+<h3 id="memory-abstraction">Memory abstraction</h3>
+<h4 id="no-memory-abstraction">No memory abstraction</h4>
+<ul>
+<li>Problems
+<ul>
+<li>Not enough physical memory</li>
+<li>Relocation problem</li>
+<li>No memory protection</li>
+</ul>
+</li>
+<li>Solutions
+<ul>
+<li>Overlays (program only loads necessary parts)</li>
+<li>Swapping (programs are progressively written to a swap file on disk)
+<ul>
+<li>Segment register -&gt; loaded with the base address of the start of the program</li>
+<li>Segment limit register -&gt; limit register to achieve memory protection</li>
+<li>Problem: Fragmentation -&gt; Very slow when low on memory</li>
+</ul>
+</li>
+<li>VAX (Virtual Address Extension)
+<ul>
+<li>The memory is divided into page frames (4 kiB)</li>
+<li>Page frames are assigned to processes, to extend their virtual memory</li>
+<li>Memory Management Unit (MMU) offers <em>hardware support</em> for virtual memory</li>
+<li>Virtual address: 32 bit address, 20 bit program number + 12 bit offset</li>
+<li>Staged page table -&gt; Only has the addresses that are needed</li>
+<li>Problem: If the memory addresses are stored in the RAM you need <em>double</em> the memory accesses</li>
+<li>Solution: TLB (Translation Lookaside Buffer)</li>
+<li>Cached inside MMU</li>
+</ul>
+</li>
+<li>Paging -&gt; Same as sawpping, but swaps infrequently used pages to disk</li>
+</ul>
+</li>
+<li>Memory Management Mechanism
+<ul>
+<li>Program accesses initial memory address
+<ol>
+<li>Page number in TLB -&gt; MMU translates address :)</li>
+<li>Page number not in TLB -&gt; Fetch PT goto 1</li>
+<li>Page number not in Page Table (PT) -&gt; Interrupt - OS handles interrupt
+<ul>
+<li>Page on disk -&gt; reload, goto 2</li>
+<li>page is reserved, but not yet accessed -&gt; update PT, goto 2</li>
+<li>Page does not belong to process -&gt; Abort, Segfault (SIGSEGV)</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>Memory Management Policy
+<ul>
+<li>Optimal
+<ul>
+<li>The page accessed furthest in the future is dumped</li>
+<li>NRU (Not Recently Used)
+<ul>
+<li>TLB records access in special bit in PT</li>
+<li>OS clears those bits from time to time</li>
+</ul>
+</li>
+<li>FIFO
+<ul>
+<li>First in, first out</li>
+</ul>
+</li>
+<li>FIFO with 2nd chance (clock algorithm)
+<ul>
+<li>if a page is about to be paged out, it is given a second chance</li>
+</ul>
+</li>
+<li>LRU (Last Recently Used)
+<ul>
+<li>The page that was used last recently gets dumped</li>
+</ul>
+</li>
+<li>NFU (Not Frequently Used)
+<ul>
+<li>The page that is used least frequently gets dumped</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="deadlocks">Deadlocks</h3>
+<ul>
+<li>Mutual exclusion
+<ul>
+<li>No two processes can use resources simultaneously</li>
+</ul>
+</li>
+<li>Hold and await
+<ul>
+<li>Can acquire and will not refuse even ig the process is stuck</li>
+</ul>
+</li>
+<li>No preemption
+<ul>
+<li>OS can not force release of resource</li>
+</ul>
+</li>
+<li>Circular wait
+<ul>
+<li>A waits for B, B waits for A</li>
+</ul>
+</li>
+</ul>
+</div>
+</body>
+
 </html>
