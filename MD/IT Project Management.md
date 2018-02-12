@@ -202,7 +202,7 @@ Ongoing activity throughout the PLC
 	4. NPV
 8. Propose a recommendation
 
-|Time |Benefit |Cost |Net value |Discouting factor | | |
+|Time |Benefit |Cost |Net value |Discouting factor | |
 |-:|-:|-:|-:|:-|:-|
 |0	|0	|150	|-150	|1		|-150
 |1	|80	|35	|45	|1,095		|41,09589041
@@ -371,5 +371,68 @@ Agile
 	* Activity
 	* Identify the critical path -> Shortest time for the projects
 * Critical Path Analysis
+	* Look for critical path in the AotN chart to get minimal time to get the project done
 * Program evaluation and review technique
+	* Use a weighted average of pessimistic, optimistic, and most likely times (weighted 4 times more than the other two).
+	* Formula: ${{a+4b+c} \over 6}$
 * Precedence Diagram Method
+	* Finish-to-start
+	* Start-to-start
+	* Start-to-finish
+	* Finish-to-finish
+
+#### Slack/Float
+
+* Slack = The amount of time an activity can be delayed for before it delays the project
+* Critical path can change
+* Fast-tracking: performing serial activities in parallel
+
+#### Lead Time
+
+* Starting a new task before the previous task is complete
+* Overlapping activities
+
+#### Lag time
+
+* Adding waiting time before the next task start
+
+#### Critical Chain Project Management
+
+* Based on the assumption that people often add buffer to compensate for the risk of finishing late
+* Parkinsons law: Work fills time available
+* Students Syndrome: doing tasks in the last minute
+* Resource contention: Project members are assigned to many projects
+	* No opportunity to focus on tasks on the critical path
+	* Constraint on the entire project
+* Ask each person on the team what time he can be done with a probability of 50%
+* Instead of putting buffer to tasks, add buffer to project
+* Feeding buffers
+	* Apply to tasks that act as feeders on the critical path
+	* reduce start time
+* Resource buffers
+	* Ensures resource availability to combat resource contention
+* Project buffer
+	* 50% of regular buffer
+
+#### Rolling Wave Planning
+
+* Minimizes planning in uncertainty
+* Master schedule with detailed schedules for a few week/months
+
+#### Budgeting
+
+* Define what resources will be needed to perform the work
+* Determine the quality of resources that are needed
+* Define the cost of using each resource
+* Calculate the cost of the task or activity
+* Ensure resources are not over-allocated
+* Sum up everything
+
+##### Types of costs
+
+* Direct costs
+* Indirect costs
+* Sunk costs
+* Learning curve related costs
+* Prorated costs
+* Reserves
