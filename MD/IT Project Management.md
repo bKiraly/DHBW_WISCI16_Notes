@@ -168,7 +168,7 @@ Ongoing activity throughout the PLC
 		* Strategic
 		* Financial
 		* Social
-		*  
+		* Operational
 2. Form cross-functional business case team
 3. Identify alternatives
 	1. Change the existing process without IT
