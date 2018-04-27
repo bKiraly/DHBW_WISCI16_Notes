@@ -1,4 +1,5 @@
-##### Possible Exam Questions
+# Exam Questions
+## Possible Questions
 
 * What does the principle of autonomy consist of? What does it mean? -> *See Lecture 1.*
 * What is the principle of subsidiarity? -> *See Lecture 2.*
@@ -14,5 +15,31 @@
 	* What are the main sources of EU Law?
 	* Explain what directives are.
 	* What are regulations?
-	
+* Define the concept of entrepreneur/consumer.
+* What are the three types of liability contained in the BGB?
+	* Tort liability based on fault.
+	* Tort liability based on a perception of fault.
+	* Strict liability.
+* What is the maximum a person can claim under the product liability act?
+	* €85 million
+* What is a purchase agreement? Name the different categories of purchase agreement regulated by the BGB.
+* When is a material defect considered to exist?
+* What are the principles of EU Law? Give definitions.
+	* Principle of Subsidiarity
+	* Principle of Legality
+* What kind of elements do you need under the BGB to conclude a contract?
+	* Offer
+	* Acceptance
+	* Declaration of intent
+* What are the obligations of the buyer and seller under the BGB?
 
+## Types of Question
+
+* Direct question and answer
+* Multiple choice
+* Practical questions similar to the homework
+* Etc.
+
+**Relevant sections of the BGB:**
+* Book 1
+* The Law of Obligations (Book 2)
