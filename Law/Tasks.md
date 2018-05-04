@@ -11,10 +11,10 @@ Tasks
 * Daniel: 
   * Legal system
   * EU law
-* Bence: Consolidate notes
+* Bence:
   * Business and Company law
   * Tort law
   * Posession and Property
-* Lisa: Summarize sildes
+* Lisa:
   * Contractual law
   * Commercial contracts and sale of goods
