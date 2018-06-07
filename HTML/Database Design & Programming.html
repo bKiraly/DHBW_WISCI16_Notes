@@ -121,6 +121,13 @@ Database applications are the ‘active’ part of DB systems</p>
 <li>Authentication</li>
 </ul>
 <h2 id="database-design">Database Design</h2>
+<h3 id="overview">Overview</h3>
+<ul>
+<li>Conceptual design // E/R Modelling</li>
+<li>Logical design // Transformation into tables</li>
+<li>Normalization // Remove redundancies</li>
+<li>Physical design // SQL</li>
+</ul>
 <h3 id="conceptual-design">Conceptual Design</h3>
 <p>ACID properties</p>
 <ul>
@@ -433,8 +440,303 @@ Delete<br>
 <blockquote>
 <p><strong>Groups</strong> are sets of users</p>
 </blockquote>
-<h3 id="data-structures">Data Structures</h3>
+<h4 id="transactions">Transactions</h4>
+<blockquote>
+<p><strong>Transactions</strong> are ways of ensuring a consistent state in the database, by only writing data if it is complete, and rolling it back otherwise</p>
+</blockquote>
+<p><code>START TRANSACTION (WITH CONSISTENT SNAPSHOT |READ WRITE | READ ONLY) BEGIN (WORK) (COMMIT (WORK) | ROLLBACK) autocomit (0|1)</code></p>
+<h4 id="isolation-problems">Isolation problems</h4>
+<ul>
+<li>Dirty read</li>
+<li>Non-repeatable read</li>
+<li>Phantom read</li>
+</ul>
+<p>Solutions</p>
+<ul>
+<li>Serializeable</li>
+<li>Read committed</li>
+<li>Read uncommitted</li>
+</ul>
+<h4 id="two-phase-commit-2pc">Two-Phase Commit (2PC)</h4>
+<ul>
+<li>Ensure serialized transaction by granting/revoking locks</li>
+<li>Phases
+<ul>
+<li>Growing phase -&gt; Obtains locks</li>
+<li>Shrinking phase -&gt; Releases locks</li>
+</ul>
+</li>
+</ul>
+<h4 id="handling-failures-and-crashes">Handling failures and crashes</h4>
+<ul>
+<li>Logical error</li>
+<li>System error
+<ul>
+<li>System crash</li>
+<li>Disk failure</li>
+</ul>
+</li>
+</ul>
+<h3 id="administration-1">Administration</h3>
+<p>root access -&gt; Generally a bad idea<br>
+Audits<br>
+Backups<br>
+ACLs</p>
 <h3 id="performance-tuning">Performance Tuning</h3>
+<h4 id="data-dictionary">Data dictionary</h4>
+<h5 id="information-schema">Information Schema</h5>
+<p>Information about the database<br>
+Formatted to make information more accessible</p>
+<h5 id="performance-schema">Performance schema</h5>
+<p>Contains information about performance of the database</p>
+<h4 id="user-and-permission-management">User and permission management</h4>
+<h5 id="based-on-grantrevoke-dac-system">Based on GRANT/REVOKE DAC system</h5>
+<p>Users - User itself <code>CREATE USER &lt;username&gt;</code><br>
+Privileges - What the user can do <code>GRANT &lt;username&gt; &lt;privileges&gt; ON &lt;tables&gt;</code><br>
+Resource limits - How many system resources the user can access<br>
+Password - Set password for user <code>{CREATE | ALTER} USER &lt;username&gt; IDENTIFIED BY &lt;password&gt;</code></p>
+<h4 id="backup-and-restore">Backup and Restore</h4>
+<ol>
+<li>Backup Availability
+<ul>
+<li>3-2-1 rule</li>
+</ul>
+</li>
+<li>Backup Scope
+<ul>
+<li>Full</li>
+<li>Incremental</li>
+<li>Differential</li>
+</ul>
+</li>
+<li>Backup Frequency
+<ul>
+<li>Father / Grandfather schemes
+<ul>
+<li>6 daily backups</li>
+<li>3 weekly backups</li>
+<li>11 monthly backups</li>
+<li>1 annual backup</li>
+</ul>
+</li>
+<li>Towers of Hanoi scheme</li>
+</ul>
+</li>
+<li>Backup targets
+<ul>
+<li>Different media</li>
+</ul>
+</li>
+</ol>
+<p>Reasons for having Backups</p>
+<ul>
+<li>Safety</li>
+<li>Legal Requirements (SOx, Basel-II)</li>
+<li>Compliance</li>
+</ul>
+<p>Restore test</p>
+<h4 id="mysql-backup-tools">MySQL Backup tools</h4>
+<ul>
+<li>Cold backup
+<ul>
+<li>Offline, physical</li>
+<li>Simple copy</li>
+</ul>
+</li>
+<li>Warm backup
+<ul>
+<li>Locking logical</li>
+<li>mysqldump</li>
+</ul>
+</li>
+<li>Standby Copy
+<ul>
+<li>Hot-swappable</li>
+<li>MySQL replication</li>
+</ul>
+</li>
+<li>Hot backup
+<ul>
+<li>Online, Physical</li>
+<li>mysqlbackup</li>
+</ul>
+</li>
+</ul>
+<h4 id="monitoring-requirements">Monitoring requirements</h4>
+<ul>
+<li>Availability</li>
+<li>Historical reporting</li>
+</ul>
+<h5 id="mysql-enterprise-monitor">MySQL Enterprise Monitor</h5>
+<ul>
+<li>
+<p>Distributed monitoring system</p>
+<ul>
+<li>Service management</li>
+<li>Agents distributed across monitored hosts</li>
+</ul>
+</li>
+<li>
+<p>Client-side plugins for query analysis</p>
+</li>
+<li>
+<p>Advisors</p>
+</li>
+<li>
+<p>Events</p>
+</li>
+<li>
+<p>Notification Groups</p>
+</li>
+<li>
+<p>Graphs</p>
+</li>
+</ul>
+<h4 id="replication">Replication</h4>
+<ul>
+<li>Two databases with the same data</li>
+<li>Formats
+<ul>
+<li>Statement-based replication (each statement that is executed is transferred to the other database)</li>
+<li>Raw-based replication (transfer result of the statement)</li>
+<li>Mixed (utilize both systems)</li>
+</ul>
+</li>
+<li>Methods
+<ul>
+<li>Binlog (Binary Transaction Log)</li>
+<li>Replication using GTIDs
+<ul>
+<li>Identify each transaction, and supervise that everything runs correctly</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Topologies
+<ul>
+<li>Master/Slave topology</li>
+</ul>
+</li>
+</ul>
+<div class="mermaid"><svg xmlns="http://www.w3.org/2000/svg" id="mermaid-svg-0BuZiI5BKinqUXZn" height="100%" viewBox="0 0 175.20001220703125 106.71665954589844" style="max-width:175.20001220703125px;"><g><g class="output"><g class="clusters"></g><g class="edgePaths"><g class="edgePath" style="opacity: 1;"><path class="path" d="M54.850006103515625,43.35832977294922L79.85000610351562,43.35832977294922L104.85000610351562,43.35832977294922" marker-end="url(#arrowhead2215)" style="fill:none"></path><defs><marker id="arrowhead2215" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" style="opacity: 1;" transform=""><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g></g><g class="nodes"><g class="node" style="opacity: 1;" id="A" transform="translate(37.42500305175781,43.35832977294922)"><rect rx="5" ry="5" x="-17.425003051757812" y="-23.35832977294922" width="34.850006103515625" height="46.71665954589844"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-7.4250030517578125,-13.358329772949219)"><foreignObject width="14.850006103515625" height="26.716659545898438"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">M</div></foreignObject></g></g></g><g class="node" style="opacity: 1;" id="B" transform="translate(120.02500915527344,43.35832977294922)"><rect rx="5" ry="5" x="-15.175003051757812" y="-23.35832977294922" width="30.350006103515625" height="46.71665954589844"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-5.1750030517578125,-13.358329772949219)"><foreignObject width="10.350006103515625" height="26.716659545898438"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">B</div></foreignObject></g></g></g></g></g></g></svg></div>
+<ul>
+<li>Chained tolpology</li>
+</ul>
+<div class="mermaid"><svg xmlns="http://www.w3.org/2000/svg" id="mermaid-svg-Mob2TQPKfUY7Vm2D" height="100%" viewBox="0 0 249.683349609375 106.71665954589844" style="max-width:249.683349609375px;"><g><g class="output"><g class="clusters"></g><g class="edgePaths"><g class="edgePath" style="opacity: 1;"><path class="path" d="M54.850006103515625,43.35832977294922L79.85000610351562,43.35832977294922L104.85000610351562,43.35832977294922" marker-end="url(#arrowhead2227)" style="fill:none"></path><defs><marker id="arrowhead2227" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M129.33334350585938,43.35832977294922L154.33334350585938,43.35832977294922L179.33334350585938,43.35832977294922" marker-end="url(#arrowhead2228)" style="fill:none"></path><defs><marker id="arrowhead2228" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" style="opacity: 1;" transform=""><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" style="opacity: 1;" transform=""><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g></g><g class="nodes"><g class="node" style="opacity: 1;" id="A" transform="translate(37.42500305175781,43.35832977294922)"><rect rx="5" ry="5" x="-17.425003051757812" y="-23.35832977294922" width="34.850006103515625" height="46.71665954589844"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-7.4250030517578125,-13.358329772949219)"><foreignObject width="14.850006103515625" height="26.716659545898438"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">M</div></foreignObject></g></g></g><g class="node" style="opacity: 1;" id="B" transform="translate(117.0916748046875,43.35832977294922)"><rect rx="5" ry="5" x="-12.241668701171875" y="-23.35832977294922" width="24.48333740234375" height="46.71665954589844"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-2.241668701171875,-13.358329772949219)"><foreignObject width="4.48333740234375" height="26.716659545898438"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">I</div></foreignObject></g></g></g><g class="node" style="opacity: 1;" id="C" transform="translate(194.5083465576172,43.35832977294922)"><rect rx="5" ry="5" x="-15.175003051757812" y="-23.35832977294922" width="30.350006103515625" height="46.71665954589844"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-5.1750030517578125,-13.358329772949219)"><foreignObject width="10.350006103515625" height="26.716659545898438"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">B</div></foreignObject></g></g></g></g></g></g></svg></div>
+<ul>
+<li>Group replication
+<ul>
+<li>Bidirectional replication</li>
+</ul>
+</li>
+</ul>
+<h3 id="performance-tuning-1">Performance tuning</h3>
+<blockquote>
+<p><strong>Performance tuning</strong> is the act of optimizing the performance of a database without altering its functionality.</p>
+</blockquote>
+<ul>
+<li>Performance tuning is <em>system-specific</em>.</li>
+<li>Tuning is done by identifying and alleviating bottlenecks
+<ul>
+<li>Bottlenecks are points of the processing pipeline that cause the whole transaction to slow down</li>
+<li>Pareto <span class="katex--inline"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height: 0.36687em;"></span><span class="strut bottom" style="height: 0.36687em; vertical-align: 0em;"></span><span class="base"><span class="mrel">→</span></span></span></span></span> 80% of estates belong to 20% of owners</li>
+<li>80% of all the CPU time is taken up by 20% of the code</li>
+<li>Alleviating bottlenecks is done by making the metaphorical bottleneck wider</li>
+<li>Database systems can be modeled as <em>queuing systems</em>, where each system has a queue</li>
+</ul>
+</li>
+<li>Levels
+<ol>
+<li>Hardware level
+<ul>
+<li>More hardware ~= better performance</li>
+<li>Monitoring hardware resources
+<ul>
+<li>Disk usage / I/O Operations</li>
+<li>Buffer fill rate</li>
+<li>CPU utilization</li>
+<li>Incoming / Outgoing network packets</li>
+<li>Latency</li>
+</ul>
+</li>
+<li><strong>Five-minute rule</strong>
+<ul>
+<li>If a page that is randomly accessed is accessed more than once every 5 minutes, it’s more useful to keep it in memory.</li>
+</ul>
+</li>
+<li><strong>One-minute rule</strong>
+<ul>
+<li>If a piece of data that is accessed more than once every minute, it should be kept in memory</li>
+</ul>
+</li>
+<li>Disk redundancies
+<ul>
+<li>RAID systems</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>DB Parameters level
+<ul>
+<li>Tweaking system parameters</li>
+<li>Change configuration files</li>
+<li>Systems may have automatic tuning</li>
+</ul>
+</li>
+<li>High-level DB design
+<ul>
+<li>Schema tuning
+<ul>
+<li>Denormalization
+<ul>
+<li>Add redundancies to tables to avoid constant table joining
+<ul>
+<li>Less resource usage when reading, more resource usage when writing</li>
+</ul>
+</li>
+<li>Cluster frequently merged tables</li>
+<li>Vertically partition relations</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Changing indexing
+<ul>
+<li>Create appropriate indices to speed up slow queries</li>
+<li>Remove unneeded indices</li>
+<li>Change index type</li>
+<li>Clustered index</li>
+</ul>
+</li>
+<li>Using materialized views
+<ul>
+<li><strong>Materialized views</strong> store the view as an additional table</li>
+<li>This makes queries faster</li>
+<li>Overhead from keeping the view up-to-date</li>
+<li>Disk space overhead</li>
+</ul>
+</li>
+<li>Tuning transactions
+<ul>
+<li>Keep transactions short</li>
+<li>Avoid deadlocks</li>
+<li>Use stored procedures</li>
+<li>Combine multiple queries into a single query</li>
+<li>Mini-batch transaction</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>Performance benchmarks
+<ul>
+<li>Throughput</li>
+<li>Response time</li>
+<li>Availability</li>
+</ul>
+</li>
+</ul>
 </div>
 </body>
 
