@@ -82,6 +82,13 @@ Features of a DBMS
 
 ## Database Design
 
+### Overview
+
+* Conceptual design // E/R Modelling
+* Logical design // Transformation into tables
+* Normalization // Remove redundancies
+* Physical design // SQL
+
 ### Conceptual Design
 
 ACID properties
@@ -399,5 +406,197 @@ Access control
 
 > **Groups** are sets of users
 
-### Data Structures
+#### Transactions
+
+> **Transactions** are ways of ensuring a consistent state in the database, by only writing data if it is complete, and rolling it back otherwise
+
+`START TRANSACTION (WITH CONSISTENT SNAPSHOT |READ WRITE | READ ONLY) BEGIN (WORK) (COMMIT (WORK) | ROLLBACK) autocomit (0|1)`
+
+#### Isolation problems
+
+* Dirty read
+* Non-repeatable read
+* Phantom read
+
+Solutions
+
+* Serializeable
+* Read committed
+* Read uncommitted
+
+#### Two-Phase Commit (2PC)
+
+* Ensure serialized transaction by granting/revoking locks
+* Phases
+	* Growing phase -> Obtains locks
+	* Shrinking phase -> Releases locks
+
+#### Handling failures and crashes
+
+* Logical error
+* System error
+	* System crash
+	* Disk failure
+
+### Administration
+
+root access -> Generally a bad idea
+Audits
+Backups
+ACLs
+
 ### Performance Tuning
+
+#### Data dictionary
+
+##### Information Schema
+Information about the database
+Formatted to make information more accessible
+
+##### Performance schema
+Contains information about performance of the database
+
+#### User and permission management
+
+##### Based on GRANT/REVOKE DAC system
+Users - User itself `CREATE USER <username>`
+Privileges - What the user can do `GRANT <username> <privileges> ON <tables>`
+Resource limits - How many system resources the user can access
+Password - Set password for user `{CREATE | ALTER} USER <username> IDENTIFIED BY <password>`
+
+#### Backup and Restore
+
+1. Backup Availability
+	* 3-2-1 rule
+2. Backup Scope
+	* Full
+	* Incremental
+	* Differential
+3. Backup Frequency
+	* Father / Grandfather schemes
+		* 6 daily backups
+		* 3 weekly backups
+		* 11 monthly backups
+		* 1 annual backup
+	* Towers of Hanoi scheme
+4. Backup targets
+	* Different media
+
+Reasons for having Backups
+
+* Safety
+* Legal Requirements (SOx, Basel-II)
+* Compliance
+
+Restore test
+
+#### MySQL Backup tools
+* Cold backup
+	* Offline, physical
+	* Simple copy
+* Warm backup
+	* Locking logical
+	* mysqldump
+* Standby Copy
+	* Hot-swappable
+	* MySQL replication
+* Hot backup
+	* Online, Physical
+	* mysqlbackup
+
+#### Monitoring requirements
+* Availability
+* Historical reporting
+
+##### MySQL Enterprise Monitor
+* Distributed monitoring system
+	* Service management
+	* Agents distributed across monitored hosts
+* Client-side plugins for query analysis
+
+* Advisors
+* Events
+* Notification Groups
+* Graphs
+
+#### Replication
+
+* Two databases with the same data
+* Formats
+	* Statement-based replication (each statement that is executed is transferred to the other database)
+	* Raw-based replication (transfer result of the statement)
+	* Mixed (utilize both systems)
+* Methods
+	* Binlog (Binary Transaction Log)
+	* Replication using GTIDs
+		* Identify each transaction, and supervise that everything runs correctly
+* Topologies
+	* Master/Slave topology
+```mermaid
+graph LR
+A(M) --> B(B)
+```
+* Chained tolpology
+```mermaid
+graph LR
+A(M) --> B(I)
+B -->C(B)
+```
+* Group replication
+	* Bidirectional replication
+
+### Performance tuning
+> **Performance tuning** is the act of optimizing the performance of a database without altering its functionality.
+* Performance tuning is *system-specific*.
+* Tuning is done by identifying and alleviating bottlenecks
+	* Bottlenecks are points of the processing pipeline that cause the whole transaction to slow down
+	* Pareto $\rightarrow$ 80% of estates belong to 20% of owners
+	* 80% of all the CPU time is taken up by 20% of the code
+	* Alleviating bottlenecks is done by making the metaphorical bottleneck wider
+	* Database systems can be modeled as *queuing systems*, where each system has a queue
+* Levels
+	1. Hardware level
+		* More hardware ~= better performance
+		* Monitoring hardware resources
+			* Disk usage / I/O Operations
+			* Buffer fill rate
+			* CPU utilization
+			* Incoming / Outgoing network packets
+			* Latency
+		* **Five-minute rule**
+			* If a page that is randomly accessed is accessed more than once every 5 minutes, it's more useful to keep it in memory.
+		* **One-minute rule**
+			* If a piece of data that is accessed more than once every minute, it should be kept in memory
+		* Disk redundancies
+			* RAID systems
+	2. DB Parameters level
+		* Tweaking system parameters
+		* Change configuration files
+		* Systems may have automatic tuning
+	3. High-level DB design
+		* Schema tuning
+			* Denormalization
+				* Add redundancies to tables to avoid constant table joining
+					* Less resource usage when reading, more resource usage when writing
+				* Cluster frequently merged tables
+				* Vertically partition relations
+		* Changing indexing
+			* Create appropriate indices to speed up slow queries
+			* Remove unneeded indices
+			* Change index type
+			* Clustered index
+		* Using materialized views
+			* **Materialized views** store the view as an additional table
+			* This makes queries faster
+			* Overhead from keeping the view up-to-date
+			* Disk space overhead
+		* Tuning transactions
+			* Keep transactions short
+			* Avoid deadlocks
+			* Use stored procedures
+			* Combine multiple queries into a single query
+			* Mini-batch transaction
+* Performance benchmarks
+	* Throughput
+	* Response time
+	* Availability
