@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Distributed Systems</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__left">
+    <div class="stackedit__toc">
+      
+<ul>
+<li><a href="#distributed-systems">Distributed Systems</a>
+<ul>
+<li><a href="#aims-of-distributed-systems">Aims of distributed systems</a></li>
+<li><a href="#communication-in-distributed-systems">Communication in distributed systems</a></li>
+<li><a href="#security">Security</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+  <div class="stackedit__right">
+    <div class="stackedit__html">
+      <h1 id="distributed-systems">Distributed Systems</h1>
+<h2 id="aims-of-distributed-systems">Aims of distributed systems</h2>
+<ul>
+<li>Performance
+<ul>
+<li>0.1s loading time considered immediate</li>
+<li>Compose web page from multiple distributed sources</li>
+<li>Load balancing</li>
+<li>Scaling</li>
+</ul>
+</li>
+<li>Costs
+<ul>
+<li>Avoid overhead</li>
+<li>Light-weight</li>
+<li>Multi tenancy</li>
+<li>Scaling</li>
+<li>Pay as you go</li>
+</ul>
+</li>
+<li>Availability
+<ul>
+<li>Redundancy</li>
+<li>Fail over</li>
+<li>Load balancing</li>
+<li>Monitoring</li>
+<li>Timeouts</li>
+</ul>
+</li>
+<li>Security
+<ul>
+<li>Authentication</li>
+<li>Authorization</li>
+<li>Encryption</li>
+<li>Defense in depth</li>
+<li>Monitoring</li>
+<li>Backups</li>
+<li>Planning</li>
+</ul>
+</li>
+<li>Manageability
+<ul>
+<li>Monitoring</li>
+<li>Instrumenting</li>
+<li>Updates</li>
+<li>Changes/Migrations</li>
+</ul>
+</li>
+<li>Scalability
+<ul>
+<li>Monitor loads</li>
+<li>Scale up to demand</li>
+<li>Scale down to reduce costs</li>
+<li>Bigger changes (shard DB)</li>
+</ul>
+</li>
+</ul>
+<h2 id="communication-in-distributed-systems">Communication in distributed systems</h2>
+<ul>
+<li>Point to Point</li>
+<li>Localized multicast</li>
+<li>Types
+<ul>
+<li>Request-Response (stateless)</li>
+<li>WebSockets</li>
+<li>Streaming</li>
+</ul>
+</li>
+<li>Text-based
+<ul>
+<li>Plaintext</li>
+<li>HTML</li>
+<li>JSON</li>
+<li>XML</li>
+<li>YAML</li>
+<li>Etc.</li>
+</ul>
+</li>
+<li>Binary
+<ul>
+<li>BSON</li>
+<li>Colfer</li>
+<li>Hessian</li>
+<li>Apache Avro</li>
+</ul>
+</li>
+</ul>
+<h2 id="security">Security</h2>
+<p>Problems</p>
+<ul>
+<li>Confidentiality - Keep data from unauthorized access</li>
+<li>Integrity - prevent unauthorized change of data</li>
+<li>Availability - Ability to access data</li>
+<li>Non-reprudiation - Prevent future deniability</li>
+</ul>
+<p>Solutions</p>
+<ul>
+<li>Symmetric encryption
+<ul>
+<li>Single key</li>
+<li>Fast</li>
+<li>Key distribution</li>
+<li>Chaining</li>
+<li>Integrity</li>
+<li>Example: AES</li>
+<li>Chaining
+<ul>
+<li>The previous block influences the next block -&gt; Repetitions eliminated</li>
+<li>+Nonce +Counter -&gt; Counter mode (CTR)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Asymmetric encryption
+<ul>
+<li>2 keys</li>
+<li>One for encryption, one for decryption</li>
+<li>RSA</li>
+<li>Rely on prime factorization</li>
+<li>One has to verify the public key actually corresponds to the person
+<ul>
+<li>PKI
+<ul>
+<li>Users trust CA</li>
+<li>CA issues certificate to site</li>
+<li>Site present certificate</li>
+<li>CAs can be hacked</li>
+</ul>
+</li>
+<li>PGP / GPG
+<ul>
+<li>Simple public key as text</li>
+<li>Often used for e-mails</li>
+<li>Key exchange parties</li>
+</ul>
+</li>
+<li>Personal exchange</li>
+<li>Blockchain
+<ul>
+<li>BTC wallet is a private key</li>
+<li>Public key is identifier</li>
+</ul>
+</li>
+<li>Hashing
+<ul>
+<li>One-way encryption</li>
+<li>SHA512, ARGON</li>
+<li><strong>DO NOT USE:</strong> MD5, SHA1</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>OAuth
+<ul>
+<li>Identity provider controls all identities</li>
+<li>Easy for the user</li>
+<li><code>Login with google</code> button works that way</li>
+</ul>
+</li>
+<li>Secure Remote Password
+<ul>
+<li>Store a hash of the password and salt</li>
+<li>Prove knowledge of password using DH</li>
+<li>Produce session key</li>
+<li>No plaintext password revealed to the server</li>
+</ul>
+</li>
+<li>Trusted timestamping
+<ul>
+<li>Trusted third party signs the timestamp</li>
+</ul>
+</li>
+<li>Key splitting
+<ul>
+<li>N of M systems</li>
+<li>Calculate M keys based on the original</li>
+<li>N of them needed to get the original secret</li>
+</ul>
+</li>
+<li>Cryptography – easy on the surface, difficult when you dig down.
+<ul>
+<li>Small mistakes can compromise security</li>
+<li><strong>Stick to existing solutions</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+</body>
+
+</html>
