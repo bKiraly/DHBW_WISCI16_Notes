@@ -120,3 +120,81 @@ Solutions
 	* Cryptography -- easy on the surface, difficult when you dig down.
 		* Small mistakes can compromise security
 		* **Stick to existing solutions**
+
+### Distribution transparency
+
+> **Transparency** is the idea of hiding certain information, in order to make it look as though the distributed system was one unified whole.
+
+* Access
+* Location
+* Migration
+* Relocation
+* Replication
+* Concurrency
+* Failure
+
+### Openness
+
+* Using standard syntax and semantics
+* Interfaces -- IDL
+* Interface semantics
+* Interoperability
+* Portability
+* Extensiblity
+
+### Beginner assumptions
+
+* Network is reliable
+* Network is secure
+* Network is homogeneous
+* The topology does not change
+* Latency is zero
+* Bandwidth is infinite
+* Transport cost is zero
+* There is one admin/domain 
+
+### Virtualization
+
+* Runs the program in a specific environment different from the environment outside the Virtualization Manager
+* Types
+	* Paravirtualization (e.g. JVM)
+	* Bare-metal hypervisor (e.g. VMWare)
+	* Hosted hypervisor (e.g. VirtualBox)
+* Separate privileged calls from unprivileged ones
+* Solutions
+	* Emulate all instructions
+	* Warp nonprivileged instructions to divert control to the VMMs
+	* Paravirtualization
+* XaaS
+	* Infrastructure as a Service
+	* Platform as a Service
+	* Software as a Service
+
+### Networked UI
+
+* X-window
+	* Each application is a client to the X-server
+	* They use the X-protocol to communicate with the X-server
+	* The X-server displays the image on the terminal
+
+### Server architecture
+
+* Iterative vs Concurrent servers
+	* Iterative server
+		* The server goes through each request one-by-one
+	* Concurrent servers
+		* The server creates a separate thread for each process
+* Stateful vs Stateless servers
+	* Stateful servers
+		* Keeps track of client
+		* Efficient
+		* Fragile
+	* Stateless server
+		* Does not keep track of client
+		* Inefficiencies
+		* Robust
+	* Distributed systems
+		* Entry system
+		* Load balancing
+		* Processing servers
+		* Database servers
