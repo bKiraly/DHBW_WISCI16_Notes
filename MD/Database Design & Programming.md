@@ -600,3 +600,205 @@ B -->C(B)
 	* Throughput
 	* Response time
 	* Availability
+
+Nicolai Andler: Methods and tools for project management workshops and consulting
+
+## Centralized systems
+
+> For a more detailed explanation, please refer to the operating systems notes
+
+* Von Neumann Architecture (<-> Harward Architecture)
+* Client-Server systems
+	* Back-end -- Manages data
+	* Front-end -- Tools and GUI facilities
+
+### Transaction Server processes
+
+* Server process
+	* Receive user queries
+	* Usually multithreaded
+	* Multiple processes
+* Lock management process
+* Database writer process
+	* Output modified buffer blocks to disks continually
+* Log writer
+	* Writes the transaction lock continually to disk
+* Checkpoint process
+	* Performs periodic checkups
+* Process monitor process
+	* Monitors other processes
+
+### Data servers
+
+* High-speed LAN
+* Data is shipped to the client for processing and then shipped back when it's done
+* Object-oriented DBs
+* Page-shipping vs Item-shipping
+	* Shipping -- Delivering data
+	* Prefetching pages?
+	* Smaller units -- More messages
+* Locking
+	* Overhead of getting locks is high
+	* Grants locks on prefetched items
+	* Locks on prefetched items can be called back by the server
+	* Locks on page can be de-escalated to items on the page
+* Data caching
+	* Cached on client between transactions
+	* Cache-choherency -- Check if cache is up-to-date
+	* Check done when requesting lock
+* Lock caching
+	* Server administers everything
+
+### Parallel systems
+
+* Parallel database systems consist of multiple processors, disks connected over the network
+* A **Coarse-grain machine** has a few powerful processors
+* A **Fine-grain** or **massively parallel** machine utilizes thousands of small processing units
+* Performance metrics
+	* Throughput
+	* Response
+* Speedup
+	* Task runs faster on a bigger machine
+	* Scales linearly with machine size -> good
+* Scaleup
+	* Bigger task runs in the same time on a larger system
+	* Time required stays the same  -> good
+* Batch and Transactional scaleup
+	* Batch scaleup
+	* Transaction scaleup
+		* Numerous small queries submitted independently by many users
+		* TPSs, time-sharing systems
+	* Limiting factors
+		* Startup cost
+			* Parallelism need set-up time
+		* Interference
+			* Synchronizing resources
+		* Skew
+			* Increasing degree of parallelism increases the variance in service times. Overall time is determined by the *slowest* service
+
+### Interconnecting network architectures
+
+* Bus
+	* Simple linear connection between systems
+	* Simple, but does not scale well
+* Mesh
+	* Components arranged in a grid, each component connected to adjacent components
+	* Lower number of connections
+* Hypercube
+	* Same as grid, but more adjacent nodes
+	* More redundancy
+
+### Parallel DB architectures
+
+* Shared memory
+	* Efficient communication between processors
+	* Von-Neumann bottleneck -- Bus system unable to handle more than 32 or 64 processors
+* Shared disk
+	* All CPUs can access disks
+	* Fault-tolerance -- If a processor fails the others can take over
+	* Overhead occurs in the interconnection to the disk subsystem
+	* Connection between processors is slower
+* Nothing shared
+	* Node consists of CPU, Memory, Disk
+	* Scales well to lots of processors
+	* High overhead
+* Hierarchical -- Hybrid of all the above
+
+### Distributed DBs
+
+* Homogenious distributed systems
+	* Same software and setup on all sites
+* Heterogenious distributed systems
+	* Different functionality on each site
+	* Integrate existing DBs
+* Local vs global transactions
+	* Local transactions access data from a single site
+	* Global transactions access data from multiple sites -- two-phase commit
+
+### Pros and cons
+
+* Sharing data
+* Autonomy
+* High availability
+* Complexits
+
+### Possible implementation difficulties
+
+* Atomicity through 2PC
+* Sometimes other systems also used
+* Distributed concurrency control
+* Data items replicated
+
+### Network types
+
+* LAN
+	* NAS
+	* SAN
+* WAN
+	* WAN (i.e. the internet) to distribute large systems
+	* Groupware (lotus notes)
+
+### Replication
+* The data is copied to multiple sites
+* Advantages
+	* Availability
+	* Parallelism
+	* Reduced data transfer
+* Disadvantages
+	* Increased cost of updates
+	* Increased complexity of concurrency control
+
+### Fragmentation
+* Data is split among multiple sites
+* Horizontal fragmentation (homogeneous)
+* Vertical fragmentation (heterogeneous)
+
+### Naming things in distributed systems
+* Every data item must have a system-wide unique name
+* Solutions
+	* Name server gives names to all items - Single point of failure, performance bottleneck
+	* Use of prefixes- new names for everything, non-network-transparent
+	* Use aliases - stored on each site, make prefixed data network-transparent
+
+### Alternative solutions of transaction processing
+* Error conditions
+	* Failure situations
+* Persistent messaging workflows
+	* Workflow = Structured way of sending a message
+
+### Distributed lock management
+* All sites have lock managers
+* Work is distributed, more robust to failures
+* Deadlock detection is more complicated
+* Variants
+	* Primary copy -> Master-slave model
+	* Majority copy -> If more than 50% of the sites approve the lock, the resource is considered locked
+	* Biased protocol
+		* Makes reading easier
+		* Shared locks are easier to acquire
+		* Exclusive locks need all sites
+	* Quorum consensus
+		* Read- and Write locks have a certain weight
+		* Certain requests can have different weights (weights determine how many nodes are needed for lock)
+
+### Availability
+* Robustness
+	* Detect failures
+	* Reconfigure the system so that computation may continue
+	* Recovery
+* Reconfiguration
+* Trading consistency for availability
+
+### Consistency
+* Consistency in DBs (ACID)
+	* Database integrity standards
+* Strong consistency
+	* All behaves like a local system
+* Weak consistency
+* BASE (Basically Available, Soft-state, Eventual consistency)
+
+### LDAP (Lightweight Directory Access Protocol)
+* LDAP Model
+* Data Manipulation
+* Distributed directory trees
+* e.g. Microsoft Active Directory, RDNs
