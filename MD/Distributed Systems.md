@@ -198,3 +198,32 @@ Solutions
 		* Load balancing
 		* Processing servers
 		* Database servers
+
+### Messaging
+
+* Persistent vs transient messaging
+* Synchronous vs asynchronous messaging
+
+### RPCs
+
+* Remote procedure calls
+* Functions on servers
+* Encoding negotiation
+* Async RPCs -> callback called when the server is done
+
+### MPI
+
+* Used in supercomputers
+* Specific cases
+
+### Message-oriented middleware
+
+* Queue managers
+* Message brokers
+	* Transform and relay messages based on source and destination addresses and formats
+* Multicast (Application level)
+	* Link stress
+	* Stretch
+* Epidemic protocols
+	* Anti-entropy
+	* Rumor spreading
