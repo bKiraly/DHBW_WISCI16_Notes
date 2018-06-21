@@ -227,3 +227,95 @@ Solutions
 * Epidemic protocols
 	* Anti-entropy
 	* Rumor spreading
+
+### RESTful services
+
+* Usually via HTTP(S)
+* Messages can be XML, JSON, etc.
+* Based on URIs
+* Resources
+* CRUD operations
+
+CRUD:
+-Create 
+-Run
+-Update
+-Delete
+Client-Server architecture
+-Seperating concers
+    -UI from processing from data storage
+    -Better scalability
+    -Better support for migration, update, replace
+    
+Statelessness
+* No client context stored in server between requests
+    * State stored in the client
+    * Can be also in the underlying DB
+    * Client sends a request when changing state
+Cacheability: Messages have to define wheter they are cacheable or not -> Perfomance improvements
+Layered system:
+* Client cannot tell if it is talking to:
+    * Gateway
+    * Authentification server
+    * Load balancer
+    * App server
+Code on demand:
+* Server can extend client by providing code
+Uniform interface:
+* Resource identification in request
+    * Resource identified directly in the URI
+    * Resource representation seperate from internal
+* Resource manipulation through representation
+    * Resource representation has enough info to manipulate it in the server
+* Self-descriptive messages
+    * Each messages has enough info to process it
+* Hypermedia As The Engine Of Application State HATEOAS
+
+#### REST Maturity levels
+0. Swamp of POX
+	* Communicate over HTTP
+1. Resources
+	* URI path already correct
+2. Verbs
+	* URI Parameters now correct
+3. HATEOAS
+	* Discoverability
+	* Return all resources needed for future replies
+
+#### Advantages of REST
+* Simple service
+* No state mismatch
+* Easy load balancing
+* Easy service comparison
+* Correct verbs make service clearer
+
+#### Naming things
+* Pure name -- random string
+* Identifier -- A name with a  specific property
+* Flat naming
+* Broadcasting
+* ARP
+* Forwarding pointer
+* Hierarchical locations services
+	* Create hierarchies based on geographical data
+	* Keyspaces create trees
+* Structured naming
+	* Each level defines its namespace
+	* Attach attributes to any node
+	* DNS
+	* NFS file name
+	* Phone number
+	* IP address
+* Links
+	* Hard link -- Point to another node
+	* Soft link -- Contain the name of another node
+* Mounting
+* Foreign namespaces can be mounted in a node on the root namespace
+* Name spaces can be split among multiple machines in a distributed way
+* DNS name resolution (see Communication Systems)
+* UUIDs and GUIDs
+	* Practically unique
+	* No central coordination
+	* 128-bit identifiers
+	* RFC 4122 defines uniform resource name
+* 
