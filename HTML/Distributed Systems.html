@@ -364,6 +364,140 @@
 </ul>
 </li>
 </ul>
+<h3 id="restful-services">RESTful services</h3>
+<ul>
+<li>Usually via HTTP(S)</li>
+<li>Messages can be XML, JSON, etc.</li>
+<li>Based on URIs</li>
+<li>Resources</li>
+<li>CRUD operations</li>
+</ul>
+<p>CRUD:<br>
+-Create<br>
+-Run<br>
+-Update<br>
+-Delete<br>
+Client-Server architecture<br>
+-Seperating concers<br>
+-UI from processing from data storage<br>
+-Better scalability<br>
+-Better support for migration, update, replace</p>
+<p>Statelessness</p>
+<ul>
+<li>No client context stored in server between requests
+<ul>
+<li>State stored in the client</li>
+<li>Can be also in the underlying DB</li>
+<li>Client sends a request when changing state<br>
+Cacheability: Messages have to define wheter they are cacheable or not -&gt; Perfomance improvements<br>
+Layered system:</li>
+</ul>
+</li>
+<li>Client cannot tell if it is talking to:
+<ul>
+<li>Gateway</li>
+<li>Authentification server</li>
+<li>Load balancer</li>
+<li>App server<br>
+Code on demand:</li>
+</ul>
+</li>
+<li>Server can extend client by providing code<br>
+Uniform interface:</li>
+<li>Resource identification in request
+<ul>
+<li>Resource identified directly in the URI</li>
+<li>Resource representation seperate from internal</li>
+</ul>
+</li>
+<li>Resource manipulation through representation
+<ul>
+<li>Resource representation has enough info to manipulate it in the server</li>
+</ul>
+</li>
+<li>Self-descriptive messages
+<ul>
+<li>Each messages has enough info to process it</li>
+</ul>
+</li>
+<li>Hypermedia As The Engine Of Application State HATEOAS</li>
+</ul>
+<h4 id="rest-maturity-levels">REST Maturity levels</h4>
+<ol start="0">
+<li>Swamp of POX
+<ul>
+<li>Communicate over HTTP</li>
+</ul>
+</li>
+<li>Resources
+<ul>
+<li>URI path already correct</li>
+</ul>
+</li>
+<li>Verbs
+<ul>
+<li>URI Parameters now correct</li>
+</ul>
+</li>
+<li>HATEOAS
+<ul>
+<li>Discoverability</li>
+<li>Return all resources needed for future replies</li>
+</ul>
+</li>
+</ol>
+<h4 id="advantages-of-rest">Advantages of REST</h4>
+<ul>
+<li>Simple service</li>
+<li>No state mismatch</li>
+<li>Easy load balancing</li>
+<li>Easy service comparison</li>
+<li>Correct verbs make service clearer</li>
+</ul>
+<h4 id="naming-things">Naming things</h4>
+<ul>
+<li>Pure name – random string</li>
+<li>Identifier – A name with a  specific property</li>
+<li>Flat naming</li>
+<li>Broadcasting</li>
+<li>ARP</li>
+<li>Forwarding pointer</li>
+<li>Hierarchical locations services
+<ul>
+<li>Create hierarchies based on geographical data</li>
+<li>Keyspaces create trees</li>
+</ul>
+</li>
+<li>Structured naming
+<ul>
+<li>Each level defines its namespace</li>
+<li>Attach attributes to any node</li>
+<li>DNS</li>
+<li>NFS file name</li>
+<li>Phone number</li>
+<li>IP address</li>
+</ul>
+</li>
+<li>Links
+<ul>
+<li>Hard link – Point to another node</li>
+<li>Soft link – Contain the name of another node</li>
+</ul>
+</li>
+<li>Mounting</li>
+<li>Foreign namespaces can be mounted in a node on the root namespace</li>
+<li>Name spaces can be split among multiple machines in a distributed way</li>
+<li>DNS name resolution (see Communication Systems)</li>
+<li>UUIDs and GUIDs
+<ul>
+<li>Practically unique</li>
+<li>No central coordination</li>
+<li>128-bit identifiers</li>
+<li>RFC 4122 defines uniform resource name</li>
+</ul>
+</li>
+<li></li>
+</ul>
 
     </div>
   </div>
