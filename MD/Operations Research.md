@@ -85,11 +85,13 @@ D --> B
 2. Create table with the coefficients á la Gaussian method of elimination
 3. Check if the coefficients for $(0)$ are non-negative
 4. If no
-	1. Find the column of the lowest coefficient, call it the **Pivot column**, and the variable corresponding to the coefficient the **Entering basic variable**
-	2. Find the positive coefficients in the pivot column
-	3. Divide the right-hand side by the pivot column for both, find the lowest result
-	4. The row with the lowest result is your **Pivot row** and the variable corresponding to it the **Leaving basic variable**
-	5. The intersection of the two is the **Pivot number**
-	6. Divide the equation so that the pivot number is one
-	7. In all equations change the coefficient of the *leaving basic variable*, so that the coefficient of the *entering basic variable* is zero
-	8. The entering basic variable is now the basic variable 
+	4.1. Find the column of the lowest coefficient, call it the **Pivot column**, and the variable corresponding to the coefficient the **Entering basic variable**
+	4.2. Find the positive coefficients in the pivot column
+	4.3. Divide the right-hand side by the pivot column for both, find the lowest result
+	4.4. The row with the lowest result is your **Pivot row** and the variable corresponding to it the **Leaving basic variable**
+	4.5. The intersection of the two is the **Pivot number**
+	4.6. Divide the equation so that the pivot number is one
+	4.7. In all equations change the coefficient of the *leaving basic variable*, so that the coefficient of the *entering basic variable* is zero
+	4.8. The entering basic variable is now the basic variable is now the basic variable of the equation in the pivot row
+	4.9. Goto 3
+5. If yes then the solution is optimal, calculate Z from the coefficients of equation $(0)$
