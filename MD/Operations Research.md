@@ -81,7 +81,7 @@ D --> B
 
 ### Tabular method
 
-1. Normalize equations as before
+1. Change the equations to the augmented form as before
 2. Create table with the coefficients á la Gaussian method of elimination
 3. Check if the coefficients for $(0)$ are non-negative
 4. If no
