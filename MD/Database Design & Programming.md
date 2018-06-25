@@ -802,3 +802,112 @@ Nicolai Andler: Methods and tools for project management workshops and consultin
 * Data Manipulation
 * Distributed directory trees
 * e.g. Microsoft Active Directory, RDNs
+
+### Decision support systems
+
+* Data warehouse
+	* contains lotsa data
+	* ETL (Extract, Transform, Load)
+* Data mart
+	* You can get individual data
+* Data lake
+	* Contains non-structured data
+* Source driven architecture
+* Destination-driven architecture
+* Dimension values are encoded in small integers
+	* Snowflake-schema
+	* Star-schema
+* Data mining
+	* Prediction
+	* Classification
+	* Regression
+* Decision trees
+* Construction of decision trees
+	* Greedy approach
+	* Gini measure
+	* Information gain
+	* Baysian classifiers
+
+## Possible exam questions
+
+* What three mySQL command line clients are there?
+	* mysql
+	* mysqladmin
+	* mysqldump
+	* mysqlpump
+* What are the two most important internal administration schemata in mySQL
+	* mysql
+	* INFORMATION_SCHEMA
+	* PERFORMANCE_SCHEMA
+* Create a user called "joe" identified by the password "Heureka!" with access to the whole system
+	* CREATE USER 'joe' IDENTIFIED BY 'Heureka!'
+	* GRANT ALL ON * to 'joe'
+* Describe the 3-2-1 backup rule
+* Explain what distinguishes full, incremental and differential backups
+* Which tool is employed to create a warm (logical) backup in mySQL, what are the disadvantages?
+* Name three tunable properties
+	* Hardware
+	* Transactions
+	* Config parameters
+	* Indices
+	* Denormalization
+	* Materiaized views
+* Describe RAID 1 and 5
+* Which are the two performance benchmarks
+	* Response time
+	* Throughput
+* Into which kind of systems can DB servers be categorized
+	* Transactional servers
+		* Troughput
+	* Decision support systems
+		* Large systems, few transactions
+* Six common internal processes of a transaction database servers
+	* Server process
+		* Receive user queries
+		* Usually multithreaded
+		* Multiple processes
+	* Lock management process
+	* Database writer process
+		* Output modified buffer blocks to disks continually
+	* Log writer
+		* Writes the transaction lock continually to disk
+	* Checkpoint process
+		* Performs periodic checkups
+	* Process monitor process
+		* Monitors other processes
+* What is a system scaleup
+* What factors are limiting the scaleup of a system
+* What is the difference between a homogeneous and a heterogeneous distributed database?
+* What's the difference between a local and a global transaction?
+* Name at least two methods used for coordinating the execution of distributed transactions
+	* 2PC
+	* Persistent messaging
+	* Workflow
+* Name the phases of a two-phase commit
+	* Obtaining the decision
+	* Recording the decision
+* Define the term "Distributed database system"
+	* Data spread across different sites
+	* Requires distributed transactions
+	* Can be heterogeneous or homogeneous
+* Which methods are applied for storing data across distributed sites?
+	* Vertical or Horizontal fragmentation
+	* Replication
+* Which agents can be used to control concurrency in distributed environments
+	* Global single lock manager
+	* Distributed lock manager
+* Explain the CAP theorem
+	* Consistency
+	* Availability
+	* Partition tolerance
+* For distributed systems how is the relaxed form of the ACID requirements called?
+	* BASE
+		* Basically Available
+		* Soft-state
+		* Eventual consistency
+* Define "Decision support systems" and give some examples
+	* Decision support systems are often based on data collected by on-line transaction processing systems
+		* Data analysis
+		* Statistical analysis
+		* Data mining
+		* Data warehouse
