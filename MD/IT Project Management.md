@@ -436,3 +436,71 @@ Agile
 * Learning curve related costs
 * Prorated costs
 * Reserves
+
+#### Stakeholder management
+
+* Stakeholder influence and interest
+* Formal organization
+	* Org. chart
+* Informal organization
+	* Networking
+	* Bypasses formal organization
+	* Know as much as possible about the informal organization
+* Stakeholder analysis
+	* Develop a list of stakeholders
+	* Identify stakeholder alignment
+	* Determine the degree of influence
+	* Define a role per stakeholder
+	* Identify an objective per stakeholder
+	* Identify a strategy per stakeholder
+
+#### Project communication plan
+
+* Information requirements
+* Type of report or metric
+* Timings/Availabilities
+* Medium/Format
+
+#### Closure plan
+
+* Changeover
+	* Direct cutover
+	* Parallel
+	* Phased
+* Project state at the end of project
+	* Normal
+	* Premature
+	* Perpetual
+	* Failed
+	* Changed priorities
+* Project acceptance
+* Final project - minimum requirements
+	* Project summary
+	* Project description
+	* MOV
+	* Scope, schedule, budget and quality objectives
+	* Comparison: planned/actual
+* Final close-out meeting
+	* Formally transfers product
+	* Acknowledges contributions
+	* Receives formal sign-off
+* Deliverables until July 3rd
+	* Communication plan
+	* Project closure plan
+
+### Replication
+
+* Reasons for replication
+	* Reliability
+	* Performance
+
+### Consistency
+
+* Guaranteed consistency
+	* Locking
+	* Performance problems
+* Eventual consistency
+	* Relaxed
+	* The changes will be replicated to other replicas
+	* This is not a locking call
+* 
