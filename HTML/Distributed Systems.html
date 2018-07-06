@@ -496,7 +496,115 @@ Uniform interface:</li>
 <li>RFC 4122 defines uniform resource name</li>
 </ul>
 </li>
-<li></li>
+</ul>
+<h3 id="coordination">Coordination</h3>
+<ul>
+<li>Clock coordination
+<ul>
+<li>NTP</li>
+<li>UTC</li>
+<li>Reference broadcast synchronization</li>
+<li>Happened-before relationships</li>
+</ul>
+</li>
+<li>Logical locks
+<ul>
+<li>Lamports clocks</li>
+<li>Vector locks</li>
+</ul>
+</li>
+<li>Mutual exclusion
+<ul>
+<li>Lamports clocks for mutual exclusion</li>
+<li>Permission based
+<ul>
+<li>Coordinator decides who gets the lock</li>
+</ul>
+</li>
+<li>Token based
+<ul>
+<li>Token-ring overlay network</li>
+</ul>
+</li>
+<li>Mutual exclusion Ricart &amp; Agrawala</li>
+<li>Decentralized algorithms</li>
+</ul>
+</li>
+<li>Election algorithms
+<ul>
+<li>Find coordinators</li>
+<li>All processes have unique IDs</li>
+<li>All processes know of all other processes in the system</li>
+<li>Election means identifying if the process with the highest ID is up</li>
+<li>Elections in ring systems
+<ul>
+<li>Send a message on the ring with the ID</li>
+<li>It goes around, and each node adds its ID</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Positioning of a node
+<ul>
+<li>Calculate distance to landmarks</li>
+<li>GPS</li>
+</ul>
+</li>
+</ul>
+<h3 id="replication">Replication</h3>
+<ul>
+<li>Reasons for replication
+<ul>
+<li>Reliability</li>
+<li>Performance</li>
+</ul>
+</li>
+</ul>
+<h4 id="consistency">Consistency</h4>
+<ul>
+<li>Guaranteed consistency
+<ul>
+<li>Locking</li>
+<li>Performance problems</li>
+<li>Sequence locking</li>
+</ul>
+</li>
+<li>Eventual consistency
+<ul>
+<li>Relaxed</li>
+<li>The changes will be replicated to other replicas</li>
+<li>This is not a locking call</li>
+<li>Monotonic reads</li>
+</ul>
+</li>
+</ul>
+<h4 id="content-distribution">Content distribution</h4>
+<ul>
+<li>Propagate notification/invalidation</li>
+<li>Transfer the data</li>
+<li>Propagate the update operation</li>
+</ul>
+<h4 id="pull-vs-push">Pull vs push</h4>
+<ul>
+<li>Push
+<ul>
+<li>Server-initiated</li>
+</ul>
+</li>
+<li>Pull
+<ul>
+<li>Client initiated poll</li>
+</ul>
+</li>
+</ul>
+<h4 id="replication-methods">Replication methods</h4>
+<ul>
+<li>Primary based
+<ul>
+<li>Primary handles all the writes</li>
+<li>Primary has to sign off on all writes</li>
+</ul>
+</li>
 </ul>
 
     </div>
