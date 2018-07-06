@@ -318,4 +318,71 @@ Uniform interface:
 	* No central coordination
 	* 128-bit identifiers
 	* RFC 4122 defines uniform resource name
-* 
+
+### Coordination
+
+* Clock coordination
+	* NTP
+	* UTC
+	* Reference broadcast synchronization
+	* Happened-before relationships
+* Logical locks
+	* Lamports clocks
+	* Vector locks
+* Mutual exclusion
+	* Lamports clocks for mutual exclusion
+	* Permission based
+		* Coordinator decides who gets the lock
+	* Token based
+		* Token-ring overlay network
+	* Mutual exclusion Ricart & Agrawala
+	* Decentralized algorithms
+* Election algorithms
+	* Find coordinators
+	* All processes have unique IDs
+	* All processes know of all other processes in the system
+	* Election means identifying if the process with the highest ID is up
+	* Elections in ring systems
+		* Send a message on the ring with the ID
+		* It goes around, and each node adds its ID
+* Positioning of a node
+	* Calculate distance to landmarks
+	* GPS
+
+
+### Replication
+
+* Reasons for replication
+	* Reliability
+	* Performance
+
+#### Consistency
+
+* Guaranteed consistency
+	* Locking
+	* Performance problems
+	* Sequence locking
+* Eventual consistency
+	* Relaxed
+	* The changes will be replicated to other replicas
+	* This is not a locking call
+	* Monotonic reads
+
+#### Content distribution
+
+* Propagate notification/invalidation
+* Transfer the data
+* Propagate the update operation
+
+#### Pull vs push
+
+* Push
+	* Server-initiated
+* Pull
+	* Client initiated poll
+
+#### Replication methods
+
+* Primary based
+	* Primary handles all the writes
+	* Primary has to sign off on all writes
