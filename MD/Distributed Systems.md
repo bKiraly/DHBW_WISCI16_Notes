@@ -386,3 +386,22 @@ Uniform interface:
 * Primary based
 	* Primary handles all the writes
 	* Primary has to sign off on all writes
+
+## Fault tolerance
+
+### Goals
+* Partial failure != total failure
+* Ideally failure means no degradation
+* If degradation is inevitable, it should degrade gracefully
+* In the case of catastrophic failure it should fail safely
+
+### Dependability
+* Parts of a system may depend on other parts of a system
+
+### Metrics
+* Availability
+* Reliability
+* Safety
+* Maintainability
+
+
