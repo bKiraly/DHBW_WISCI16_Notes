@@ -18,6 +18,7 @@
 <li><a href="#aims-of-distributed-systems">Aims of distributed systems</a></li>
 <li><a href="#communication-in-distributed-systems">Communication in distributed systems</a></li>
 <li><a href="#security">Security</a></li>
+<li><a href="#fault-tolerance">Fault tolerance</a></li>
 </ul>
 </li>
 </ul>
@@ -605,6 +606,25 @@ Uniform interface:</li>
 <li>Primary has to sign off on all writes</li>
 </ul>
 </li>
+</ul>
+<h2 id="fault-tolerance">Fault tolerance</h2>
+<h3 id="goals">Goals</h3>
+<ul>
+<li>Partial failure != total failure</li>
+<li>Ideally failure means no degradation</li>
+<li>If degradation is inevitable, it should degrade gracefully</li>
+<li>In the case of catastrophic failure it should fail safely</li>
+</ul>
+<h3 id="dependability">Dependability</h3>
+<ul>
+<li>Parts of a system may depend on other parts of a system</li>
+</ul>
+<h3 id="metrics">Metrics</h3>
+<ul>
+<li>Availability</li>
+<li>Reliability</li>
+<li>Safety</li>
+<li>Maintainability</li>
 </ul>
 
     </div>
