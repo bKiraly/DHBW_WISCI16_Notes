@@ -95,3 +95,68 @@ D --> B
 	4.8. The entering basic variable is now the basic variable is now the basic variable of the equation in the pivot row
 	4.9. Goto 3
 5. If yes then the solution is optimal, calculate Z from the coefficients of equation $(0)$
+
+### Equality constraints
+
+* If we have an equality constraint (constraint of form $\sum_{1}^n(ai*xi) = b$) we use the *Big $M$ method*
+	* Introduce artificial variable $\bar{x_4}$
+	* Create penalty $M$, which is a very large number
+
+### Dealing with negative numbers
+
+* Use the same as before, but replace the free variable with two other variables, each of which is non-negative
+* For example $x_1$ is replaced with $x_1 = x_1^+ -x_1^- x_1^+,x_1^- > 0$
+
+## Post-Optimality analysis
+
+* Re-Optimization
+	* For a very large problem small changes can benefit from previous solutions
+* Shadow price
+	* Shows the behavior of the price assuming small changes in inputs
+* Sensitivity analysis
+	* Sensitivity analysis shows the robustness of the model to changes to the assumptions
+	* Allows acceptable ranges around coefficients
+
+## Duality
+
+* Every linear programming model has a corresponding problem called a *dual*
+* Used in sensitivity analysis
+* Original problem is then called the *primal* problem
+* Constructed by using using the formula in the slides
+* If the primal has no solution, then the dual also has no solutions
+
+## Integer programming
+
+> **Integer programming** is a type of problems, where all the decision variables are *integers*
+
+### Binary Integer programming
+
+> **Binary integer programming** is a type of problems, where all the decision variables are *boolean values*
+
+## Branch and Bound Algorithm
+### Initialization
+Set $Z^* = -\infty$ and apply step 2 and 3 from below to the original problem. 
+### Iteration
+1. Branching - Among the remaining subproblems, select one created *most recently*. Branch from this node by fixing the next variable to 0 or 1 (two separate branches)
+2. Bounding - For each new subproblem, obtain its bound by applying LP relaxation. Round down Z for the resulting solution
+3. Fathoming - For each new subproblem, apply the three fathoming tests and discard subproblems that are fathomed by the tests. If all subproblems are fathomed this way, the solution is optimal
+	1. Is the bound $\leq Z^*$
+	2. Its LP relaxation has no feasible solution
+	3. Optimal solutions for LP relaxation is integer
+
+## Game Theory
+
+> **Game theory** is the formal mathematical description of competitive scenarios
+
+We will focus on two player zero sum game (sum of all winnings equals zero)
+
+> **Strategy** is a predetermined rule that specifies all responses for each state of the game
+
+The goal of game theory is to develop a rational criteria to develop a strategy
+
+**Assumptions**
+
+* Both players are rational
+* Both players choose strategies that promote their own welfare
+
+> **Vale of the game** refers to the payout to player one if both players play optimally. If it is zero, the game is said to be *fair*.
