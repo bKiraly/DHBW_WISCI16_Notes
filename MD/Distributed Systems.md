@@ -401,7 +401,185 @@ Uniform interface:
 ### Metrics
 * Availability
 * Reliability
+	* MTTF (Mean Time To Failure)
+	* MTTR (Mean Time To Repair)
+	* MTBF (Mean Time Between Failures)
 * Safety
 * Maintainability
 
+### Terminology
+* Failure - Symptom of the error
+* Error - Reason for failure
+* Fault - What created the error
+* Fault prevention - Prevent the occurrence of fault
+* Fault tolerance - Build the system in a way that it masks faults
+* Fault removal - Remove faults
+* Fault forecasting - Know of faults
+* Transient fault - Happens once, never again
+* Intermitten fault - Happens every once in a while
+* Permanent fault - Faulty until fixed
 
+### Types of failures
+* Crash failure
+	* Fail stop
+	* Fail noisy
+	* Fail silent
+	* Fail safe
+	* Fail arbitrary
+* Omission failure
+* Timing failure
+* Response failure
+* Arbitrary failure
+	* Omission failure
+	* Commission failure
+
+### Async and sync systems
+* Async system - Can not reliably detect crash failures
+* Synchronous system - Detect omission and timing failures
+* Partially synchronous systems - Can reliably detect crash failures
+
+### Types of systems
+* Flat system
+* Hierarchical system
+
+### Degree of fault-tolerance
+* k-fault tolerant = The system can work with k parts failing simultaneously
+
+### Realistic Consensus (Paxos)
+* Partially async system
+* Communication is unreliable
+* Corrupted messages detected
+* Operations are deterministic
+* Crash failures: yes; Arbitrary failures: no
+* Processes do not conclude
+
+Exam stuff
+========
+
+* Partitioning / Distributed Hash Tables
+* High availability / Vector clocks
+* Failure tolerance / Sloppy Quorum
+* Permanent failures / Merkle trees (Hashes of hashes below)
+* Membership / Gossip-based membership protocol
+
+### Networking
+* Point to Point connections
+* Transfer speeds of different protocols
+
+### Security
+* Know of AES (Chaining, block cypher)
+* Asymmetric encryption (RSA)
+* PKI, PGP
+* Hashing
+	* Cryptographic hashing
+	* Not the actual algorithms
+* Usage of hashes
+* Authentication using IDP
+* Role-Based Access Control
+
+### Principles, Architecture
+* Openness
+* Problems of Scalability
+* Distribution
+	* Data
+	* Processing
+	* Both
+	* Layering vs Splitting
+* Types of distributed computing
+	* Cluster computing - Fast interconnect, identical machines
+	* Cloud computing - Heterogenious system, internet
+* ACID Principle
+* Communication types
+	* RPC, RMI, MOM
+* Health care
+* Layered, Object-based, Event-based
+* System architectures
+	* Layering -> Fat clients, thin clients
+* Decentralized architectures
+* Peer-to-Peer architectures
+	* Machines organized into an overlay network
+	* Structured P2P -> DHT
+	* Unstructured P2P -> Flooding / Low performance
+* Middleware vs Architecture
+	* Middleware -> Software that implements architecture
+
+### Processes
+* Multithreaded systems -> Parallel communication
+* Server-side should be multi-threaded to serve multiple clients at the same time
+* Virtualization
+* Cloud computing models
+* Middleware to handle distributed concepts
+* Out of band communication
+* Stateless servers vs stateful servers
+* Three tier architecture
+* Migration
+
+### RESTful services
+* REST architecture constraints
+	* Statelessness
+	* Uniform interface
+	* HTTP verbs
+
+### Communications
+* Transient / Persistent
+* Asynchronous / Synchronous
+* Message oriented middleware
+* RPC framework
+* RPC parameter passing
+* Message-oriented middleware
+* Application level multicasting
+* Epidemic protocols
+	* Anti-entropy
+	* Rumor-spreading
+
+### Naming things
+* Home address
+* Distributed Hash table
+	* Logical ring
+	* Finger tables
+* Namespace systems
+* Mounting
+* LDAP
+* UUID, GUID
+
+### Coordination
+* Happened-before relationship
+* Logical clocks
+* Total ordered multicast -> Timestamp+ack
+	* Assures everything in order
+	* High performance penalty
+* Vector clocks
+* Capturing causality
+* Mutual exclusion
+* Election algorithms
+	* Election by bullying
+
+### Consistency and Replication
+* Reasons for replication
+* Performance and scalability
+* Weakened consistency requirements
+* Sequential consistency
+* Eventual consistency
+* BASE instead of ACID
+* Client-centric consistency
+	* It doesn't matter if the system is consistent, if the client *thinks* the system is consistent
+* Content replication
+* Content distribution
+	* Propagating updates
+* Push/Pull updates
+* Quorum-based approach
+
+### Fault tolerance
+* Availability vs Reliability
+* Fault prevention
+* Fault tolerance
+* Fault removal
+* Fault types
+* Process resilience
+* Degree of fault-tolerance
+* CAP theorem
+* 2PC
+* Error recovery
+	* Recovery points
+	* Checkpointing
+* Message logging
