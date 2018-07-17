@@ -21,6 +21,11 @@
 <li><a href="#fault-tolerance">Fault tolerance</a></li>
 </ul>
 </li>
+<li><a href="#exam-stuff">Exam stuff</a>
+<ul>
+<li></li>
+</ul>
+</li>
 </ul>
 
     </div>
@@ -622,9 +627,258 @@ Uniform interface:</li>
 <h3 id="metrics">Metrics</h3>
 <ul>
 <li>Availability</li>
-<li>Reliability</li>
+<li>Reliability
+<ul>
+<li>MTTF (Mean Time To Failure)</li>
+<li>MTTR (Mean Time To Repair)</li>
+<li>MTBF (Mean Time Between Failures)</li>
+</ul>
+</li>
 <li>Safety</li>
 <li>Maintainability</li>
+</ul>
+<h3 id="terminology">Terminology</h3>
+<ul>
+<li>Failure - Symptom of the error</li>
+<li>Error - Reason for failure</li>
+<li>Fault - What created the error</li>
+<li>Fault prevention - Prevent the occurrence of fault</li>
+<li>Fault tolerance - Build the system in a way that it masks faults</li>
+<li>Fault removal - Remove faults</li>
+<li>Fault forecasting - Know of faults</li>
+<li>Transient fault - Happens once, never again</li>
+<li>Intermitten fault - Happens every once in a while</li>
+<li>Permanent fault - Faulty until fixed</li>
+</ul>
+<h3 id="types-of-failures">Types of failures</h3>
+<ul>
+<li>Crash failure
+<ul>
+<li>Fail stop</li>
+<li>Fail noisy</li>
+<li>Fail silent</li>
+<li>Fail safe</li>
+<li>Fail arbitrary</li>
+</ul>
+</li>
+<li>Omission failure</li>
+<li>Timing failure</li>
+<li>Response failure</li>
+<li>Arbitrary failure
+<ul>
+<li>Omission failure</li>
+<li>Commission failure</li>
+</ul>
+</li>
+</ul>
+<h3 id="async-and-sync-systems">Async and sync systems</h3>
+<ul>
+<li>Async system - Can not reliably detect crash failures</li>
+<li>Synchronous system - Detect omission and timing failures</li>
+<li>Partially synchronous systems - Can reliably detect crash failures</li>
+</ul>
+<h3 id="types-of-systems">Types of systems</h3>
+<ul>
+<li>Flat system</li>
+<li>Hierarchical system</li>
+</ul>
+<h3 id="degree-of-fault-tolerance">Degree of fault-tolerance</h3>
+<ul>
+<li>k-fault tolerant = The system can work with k parts failing simultaneously</li>
+</ul>
+<h3 id="realistic-consensus-paxos">Realistic Consensus (Paxos)</h3>
+<ul>
+<li>Partially async system</li>
+<li>Communication is unreliable</li>
+<li>Corrupted messages detected</li>
+<li>Operations are deterministic</li>
+<li>Crash failures: yes; Arbitrary failures: no</li>
+<li>Processes do not conclude</li>
+</ul>
+<h1 id="exam-stuff">Exam stuff</h1>
+<ul>
+<li>Partitioning / Distributed Hash Tables</li>
+<li>High availability / Vector clocks</li>
+<li>Failure tolerance / Sloppy Quorum</li>
+<li>Permanent failures / Merkle trees (Hashes of hashes below)</li>
+<li>Membership / Gossip-based membership protocol</li>
+</ul>
+<h3 id="networking">Networking</h3>
+<ul>
+<li>Point to Point connections</li>
+<li>Transfer speeds of different protocols</li>
+</ul>
+<h3 id="security-1">Security</h3>
+<ul>
+<li>Know of AES (Chaining, block cypher)</li>
+<li>Asymmetric encryption (RSA)</li>
+<li>PKI, PGP</li>
+<li>Hashing
+<ul>
+<li>Cryptographic hashing</li>
+<li>Not the actual algorithms</li>
+</ul>
+</li>
+<li>Usage of hashes</li>
+<li>Authentication using IDP</li>
+<li>Role-Based Access Control</li>
+</ul>
+<h3 id="principles-architecture">Principles, Architecture</h3>
+<ul>
+<li>Openness</li>
+<li>Problems of Scalability</li>
+<li>Distribution
+<ul>
+<li>Data</li>
+<li>Processing</li>
+<li>Both</li>
+<li>Layering vs Splitting</li>
+</ul>
+</li>
+<li>Types of distributed computing
+<ul>
+<li>Cluster computing - Fast interconnect, identical machines</li>
+<li>Cloud computing - Heterogenious system, internet</li>
+</ul>
+</li>
+<li>ACID Principle</li>
+<li>Communication types
+<ul>
+<li>RPC, RMI, MOM</li>
+</ul>
+</li>
+<li>Health care</li>
+<li>Layered, Object-based, Event-based</li>
+<li>System architectures
+<ul>
+<li>Layering -&gt; Fat clients, thin clients</li>
+</ul>
+</li>
+<li>Decentralized architectures</li>
+<li>Peer-to-Peer architectures
+<ul>
+<li>Machines organized into an overlay network</li>
+<li>Structured P2P -&gt; DHT</li>
+<li>Unstructured P2P -&gt; Flooding / Low performance</li>
+</ul>
+</li>
+<li>Middleware vs Architecture
+<ul>
+<li>Middleware -&gt; Software that implements architecture</li>
+</ul>
+</li>
+</ul>
+<h3 id="processes">Processes</h3>
+<ul>
+<li>Multithreaded systems -&gt; Parallel communication</li>
+<li>Server-side should be multi-threaded to serve multiple clients at the same time</li>
+<li>Virtualization</li>
+<li>Cloud computing models</li>
+<li>Middleware to handle distributed concepts</li>
+<li>Out of band communication</li>
+<li>Stateless servers vs stateful servers</li>
+<li>Three tier architecture</li>
+<li>Migration</li>
+</ul>
+<h3 id="restful-services-1">RESTful services</h3>
+<ul>
+<li>REST architecture constraints
+<ul>
+<li>Statelessness</li>
+<li>Uniform interface</li>
+<li>HTTP verbs</li>
+</ul>
+</li>
+</ul>
+<h3 id="communications">Communications</h3>
+<ul>
+<li>Transient / Persistent</li>
+<li>Asynchronous / Synchronous</li>
+<li>Message oriented middleware</li>
+<li>RPC framework</li>
+<li>RPC parameter passing</li>
+<li>Message-oriented middleware</li>
+<li>Application level multicasting</li>
+<li>Epidemic protocols
+<ul>
+<li>Anti-entropy</li>
+<li>Rumor-spreading</li>
+</ul>
+</li>
+</ul>
+<h3 id="naming-things-1">Naming things</h3>
+<ul>
+<li>Home address</li>
+<li>Distributed Hash table
+<ul>
+<li>Logical ring</li>
+<li>Finger tables</li>
+</ul>
+</li>
+<li>Namespace systems</li>
+<li>Mounting</li>
+<li>LDAP</li>
+<li>UUID, GUID</li>
+</ul>
+<h3 id="coordination-1">Coordination</h3>
+<ul>
+<li>Happened-before relationship</li>
+<li>Logical clocks</li>
+<li>Total ordered multicast -&gt; Timestamp+ack
+<ul>
+<li>Assures everything in order</li>
+<li>High performance penalty</li>
+</ul>
+</li>
+<li>Vector clocks</li>
+<li>Capturing causality</li>
+<li>Mutual exclusion</li>
+<li>Election algorithms
+<ul>
+<li>Election by bullying</li>
+</ul>
+</li>
+</ul>
+<h3 id="consistency-and-replication">Consistency and Replication</h3>
+<ul>
+<li>Reasons for replication</li>
+<li>Performance and scalability</li>
+<li>Weakened consistency requirements</li>
+<li>Sequential consistency</li>
+<li>Eventual consistency</li>
+<li>BASE instead of ACID</li>
+<li>Client-centric consistency
+<ul>
+<li>It doesn’t matter if the system is consistent, if the client <em>thinks</em> the system is consistent</li>
+</ul>
+</li>
+<li>Content replication</li>
+<li>Content distribution
+<ul>
+<li>Propagating updates</li>
+</ul>
+</li>
+<li>Push/Pull updates</li>
+<li>Quorum-based approach</li>
+</ul>
+<h3 id="fault-tolerance-1">Fault tolerance</h3>
+<ul>
+<li>Availability vs Reliability</li>
+<li>Fault prevention</li>
+<li>Fault tolerance</li>
+<li>Fault removal</li>
+<li>Fault types</li>
+<li>Process resilience</li>
+<li>Degree of fault-tolerance</li>
+<li>CAP theorem</li>
+<li>2PC</li>
+<li>Error recovery
+<ul>
+<li>Recovery points</li>
+<li>Checkpointing</li>
+</ul>
+</li>
+<li>Message logging</li>
 </ul>
 
     </div>
