@@ -466,6 +466,13 @@ Exam stuff
 * Point to Point connections
 * Transfer speeds of different protocols
 
+#### Slides
+- #4
+- #6
+- #10
+- #14-19
+- #22-23
+
 ### Security
 * Know of AES (Chaining, block cypher)
 * Asymmetric encryption (RSA)
@@ -476,6 +483,17 @@ Exam stuff
 * Usage of hashes
 * Authentication using IDP
 * Role-Based Access Control
+
+####  Slides
+
+- #3-5
+- #7-9
+- #11
+- #13-14-15
+- #18-20
+- #23-24
+- #27-28
+- #30-34
 
 ### Principles, Architecture
 * Openness
@@ -503,6 +521,16 @@ Exam stuff
 * Middleware vs Architecture
 	* Middleware -> Software that implements architecture
 
+#### Slides
+- #6-8
+- #10
+- #11-14
+- #18-22
+- #24
+- #28-29
+- #32-34
+- #36
+
 ### Processes
 * Multithreaded systems -> Parallel communication
 * Server-side should be multi-threaded to serve multiple clients at the same time
@@ -514,11 +542,27 @@ Exam stuff
 * Three tier architecture
 * Migration
 
+#### Slides
+- #12
+- #14
+- #16
+- #21
+- #22
+- #29
+- #31-32
+- #34
+- #47
+
 ### RESTful services
 * REST architecture constraints
 	* Statelessness
 	* Uniform interface
 	* HTTP verbs
+
+#### Slides
+- #2-3
+- #10
+- #17-18
 
 ### Communications
 * Transient / Persistent
@@ -532,6 +576,15 @@ Exam stuff
 	* Anti-entropy
 	* Rumor-spreading
 
+#### Slides
+- #5
+- #7
+- #11-12
+- #14
+- #29
+- #37
+- #41
+
 ### Naming things
 * Home address
 * Distributed Hash table
@@ -541,6 +594,16 @@ Exam stuff
 * Mounting
 * LDAP
 * UUID, GUID
+
+#### Slides
+- #11
+- #23-24
+- #28
+- #39
+
+#### UUID/GUID
+- #2
+- #4
 
 ### Coordination
 * Happened-before relationship
@@ -553,6 +616,15 @@ Exam stuff
 * Mutual exclusion
 * Election algorithms
 	* Election by bullying
+
+#### Slides
+- #8
+- #11
+- #12
+- #14
+- #20
+- #24
+- #33
 
 ### Consistency and Replication
 * Reasons for replication
@@ -569,6 +641,14 @@ Exam stuff
 * Push/Pull updates
 * Quorum-based approach
 
+#### Slides
+- #4
+- #10-11
+- #14
+- #25
+- #28-29
+- #37
+
 ### Fault tolerance
 * Availability vs Reliability
 * Fault prevention
@@ -584,101 +664,7 @@ Exam stuff
 	* Checkpointing
 * Message logging
 
-## Slide numbers
-
-Summary:
-
-### Introduction, basic concepts
-
-- #4
-- #6
-- #10
-- #14-19
-- #22-23
-
-### Security
-
-- #3-5
-- #7-9
-- #11
-- #13-14-15
-- #18-20
-- #23-24
-- #27-28
-- #30-34
-
-### Architectures
-
-- #6-8
-- #10
-- #11-14
-- #18-22
-- #24
-- #28-29
-- #32-34
-- #36
- 
-### Processes
-
-- #12
-- #14
-- #16
-- #21
-- #22
-- #29
-- #31-32
-- #34
-- #47
-
-### Restful
-
-- #2-3
-- #10
-- #17-18
-
-### Communication
-
-- #5
-- #7
-- #11-12
-- #14
-- #29
-- #37
-- #41
-
-### Naming
-
-- #11
-- #23-24
-- #28
-- #39
-
-### UUID/GUID
-
-- #2
-- #4
-
-### Coordination
-
-- #8
-- #11
-- #12
-- #14
-- #20
-- #24
-- #33
-
-### Replication
-
-- #4
-- #10-11
-- #14
-- #25
-- #28-29
-- #37
-
-### Fault tolerance
-
+#### Slides
 - #3
 - #7-8
 - #14
